@@ -1,0 +1,18 @@
+# Raw media / source files
+media/
+/*.mp4
+/*.gpx
+/*.kml
+/*.csv
+/*.pdf
+
+# Firebase
+firebase-debug.log
+
+# Claude / Playwright
+.claude/
+.playwright-mcp/
+
+# OS
+.DS_Store
+Thumbs.db

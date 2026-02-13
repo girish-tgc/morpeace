@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Caveat:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700&display=swap');
+@import 'maplibre-gl/dist/maplibre-gl.css';
+@import "tailwindcss";
+
+@theme {
+  --color-soil-deep: #1c1508;
+  --color-forest-night: #0f2313;
+  --color-soil-warm: #3d2b1f;
+  --color-root-green: #2d5016;
+  --color-leaf-new: #6b8f3c;
+  --color-canopy-light: #a8c256;
+  --color-mango-gold: #d4a017;
+  --color-mango-green: #5a7247;
+  --color-flower-pink: #d94f6b;
+  --color-flower-purple: #7b4d8e;
+  --color-fish-gold: #d4942a;
+  --color-water-green: #4a7c59;
+  --color-sky-cream: #f5f0e8;
+  --color-stone-gray: #8a8577;
+  --color-bark-sienna: #8b5e3c;
+  --color-strawberry: #c41e3a;
+  --color-parchment: #faf6ef;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-poem: 'Cormorant Garamond', Garamond, serif;
+  --font-handwritten: 'Caveat', cursive;
+  --font-devanagari: 'Noto Serif Devanagari', serif;
+}
+
+/* Tailwind v4 preflight handles box-sizing, margin, padding resets.
+   Do NOT add unlayered * rules — they override Tailwind's layered utilities. */
+
+html {
+  overflow-x: hidden;
+  background-color: var(--color-soil-deep);
+}
+
+body {
+  font-family: var(--font-poem);
+  color: var(--color-sky-cream);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: rgba(107, 143, 60, 0.4);
+  color: var(--color-sky-cream);
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-soil-deep);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-root-green);
+  border-radius: 2px;
+}
+
+@keyframes breathe-outer {
+  0%, 100% { transform: scale(0.85); opacity: 0.2; }
+  50% { transform: scale(1.2); opacity: 0.7; }
+}
+
+@keyframes breathe-inner {
+  0%, 100% { transform: scale(0.9); opacity: 0.25; }
+  50% { transform: scale(1.15); opacity: 0.85; }
+}
+
+@keyframes breathe-vignette {
+  0%, 100% { opacity: 0.75; }
+  50% { opacity: 0.35; }
+}
+
+@keyframes breathe-text {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+.forest-breathe-outer {
+  animation: breathe-outer 4s ease-in-out infinite;
+}
+
+.forest-breathe-inner {
+  animation: breathe-inner 4s ease-in-out infinite;
+}
+
+.forest-breathe-vignette {
+  animation: breathe-vignette 4s ease-in-out infinite;
+}
+
+.forest-breathe-text {
+  animation: breathe-text 4s ease-in-out infinite;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hide scrollbar for horizontal scroll areas */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Smooth image loading */
+img {
+  transition: opacity 0.3s ease;
+}
+
+/* Line clamp utility */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .forest-breathe-outer,
+  .forest-breathe-inner,
+  .forest-breathe-vignette,
+  .forest-breathe-text,
+  [data-animate] {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Mobile typography adjustments */
+@media (max-width: 640px) {
+  .font-display {
+    letter-spacing: 0.05em;
+  }
+}
+
+/* MapLibre popup styles */
+.forest-popup .maplibregl-popup-content {
+  background: var(--color-forest-night);
+  color: var(--color-sky-cream);
+  border-radius: 12px;
+  padding: 10px 14px;
+  border: 1px solid rgba(107, 143, 60, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.forest-popup .maplibregl-popup-tip {
+  border-top-color: var(--color-forest-night);
+}
+
+.forest-popup-species {
+  font-family: var(--font-display);
+  font-size: 13px;
+  color: rgba(245, 240, 232, 0.9);
+  margin: 0;
+}
+
+.forest-popup-marathi {
+  font-family: var(--font-poem);
+  font-size: 12px;
+  font-style: italic;
+  color: rgba(245, 240, 232, 0.4);
+  margin: 2px 0 0;
+}
+
+.forest-popup-hint {
+  font-family: var(--font-display);
+  font-size: 11px;
+  color: rgba(212, 160, 23, 0.6);
+  margin: 4px 0 0;
+}
+
+/* MapLibre attribution subtle */
+.maplibregl-ctrl-attrib {
+  opacity: 0.4;
+  font-size: 10px !important;
+}
+
+/* MapLibre cooperative gesture message */
+.maplibregl-cooperative-gesture-screen {
+  background: rgba(26, 18, 7, 0.8) !important;
+  color: var(--color-sky-cream) !important;
+  font-family: var(--font-poem) !important;
+}
+
+/* Tree marker styles */
+.forest-tree-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5));
+}
+
+.forest-marker-icon {
+  transition: filter 0.3s ease;
+}
+
+.forest-marker-label {
+  font-family: var(--font-display);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--color-sky-cream);
+  background: rgba(12, 26, 14, 0.92);
+  padding: 2px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  margin-top: 3px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+@keyframes marker-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
