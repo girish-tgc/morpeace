@@ -7,8 +7,11 @@ import ErrorBoundary from './components/ErrorBoundary'
 import Layer0Soil from './components/layer0/Layer0Soil'
 import DroneVideoSection from './components/layer1/DroneVideoSection'
 import Layer1Floor from './components/layer1/Layer1Floor'
+import Layer2Understory from './components/layer2/Layer2Understory'
 import Layer3Canopy from './components/layer3/Layer3Canopy'
 import Layer4Sky from './components/layer4/Layer4Sky'
+import OurDream from './components/shared/OurDream'
+import OurPromise from './components/shared/OurPromise'
 import RootNav from './components/navigation/RootNav'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -73,6 +76,10 @@ function App() {
       </ErrorBoundary>
 
       <ErrorBoundary>
+        <OurDream />
+      </ErrorBoundary>
+
+      <ErrorBoundary>
         <DroneVideoSection />
       </ErrorBoundary>
 
@@ -84,12 +91,22 @@ function App() {
 
       <ErrorBoundary>
         <div ref={el => { layerRefs.current[2] = el }}>
-          <Layer3Canopy />
+          <Layer2Understory />
         </div>
       </ErrorBoundary>
 
       <ErrorBoundary>
         <div ref={el => { layerRefs.current[3] = el }}>
+          <Layer3Canopy />
+        </div>
+      </ErrorBoundary>
+
+      <ErrorBoundary>
+        <OurPromise />
+      </ErrorBoundary>
+
+      <ErrorBoundary>
+        <div ref={el => { layerRefs.current[4] = el }}>
           <Layer4Sky />
         </div>
       </ErrorBoundary>

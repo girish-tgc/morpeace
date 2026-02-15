@@ -9,7 +9,7 @@ interface Props {
 const layers = [
   { name: 'Soil', subtitle: 'The Story', icon: '◉' },
   { name: 'Floor', subtitle: 'The Map', icon: '◈' },
-  { name: 'Understory', subtitle: 'Tree Stories', icon: '❋' },
+  { name: 'Understory', subtitle: 'Trail & Stillness', icon: '❋' },
   { name: 'Canopy', subtitle: 'Recipes', icon: '✿' },
   { name: 'Sky', subtitle: 'Invitation', icon: '✧' },
 ]

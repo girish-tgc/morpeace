@@ -130,10 +130,17 @@ img {
   transition: opacity 0.3s ease;
 }
 
-/* Line clamp utility */
+/* Line clamp utilities */
 .line-clamp-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -143,6 +150,7 @@ img {
   .forest-breathe-inner,
   .forest-breathe-vignette,
   .forest-breathe-text,
+  .animate-slow-rotate,
   [data-animate] {
     animation: none !important;
     transition: none !important;
@@ -233,4 +241,13 @@ img {
 @keyframes marker-float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-3px); }
+}
+
+@keyframes slow-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-slow-rotate {
+  animation: slow-rotate 30s linear infinite;
 }
