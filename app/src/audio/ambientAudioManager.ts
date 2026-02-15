@@ -55,6 +55,16 @@ class AmbientAudioManager {
     document.querySelectorAll<HTMLElement>('[data-audio-zone]').forEach((el) => {
       this.observer!.observe(el)
     })
+
+    // Preload the first zone's audio so it starts instantly on gesture
+    const firstZoneEl = document.querySelector<HTMLElement>('[data-audio-zone]')
+    if (firstZoneEl) {
+      const zoneKey = firstZoneEl.dataset.audioZone
+      if (zoneKey && AUDIO_ZONES[zoneKey]) {
+        const audio = this.getOrCreateAudio(AUDIO_ZONES[zoneKey].track)
+        audio.preload = 'auto'
+      }
+    }
   }
 
   destroy() {
@@ -76,11 +86,11 @@ class AmbientAudioManager {
     if (this.gestureUnlockBound) return
     this.gestureUnlockBound = () => {
       this.removeGestureListener()
-      // Re-attempt playback on first user gesture
+      // Re-attempt playback on first user gesture — quick fade-in
       const activeZone = this.state.activeZone
       if (activeZone && !this.state.muted) {
         const zone = AUDIO_ZONES[activeZone]
-        if (zone) this.crossfade(zone.track, zone.volume)
+        if (zone) this.crossfade(zone.track, zone.volume, true)
       }
     }
     for (const evt of ['click', 'touchstart', 'keydown'] as const) {
@@ -130,14 +140,16 @@ class AmbientAudioManager {
     return audio
   }
 
-  private crossfade(newTrackId: TrackId, targetVolume: number) {
+  private crossfade(newTrackId: TrackId, targetVolume: number, quick = false) {
     this.clearFades()
+
+    const fadeDuration = quick ? 400 : FADE_DURATION
 
     // Fade out current track
     if (this.activeTrack && this.activeTrack !== newTrackId) {
       const oldAudio = this.audioElements.get(this.activeTrack)
       if (oldAudio) {
-        this.fadeVolume(oldAudio, 0, () => {
+        this.fadeVolume(oldAudio, 0, fadeDuration, () => {
           oldAudio.pause()
         })
       }
@@ -152,7 +164,7 @@ class AmbientAudioManager {
       // Autoplay blocked — silently wait for first user gesture
       this.addGestureListener()
     })
-    this.fadeVolume(newAudio, targetVolume)
+    this.fadeVolume(newAudio, targetVolume, fadeDuration)
     this.activeTrack = newTrackId
   }
 
@@ -160,11 +172,11 @@ class AmbientAudioManager {
     this.clearFades()
     const audio = this.audioElements.get(trackId)
     if (audio) {
-      this.fadeVolume(audio, targetVolume)
+      this.fadeVolume(audio, targetVolume, FADE_DURATION)
     }
   }
 
-  private fadeVolume(audio: HTMLAudioElement, target: number, onDone?: () => void) {
+  private fadeVolume(audio: HTMLAudioElement, target: number, duration: number, onDone?: () => void) {
     const startVol = audio.volume
     const diff = target - startVol
     if (Math.abs(diff) < 0.01) {
@@ -186,7 +198,7 @@ class AmbientAudioManager {
         audio.volume = Math.max(0, Math.min(1, target))
         onDone?.()
       }
-    }, FADE_DURATION / FADE_STEPS)
+    }, duration / FADE_STEPS)
 
     this.fadeIntervals.push(interval)
   }
@@ -209,7 +221,7 @@ class AmbientAudioManager {
       // Fade out and pause all
       this.clearFades()
       this.audioElements.forEach((audio) => {
-        this.fadeVolume(audio, 0, () => { audio.pause() })
+        this.fadeVolume(audio, 0, FADE_DURATION, () => { audio.pause() })
       })
     } else {
       // Resume current zone

@@ -95,12 +95,14 @@ export default function Layer0Soil() {
   const outerRef = useRef<HTMLDivElement>(null)
   const innerRef = useRef<HTMLDivElement>(null)
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([])
+  const stanzaRefs = useRef<(HTMLDivElement | null)[]>([])
 
   useEffect(() => {
     if (!containerRef.current || !outerRef.current || !innerRef.current) return
 
+    const mm = gsap.matchMedia()
     const ctx = gsap.context(() => {
-      // Opening fade in
+      // Opening fade — all screen sizes
       if (openingRef.current) {
         gsap.fromTo(openingRef.current,
           { opacity: 0 },
@@ -108,24 +110,39 @@ export default function Layer0Soil() {
         )
       }
 
-      // Horizontal scroll pin
-      const inner = innerRef.current!
-      const outer = outerRef.current!
+      // DESKTOP: horizontal scroll pin (768px+)
+      mm.add('(min-width: 768px)', () => {
+        const inner = innerRef.current!
+        const outer = outerRef.current!
+        gsap.set(inner, { width: stanzas.length * 100 + 'vw', display: 'flex', flexDirection: 'row' })
+        gsap.to(inner, {
+          x: () => -(inner.scrollWidth - window.innerWidth),
+          ease: 'none',
+          scrollTrigger: {
+            trigger: outer,
+            pin: true,
+            scrub: 1,
+            end: () => '+=' + (inner.scrollWidth - window.innerWidth),
+            invalidateOnRefresh: true,
+          },
+        })
+      })
 
-      gsap.to(inner, {
-        x: () => -(inner.scrollWidth - window.innerWidth),
-        ease: 'none',
-        scrollTrigger: {
-          trigger: outer,
-          pin: true,
-          scrub: 1,
-          end: () => '+=' + (inner.scrollWidth - window.innerWidth),
-          invalidateOnRefresh: true,
-        },
+      // MOBILE: fade-in stanza animations (<768px)
+      mm.add('(max-width: 767px)', () => {
+        stanzaRefs.current.forEach((ref) => {
+          if (!ref) return
+          gsap.fromTo(ref,
+            { opacity: 0, y: 40 },
+            { opacity: 1, y: 0, duration: 1.4, ease: 'power3.out',
+              scrollTrigger: { trigger: ref, start: 'top 85%', toggleActions: 'play none none reverse' },
+            }
+          )
+        })
       })
     }, containerRef)
 
-    return () => ctx.revert()
+    return () => { mm.revert(); ctx.revert() }
   }, [])
 
   // IntersectionObserver for video play/pause
@@ -204,7 +221,7 @@ export default function Layer0Soil() {
 
       {/* === HORIZONTAL SCROLL — Stanza Panels === */}
       <div ref={outerRef} data-audio-zone="layer0-story" className="overflow-hidden">
-        <div ref={innerRef} className="flex" style={{ width: `${stanzas.length * 100}vw` }}>
+        <div ref={innerRef} className="flex flex-col md:flex-row">
           {stanzas.map((stanza, i) => {
             const isLast = i === stanzas.length - 1
             const currentVideoIdx = stanza.bg.type === 'video' ? videoIndex++ : -1
@@ -212,8 +229,8 @@ export default function Layer0Soil() {
             return (
               <div
                 key={i}
-                className="relative flex items-center justify-center overflow-hidden shrink-0"
-                style={{ width: '100vw', height: '100vh' }}
+                ref={el => { stanzaRefs.current[i] = el }}
+                className="relative flex items-center justify-center overflow-hidden shrink-0 w-screen min-h-screen md:h-screen"
               >
                 {/* Background */}
                 {stanza.bg.type === 'video' && (
