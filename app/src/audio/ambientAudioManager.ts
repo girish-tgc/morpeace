@@ -77,8 +77,11 @@ class AmbientAudioManager {
     this.gestureUnlockBound = () => {
       this.removeGestureListener()
       // Re-attempt playback on first user gesture
-      if (this.state.activeZone && !this.state.muted) {
-        const zone = AUDIO_ZONES[this.state.activeZone]
+      const activeZone = this.state.activeZone
+      if (activeZone) {
+        this.state = { ...this.state, muted: false }
+        this.notify()
+        const zone = AUDIO_ZONES[activeZone]
         if (zone) this.crossfade(zone.track, zone.volume)
       }
     }
@@ -148,7 +151,11 @@ class AmbientAudioManager {
     newAudio.play().then(() => {
       this.removeGestureListener()
     }).catch(() => {
-      // Autoplay blocked — wait for user gesture to start
+      // Autoplay blocked — show muted icon so user knows to click
+      if (!this.state.muted) {
+        this.state = { ...this.state, muted: true }
+        this.notify()
+      }
       this.addGestureListener()
     })
     this.fadeVolume(newAudio, targetVolume)
