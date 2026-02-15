@@ -81,7 +81,7 @@ function App() {
       <AmbientAudioToggle />
 
       <ErrorBoundary>
-        <div ref={el => { layerRefs.current[0] = el }} data-audio-zone="layer0-soil">
+        <div ref={el => { layerRefs.current[0] = el }}>
           <Layer0Soil />
         </div>
       </ErrorBoundary>

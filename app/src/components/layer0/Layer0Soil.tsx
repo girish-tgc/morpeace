@@ -152,6 +152,7 @@ export default function Layer0Soil() {
     <div ref={containerRef} className="relative">
       {/* === THE DARKNESS — Opening === */}
       <section
+        data-audio-zone="layer0-intro"
         className="h-screen flex items-center justify-center relative overflow-hidden"
         style={{ background: 'radial-gradient(ellipse at 50% 60%, #2a4a20 0%, #1b3316 40%, #122410 70%, #0a0f07 100%)' }}
       >
@@ -202,7 +203,7 @@ export default function Layer0Soil() {
       </section>
 
       {/* === HORIZONTAL SCROLL — Stanza Panels === */}
-      <div ref={outerRef} className="overflow-hidden">
+      <div ref={outerRef} data-audio-zone="layer0-story" className="overflow-hidden">
         <div ref={innerRef} className="flex" style={{ width: `${stanzas.length * 100}vw` }}>
           {stanzas.map((stanza, i) => {
             const isLast = i === stanzas.length - 1
