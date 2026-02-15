@@ -79,8 +79,8 @@ export default function Layer4Sky() {
         {/* Opening */}
         <div className="text-center mb-12">
           <p className="font-poem text-2xl md:text-3xl leading-relaxed italic text-sky-cream/90" style={{ textShadow }}>
-            What began as a property for family has now opened its doors to discerning souls —
-            not as a resort or a hotel, but as <span className="text-canopy-light">your own home</span>.
+            What began as one man&rsquo;s quiet listening has grown into an open door &mdash;
+            not a resort or hotel, but <span className="text-canopy-light">your own home</span>.
           </p>
         </div>
 

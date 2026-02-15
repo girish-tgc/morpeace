@@ -90,8 +90,7 @@ export default function Layer3Canopy() {
             className="font-poem text-lg md:text-xl text-sky-cream/80 italic max-w-2xl mx-auto leading-relaxed"
             style={{ textShadow: '0 1px 12px rgba(0,0,0,0.4)' }}
           >
-            Every recipe here begins with a tree. Traditional preparations using ingredients
-            that modern kitchens have forgotten.
+            My companions bear fruits the world has forgotten how to cook. These are their offerings.
           </p>
         </div>
       </div>

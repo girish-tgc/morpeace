@@ -17,13 +17,7 @@ interface Props {
 
 export default function TreeStoryPanel({ tree, onClose }: Props) {
   const panelRef = useRef<HTMLDivElement>(null)
-  const [activeChapter, setActiveChapter] = useState<TreeStoryChapter | null>(
-    tree.story?.[0] ?? null
-  )
-
-  useEffect(() => {
-    setActiveChapter(tree.story?.[0] ?? null)
-  }, [tree.id, tree.story])
+  const [expandedChapter, setExpandedChapter] = useState<TreeStoryChapter | null>(null)
 
   // Animate in
   useEffect(() => {
@@ -34,7 +28,7 @@ export default function TreeStoryPanel({ tree, onClose }: Props) {
     )
   }, [tree.id])
 
-  if (!tree.story || !activeChapter) return null
+  if (!tree.story) return null
 
   return (
     <div ref={panelRef} className="w-full px-4 md:px-8 mt-10">
@@ -69,33 +63,50 @@ export default function TreeStoryPanel({ tree, onClose }: Props) {
           </button>
         </div>
 
-        {/* Chapter tabs */}
-        <div className="flex gap-1 px-6 md:px-8 pb-4 overflow-x-auto scrollbar-hide">
-          {tree.story.map((ch) => (
-            <button
-              key={ch.id}
-              onClick={() => setActiveChapter(ch)}
-              className={`px-3 py-1.5 rounded-full text-xs font-display tracking-wider whitespace-nowrap transition-all duration-300
-                ${activeChapter.id === ch.id
-                  ? 'text-sky-cream border border-sky-cream/30'
-                  : 'text-sky-cream/50 border border-transparent hover:text-sky-cream/80'
-                }`}
-              style={activeChapter.id === ch.id ? { backgroundColor: `${tree.accentColor}20` } : undefined}
-            >
-              {chapterLabels[ch.id]}
-            </button>
-          ))}
-        </div>
-
         {/* Divider */}
         <div className="mx-6 md:mx-8 border-t border-sky-cream/15" />
 
-        {/* Story content */}
-        <ChapterContent
-          key={activeChapter.id}
-          chapter={activeChapter}
-          accentColor={tree.accentColor}
-        />
+        {/* Horizontal scroll chapter cards */}
+        <div className="flex gap-4 overflow-x-auto scrollbar-hide pb-4 pt-6 snap-x snap-mandatory px-6 md:px-8">
+          <div className="shrink-0 w-2" />
+          {tree.story.map(chapter => {
+            const isTeaching = chapter.id === 'teaching'
+            return (
+              <button
+                key={chapter.id}
+                onClick={() => setExpandedChapter(
+                  expandedChapter?.id === chapter.id ? null : chapter
+                )}
+                className={`shrink-0 w-72 md:w-80 rounded-2xl snap-start text-left p-5 transition-all duration-300 border ${
+                  expandedChapter?.id === chapter.id
+                    ? 'border-sky-cream/30 bg-sky-cream/10'
+                    : 'border-sky-cream/10 bg-sky-cream/5 hover:border-sky-cream/20 hover:bg-sky-cream/8'
+                }`}
+                style={isTeaching ? { borderColor: `${tree.accentColor}40` } : undefined}
+              >
+                <p
+                  className="font-display text-xs tracking-wider uppercase mb-2"
+                  style={{ color: `${tree.accentColor}cc` }}
+                >
+                  {chapterLabels[chapter.id]}
+                </p>
+                <p className="font-poem text-sm md:text-base text-sky-cream/80 leading-relaxed line-clamp-4">
+                  {chapter.content.split('\n\n')[0]}
+                </p>
+              </button>
+            )
+          })}
+          <div className="shrink-0 w-2" />
+        </div>
+
+        {/* Expanded chapter content */}
+        {expandedChapter && (
+          <ChapterContent
+            key={expandedChapter.id}
+            chapter={expandedChapter}
+            accentColor={tree.accentColor}
+          />
+        )}
 
         {/* Footer — tree data */}
         <div className="mx-6 md:mx-8 border-t border-sky-cream/15" />
@@ -137,8 +148,8 @@ function ChapterContent({ chapter, accentColor }: { chapter: TreeStoryChapter; a
 
   return (
     <div ref={contentRef} className="px-6 md:px-8 py-8 max-h-[50vh] overflow-y-auto scrollbar-hide">
+      <div className="mx-6 md:mx-8 border-t border-sky-cream/15 mb-6" />
       {isTeaching ? (
-        // Teaching chapter — larger, colored, centered
         <div className="text-center max-w-lg mx-auto">
           {chapter.content.split('\n\n').map((paragraph, pi) => (
             <p
@@ -156,7 +167,6 @@ function ChapterContent({ chapter, accentColor }: { chapter: TreeStoryChapter; a
           ))}
         </div>
       ) : (
-        // Other chapters — left-aligned, poetic
         <div className="max-w-xl mx-auto">
           {chapter.content.split('\n\n').map((paragraph, pi) => (
             <p

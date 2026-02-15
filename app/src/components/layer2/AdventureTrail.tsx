@@ -65,7 +65,7 @@ export default function AdventureTrail() {
   }, [])
 
   return (
-    <div>
+    <div data-audio-zone="adventure-trail">
       {/* === CINEMATIC HERO === */}
       <div ref={heroRef} className="relative min-h-[50vh] flex items-center justify-center overflow-hidden">
         <img
@@ -96,7 +96,7 @@ export default function AdventureTrail() {
             className="font-poem text-lg md:text-xl text-sky-cream/80 italic max-w-2xl mx-auto leading-relaxed"
             style={{ textShadow: '0 1px 12px rgba(0,0,0,0.4)' }}
           >
-            Five cousins explore Morpeace and discover that every corner of the land has a lesson to teach.
+            Five young ones once wandered through my home. Here is what the land whispered to them.
           </p>
         </div>
       </div>

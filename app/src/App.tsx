@@ -12,7 +12,11 @@ import Layer3Canopy from './components/layer3/Layer3Canopy'
 import Layer4Sky from './components/layer4/Layer4Sky'
 import OurDream from './components/shared/OurDream'
 import OurPromise from './components/shared/OurPromise'
+import TheUnfolding from './components/shared/TheUnfolding'
+import TouchMeNotClosing from './components/shared/TouchMeNotClosing'
 import RootNav from './components/navigation/RootNav'
+import AmbientAudioToggle from './components/shared/AmbientAudioToggle'
+import { ambientAudio } from './audio/ambientAudioManager'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -38,6 +42,12 @@ function App() {
       lenis.destroy()
       gsap.ticker.remove(lenis.raf)
     }
+  }, [])
+
+  // Initialize ambient audio manager
+  useEffect(() => {
+    ambientAudio.init()
+    return () => { ambientAudio.destroy() }
   }, [])
 
   // Track which layers have been explored
@@ -68,23 +78,40 @@ function App() {
         onNavigate={scrollToLayer}
         activeTree={activeTree}
       />
+      <AmbientAudioToggle />
 
       <ErrorBoundary>
-        <div ref={el => { layerRefs.current[0] = el }}>
+        <div ref={el => { layerRefs.current[0] = el }} data-audio-zone="layer0-soil">
           <Layer0Soil />
         </div>
       </ErrorBoundary>
 
       <ErrorBoundary>
-        <OurDream />
+        <div data-audio-zone="our-dream">
+          <OurDream />
+        </div>
       </ErrorBoundary>
 
       <ErrorBoundary>
-        <DroneVideoSection />
+        <div data-audio-zone="the-unfolding">
+          <TheUnfolding />
+        </div>
       </ErrorBoundary>
 
       <ErrorBoundary>
-        <div ref={el => { layerRefs.current[1] = el }}>
+        <div data-audio-zone="touch-me-not">
+          <TouchMeNotClosing />
+        </div>
+      </ErrorBoundary>
+
+      <ErrorBoundary>
+        <div data-audio-zone="drone-video">
+          <DroneVideoSection />
+        </div>
+      </ErrorBoundary>
+
+      <ErrorBoundary>
+        <div ref={el => { layerRefs.current[1] = el }} data-audio-zone="layer1-floor">
           <Layer1Floor onTreeSelect={setActiveTree} />
         </div>
       </ErrorBoundary>
@@ -96,17 +123,19 @@ function App() {
       </ErrorBoundary>
 
       <ErrorBoundary>
-        <div ref={el => { layerRefs.current[3] = el }}>
+        <div ref={el => { layerRefs.current[3] = el }} data-audio-zone="layer3-canopy">
           <Layer3Canopy />
         </div>
       </ErrorBoundary>
 
       <ErrorBoundary>
-        <OurPromise />
+        <div data-audio-zone="our-promise">
+          <OurPromise />
+        </div>
       </ErrorBoundary>
 
       <ErrorBoundary>
-        <div ref={el => { layerRefs.current[4] = el }}>
+        <div ref={el => { layerRefs.current[4] = el }} data-audio-zone="layer4-sky">
           <Layer4Sky />
         </div>
       </ErrorBoundary>

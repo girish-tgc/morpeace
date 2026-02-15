@@ -81,13 +81,13 @@ export default function OurPromise() {
             className="font-poem text-2xl md:text-3xl lg:text-4xl text-sky-cream/95 italic leading-relaxed"
             style={{ textShadow: '0 2px 24px rgba(0,0,0,0.8), 0 4px 40px rgba(0,0,0,0.5)' }}
           >
-            We will cook with memory in the spice.
+            We will guard the quiet and the unseen.
           </p>
           <p
             className="font-poem text-2xl md:text-3xl lg:text-4xl text-sky-cream/95 italic leading-relaxed"
             style={{ textShadow: '0 2px 24px rgba(0,0,0,0.8), 0 4px 40px rgba(0,0,0,0.5)' }}
           >
-            We will listen to the soil before we speak for it.
+            We will listen more than we speak,
           </p>
         </div>
 

@@ -58,7 +58,7 @@ export default function Layer1Floor({ onTreeSelect }: Props) {
       <div className="text-center mb-12 px-8">
         <h2 className="font-display text-base md:text-lg tracking-[0.3em] uppercase text-leaf-new mb-4">The Living Map</h2>
         <p className="font-poem text-xl md:text-2xl text-sky-cream/85 max-w-lg mx-auto">
-          18 sentinel trees, mapped and measured. Click any tree to hear its story.
+          Come, meet my companions. Each one mapped, measured, and eager to share its story.
         </p>
       </div>
 
