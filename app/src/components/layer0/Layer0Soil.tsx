@@ -28,15 +28,6 @@ const stanzas: Stanza[] = [
   },
   {
     text: [
-      "I am the Touch-Me-Not.",
-      "I fold when touched, to reopen again.",
-      "And this is my story.",
-    ],
-    bg: { type: 'video', src: `${BASE}photos/mimosa-shy-plant.mp4` },
-    overlay: 'bg-black/55',
-  },
-  {
-    text: [
       "I am never meant to be grand. I do not tower.",
       "But I\u2019m sensitive. I feel it first.",
     ],
@@ -52,6 +43,15 @@ const stanzas: Stanza[] = [
       "I grew among grand neighbours \u2014 tamarind, guava, roses\u2026",
     ],
     bg: { type: 'video', src: `${BASE}photos/hands-planting.mp4` },
+    overlay: 'bg-black/55',
+  },
+  {
+    text: [
+      "I am the Touch-Me-Not.",
+      "I fold when touched, to reopen again.",
+      "And this is my story.",
+    ],
+    bg: { type: 'video', src: `${BASE}photos/mimosa-shy-plant.mp4` },
     overlay: 'bg-black/55',
   },
   {
@@ -203,8 +203,7 @@ export default function Layer0Soil() {
 
         <div ref={openingRef} className="opacity-0 relative z-10 max-w-3xl px-8 text-center">
           <p className="font-poem text-2xl md:text-3xl lg:text-4xl leading-relaxed text-sky-cream/90 italic forest-breathe-text">
-            "Morpeace is not being built &mdash; it will become.
-            <br />This is the story of Morpeace."
+            "Morpeace is not being built &mdash; it will become."
           </p>
           <div className="mt-12">
             <p className="text-sm tracking-[0.3em] uppercase text-sky-cream/30 font-display">

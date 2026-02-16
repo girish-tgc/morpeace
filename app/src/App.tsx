@@ -12,6 +12,7 @@ import Layer3Canopy from './components/layer3/Layer3Canopy'
 import Layer4Sky from './components/layer4/Layer4Sky'
 import OurDream from './components/shared/OurDream'
 import OurPromise from './components/shared/OurPromise'
+import Voices from './components/shared/Voices'
 import TheUnfolding from './components/shared/TheUnfolding'
 import TouchMeNotClosing from './components/shared/TouchMeNotClosing'
 import RootNav from './components/navigation/RootNav'
@@ -126,6 +127,10 @@ function App() {
         <div ref={el => { layerRefs.current[3] = el }} data-audio-zone="layer3-canopy">
           <Layer3Canopy />
         </div>
+      </ErrorBoundary>
+
+      <ErrorBoundary>
+        <Voices />
       </ErrorBoundary>
 
       <ErrorBoundary>
