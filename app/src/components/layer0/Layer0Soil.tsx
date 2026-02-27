@@ -10,7 +10,7 @@ interface Stanza {
   text: string[]
   bg:
     | { type: 'video'; src: string }
-    | { type: 'image'; src: string; grayscale?: boolean }
+    | { type: 'image'; src: string }
     | { type: 'gradient'; style: string; breathe?: boolean }
   overlay?: string
 }
@@ -60,7 +60,7 @@ const stanzas: Stanza[] = [
       "The canopies vanished. The pond was silenced.",
       "Concrete replaced breath.",
     ],
-    bg: { type: 'image', src: `${BASE}photos/tree-stump-fog.jpeg`, grayscale: true },
+    bg: { type: 'image', src: `${BASE}photos/tree-stump-fog.jpeg` },
     overlay: 'bg-gradient-to-b from-black/50 via-black/40 to-black/65',
   },
   {
@@ -82,10 +82,8 @@ const stanzas: Stanza[] = [
   },
   {
     text: ["And that is where Morpeace began."],
-    bg: {
-      type: 'gradient',
-      style: 'radial-gradient(ellipse at 50% 50%, #1b3316 0%, #0a0f07 100%)',
-    },
+    bg: { type: 'image', src: `${BASE}photos/peacock-plumage.jpeg` },
+    overlay: 'bg-black/50',
   },
 ]
 
@@ -100,14 +98,20 @@ export default function Layer0Soil() {
   useEffect(() => {
     if (!containerRef.current || !outerRef.current || !innerRef.current) return
 
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
     const mm = gsap.matchMedia()
     const ctx = gsap.context(() => {
       // Opening fade — all screen sizes
       if (openingRef.current) {
-        gsap.fromTo(openingRef.current,
-          { opacity: 0 },
-          { opacity: 1, duration: 3, delay: 1.5, ease: 'power2.inOut' }
-        )
+        if (prefersReduced) {
+          gsap.set(openingRef.current, { opacity: 1 })
+        } else {
+          gsap.fromTo(openingRef.current,
+            { opacity: 0 },
+            { opacity: 1, duration: 3, delay: 1.5, ease: 'power2.inOut' }
+          )
+        }
       }
 
       // DESKTOP: horizontal scroll pin (768px+)
@@ -115,7 +119,8 @@ export default function Layer0Soil() {
         const inner = innerRef.current!
         const outer = outerRef.current!
         gsap.set(inner, { width: stanzas.length * 100 + 'vw', display: 'flex', flexDirection: 'row' })
-        gsap.to(inner, {
+
+        const horizontalTween = gsap.to(inner, {
           x: () => -(inner.scrollWidth - window.innerWidth),
           ease: 'none',
           scrollTrigger: {
@@ -126,18 +131,70 @@ export default function Layer0Soil() {
             invalidateOnRefresh: true,
           },
         })
+
+        // Per-stanza B&W→color + text fade using containerAnimation
+        if (!prefersReduced) {
+          stanzaRefs.current.forEach((stanza) => {
+            if (!stanza) return
+            const bgWrapper = stanza.querySelector('[data-bg-wrapper]')
+            const textContent = stanza.querySelector('[data-text-content]')
+            if (!bgWrapper || !textContent) return
+
+            const tl = gsap.timeline({
+              scrollTrigger: {
+                trigger: stanza,
+                containerAnimation: horizontalTween,
+                start: 'left 80%',
+                end: 'left 20%',
+                scrub: 0.5,
+              },
+            })
+            tl.fromTo(bgWrapper, { filter: 'grayscale(1)' }, { filter: 'grayscale(0)', duration: 0.6 })
+            tl.fromTo(textContent, { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.4)
+          })
+        }
+
+        // Crossfade out the entire Layer0 outer container as user scrolls past
+        if (!prefersReduced) {
+          ScrollTrigger.create({
+            trigger: outer,
+            start: 'bottom 60%',
+            end: 'bottom 10%',
+            scrub: 0.6,
+            onUpdate: (self) => {
+              const opacity = 1 - self.progress
+              gsap.set(outer, { opacity })
+              outer.style.pointerEvents = opacity < 0.1 ? 'none' : 'auto'
+            },
+          })
+        }
       })
 
-      // MOBILE: fade-in stanza animations (<768px)
+      // MOBILE: vertical stanza animations (<768px)
       mm.add('(max-width: 767px)', () => {
-        stanzaRefs.current.forEach((ref) => {
-          if (!ref) return
-          gsap.fromTo(ref,
-            { opacity: 0, y: 40 },
-            { opacity: 1, y: 0, duration: 1.4, ease: 'power3.out',
-              scrollTrigger: { trigger: ref, start: 'top 85%', toggleActions: 'play none none reverse' },
-            }
-          )
+        stanzaRefs.current.forEach((stanza) => {
+          if (!stanza) return
+          const bgWrapper = stanza.querySelector('[data-bg-wrapper]')
+          const textContent = stanza.querySelector('[data-text-content]')
+
+          if (prefersReduced) {
+            if (bgWrapper) gsap.set(bgWrapper, { filter: 'grayscale(0)' })
+            if (textContent) gsap.set(textContent, { opacity: 1 })
+            return
+          }
+
+          if (!bgWrapper || !textContent) return
+
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: stanza,
+              start: 'top 85%',
+              end: 'top 30%',
+              scrub: 0.5,
+            },
+          })
+          tl.fromTo(bgWrapper, { filter: 'grayscale(1)' }, { filter: 'grayscale(0)', duration: 0.6 })
+          tl.fromTo(textContent, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.4 }, 0.4)
         })
       })
     }, containerRef)
@@ -231,74 +288,65 @@ export default function Layer0Soil() {
                 ref={el => { stanzaRefs.current[i] = el }}
                 className="relative flex items-center justify-center overflow-hidden shrink-0 w-screen min-h-screen md:h-screen"
               >
-                {/* Background */}
-                {stanza.bg.type === 'video' && (
-                  <>
-                    <video
-                      ref={el => { videoRefs.current[currentVideoIdx] = el as HTMLVideoElement }}
-                      src={stanza.bg.src}
-                      muted
-                      loop
-                      playsInline
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
-                    {stanza.overlay && <div className={`absolute inset-0 ${stanza.overlay}`} />}
-                  </>
-                )}
+                {/* Background wrapper for B&W→color */}
+                <div data-bg-wrapper className="absolute inset-0">
+                  {stanza.bg.type === 'video' && (
+                    <>
+                      <video
+                        ref={el => { videoRefs.current[currentVideoIdx] = el as HTMLVideoElement }}
+                        src={stanza.bg.src}
+                        muted
+                        loop
+                        playsInline
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
+                      {stanza.overlay && <div className={`absolute inset-0 ${stanza.overlay}`} />}
+                    </>
+                  )}
 
-                {stanza.bg.type === 'image' && (
-                  <>
-                    <img
-                      src={stanza.bg.src}
-                      alt=""
-                      className="absolute inset-0 w-full h-full object-cover"
-                      style={stanza.bg.grayscale ? { filter: 'grayscale(0.85) brightness(0.45) contrast(1.1)' } : undefined}
-                      loading="lazy"
-                    />
-                    {stanza.overlay && <div className={`absolute inset-0 ${stanza.overlay}`} />}
-                  </>
-                )}
+                  {stanza.bg.type === 'image' && (
+                    <>
+                      <img
+                        src={stanza.bg.src}
+                        alt=""
+                        className="absolute inset-0 w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                      {stanza.overlay && <div className={`absolute inset-0 ${stanza.overlay}`} />}
+                    </>
+                  )}
 
-                {stanza.bg.type === 'gradient' && (
-                  <>
-                    <div className="absolute inset-0" style={{ background: stanza.bg.style }} />
-                    {stanza.bg.breathe && (
-                      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                        <div
-                          className="absolute forest-breathe-outer rounded-full"
-                          style={{
-                            width: '60vmin',
-                            height: '60vmin',
-                            background: 'radial-gradient(circle, rgba(107,143,60,0.25) 0%, rgba(42,74,32,0.1) 50%, transparent 70%)',
-                            filter: 'blur(25px)',
-                          }}
-                        />
-                      </div>
-                    )}
-                  </>
-                )}
+                  {stanza.bg.type === 'gradient' && (
+                    <>
+                      <div className="absolute inset-0" style={{ background: stanza.bg.style }} />
+                      {stanza.bg.breathe && (
+                        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                          <div
+                            className="absolute forest-breathe-outer rounded-full"
+                            style={{
+                              width: '60vmin',
+                              height: '60vmin',
+                              background: 'radial-gradient(circle, rgba(107,143,60,0.25) 0%, rgba(42,74,32,0.1) 50%, transparent 70%)',
+                              filter: 'blur(25px)',
+                            }}
+                          />
+                        </div>
+                      )}
+                    </>
+                  )}
+                </div>
 
                 {/* Text content */}
-                <div className={`relative z-10 max-w-3xl px-8 md:px-16 ${isLast ? 'text-center' : 'text-center'}`}>
+                <div data-text-content className={`relative z-10 max-w-3xl px-8 md:px-16 text-center`}>
                   {isLast ? (
-                    /* Final panel — large typographic reveal */
+                    /* Final panel — peacock plumage + Morpeace shimmer */
                     <>
-                      <p
-                        className="font-display text-6xl md:text-8xl lg:text-9xl text-sky-cream leading-tight tracking-wide"
-                        style={{ textShadow: '0 0 60px rgba(168,194,86,0.4), 0 4px 30px rgba(0,0,0,0.7), 0 2px 10px rgba(0,0,0,0.5)' }}
-                      >
+                      <p className="font-display text-6xl md:text-8xl lg:text-9xl leading-tight tracking-wide peacock-text">
                         Morpeace
                       </p>
                       <p className="font-poem text-xl md:text-2xl text-sky-cream/80 italic mt-6" style={{ textShadow: textShadowStrong }}>
                         And that is where Morpeace began.
                       </p>
-                      {/* Canopy-light glow */}
-                      <div
-                        className="absolute inset-0 pointer-events-none"
-                        style={{
-                          background: 'radial-gradient(ellipse at 50% 50%, rgba(168,194,86,0.08) 0%, transparent 60%)',
-                        }}
-                      />
                     </>
                   ) : (
                     <div className="space-y-6">

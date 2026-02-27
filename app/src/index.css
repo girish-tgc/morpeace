@@ -151,6 +151,7 @@ img {
   .forest-breathe-vignette,
   .forest-breathe-text,
   .animate-slow-rotate,
+  .peacock-text,
   [data-animate] {
     animation: none !important;
     transition: none !important;
@@ -250,4 +251,21 @@ img {
 
 .animate-slow-rotate {
   animation: slow-rotate 30s linear infinite;
+}
+
+@keyframes peacock-shimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.peacock-text {
+  background: linear-gradient(135deg,
+    #1a3a5c 0%, #0d7377 15%, #1a6b3c 30%, #2d8a4e 45%,
+    #d4a017 55%, #0d7377 70%, #1a3a5c 85%, #2d5016 100%);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: peacock-shimmer 6s ease-in-out infinite;
 }
