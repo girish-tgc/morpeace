@@ -10,6 +10,8 @@ const NAV_LINKS = [
   { to: '/come', label: 'Come' },
 ] as const
 
+const BOOKING_URL = 'https://www.stayvista.com/villa/rustic-haven?adult=6&child=0&infant=0&pax_selected=false&rooms_booked=3&reference_number=prop673b7f18be369lqw7kij&from=card'
+
 export default function SiteNav() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -66,6 +68,18 @@ export default function SiteNav() {
                 </Link>
               )
             })}
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`font-display text-xs tracking-wider px-5 py-2 rounded-full border transition-all hover:scale-105 ${
+                scrolled
+                  ? 'border-[#C99A2E] text-[#C99A2E] hover:bg-[#C99A2E]/10'
+                  : 'border-mango-gold/70 text-mango-gold hover:bg-mango-gold/10'
+              }`}
+            >
+              Book Now
+            </a>
           </div>
 
           {/* Mobile hamburger */}

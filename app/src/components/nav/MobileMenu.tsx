@@ -83,6 +83,19 @@ export default function MobileMenu({ open, onClose, links }: Props) {
           })}
         </div>
 
+        {/* Book Now */}
+        <div className="px-6 pt-6">
+          <a
+            href="https://www.stayvista.com/villa/rustic-haven?adult=6&child=0&infant=0&pax_selected=false&rooms_booked=3&reference_number=prop673b7f18be369lqw7kij&from=card"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={onClose}
+            className="block text-center font-display text-sm tracking-wider px-5 py-3 rounded-full border border-[#C99A2E] text-[#C99A2E] hover:bg-[#C99A2E]/10 transition-all"
+          >
+            Book Now
+          </a>
+        </div>
+
         {/* Footer */}
         <div className="mt-auto p-6 border-t border-[#1a2e1a]/10">
           <p className="font-handwritten text-lg text-[#1a2e1a]/40">
