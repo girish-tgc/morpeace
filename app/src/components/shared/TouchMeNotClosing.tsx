@@ -7,7 +7,7 @@ export default function TouchMeNotClosing() {
   const contentRef = useRef<HTMLDivElement>(null)
   const videoRef = useRef<HTMLVideoElement>(null)
 
-  useCinematicReveal({ sectionRef, bgWrapperRef, contentRef })
+  useCinematicReveal({ sectionRef, bgWrapperRef, contentRef, crossfadeOut: false })
 
   // Video play/pause based on visibility (separate from cinematic animation)
   useEffect(() => {

@@ -7,20 +7,25 @@ export default function TheUnfolding() {
   const contentRef = useRef<HTMLDivElement>(null)
   const bgRef = useRef<HTMLImageElement>(null)
 
-  useCinematicReveal({ sectionRef, bgWrapperRef, contentRef, bgRef })
+  useCinematicReveal({ sectionRef, bgWrapperRef, contentRef, bgRef, crossfadeOut: false })
 
   return (
     <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background wrapper for B&W→color */}
       <div ref={bgWrapperRef} className="absolute inset-0">
-        <img
-          ref={bgRef}
-          src={`${import.meta.env.BASE_URL}photos/forest-dense-vegetation.jpeg`}
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover scale-110"
-          loading="lazy"
-        />
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="ken-burns-b absolute inset-0">
+            <img
+              ref={bgRef}
+              src={`${import.meta.env.BASE_URL}photos/forest-dense-vegetation.jpeg`}
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover scale-110"
+              loading="lazy"
+            />
+          </div>
+        </div>
         <div className="absolute inset-0 bg-gradient-to-b from-soil-deep/75 via-black/65 to-soil-deep/85" />
+        <div className="light-dapple" />
       </div>
 
       <div ref={contentRef} className="relative z-10 text-center px-8 py-24 max-w-3xl mx-auto">

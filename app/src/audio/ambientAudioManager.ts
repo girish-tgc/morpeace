@@ -82,6 +82,16 @@ class AmbientAudioManager {
     this.notify()
   }
 
+  /** Re-scan the DOM for [data-audio-zone] elements after a page transition. */
+  rescan() {
+    if (this.disabled || !this.observer) return
+    // Disconnect existing observations then re-observe current DOM
+    this.observer.disconnect()
+    document.querySelectorAll<HTMLElement>('[data-audio-zone]').forEach((el) => {
+      this.observer!.observe(el)
+    })
+  }
+
   private addGestureListener() {
     if (this.gestureUnlockBound) return
     this.gestureUnlockBound = () => {

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useCallback } from 'react'
+import { useNavigate } from 'react-router-dom'
 import maplibregl from 'maplibre-gl'
 import { trees, type Tree, type TreeCategory } from '../../data/trees'
 
@@ -13,7 +14,6 @@ const MAX_BOUNDS: [[number, number], [number, number]] = [
 interface Props {
   activeFilters: Set<TreeCategory>
   showStoriesOnly: boolean
-  onTreeClick: (tree: Tree) => void
 }
 
 function getFilteredTrees(activeFilters: Set<TreeCategory>, showStoriesOnly: boolean): Tree[] {
@@ -29,7 +29,6 @@ function getFilteredTrees(activeFilters: Set<TreeCategory>, showStoriesOnly: boo
   return filtered
 }
 
-// Tree icon SVG — organic canopy silhouette with satellite-contrast outline
 function treeSVG(color: string, hasStory: boolean, isMonarch: boolean): string {
   const size = isMonarch ? 60 : hasStory ? 48 : 36
   const cx = size / 2
@@ -42,29 +41,18 @@ function treeSVG(color: string, hasStory: boolean, isMonarch: boolean): string {
 
   let svg = `<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" xmlns="http://www.w3.org/2000/svg">`
 
-  // Outer glow for story trees — pulsing ring
   if (hasStory) {
     svg += `<circle cx="${cx}" cy="${cy}" r="${r1 + 10}" fill="${color}" opacity="0.1"/>`
     svg += `<circle cx="${cx}" cy="${cy}" r="${r1 + 6}" fill="none" stroke="${color}" stroke-width="1" opacity="0.4" stroke-dasharray="4 3"/>`
   }
 
-  // White halo for satellite contrast
   svg += `<circle cx="${cx}" cy="${cy}" r="${r1 + 2}" fill="rgba(255,255,255,0.15)"/>`
-
-  // Main canopy — 3 overlapping circles for organic shape
   svg += `<circle cx="${cx}" cy="${cy}" r="${r1}" fill="${color}" opacity="0.9"/>`
   svg += `<circle cx="${cx - r1 * 0.55}" cy="${cy + r1 * 0.2}" r="${r2}" fill="${color}" opacity="0.7"/>`
   svg += `<circle cx="${cx + r1 * 0.55}" cy="${cy + r1 * 0.2}" r="${r2}" fill="${color}" opacity="0.7"/>`
-
-  // Light highlight on canopy
   svg += `<circle cx="${cx - r1 * 0.2}" cy="${cy - r1 * 0.25}" r="${r1 * 0.2}" fill="rgba(255,255,255,0.2)"/>`
-
-  // Trunk
   svg += `<rect x="${cx - trunkW / 2}" y="${trunkTop}" width="${trunkW}" height="${trunkH}" rx="1.5" fill="${color}" opacity="0.6"/>`
-
-  // Ground shadow ellipse
   svg += `<ellipse cx="${cx}" cy="${trunkTop + trunkH + 1}" rx="${trunkW * 2.5}" ry="2" fill="rgba(0,0,0,0.3)"/>`
-
   svg += `</svg>`
   return svg
 }
@@ -89,16 +77,16 @@ function createMarkerElement(tree: Tree): HTMLDivElement {
   return el
 }
 
-export default function ForestMap({ activeFilters, showStoriesOnly, onTreeClick }: Props) {
+export default function ForestMap({ activeFilters, showStoriesOnly }: Props) {
   const containerRef = useRef<HTMLDivElement>(null)
   const mapRef = useRef<maplibregl.Map | null>(null)
   const markersRef = useRef<maplibregl.Marker[]>([])
+  const navigate = useNavigate()
 
   const syncMarkers = useCallback(() => {
     const map = mapRef.current
     if (!map) return
 
-    // Remove old markers
     markersRef.current.forEach(m => m.remove())
     markersRef.current = []
 
@@ -106,7 +94,9 @@ export default function ForestMap({ activeFilters, showStoriesOnly, onTreeClick 
 
     filtered.forEach(tree => {
       const el = createMarkerElement(tree)
-      el.addEventListener('click', () => onTreeClick(tree))
+      el.addEventListener('click', () => {
+        navigate(`/the-forest/${tree.tag.toLowerCase()}`)
+      })
 
       const marker = new maplibregl.Marker({ element: el, anchor: 'bottom' })
         .setLngLat([tree.coordinates.lng, tree.coordinates.lat])
@@ -114,7 +104,7 @@ export default function ForestMap({ activeFilters, showStoriesOnly, onTreeClick 
 
       markersRef.current.push(marker)
     })
-  }, [activeFilters, showStoriesOnly, onTreeClick])
+  }, [activeFilters, showStoriesOnly, navigate])
 
   // Init map
   useEffect(() => {

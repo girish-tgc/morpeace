@@ -7,22 +7,27 @@ export default function OurPromise() {
   const contentRef = useRef<HTMLDivElement>(null)
   const bgRef = useRef<HTMLImageElement>(null)
 
-  useCinematicReveal({ sectionRef, bgWrapperRef, contentRef, bgRef })
+  useCinematicReveal({ sectionRef, bgWrapperRef, contentRef, bgRef, crossfadeOut: false })
 
   return (
     <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background wrapper for B&W→color */}
       <div ref={bgWrapperRef} className="absolute inset-0">
-        <img
-          ref={bgRef}
-          src={`${import.meta.env.BASE_URL}photos/forest-path.jpeg`}
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover scale-110"
-          loading="lazy"
-        />
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="ken-burns-c absolute inset-0">
+            <img
+              ref={bgRef}
+              src={`${import.meta.env.BASE_URL}photos/forest-path.jpeg`}
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover scale-110"
+              loading="lazy"
+            />
+          </div>
+        </div>
         <div className="absolute inset-0 bg-gradient-to-b from-forest-night/60 via-forest-night/50 to-soil-deep/70" />
         {/* Warm golden radial glow */}
         <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse at 50% 45%, rgba(212,160,23,0.1) 0%, transparent 55%)' }} />
+        <div className="light-dapple" />
       </div>
 
       {/* Content */}

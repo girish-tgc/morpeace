@@ -34,10 +34,8 @@ export default function MapFilterPanel({ activeFilters, showStoriesOnly, onToggl
         )
       })}
 
-      {/* Divider */}
       <div className="w-px h-6 bg-sky-cream/10 self-center mx-1 hidden md:block" />
 
-      {/* Has Story toggle */}
       <button
         onClick={onToggleStories}
         className={`px-3 md:px-4 py-1.5 md:py-2 rounded-full text-sm font-display tracking-wider border transition-all duration-300

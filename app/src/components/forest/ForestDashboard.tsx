@@ -25,7 +25,7 @@ export default function ForestDashboard({ mode }: Props) {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           <StatCard value={`${dashboardStats.totalTrees}`} label="Sentinel Trees" sublabel="measured & tagged" />
           <StatCard value={`${dashboardStats.totalSpecies}`} label="Distinct Species" sublabel="in this sample" />
-          <StatCard value={`${dashboardStats.totalLifetimeCO2kg.toLocaleString()} kg`} label="CO₂ Stored" sublabel="lifetime sequestration" />
+          <StatCard value={`${dashboardStats.totalLifetimeCO2kg.toLocaleString()} kg`} label="CO\u2082 Stored" sublabel="lifetime sequestration" />
           <StatCard value={dashboardStats.shannonWienerIndex.toFixed(2)} label="Shannon-Wiener" sublabel="diversity index" />
           <StatCard value={`${dashboardStats.mangoVarieties}+`} label="Mango Varieties" sublabel="and counting" />
           <StatCard value={`${dashboardStats.totalAreaAcres}`} label="Acres" sublabel="of living forest" />
@@ -36,7 +36,7 @@ export default function ForestDashboard({ mode }: Props) {
 
       {mode === 'walk' && (
         <div className="text-center">
-          <p className="font-poem text-xl md:text-2xl text-sky-cream/85 italic max-w-xl mx-auto">
+          <p className="font-body text-xl md:text-2xl text-sky-cream/85 italic max-w-xl mx-auto">
             Each dot is a tree. The larger dots with rings have stories to tell.
             Click one to begin walking through the forest.
           </p>
@@ -45,10 +45,10 @@ export default function ForestDashboard({ mode }: Props) {
 
       {mode === 'seasons' && (
         <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-          <SeasonCard season="Monsoon" months="Jun–Sep" description="The lake fills. Wild greens appear. The forest breathes deepest." color="bg-water-green" photo={`${import.meta.env.BASE_URL}photos/fish-pond.jpeg`} />
-          <SeasonCard season="Winter" months="Oct–Feb" description="Cool winds. Strawberries ripen. Birds migrate in." color="bg-sky-cream" photo={`${import.meta.env.BASE_URL}photos/strawberries.jpeg`} />
-          <SeasonCard season="Spring" months="Feb–Apr" description="Flowers explode. Bees arrive. The air is sweet." color="bg-flower-pink" photo={`${import.meta.env.BASE_URL}photos/flowers-vivid-pink.jpeg`} />
-          <SeasonCard season="Summer" months="Apr–Jun" description="Mango season. 40+ varieties ripen. The forest feeds." color="bg-mango-gold" photo={`${import.meta.env.BASE_URL}photos/mango-tree-ripe.jpeg`} />
+          <SeasonCard season="Monsoon" months="Jun\u2013Sep" description="The lake fills. Wild greens appear. The forest breathes deepest." photo={`${import.meta.env.BASE_URL}photos/fish-pond.jpeg`} />
+          <SeasonCard season="Winter" months="Oct\u2013Feb" description="Cool winds. Strawberries ripen. Birds migrate in." photo={`${import.meta.env.BASE_URL}photos/strawberries.jpeg`} />
+          <SeasonCard season="Spring" months="Feb\u2013Apr" description="Flowers explode. Bees arrive. The air is sweet." photo={`${import.meta.env.BASE_URL}photos/flowers-vivid-pink.jpeg`} />
+          <SeasonCard season="Summer" months="Apr\u2013Jun" description="Mango season. 40+ varieties ripen. The forest feeds." photo={`${import.meta.env.BASE_URL}photos/mango-tree-ripe.jpeg`} />
         </div>
       )}
 
@@ -67,12 +67,12 @@ function StatCard({ value, label, sublabel }: { value: string; label: string; su
     >
       <p className="font-display text-3xl md:text-5xl text-canopy-light">{value}</p>
       <p className="font-display text-sm tracking-wider uppercase text-sky-cream/85 mt-2">{label}</p>
-      <p className="font-poem text-sm text-sky-cream/60 italic">{sublabel}</p>
+      <p className="font-body text-sm text-sky-cream/60 italic">{sublabel}</p>
     </div>
   )
 }
 
-function SeasonCard({ season, months, description, color, photo }: { season: string; months: string; description: string; color: string; photo: string }) {
+function SeasonCard({ season, months, description, photo }: { season: string; months: string; description: string; photo: string }) {
   return (
     <div className="rounded-xl overflow-hidden relative group">
       <div className="aspect-[4/3] relative overflow-hidden">
@@ -90,8 +90,8 @@ function SeasonCard({ season, months, description, color, photo }: { season: str
           <p className="font-handwritten text-base md:text-lg text-sky-cream/85" style={{ textShadow: '0 1px 8px rgba(0,0,0,0.5)' }}>{months}</p>
         </div>
       </div>
-      <div className={`p-4 ${color}/10`}>
-        <p className="font-poem text-base text-sky-cream/80 leading-relaxed">{description}</p>
+      <div className="p-4 bg-forest-night/10">
+        <p className="font-body text-base text-sky-cream/80 leading-relaxed">{description}</p>
       </div>
     </div>
   )

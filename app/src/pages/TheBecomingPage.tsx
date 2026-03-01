@@ -1,26 +1,32 @@
-import { useEffect, useRef } from 'react'
+import { useRef, useEffect } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import OurDream from '../components/shared/OurDream'
+import TheUnfolding from '../components/shared/TheUnfolding'
+import TouchMeNotClosing from '../components/shared/TouchMeNotClosing'
+import OurPromise from '../components/shared/OurPromise'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const textShadowStrong = '0 2px 24px rgba(0,0,0,0.7), 0 1px 8px rgba(0,0,0,0.5), 0 0 40px rgba(0,0,0,0.3)'
+const BASE = import.meta.env.BASE_URL
 
-interface Stanza {
+const textShadow = '0 2px 24px rgba(0,0,0,0.7), 0 1px 8px rgba(0,0,0,0.5), 0 0 40px rgba(0,0,0,0.3)'
+
+interface StanzaData {
   text: string[]
   bg:
     | { type: 'video'; src: string }
     | { type: 'image'; src: string }
     | { type: 'gradient'; style: string; breathe?: boolean }
   overlay?: string
+  kenBurns?: 'a' | 'b' | 'c'
+  effect?: 'light-dapple' | 'fog-drift'
 }
 
-const BASE = import.meta.env.BASE_URL
-
-const stanzas: Stanza[] = [
+const stanzas: StanzaData[] = [
   {
     text: [
-      "Isn't it ironic that a forest\u2026 has chosen its tiniest plant as its spokesperson?",
+      "Isn\u2019t it ironic that a forest\u2026 has chosen its tiniest plant as its spokesperson?",
       "When Morpeace needed a voice, she chose the most sensitive one.",
     ],
     bg: { type: 'video', src: `${BASE}photos/golden-hour-leaves.mp4` },
@@ -62,6 +68,8 @@ const stanzas: Stanza[] = [
     ],
     bg: { type: 'image', src: `${BASE}photos/tree-stump-fog.jpeg` },
     overlay: 'bg-gradient-to-b from-black/50 via-black/40 to-black/65',
+    kenBurns: 'a',
+    effect: 'fog-drift',
   },
   {
     text: [
@@ -70,6 +78,8 @@ const stanzas: Stanza[] = [
     ],
     bg: { type: 'image', src: `${BASE}photos/forest-path.jpeg` },
     overlay: 'bg-gradient-to-b from-black/60 via-black/55 to-black/80',
+    kenBurns: 'b',
+    effect: 'light-dapple',
   },
   {
     text: [
@@ -84,12 +94,14 @@ const stanzas: Stanza[] = [
     text: ["And that is where Morpeace began."],
     bg: { type: 'image', src: `${BASE}photos/peacock-plumage.jpeg` },
     overlay: 'bg-black/50',
+    kenBurns: 'c',
   },
 ]
 
-export default function Layer0Soil() {
+const kenBurnsClass = { a: 'ken-burns-a', b: 'ken-burns-b', c: 'ken-burns-c' } as const
+
+export default function TheBecomingPage() {
   const containerRef = useRef<HTMLDivElement>(null)
-  const openingRef = useRef<HTMLDivElement>(null)
   const outerRef = useRef<HTMLDivElement>(null)
   const innerRef = useRef<HTMLDivElement>(null)
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([])
@@ -102,18 +114,6 @@ export default function Layer0Soil() {
 
     const mm = gsap.matchMedia()
     const ctx = gsap.context(() => {
-      // Opening fade — all screen sizes
-      if (openingRef.current) {
-        if (prefersReduced) {
-          gsap.set(openingRef.current, { opacity: 1 })
-        } else {
-          gsap.fromTo(openingRef.current,
-            { opacity: 0 },
-            { opacity: 1, duration: 3, delay: 1.5, ease: 'power2.inOut' }
-          )
-        }
-      }
-
       // DESKTOP: horizontal scroll pin (768px+)
       mm.add('(min-width: 768px)', () => {
         const inner = innerRef.current!
@@ -132,7 +132,6 @@ export default function Layer0Soil() {
           },
         })
 
-        // Per-stanza B&W→color + text fade using containerAnimation
         if (!prefersReduced) {
           stanzaRefs.current.forEach((stanza) => {
             if (!stanza) return
@@ -151,21 +150,6 @@ export default function Layer0Soil() {
             })
             tl.fromTo(bgWrapper, { filter: 'grayscale(1)' }, { filter: 'grayscale(0)', duration: 0.6 })
             tl.fromTo(textContent, { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.4)
-          })
-        }
-
-        // Crossfade out the entire Layer0 outer container as user scrolls past
-        if (!prefersReduced) {
-          ScrollTrigger.create({
-            trigger: outer,
-            start: 'bottom 60%',
-            end: 'bottom 10%',
-            scrub: 0.6,
-            onUpdate: (self) => {
-              const opacity = 1 - self.progress
-              gsap.set(outer, { opacity })
-              outer.style.pointerEvents = opacity < 0.1 ? 'none' : 'auto'
-            },
           })
         }
       })
@@ -223,59 +207,27 @@ export default function Layer0Soil() {
   let videoIndex = 0
 
   return (
-    <div ref={containerRef} className="relative">
-      {/* === THE DARKNESS — Opening === */}
+    <div ref={containerRef}>
+      {/* === HERO === */}
       <section
-        data-audio-zone="layer0-intro"
-        className="h-screen flex items-center justify-center relative overflow-hidden"
+        data-audio-zone="layer0-story"
+        className="h-[60vh] md:h-[70vh] flex items-center justify-center relative overflow-hidden"
         style={{ background: 'radial-gradient(ellipse at 50% 60%, #2a4a20 0%, #1b3316 40%, #122410 70%, #0a0f07 100%)' }}
       >
-        {/* Breathing glow orbs */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div
-            className="absolute forest-breathe-outer rounded-full"
-            style={{
-              width: '80vmin',
-              height: '80vmin',
-              background: 'radial-gradient(circle, rgba(107,143,60,0.3) 0%, rgba(42,74,32,0.15) 50%, transparent 70%)',
-              filter: 'blur(30px)',
-            }}
-          />
-          <div
-            className="absolute forest-breathe-inner rounded-full"
-            style={{
-              width: '40vmin',
-              height: '40vmin',
-              background: 'radial-gradient(circle, rgba(168,194,86,0.45) 0%, rgba(107,143,60,0.2) 50%, transparent 80%)',
-              filter: 'blur(20px)',
-            }}
-          />
-        </div>
-        <div
-          className="absolute inset-0 forest-breathe-vignette pointer-events-none"
-          style={{
-            background: 'radial-gradient(ellipse at 50% 50%, transparent 30%, rgba(10,15,7,0.7) 100%)',
-          }}
-        />
-
-        <div ref={openingRef} className="opacity-0 relative z-10 max-w-3xl px-8 text-center">
-          <p className="font-poem text-2xl md:text-3xl lg:text-4xl leading-relaxed text-sky-cream/90 italic forest-breathe-text">
-            "Morpeace is not being built &mdash; it will become."
+        <div className="relative z-10 text-center px-8">
+          <p className="font-display text-sm md:text-base tracking-[0.3em] uppercase text-canopy-light/60 mb-6">
+            The Becoming
           </p>
-          <div className="mt-12">
-            <p className="text-sm tracking-[0.3em] uppercase text-sky-cream/30 font-display">
-              scroll to hear the story
-            </p>
-            <div className="mt-4 animate-bounce">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="mx-auto opacity-25">
-                <path d="M12 5v14m0 0l-7-7m7 7l7-7" stroke="currentColor" strokeWidth="1.5" />
-              </svg>
-            </div>
-          </div>
+          <p className="font-display text-3xl md:text-5xl text-sky-cream mb-4" style={{ textShadow }}>
+            How a forest returned
+          </p>
+          <p className="font-body text-lg md:text-xl text-sky-cream/70 italic max-w-xl mx-auto">
+            The Touch-Me-Not speaks.
+          </p>
         </div>
       </section>
 
-      {/* === HORIZONTAL SCROLL — Stanza Panels === */}
+      {/* === STANZA PANELS === */}
       <div ref={outerRef} data-audio-zone="layer0-story" className="overflow-hidden">
         <div ref={innerRef} className="flex flex-col md:flex-row">
           {stanzas.map((stanza, i) => {
@@ -288,7 +240,6 @@ export default function Layer0Soil() {
                 ref={el => { stanzaRefs.current[i] = el }}
                 className="relative flex items-center justify-center overflow-hidden shrink-0 w-screen min-h-screen md:h-screen"
               >
-                {/* Background wrapper for B&W→color */}
                 <div data-bg-wrapper className="absolute inset-0">
                   {stanza.bg.type === 'video' && (
                     <>
@@ -306,13 +257,18 @@ export default function Layer0Soil() {
 
                   {stanza.bg.type === 'image' && (
                     <>
-                      <img
-                        src={stanza.bg.src}
-                        alt=""
-                        className="absolute inset-0 w-full h-full object-cover"
-                        loading="lazy"
-                      />
+                      {stanza.kenBurns ? (
+                        <div className="absolute inset-0 overflow-hidden">
+                          <div className={`${kenBurnsClass[stanza.kenBurns]} absolute inset-0`}>
+                            <img src={stanza.bg.src} alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+                          </div>
+                        </div>
+                      ) : (
+                        <img src={stanza.bg.src} alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+                      )}
                       {stanza.overlay && <div className={`absolute inset-0 ${stanza.overlay}`} />}
+                      {stanza.effect === 'light-dapple' && <div className="light-dapple" />}
+                      {stanza.effect === 'fog-drift' && <div className="fog-drift" />}
                     </>
                   )}
 
@@ -336,15 +292,13 @@ export default function Layer0Soil() {
                   )}
                 </div>
 
-                {/* Text content */}
-                <div data-text-content className={`relative z-10 max-w-3xl px-8 md:px-16 text-center`}>
+                <div data-text-content className="relative z-10 max-w-3xl px-8 md:px-16 text-center">
                   {isLast ? (
-                    /* Final panel — peacock plumage + Morpeace shimmer */
                     <>
                       <p className="font-display text-6xl md:text-8xl lg:text-9xl leading-tight tracking-wide peacock-text">
                         Morpeace
                       </p>
-                      <p className="font-poem text-xl md:text-2xl text-sky-cream/80 italic mt-6" style={{ textShadow: textShadowStrong }}>
+                      <p className="font-body text-xl md:text-2xl text-sky-cream/80 italic mt-6" style={{ textShadow }}>
                         And that is where Morpeace began.
                       </p>
                     </>
@@ -353,8 +307,8 @@ export default function Layer0Soil() {
                       {stanza.text.map((line, li) => (
                         <p
                           key={li}
-                          className="font-poem text-2xl md:text-3xl lg:text-4xl leading-relaxed text-sky-cream/90 italic"
-                          style={{ textShadow: textShadowStrong }}
+                          className="font-body text-2xl md:text-3xl lg:text-4xl leading-relaxed text-sky-cream/90 italic"
+                          style={{ textShadow }}
                         >
                           {line}
                         </p>
@@ -367,6 +321,68 @@ export default function Layer0Soil() {
           })}
         </div>
       </div>
+
+      {/* === NARRATIVE SECTIONS === */}
+      <div data-audio-zone="our-dream">
+        <OurDream />
+      </div>
+
+      <div data-audio-zone="the-unfolding">
+        <TheUnfolding />
+      </div>
+
+      <div data-audio-zone="touch-me-not">
+        <TouchMeNotClosing />
+      </div>
+
+      {/* === DRONE VIDEO BREAK === */}
+      <DroneVideoBreak />
+
+      <div data-audio-zone="our-promise">
+        <OurPromise />
+      </div>
     </div>
+  )
+}
+
+function DroneVideoBreak() {
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const sectionRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const video = videoRef.current
+    const section = sectionRef.current
+    if (!video || !section) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) video.play().catch(() => {})
+        else video.pause()
+      },
+      { threshold: 0.2 }
+    )
+    observer.observe(section)
+    return () => observer.disconnect()
+  }, [])
+
+  return (
+    <section ref={sectionRef} data-audio-zone="drone-video" className="relative h-[70vh] md:h-screen overflow-hidden">
+      <video
+        ref={videoRef}
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src={`${BASE}photos/drone-shot.mp4`} type="video/mp4" />
+      </video>
+      <div className="absolute inset-0 bg-gradient-to-b from-soil-deep/60 via-transparent to-soil-deep/80" />
+      <div className="absolute inset-0 flex items-end justify-center pb-16 md:pb-24 px-8">
+        <p className="font-body text-xl md:text-2xl lg:text-3xl text-sky-cream/70 text-center italic max-w-xl">
+          From above, the canopy tells its own story
+        </p>
+      </div>
+    </section>
   )
 }
