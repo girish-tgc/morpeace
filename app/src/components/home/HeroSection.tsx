@@ -5,7 +5,6 @@ const BASE = import.meta.env.BASE_URL
 
 export default function HeroSection() {
   const openingRef = useRef<HTMLDivElement>(null)
-  const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
     if (!openingRef.current) return
@@ -19,9 +18,6 @@ export default function HeroSection() {
         { opacity: 1, duration: 3, delay: 0.8, ease: 'power2.inOut' }
       )
     }
-
-    // Auto-play hero video
-    videoRef.current?.play().catch(() => {})
   }, [])
 
   return (
@@ -34,27 +30,6 @@ export default function HeroSection() {
         style={{ filter: 'brightness(0.3) saturate(1.4)' }}
       />
 
-      {/* Golden-hour video overlay — blends over the peacock feathers */}
-      <video
-        ref={videoRef}
-        src={`${BASE}photos/golden-hour-leaves.mp4`}
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-        style={{ opacity: 0.5, mixBlendMode: 'screen' }}
-      />
-
-      {/* Mimosa close-up — subtle second video layer */}
-      <video
-        src={`${BASE}photos/mimosa-pudica-closeup.mp4`}
-        muted
-        loop
-        playsInline
-        autoPlay
-        className="absolute inset-0 w-full h-full object-cover"
-        style={{ opacity: 0.15, mixBlendMode: 'overlay' }}
-      />
 
       {/* Dark gradient to anchor text */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/70" />
