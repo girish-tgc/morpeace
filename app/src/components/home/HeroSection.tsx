@@ -42,7 +42,18 @@ export default function HeroSection() {
         loop
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
-        style={{ opacity: 0.35, mixBlendMode: 'screen' }}
+        style={{ opacity: 0.5, mixBlendMode: 'screen' }}
+      />
+
+      {/* Mimosa close-up — subtle second video layer */}
+      <video
+        src={`${BASE}photos/mimosa-pudica-closeup.mp4`}
+        muted
+        loop
+        playsInline
+        autoPlay
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ opacity: 0.15, mixBlendMode: 'overlay' }}
       />
 
       {/* Dark gradient to anchor text */}

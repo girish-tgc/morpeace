@@ -1,8 +1,9 @@
 import { useRef, useEffect } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
 const BASE = import.meta.env.BASE_URL
 const ts = '0 2px 24px rgba(0,0,0,0.7), 0 1px 8px rgba(0,0,0,0.5), 0 0 40px rgba(0,0,0,0.3)'
@@ -260,6 +261,59 @@ export default function TheBecomingPage() {
     showBg(beats[0].bgIndex)
 
     return () => { ctx.revert() }
+  }, [])
+
+  // Auto-scroll: slow cinematic scroll like watching a film.
+  // Pauses when user touches/scrolls manually, resumes after idle.
+  useEffect(() => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (prefersReduced) return
+
+    let autoTween: gsap.core.Tween | null = null
+    let idleTimer: ReturnType<typeof setTimeout> | null = null
+    let userInteracting = false
+
+    const totalScroll = () => document.documentElement.scrollHeight - window.innerHeight
+    const SPEED = 35 // px per second — slow, meditative pace
+
+    function startAutoScroll() {
+      if (autoTween) autoTween.kill()
+      const remaining = totalScroll() - window.scrollY
+      if (remaining <= 0) return
+      const duration = remaining / SPEED
+      autoTween = gsap.to(window, {
+        scrollTo: { y: totalScroll(), autoKill: true },
+        duration,
+        ease: 'none',
+      })
+    }
+
+    function pauseAutoScroll() {
+      if (autoTween) { autoTween.kill(); autoTween = null }
+      userInteracting = true
+      if (idleTimer) clearTimeout(idleTimer)
+      // Resume after 4s idle
+      idleTimer = setTimeout(() => {
+        userInteracting = false
+        startAutoScroll()
+      }, 4000)
+    }
+
+    // Start after a 3s delay to let the hero breathe
+    const startDelay = setTimeout(() => {
+      if (!userInteracting) startAutoScroll()
+    }, 3000)
+
+    // Pause on any user scroll/touch
+    const events = ['wheel', 'touchstart', 'mousedown', 'keydown'] as const
+    events.forEach(evt => window.addEventListener(evt, pauseAutoScroll, { passive: true }))
+
+    return () => {
+      clearTimeout(startDelay)
+      if (idleTimer) clearTimeout(idleTimer)
+      if (autoTween) autoTween.kill()
+      events.forEach(evt => window.removeEventListener(evt, pauseAutoScroll))
+    }
   }, [])
 
   let videoIdx = 0
