@@ -1,12 +1,16 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
-import { dashboardStats } from '../../data/trees'
+import { trees, dashboardStats } from '../../data/trees'
 
 type MapMode = 'walk' | 'data' | 'seasons'
 
 interface Props {
   mode: MapMode
 }
+
+// Pick trees with stories for the spotlight
+const storyTrees = trees.filter(t => t.story !== null)
 
 export default function ForestDashboard({ mode }: Props) {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -20,12 +24,12 @@ export default function ForestDashboard({ mode }: Props) {
   }, [mode])
 
   return (
-    <div ref={containerRef} className="max-w-5xl mx-auto mb-10 px-4">
+    <div ref={containerRef} className="relative z-10 max-w-5xl mx-auto mb-10 px-4">
       {mode === 'data' && (
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           <StatCard value={`${dashboardStats.totalTrees}`} label="Sentinel Trees" sublabel="measured & tagged" />
           <StatCard value={`${dashboardStats.totalSpecies}`} label="Distinct Species" sublabel="in this sample" />
-          <StatCard value={`${dashboardStats.totalLifetimeCO2kg.toLocaleString()} kg`} label="CO\u2082 Stored" sublabel="lifetime sequestration" />
+          <StatCard value={`${dashboardStats.totalLifetimeCO2kg.toLocaleString()} kg`} label="CO&#x2082; Stored" sublabel="lifetime sequestration" />
           <StatCard value={dashboardStats.shannonWienerIndex.toFixed(2)} label="Shannon-Wiener" sublabel="diversity index" />
           <StatCard value={`${dashboardStats.mangoVarieties}+`} label="Mango Varieties" sublabel="and counting" />
           <StatCard value={`${dashboardStats.totalAreaAcres}`} label="Acres" sublabel="of living forest" />
@@ -34,27 +38,87 @@ export default function ForestDashboard({ mode }: Props) {
         </div>
       )}
 
-      {mode === 'walk' && (
-        <div className="text-center">
-          <p className="font-body text-xl md:text-2xl text-sky-cream/85 italic max-w-xl mx-auto">
-            Each dot is a tree. The larger dots with rings have stories to tell.
-            Click one to begin walking through the forest.
-          </p>
-        </div>
-      )}
+      {mode === 'walk' && <TreeSpotlight />}
 
       {mode === 'seasons' && (
         <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-          <SeasonCard season="Monsoon" months="Jun\u2013Sep" description="The lake fills. Wild greens appear. The forest breathes deepest." photo={`${import.meta.env.BASE_URL}photos/fish-pond.jpeg`} />
-          <SeasonCard season="Winter" months="Oct\u2013Feb" description="Cool winds. Strawberries ripen. Birds migrate in." photo={`${import.meta.env.BASE_URL}photos/strawberries.jpeg`} />
-          <SeasonCard season="Spring" months="Feb\u2013Apr" description="Flowers explode. Bees arrive. The air is sweet." photo={`${import.meta.env.BASE_URL}photos/flowers-vivid-pink.jpeg`} />
-          <SeasonCard season="Summer" months="Apr\u2013Jun" description="Mango season. 40+ varieties ripen. The forest feeds." photo={`${import.meta.env.BASE_URL}photos/mango-tree-ripe.jpeg`} />
+          <SeasonCard season="Monsoon" months="Jun&#x2013;Sep" description="The lake fills. Wild greens appear. The forest breathes deepest." photo={`${import.meta.env.BASE_URL}photos/fish-pond.jpeg`} />
+          <SeasonCard season="Winter" months="Oct&#x2013;Feb" description="Cool winds. Strawberries ripen. Birds migrate in." photo={`${import.meta.env.BASE_URL}photos/strawberries.jpeg`} />
+          <SeasonCard season="Spring" months="Feb&#x2013;Apr" description="Flowers explode. Bees arrive. The air is sweet." photo={`${import.meta.env.BASE_URL}photos/flowers-vivid-pink.jpeg`} />
+          <SeasonCard season="Summer" months="Apr&#x2013;Jun" description="Mango season. 40+ varieties ripen. The forest feeds." photo={`${import.meta.env.BASE_URL}photos/mango-tree-ripe.jpeg`} />
         </div>
       )}
 
       <p className="text-center mt-8 font-handwritten text-xl text-sky-cream/60">
         {dashboardStats.sentinelNote}
       </p>
+    </div>
+  )
+}
+
+/** Rotating species spotlight — cycles through story trees every 5 seconds */
+function TreeSpotlight() {
+  const [index, setIndex] = useState(() => Math.floor(Math.random() * storyTrees.length))
+  const cardRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Fade out, switch, fade in
+      if (cardRef.current) {
+        gsap.to(cardRef.current, {
+          opacity: 0, y: -10, duration: 0.4, ease: 'power2.in',
+          onComplete: () => {
+            setIndex(prev => (prev + 1) % storyTrees.length)
+            if (cardRef.current) {
+              gsap.fromTo(cardRef.current,
+                { opacity: 0, y: 10 },
+                { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }
+              )
+            }
+          },
+        })
+      }
+    }, 5000)
+
+    return () => clearInterval(interval)
+  }, [])
+
+  const tree = storyTrees[index]
+  const storyTitle = tree.storyTitle || tree.species
+
+  return (
+    <div className="text-center max-w-lg mx-auto">
+      <p className="font-body text-base text-sky-cream/50 italic mb-6">
+        Each dot is a tree. The larger dots with rings have stories to tell.
+        Click one to begin walking through the forest.
+      </p>
+
+      <Link to={`/the-forest/${tree.tag.toLowerCase()}`}>
+        <div
+          ref={cardRef}
+          className="inline-block rounded-2xl border px-8 py-6 backdrop-blur-sm transition-all hover:scale-105"
+          style={{
+            borderColor: `${tree.accentColor}30`,
+            background: `linear-gradient(145deg, ${tree.accentColor}15, rgba(12,26,14,0.6))`,
+          }}
+        >
+          <p className="font-display text-xs tracking-[0.25em] uppercase text-sky-cream/40 mb-3">
+            Species Spotlight
+          </p>
+          <p className="font-display text-2xl md:text-3xl" style={{ color: tree.accentColor }}>
+            {tree.species}
+          </p>
+          <p className="font-devanagari text-lg text-sky-cream/60 mt-1">
+            {tree.marathiName}
+          </p>
+          <p className="font-body text-sm italic text-sky-cream/70 mt-3">
+            &ldquo;{storyTitle}&rdquo;
+          </p>
+          <p className="font-body text-xs text-sky-cream/30 mt-3">
+            tap to meet this tree &rarr;
+          </p>
+        </div>
+      </Link>
     </div>
   )
 }
