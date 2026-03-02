@@ -274,7 +274,7 @@ export default function TheBecomingPage() {
     let userInteracting = false
 
     const totalScroll = () => document.documentElement.scrollHeight - window.innerHeight
-    const SPEED = 35 // px per second — slow, meditative pace
+    const SPEED = 90 // px per second — reading pace, slightly slow
 
     function startAutoScroll() {
       if (autoTween) autoTween.kill()
