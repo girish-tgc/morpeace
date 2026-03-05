@@ -1,5 +1,4 @@
 import HeroSection from '../components/home/HeroSection'
-import MorpeacePulse from '../components/shared/MorpeacePulse'
 import StoryDoorways from '../components/home/StoryDoorways'
 
 export default function HomePage() {
@@ -8,7 +7,6 @@ export default function HomePage() {
       <div data-audio-zone="layer0-intro">
         <HeroSection />
       </div>
-      <MorpeacePulse />
       <StoryDoorways />
     </div>
   )

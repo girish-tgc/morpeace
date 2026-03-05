@@ -247,7 +247,7 @@ export default function TheBecomingPage() {
       videoRefs.current.forEach((video) => {
         if (!video) return
         const layerForVideo = bgLayers.findIndex(
-          (l) => l.type === 'video' && l.src === video.src
+          (l) => l.type === 'video' && l.src === video.getAttribute('src')
         )
         if (layerForVideo === index) {
           video.play().catch(() => {})
