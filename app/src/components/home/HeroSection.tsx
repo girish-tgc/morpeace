@@ -1,5 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
+import { Link } from 'react-router-dom'
+import { hero } from '../../data/homeNarrative'
 
 const BASE = import.meta.env.BASE_URL
 
@@ -22,7 +24,7 @@ export default function HeroSection() {
 
   return (
     <section className="h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Peacock plumage background image — always visible as base */}
+      {/* Peacock plumage background */}
       <img
         src={`${BASE}photos/peacock-plumage.jpeg`}
         alt=""
@@ -30,8 +32,7 @@ export default function HeroSection() {
         style={{ filter: 'brightness(0.3) saturate(1.4)' }}
       />
 
-
-      {/* Dark gradient to anchor text */}
+      {/* Dark gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/70" />
 
       {/* Breathing glow orbs */}
@@ -62,23 +63,47 @@ export default function HeroSection() {
         }}
       />
 
-      {/* Light dapple effect */}
+      {/* Light dapple */}
       <div className="light-dapple" />
 
       <div ref={openingRef} className="opacity-0 relative z-10 max-w-3xl px-8 text-center">
         <p
-          className="font-display text-6xl md:text-8xl lg:text-9xl tracking-wide peacock-text mb-8"
+          className="font-display text-6xl md:text-8xl lg:text-9xl tracking-wide peacock-text mb-6"
           style={{ textShadow: '0 4px 40px rgba(0,0,0,0.6), 0 2px 12px rgba(0,0,0,0.4)' }}
         >
-          Morpeace
+          {hero.title}
         </p>
         <p
-          className="font-body text-xl md:text-2xl lg:text-3xl leading-relaxed text-sky-cream/90 italic forest-breathe-text"
+          className="font-body text-xl md:text-2xl lg:text-3xl leading-relaxed text-sky-cream/90 italic forest-breathe-text mb-4"
           style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5), 0 1px 6px rgba(0,0,0,0.3)' }}
         >
-          A forest is returning to its own breath.
+          {hero.subtitle}
         </p>
-        <div className="mt-16">
+        <p
+          className="font-body text-sm md:text-base text-sky-cream/50 tracking-wide mb-2"
+          style={{ textShadow: '0 1px 10px rgba(0,0,0,0.4)' }}
+        >
+          {hero.brandAnchor}
+        </p>
+        <p className="font-handwritten text-base md:text-lg text-sky-cream/35 tracking-wider">
+          {hero.location}
+        </p>
+
+        {/* Ghost CTA */}
+        <div className="mt-10">
+          <Link
+            to="/the-forest"
+            className="inline-block border border-sky-cream/20 text-sky-cream/50 hover:text-sky-cream/80 hover:border-sky-cream/40 px-6 py-2 rounded-full font-display text-xs tracking-[0.2em] uppercase transition-all duration-500"
+          >
+            Explore the forest map
+          </Link>
+        </div>
+
+        {/* Scroll prompt */}
+        <div className="mt-12">
+          <p className="text-sky-cream/25 font-display text-[10px] tracking-[0.3em] uppercase mb-3">
+            {hero.scrollPrompt}
+          </p>
           <div className="animate-bounce">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="mx-auto opacity-25 text-sky-cream">
               <path d="M12 5v14m0 0l-7-7m7 7l7-7" stroke="currentColor" strokeWidth="1.5" />

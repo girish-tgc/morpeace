@@ -16,7 +16,7 @@ export interface AudioZone {
 }
 
 export const AUDIO_ZONES: Record<string, AudioZone> = {
-  'layer0-intro':     { track: 'indian-flute',    volume: 0.5  },
+  'layer0-intro':     { track: 'morning-birds',    volume: 0.4  },
   'layer0-story':     { track: 'morning-birds',    volume: 0.5  },
   'our-dream':        { track: 'water-stream',     volume: 0.4  },
   'the-unfolding':    { track: 'forest-day',       volume: 0.5  },

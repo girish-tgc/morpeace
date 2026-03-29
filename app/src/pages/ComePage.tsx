@@ -310,6 +310,7 @@ export default function ComePage() {
           <div className="absolute top-0 right-0 bottom-0 w-8 pointer-events-none bg-gradient-to-l from-[#1b2a14] to-transparent" />
         </div>
       </section>
+
     </div>
   )
 }
