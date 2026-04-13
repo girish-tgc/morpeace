@@ -4,10 +4,10 @@ import MobileMenu from './MobileMenu'
 
 const NAV_LINKS = [
   { to: '/', label: 'Morpeace' },
-  { to: '/the-forest', label: 'The Forest' },
   { to: '/the-experience', label: 'Your Day' },
+  { to: '/the-forest', label: 'The Forest' },
   { to: '/philosophy', label: 'Philosophy' },
-  { to: '/visionaries', label: 'Visionaries' },
+  { to: '/visionaries', label: 'People Behind' },
   { to: '/reviews', label: 'Reviews' },
 ] as const
 
