@@ -1,16 +1,12 @@
-import { createBrowserRouter } from 'react-router-dom'
+import { createBrowserRouter, Navigate } from 'react-router-dom'
 import RootLayout from './layouts/RootLayout'
 import HomePage from './pages/HomePage'
-// TheBecomingPage removed — narrative now lives on landing page
 import TheForestPage from './pages/TheForestPage'
 import TreeDetailPage from './pages/TreeDetailPage'
-import TheExperiencePage from './pages/TheExperiencePage'
-import TrailChapterPage from './pages/TrailChapterPage'
-import RecipeDetailPage from './pages/RecipeDetailPage'
-import ComePage from './pages/ComePage'
-import TheWadaPage from './pages/TheWadaPage'
+import YourDayPage from './pages/YourDayPage'
+import ReviewsPage from './pages/ReviewsPage'
+import PhilosophyPage from './pages/PhilosophyPage'
 import VisionariesPage from './pages/VisionariesPage'
-import MeditationCavePage from './pages/MeditationCavePage'
 import NotFoundPage from './pages/NotFoundPage'
 
 export const router = createBrowserRouter(
@@ -20,16 +16,16 @@ export const router = createBrowserRouter(
       element: <RootLayout />,
       children: [
         { index: true, element: <HomePage /> },
-        /* The Becoming content now lives on the landing page */
         { path: 'the-forest', element: <TheForestPage /> },
         { path: 'the-forest/:treeId', element: <TreeDetailPage /> },
-        { path: 'the-experience', element: <TheExperiencePage /> },
-        { path: 'the-experience/trail/:chapterId', element: <TrailChapterPage /> },
-        { path: 'the-experience/recipes/:recipeId', element: <RecipeDetailPage /> },
-        { path: 'the-wada', element: <TheWadaPage /> },
-        { path: 'meditation-cave', element: <MeditationCavePage /> },
+        { path: 'the-experience', element: <YourDayPage /> },
+        { path: 'the-experience/trail/*', element: <Navigate to="/the-experience" replace /> },
+        { path: 'the-experience/recipes/*', element: <Navigate to="/the-experience" replace /> },
+        { path: 'philosophy', element: <PhilosophyPage /> },
+        { path: 'the-wada', element: <Navigate to="/philosophy" replace /> },
+        { path: 'meditation-cave', element: <Navigate to="/philosophy" replace /> },
         { path: 'visionaries', element: <VisionariesPage /> },
-        { path: 'come', element: <ComePage /> },
+        { path: 'reviews', element: <ReviewsPage /> },
         { path: '*', element: <NotFoundPage /> },
       ],
     },

@@ -5,11 +5,10 @@ import MobileMenu from './MobileMenu'
 const NAV_LINKS = [
   { to: '/', label: 'Morpeace' },
   { to: '/the-forest', label: 'The Forest' },
-  { to: '/the-experience', label: 'The Experience' },
-  { to: '/the-wada', label: 'The Wada' },
-  { to: '/meditation-cave', label: 'Meditation Cave' },
+  { to: '/the-experience', label: 'Your Day' },
+  { to: '/philosophy', label: 'Philosophy' },
   { to: '/visionaries', label: 'Visionaries' },
-  { to: '/come', label: 'Come' },
+  { to: '/reviews', label: 'Reviews' },
 ] as const
 
 const BOOKING_URL = 'https://www.stayvista.com/villa/rustic-haven?adult=6&child=0&infant=0&pax_selected=false&rooms_booked=3&reference_number=prop673b7f18be369lqw7kij&from=card'

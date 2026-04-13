@@ -20,8 +20,8 @@ export default function SiteFooter() {
             <div className="flex flex-col gap-2">
               <Link to="/the-becoming" className="font-body text-sm text-sky-cream/60 hover:text-sky-cream/90 transition-colors">The Becoming</Link>
               <Link to="/the-forest" className="font-body text-sm text-sky-cream/60 hover:text-sky-cream/90 transition-colors">The Forest</Link>
-              <Link to="/the-experience" className="font-body text-sm text-sky-cream/60 hover:text-sky-cream/90 transition-colors">The Experience</Link>
-              <Link to="/come" className="font-body text-sm text-sky-cream/60 hover:text-sky-cream/90 transition-colors">Come</Link>
+              <Link to="/the-experience" className="font-body text-sm text-sky-cream/60 hover:text-sky-cream/90 transition-colors">Your Day</Link>
+              <Link to="/reviews" className="font-body text-sm text-sky-cream/60 hover:text-sky-cream/90 transition-colors">Reviews</Link>
             </div>
           </div>
 
