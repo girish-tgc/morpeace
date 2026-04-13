@@ -1,0 +1,47 @@
+import TheVisionSection from '../components/home/TheVisionSection'
+import TheVillaSection from '../components/home/TheVillaSection'
+import MeditationCave from '../components/trail/MeditationCave'
+
+const textShadow = '0 2px 20px rgba(0,0,0,0.5), 0 1px 6px rgba(0,0,0,0.3)'
+
+export default function PhilosophyPage() {
+  return (
+    <div>
+      {/* === HERO === */}
+      <section
+        className="relative min-h-[50vh] flex items-center justify-center overflow-hidden"
+        style={{ background: 'linear-gradient(to bottom, #0f2313, #1c1508)' }}
+      >
+        <div className="relative z-10 text-center px-8 py-20">
+          <p
+            className="font-display text-sm md:text-base tracking-[0.3em] uppercase text-canopy-light/50 mb-6"
+            style={{ textShadow }}
+          >
+            The Philosophy
+          </p>
+          <p
+            className="font-display text-3xl md:text-5xl text-sky-cream mb-4"
+            style={{ textShadow }}
+          >
+            What Morpeace believes
+          </p>
+          <p
+            className="font-body text-lg md:text-xl text-sky-cream/70 italic max-w-xl mx-auto"
+            style={{ textShadow }}
+          >
+            Three philosophies. One living intention.
+          </p>
+        </div>
+      </section>
+
+      {/* === FOREST PHILOSOPHY — Pasaydan groves === */}
+      <TheVisionSection />
+
+      {/* === INFRASTRUCTURE PHILOSOPHY — The Living Wada === */}
+      <TheVillaSection />
+
+      {/* === MEDITATION CAVE PHILOSOPHY — Inner Star === */}
+      <MeditationCave />
+    </div>
+  )
+}

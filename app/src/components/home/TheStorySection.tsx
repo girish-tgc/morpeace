@@ -57,7 +57,7 @@ export default function TheStorySection() {
           gsap.fromTo(textEls,
             { opacity: 0, y: 30 },
             {
-              opacity: 1, y: 0, duration: 0.8, stagger: 0.12, ease: 'power3.out',
+              opacity: 1, y: 0, duration: 1.0, stagger: 0.16, ease: 'power3.out',
               scrollTrigger: {
                 trigger: beatEl,
                 start: 'top 75%',
@@ -121,7 +121,7 @@ export default function TheStorySection() {
     let idleTimer: ReturnType<typeof setTimeout> | null = null
     let userInteracting = false
 
-    const SPEED = 80 // px per second
+    const SPEED = 50 // px per second — slower cinematic pace
 
     function startAutoScroll() {
       if (autoTween) autoTween.kill()

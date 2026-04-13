@@ -5,7 +5,6 @@ import MapFilterPanel from '../components/forest/MapFilterPanel'
 import ForestDashboard from '../components/forest/ForestDashboard'
 import TreeCard from '../components/forest/TreeCard'
 import EvidenceDashboard from '../components/forest/EvidenceDashboard'
-import TheVisionSection from '../components/home/TheVisionSection'
 import RegenerationSection from '../components/home/RegenerationSection'
 
 type MapMode = 'walk' | 'data' | 'seasons'
@@ -50,9 +49,6 @@ export default function TheForestPage() {
           </p>
         </div>
       </section>
-
-      {/* === VISION — Pasaydan groves === */}
-      <TheVisionSection />
 
       {/* === REGENERATION — measurable impact === */}
       <RegenerationSection />
