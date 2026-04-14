@@ -28,7 +28,7 @@ export default function TreeDetailPage() {
   const hasStory = tree.story !== null
 
   return (
-    <div data-audio-zone="layer1-floor" className="pt-20 md:pt-24">
+    <div className="pt-20 md:pt-24">
       {/* Back link */}
       <div className="max-w-5xl mx-auto px-6 md:px-8 mb-8">
         <Link to="/the-forest" className="font-body text-sm text-teal-deep hover:underline inline-flex items-center gap-1">

@@ -9,9 +9,7 @@ export default function HomePage() {
   return (
     <div>
       {/* Hero */}
-      <div data-audio-zone="layer0-intro">
-        <HeroSection />
-      </div>
+      <HeroSection />
 
       {/* The full Touch-Me-Not narrative */}
       <TheStorySection />

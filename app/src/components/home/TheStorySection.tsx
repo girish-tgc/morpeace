@@ -169,7 +169,7 @@ export default function TheStorySection() {
   let videoIdx = 0
 
   return (
-    <div ref={containerRef} className="relative" data-audio-zone="layer0-story">
+    <div ref={containerRef} className="relative">
       {/* === PINNED BACKGROUND STACK === */}
       <div
         ref={bgContainerRef}

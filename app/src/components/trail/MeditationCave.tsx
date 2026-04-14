@@ -44,7 +44,7 @@ export default function MeditationCave() {
   }, [])
 
   return (
-    <div ref={sectionRef} data-audio-zone="meditation-cave" className="relative py-16 md:py-24 overflow-hidden">
+    <div ref={sectionRef} className="relative py-16 md:py-24 overflow-hidden">
       <video
         ref={videoRef}
         muted

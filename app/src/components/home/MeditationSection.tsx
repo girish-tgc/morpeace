@@ -52,7 +52,7 @@ export default function MeditationSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} data-audio-zone="meditation-cave" className="relative py-24 md:py-40 overflow-hidden">
+    <section ref={sectionRef} className="relative py-24 md:py-40 overflow-hidden">
       {/* Video background */}
       <video
         ref={videoRef}

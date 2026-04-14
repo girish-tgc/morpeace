@@ -319,7 +319,7 @@ export default function TheBecomingPage() {
   let videoIdx = 0
 
   return (
-    <div ref={containerRef} className="relative" data-audio-zone="layer0-story">
+    <div ref={containerRef} className="relative">
       {/* === PINNED BACKGROUND STACK === */}
       <div ref={bgContainerRef} className="absolute inset-0 w-screen h-screen overflow-hidden" style={{ zIndex: 0 }}>
         {bgLayers.map((layer, i) => {

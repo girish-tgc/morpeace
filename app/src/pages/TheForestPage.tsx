@@ -33,7 +33,6 @@ export default function TheForestPage() {
     <div>
       {/* === HERO === */}
       <section
-        data-audio-zone="layer1-floor"
         className="relative min-h-[50vh] flex items-center justify-center overflow-hidden"
         style={{ background: 'linear-gradient(to bottom, #0f2313, #1c1508)' }}
       >
