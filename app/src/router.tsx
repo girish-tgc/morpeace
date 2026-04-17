@@ -6,7 +6,8 @@ import TreeDetailPage from './pages/TreeDetailPage'
 import YourDayPage from './pages/YourDayPage'
 import ReviewsPage from './pages/ReviewsPage'
 import PhilosophyPage from './pages/PhilosophyPage'
-import VisionariesPage from './pages/VisionariesPage'
+import TeamPage from './pages/TeamPage'
+import GalleryPage from './pages/GalleryPage'
 import NotFoundPage from './pages/NotFoundPage'
 
 export const router = createBrowserRouter(
@@ -24,8 +25,10 @@ export const router = createBrowserRouter(
         { path: 'philosophy', element: <PhilosophyPage /> },
         { path: 'the-wada', element: <Navigate to="/philosophy" replace /> },
         { path: 'meditation-cave', element: <Navigate to="/philosophy" replace /> },
-        { path: 'visionaries', element: <VisionariesPage /> },
+        { path: 'team', element: <TeamPage /> },
+        { path: 'visionaries', element: <Navigate to="/team" replace /> },
         { path: 'reviews', element: <ReviewsPage /> },
+        { path: 'gallery', element: <GalleryPage /> },
         { path: '*', element: <NotFoundPage /> },
       ],
     },

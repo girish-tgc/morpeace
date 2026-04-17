@@ -26,7 +26,7 @@ export default function MapFilterPanel({ activeFilters, showStoriesOnly, onToggl
           <button
             key={key}
             onClick={() => onToggleFilter(key)}
-            className={`px-3 md:px-4 py-1.5 md:py-2 rounded-full text-sm font-display tracking-wider border transition-all duration-300
+            className={`px-4 md:px-5 py-2.5 md:py-3 rounded-full text-sm font-display tracking-wider border transition-all duration-300
               ${active ? activeClass : INACTIVE_CLASS}`}
           >
             {label}
@@ -38,7 +38,7 @@ export default function MapFilterPanel({ activeFilters, showStoriesOnly, onToggl
 
       <button
         onClick={onToggleStories}
-        className={`px-3 md:px-4 py-1.5 md:py-2 rounded-full text-sm font-display tracking-wider border transition-all duration-300
+        className={`px-4 md:px-5 py-2.5 md:py-3 rounded-full text-sm font-display tracking-wider border transition-all duration-300
           ${showStoriesOnly
             ? 'bg-mango-gold/25 text-mango-gold border-mango-gold/50'
             : INACTIVE_CLASS

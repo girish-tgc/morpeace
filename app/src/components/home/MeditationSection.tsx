@@ -64,16 +64,16 @@ export default function MeditationSection() {
       >
         <source src={`${BASE}photos/meditation-drone-1.mp4`} type="video/mp4" />
       </video>
-      <div className="absolute inset-0 bg-forest-night/75" />
+      <div className="absolute inset-0 bg-[#014066]/78" />
       <div
         className="absolute inset-0"
-        style={{ background: 'radial-gradient(ellipse at 50% 40%, rgba(20,35,20,0.2) 0%, rgba(10,15,7,0.5) 40%, rgba(28,21,8,0.7) 100%)' }}
+        style={{ background: 'radial-gradient(ellipse at 50% 40%, rgba(1,64,102,0.22) 0%, rgba(6,72,72,0.5) 40%, rgba(1,46,67,0.72) 100%)' }}
       />
 
       <div className="relative z-10 max-w-3xl mx-auto px-8 text-center">
         {/* Label + Headline */}
         <div ref={el => { textRefs.current[0] = el }}>
-          <p className="font-display text-xs tracking-[0.3em] uppercase text-mango-gold/50 mb-4">
+          <p className="eyebrow text-[#FF7D6B]/60 mb-4">
             {meditation.label}
           </p>
           <h2 className="font-display text-3xl md:text-5xl text-sky-cream/90 mb-6">
@@ -93,17 +93,17 @@ export default function MeditationSection() {
           <div className="relative w-40 h-40 md:w-56 md:h-56">
             <div
               className="absolute inset-0 forest-breathe-outer rounded-full"
-              style={{ background: 'radial-gradient(circle, rgba(212,160,23,0.15) 0%, transparent 70%)' }}
+              style={{ background: 'radial-gradient(circle, rgba(233,74,60,0.14) 0%, transparent 70%)' }}
             />
             <svg viewBox="0 0 200 200" className="absolute inset-0 w-full h-full">
-              <circle cx="100" cy="100" r="70" fill="none" stroke="#d4a017" strokeWidth="1.5" strokeOpacity="0.4" strokeDasharray="8 4" className="animate-slow-rotate" style={{ transformOrigin: '100px 100px' }} />
-              <circle cx="100" cy="100" r="55" fill="none" stroke="#d4a017" strokeWidth="0.5" strokeOpacity="0.25" />
-              <circle cx="100" cy="100" r="40" fill="rgba(30,60,120,0.3)" stroke="rgba(70,120,200,0.3)" strokeWidth="1" />
-              <circle cx="100" cy="100" r="40" fill="none" stroke="rgba(70,120,200,0.15)" strokeWidth="0.5" className="forest-breathe-inner" style={{ transformOrigin: '100px 100px' }} />
-              <circle cx="100" cy="100" r="6" fill="rgba(220,225,235,0.8)" className="forest-breathe-text" />
-              <circle cx="100" cy="100" r="12" fill="none" stroke="rgba(220,225,235,0.2)" strokeWidth="0.5" />
+              <circle cx="100" cy="100" r="70" fill="none" stroke="#E94A3C" strokeWidth="1.5" strokeOpacity="0.45" strokeDasharray="8 4" className="animate-slow-rotate" style={{ transformOrigin: '100px 100px' }} />
+              <circle cx="100" cy="100" r="55" fill="none" stroke="#E94A3C" strokeWidth="0.5" strokeOpacity="0.3" />
+              <circle cx="100" cy="100" r="40" fill="rgba(1,103,149,0.32)" stroke="rgba(1,103,149,0.4)" strokeWidth="1" />
+              <circle cx="100" cy="100" r="40" fill="none" stroke="rgba(1,103,149,0.2)" strokeWidth="0.5" className="forest-breathe-inner" style={{ transformOrigin: '100px 100px' }} />
+              <circle cx="100" cy="100" r="6" fill="rgba(240,245,247,0.85)" className="forest-breathe-text" />
+              <circle cx="100" cy="100" r="12" fill="none" stroke="rgba(240,245,247,0.22)" strokeWidth="0.5" />
               {[0, 60, 120, 180, 240, 300].map(angle => (
-                <line key={angle} x1="100" y1="100" x2={100 + 65 * Math.cos(angle * Math.PI / 180)} y2={100 + 65 * Math.sin(angle * Math.PI / 180)} stroke="rgba(212,160,23,0.08)" strokeWidth="0.5" />
+                <line key={angle} x1="100" y1="100" x2={100 + 65 * Math.cos(angle * Math.PI / 180)} y2={100 + 65 * Math.sin(angle * Math.PI / 180)} stroke="rgba(233,74,60,0.1)" strokeWidth="0.5" />
               ))}
             </svg>
           </div>
@@ -116,7 +116,7 @@ export default function MeditationSection() {
           </p>
           <Link
             to={meditation.cta.href}
-            className="inline-block border border-mango-gold/20 text-mango-gold/50 hover:text-mango-gold/80 hover:border-mango-gold/40 px-6 py-2 rounded-full font-display text-xs tracking-[0.2em] uppercase transition-all duration-500"
+            className="inline-block border border-[#E94A3C]/25 text-[#E94A3C]/60 hover:text-[#E94A3C] hover:border-[#E94A3C]/50 px-6 py-2 rounded-full cta-text transition-all duration-500"
           >
             {meditation.cta.text}
           </Link>

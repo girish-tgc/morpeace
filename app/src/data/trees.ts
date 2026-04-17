@@ -843,7 +843,7 @@ const rawTrees: Omit<Tree, 'carbon' | 'nearbyTreeIds'>[] = [
     species: 'Mimosa pudica', scientificName: 'Mimosa pudica', marathiName: 'लाजाळू',
     measurement: { gbh_cm: 100, height_m: 10, crown_diameter_m: 0 },
     story: touchMeNotStory, storyTitle: 'The Survivor', teaching: 'Sensitivity is not weakness. It is awareness.',
-    accentColor: '#a8c256', notes: 'Lajalu mimosa pudica',
+    accentColor: '#7FB0B5', notes: 'Lajalu mimosa pudica',
     category: ['native']
   },
   {
@@ -852,7 +852,7 @@ const rawTrees: Omit<Tree, 'carbon' | 'nearbyTreeIds'>[] = [
     species: 'Kailaspati', scientificName: 'Couroupita guianensis', marathiName: 'कैलासपती',
     measurement: { gbh_cm: 10, height_m: 9, crown_diameter_m: 0 },
     story: kailaspatiStory, storyTitle: 'The Gift That Bloomed', teaching: 'A true gift continues to give.',
-    accentColor: '#d4a017', notes: 'Kailashpati',
+    accentColor: '#FF7D6B', notes: 'Kailashpati',
     category: ['sacred', 'flowering']
   },
   {
@@ -861,7 +861,7 @@ const rawTrees: Omit<Tree, 'carbon' | 'nearbyTreeIds'>[] = [
     species: 'Bakul', scientificName: 'Mimusops elengi', marathiName: 'बकुळ',
     measurement: { gbh_cm: 24, height_m: 10, crown_diameter_m: 0 },
     story: null, storyTitle: null, teaching: null,
-    accentColor: '#8b5e3c', notes: 'Bakul',
+    accentColor: '#326872', notes: 'Bakul',
     category: ['native', 'flowering']
   },
   {
@@ -870,7 +870,7 @@ const rawTrees: Omit<Tree, 'carbon' | 'nearbyTreeIds'>[] = [
     species: 'Banyan', scientificName: 'Ficus benghalensis', marathiName: 'वड',
     measurement: { gbh_cm: 10, height_m: 2, crown_diameter_m: 0 },
     story: banyanStory, storyTitle: 'The Immortal One', teaching: 'To shelter life is a sacred act.',
-    accentColor: '#2d5016', notes: 'Krushna vad',
+    accentColor: '#014066', notes: 'Krushna vad',
     category: ['sacred', 'native']
   },
   {
@@ -879,7 +879,7 @@ const rawTrees: Omit<Tree, 'carbon' | 'nearbyTreeIds'>[] = [
     species: 'Bel', scientificName: 'Aegle marmelos', marathiName: 'बेल',
     measurement: { gbh_cm: 24, height_m: 17, crown_diameter_m: 0 },
     story: null, storyTitle: null, teaching: null,
-    accentColor: '#6b8f3c', notes: 'Bengal quince',
+    accentColor: '#1A7A7A', notes: 'Bengal quince',
     category: ['sacred', 'fruiting']
   },
   {
@@ -888,7 +888,7 @@ const rawTrees: Omit<Tree, 'carbon' | 'nearbyTreeIds'>[] = [
     species: 'Hirvi Shevri', scientificName: 'Ceiba pentandra', marathiName: 'हिरवी शेवरी',
     measurement: { gbh_cm: 23, height_m: 15, crown_diameter_m: 0 },
     story: null, storyTitle: null, teaching: null,
-    accentColor: '#4a7c59', notes: 'Hirvi shevri ciba',
+    accentColor: '#064848', notes: 'Hirvi shevri ciba',
     category: ['native', 'timber']
   },
   {
@@ -897,7 +897,7 @@ const rawTrees: Omit<Tree, 'carbon' | 'nearbyTreeIds'>[] = [
     species: 'Singapore Cherry', scientificName: 'Muntingia calabura', marathiName: 'सिंगापूर चेरी',
     measurement: { gbh_cm: 44, height_m: 25, crown_diameter_m: 0 },
     story: singaporeCherryStory, storyTitle: 'Planted by Birds', teaching: 'Generosity invites company.',
-    accentColor: '#c41e3a', notes: 'Singapuri cheri',
+    accentColor: '#E94A3C', notes: 'Singapuri cheri',
     category: ['fruiting']
   },
   {
@@ -906,7 +906,7 @@ const rawTrees: Omit<Tree, 'carbon' | 'nearbyTreeIds'>[] = [
     species: 'Banyan', scientificName: 'Ficus benghalensis', marathiName: 'वड',
     measurement: { gbh_cm: 25, height_m: 15, crown_diameter_m: 0 },
     story: null, storyTitle: null, teaching: null,
-    accentColor: '#2d5016', notes: 'Second banyan',
+    accentColor: '#014066', notes: 'Second banyan',
     category: ['sacred', 'native']
   },
   {
@@ -915,7 +915,7 @@ const rawTrees: Omit<Tree, 'carbon' | 'nearbyTreeIds'>[] = [
     species: 'Peepal', scientificName: 'Ficus religiosa', marathiName: 'पिंपळ',
     measurement: { gbh_cm: 10, height_m: 15, crown_diameter_m: 0 },
     story: peepalStory, storyTitle: 'The Tree of Breath', teaching: 'Peace is not the absence of movement. It is the rhythm beneath it.',
-    accentColor: '#5a7247', notes: 'Sacred fig',
+    accentColor: '#096C6C', notes: 'Sacred fig',
     category: ['sacred', 'native']
   },
   {
@@ -924,7 +924,7 @@ const rawTrees: Omit<Tree, 'carbon' | 'nearbyTreeIds'>[] = [
     species: 'Audumbar', scientificName: 'Ficus racemosa', marathiName: 'उंबर / औदुंबर',
     measurement: { gbh_cm: 230, height_m: 35, crown_diameter_m: 0 },
     story: null, storyTitle: 'The Quiet Monarch', teaching: null,
-    accentColor: '#3d2b1f', notes: 'The largest tree — 230cm girth, 35m tall',
+    accentColor: '#0B2E3A', notes: 'The largest tree — 230cm girth, 35m tall',
     category: ['sacred', 'native', 'fruiting']
   },
   {
@@ -933,7 +933,7 @@ const rawTrees: Omit<Tree, 'carbon' | 'nearbyTreeIds'>[] = [
     species: 'Tamarind', scientificName: 'Tamarindus indica', marathiName: 'चिंच',
     measurement: { gbh_cm: 120, height_m: 30, crown_diameter_m: 0 },
     story: tamarindStory, storyTitle: 'The Tree That Began Morpeace', teaching: 'Loss can be a doorway to creation.',
-    accentColor: '#8b5e3c', notes: 'The beloved tamarind',
+    accentColor: '#326872', notes: 'The beloved tamarind',
     category: ['native', 'fruiting']
   },
   {
@@ -942,7 +942,7 @@ const rawTrees: Omit<Tree, 'carbon' | 'nearbyTreeIds'>[] = [
     species: 'Kanchan', scientificName: 'Bauhinia purpurea', marathiName: 'कांचन',
     measurement: { gbh_cm: 24, height_m: 20, crown_diameter_m: 0 },
     story: null, storyTitle: null, teaching: null,
-    accentColor: '#7b4d8e', notes: "Camel's foot tree",
+    accentColor: '#4A6F8A', notes: "Camel's foot tree",
     category: ['native', 'flowering']
   },
   {
@@ -951,7 +951,7 @@ const rawTrees: Omit<Tree, 'carbon' | 'nearbyTreeIds'>[] = [
     species: 'Rudraksh', scientificName: 'Elaeocarpus ganitrus', marathiName: 'रुद्राक्ष',
     measurement: { gbh_cm: 10, height_m: 4, crown_diameter_m: 0 },
     story: rudrakshStory, storyTitle: 'The Tear That Became a Tree', teaching: 'Stillness is a form of compassion.',
-    accentColor: '#4a7c59', notes: 'Rudraksh',
+    accentColor: '#064848', notes: 'Rudraksh',
     category: ['sacred']
   },
   {
@@ -960,7 +960,7 @@ const rawTrees: Omit<Tree, 'carbon' | 'nearbyTreeIds'>[] = [
     species: 'Kadamb', scientificName: 'Neolamarckia cadamba', marathiName: 'कदंब',
     measurement: { gbh_cm: 10, height_m: 5, crown_diameter_m: 0 },
     story: null, storyTitle: null, teaching: null,
-    accentColor: '#d4942a', notes: 'Kadamb',
+    accentColor: '#B3271E', notes: 'Kadamb',
     category: ['sacred', 'native', 'flowering']
   },
   {
@@ -969,7 +969,7 @@ const rawTrees: Omit<Tree, 'carbon' | 'nearbyTreeIds'>[] = [
     species: 'Jamun', scientificName: 'Syzygium cumini', marathiName: 'जांभूळ',
     measurement: { gbh_cm: 15, height_m: 8, crown_diameter_m: 0 },
     story: jamunStory, storyTitle: 'The Sweet One from Kaas', teaching: 'Small sweetness is enough.',
-    accentColor: '#7b4d8e', notes: 'Indian black-berry',
+    accentColor: '#4A6F8A', notes: 'Indian black-berry',
     category: ['native', 'fruiting']
   },
   {
@@ -978,7 +978,7 @@ const rawTrees: Omit<Tree, 'carbon' | 'nearbyTreeIds'>[] = [
     species: 'Black Bamboo', scientificName: 'Phyllostachys nigra', marathiName: 'काळा बांबू',
     measurement: { gbh_cm: 10, height_m: 20, crown_diameter_m: 0 },
     story: null, storyTitle: null, teaching: null,
-    accentColor: '#3d2b1f', notes: 'Black bamboo',
+    accentColor: '#0B2E3A', notes: 'Black bamboo',
     category: ['native', 'timber']
   },
   {
@@ -987,7 +987,7 @@ const rawTrees: Omit<Tree, 'carbon' | 'nearbyTreeIds'>[] = [
     species: 'Ajan', scientificName: 'Terminalia elliptica', marathiName: 'अजन',
     measurement: { gbh_cm: 10, height_m: 2, crown_diameter_m: 0 },
     story: ajanStory, storyTitle: "Born from a Pilgrim's Staff", teaching: 'Wisdom grows where remembrance is planted.',
-    accentColor: '#8a8577', notes: 'Ajan vruksha',
+    accentColor: '#5A8A93', notes: 'Ajan vruksha',
     category: ['native', 'timber']
   },
   {
@@ -996,7 +996,7 @@ const rawTrees: Omit<Tree, 'carbon' | 'nearbyTreeIds'>[] = [
     species: 'Krushnavad', scientificName: 'Ficus krishnae', marathiName: 'कृष्णवड',
     measurement: { gbh_cm: 10, height_m: 2, crown_diameter_m: 0 },
     story: krushnavadStory, storyTitle: 'The Butter Bowl', teaching: 'Every great tree begins as a small act of faith.',
-    accentColor: '#6b8f3c', notes: 'Krishna Fig - makhan katori',
+    accentColor: '#1A7A7A', notes: 'Krishna Fig - makhan katori',
     category: ['sacred', 'native']
   }
 ];

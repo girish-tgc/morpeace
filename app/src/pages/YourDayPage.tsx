@@ -91,7 +91,11 @@ export default function YourDayPage() {
   }, [])
 
   return (
-    <div ref={pageRef}>
+    <div
+      ref={pageRef}
+      className="text-sky-cream"
+      style={{ background: 'linear-gradient(180deg, #012E43 0%, #014066 10%, #096C6C 55%, #014066 100%)' }}
+    >
       {/* === HERO === */}
       <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
@@ -103,15 +107,15 @@ export default function YourDayPage() {
             />
           </div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#012E43]/40 via-[#014066]/50 to-[#012E43]/75" />
         <div data-animate className="relative z-10 text-center px-8 py-20">
-          <h1 className="font-display text-4xl md:text-6xl text-sky-cream font-light mb-5"
-            style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}
+          <h1 className="font-display text-4xl md:text-6xl text-sky-cream mb-5"
+            style={{ textShadow: '0 2px 20px rgba(1,46,67,0.55)' }}
           >
             Your Day at Morpeace
           </h1>
           <p className="font-body text-lg md:text-xl text-sky-cream/80 italic max-w-lg mx-auto"
-            style={{ textShadow: '0 1px 12px rgba(0,0,0,0.4)' }}
+            style={{ textShadow: '0 1px 12px rgba(1,46,67,0.45)' }}
           >
             A quiet place to slow down, explore, and simply be.
           </p>
@@ -165,7 +169,7 @@ export default function YourDayPage() {
       </section>
 
       {/* === RECREATION === */}
-      <section className="bg-[#F4EFE6] py-16 md:py-24 px-6 md:px-8">
+      <section className="bg-[#012E43]/30 py-16 md:py-24 px-6 md:px-8">
         <div className="max-w-6xl mx-auto">
           <SectionHeader
             id="recreation"
@@ -218,11 +222,12 @@ export default function YourDayPage() {
             />
           </div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'rgba(50,104,114,0.16)', mixBlendMode: 'multiply' }} />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#012E43]/80 via-[#014066]/50 to-transparent" />
         <div data-animate className="relative z-10 max-w-xl px-8 md:px-16 py-20">
-          <span className="font-display text-xs tracking-[0.2em] uppercase text-turmeric block mb-3">Food</span>
+          <span className="eyebrow text-[#FF7D6B] block mb-3">Food</span>
           <h2 className="font-display text-3xl md:text-4xl text-sky-cream mb-5"
-            style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}
+            style={{ textShadow: '0 2px 20px rgba(1,46,67,0.55)' }}
           >
             A Return to Memory
           </h2>
@@ -278,10 +283,10 @@ export default function YourDayPage() {
               <div
                 key={p.name}
                 data-animate
-                className="flex justify-between items-center bg-white border border-[#e8e2d8] rounded-lg px-5 py-4"
+                className="flex justify-between items-center bg-[#014066]/45 backdrop-blur-sm border border-sky-cream/10 rounded-lg px-5 py-4 hover:border-[#FF7D6B]/30 transition-colors"
               >
-                <span className="font-display text-base text-text-deep font-medium">{p.name}</span>
-                <span className="font-body text-sm text-text-deep/40">{p.meta}</span>
+                <span className="font-display text-base text-sky-cream font-medium">{p.name}</span>
+                <span className="font-body text-sm text-sky-cream/55">{p.meta}</span>
               </div>
             ))}
           </div>
@@ -289,23 +294,23 @@ export default function YourDayPage() {
       </section>
 
       {/* === GOOD TO KNOW === */}
-      <section className="bg-[#F4EFE6] py-16 md:py-24 px-6 md:px-8">
+      <section className="bg-[#012E43]/30 py-16 md:py-24 px-6 md:px-8">
         <div className="max-w-6xl mx-auto">
           <SectionHeader
             tag="Good to Know"
-            heading="What Morpeace Is Not"
+            heading="The Pace of Morpeace"
           />
-          <div data-animate className="bg-[#F4EFE6] border-l-4 border-turmeric rounded-r-xl pl-8 pr-6 py-6 max-w-2xl mx-auto">
+          <div data-animate className="bg-[#014066]/50 backdrop-blur-sm border-l-4 border-[#E94A3C] rounded-r-xl pl-8 pr-6 py-6 max-w-2xl mx-auto">
             <ul className="space-y-3">
               {[
-                'There is no loud music',
-                'No curated entertainment or packed itineraries',
-                'No urgency',
-                'If you are seeking non-stop activity, this may not be the right fit',
-                'If you are open to stillness, you may find more than you expected',
+                'Birdsong over background music',
+                'Open hours, not packed itineraries',
+                'Intentional pacing',
+                'Best for guests who welcome a slower rhythm',
+                'Stillness here rewards those who settle into it',
               ].map((item, i) => (
-                <li key={i} className="font-body text-base text-text-deep/65 leading-relaxed">
-                  <span className="text-turmeric mr-2">—</span>{item}
+                <li key={i} className="font-body text-base text-sky-cream/80 leading-relaxed">
+                  <span className="text-[#FF7D6B] mr-2">—</span>{item}
                 </li>
               ))}
             </ul>
@@ -314,16 +319,16 @@ export default function YourDayPage() {
       </section>
 
       {/* === CTA === */}
-      <section data-animate className="text-center py-20 md:py-28 px-6 bg-white">
-        <h2 className="font-display text-3xl md:text-4xl text-text-deep mb-4">Ready to Slow Down?</h2>
-        <p className="font-body text-base md:text-lg text-text-deep/55 mb-10">
+      <section data-animate className="text-center py-20 md:py-28 px-6">
+        <h2 className="font-display text-3xl md:text-4xl text-sky-cream mb-4">Ready to arrive?</h2>
+        <p className="font-body text-base md:text-lg text-sky-cream/65 mb-10">
           Book your stay at Morpeace and let the day unfold.
         </p>
         <a
           href={BOOKING_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block font-display text-base tracking-wide bg-teal-deep text-white px-10 py-4 rounded-lg hover:bg-[#155a4a] transition-colors duration-300"
+          className="inline-block cta-text border border-[#E94A3C] text-[#FF7D6B] hover:bg-[#E94A3C]/15 hover:text-[#E94A3C] px-10 py-4 rounded-full transition-all duration-300"
         >
           Book Your Stay
         </a>

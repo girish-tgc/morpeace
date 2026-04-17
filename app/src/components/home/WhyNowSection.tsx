@@ -73,7 +73,7 @@ export default function WhyNowSection() {
       <div className="max-w-3xl mx-auto px-8 text-center">
         <h2
           ref={headlineRef}
-          className="font-display text-3xl md:text-5xl lg:text-6xl text-text-deep leading-tight mb-16 md:mb-24"
+          className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-text-deep leading-tight mb-16 md:mb-24"
         >
           {whyNow.headline}
         </h2>

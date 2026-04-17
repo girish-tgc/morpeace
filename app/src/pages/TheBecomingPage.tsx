@@ -29,7 +29,7 @@ const bgLayers = [
   { type: 'video' as const, src: `${BASE}photos/hands-planting.mp4` },
   { type: 'image' as const, src: `${BASE}photos/tree-stump-fog.jpeg` },
   { type: 'image' as const, src: `${BASE}photos/forest-path.jpeg` },
-  { type: 'video' as const, src: `${BASE}photos/roots-growing.mp4` },
+  { type: 'video' as const, src: `${BASE}photos/mimosa-pudica-closeup.mp4` },
   { type: 'image' as const, src: `${BASE}photos/peacock-plumage.jpeg` },
   { type: 'video' as const, src: `${BASE}photos/drone-shot.mp4` },
   { type: 'image' as const, src: `${BASE}photos/forest-dense-vegetation.jpeg` },
@@ -321,7 +321,7 @@ export default function TheBecomingPage() {
   return (
     <div ref={containerRef} className="relative">
       {/* === PINNED BACKGROUND STACK === */}
-      <div ref={bgContainerRef} className="absolute inset-0 w-screen h-screen overflow-hidden" style={{ zIndex: 0 }}>
+      <div ref={bgContainerRef} className="absolute inset-0 w-full h-[100svh] overflow-hidden" style={{ zIndex: 0 }}>
         {bgLayers.map((layer, i) => {
           const curVideoIdx = layer.type === 'video' ? videoIdx++ : -1
           return (

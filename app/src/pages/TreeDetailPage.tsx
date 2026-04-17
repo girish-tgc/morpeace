@@ -18,7 +18,7 @@ export default function TreeDetailPage() {
     return (
       <div className="min-h-screen flex items-center justify-center px-8">
         <div className="text-center">
-          <p className="font-display text-2xl text-text-deep mb-4">Tree not found</p>
+          <p className="font-display text-2xl text-text-deep mb-4">This tree isn't in the registry yet</p>
           <Link to="/the-forest" className="font-body text-teal-deep hover:underline">&larr; Back to The Forest</Link>
         </div>
       </div>
@@ -53,7 +53,7 @@ export default function TreeDetailPage() {
                     style={{ backgroundColor: `${tree.accentColor}30`, border: `3px solid ${tree.accentColor}70` }}
                   />
                   <div>
-                    <h1 className="font-display text-3xl md:text-4xl text-text-deep">{tree.storyTitle}</h1>
+                    <h1 className="font-display text-2xl sm:text-3xl md:text-4xl text-text-deep">{tree.storyTitle}</h1>
                     <p className="font-body text-base text-text-deep/50 italic">{tree.species} &middot; {tree.marathiName}</p>
                   </div>
                 </div>
@@ -71,7 +71,7 @@ export default function TreeDetailPage() {
                         {chapter.content.split('\n\n').map((paragraph, pi) => (
                           <p
                             key={pi}
-                            className="font-body text-xl md:text-2xl leading-relaxed mb-4"
+                            className="font-body text-xl md:text-2xl italic leading-relaxed mb-4"
                             style={{ color: `${tree.accentColor}cc` }}
                           >
                             {paragraph.split('\n').map((line, li) => (
@@ -118,7 +118,7 @@ export default function TreeDetailPage() {
                 style={{ backgroundColor: `${tree.accentColor}30`, border: `3px solid ${tree.accentColor}70` }}
               />
               <div>
-                <h1 className="font-display text-3xl md:text-4xl text-text-deep">{tree.species}</h1>
+                <h1 className="font-display text-2xl sm:text-3xl md:text-4xl text-text-deep">{tree.species}</h1>
                 <p className="font-body text-base text-text-deep/50 italic">{tree.marathiName}</p>
               </div>
             </div>

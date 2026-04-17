@@ -7,6 +7,8 @@ import { pasaydanGroves } from '../../data/pasaydan'
 
 gsap.registerPlugin(ScrollTrigger)
 
+const BASE = import.meta.env.BASE_URL
+
 export default function TheVisionSection() {
   const sectionRef = useRef<HTMLDivElement>(null)
   const headRef = useRef<HTMLDivElement>(null)
@@ -71,20 +73,30 @@ export default function TheVisionSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="section-dark py-24 md:py-40 overflow-hidden">
-      <div className="max-w-5xl mx-auto px-8">
+    <section ref={sectionRef} className="relative py-24 md:py-40 overflow-hidden">
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${BASE}photos/forest-dense-vegetation.jpeg)` }}
+      />
+      <div className="absolute inset-0 bg-forest-night/70" />
+      <div
+        className="absolute inset-0"
+        style={{ background: 'radial-gradient(ellipse at 50% 40%, transparent 20%, rgba(6,22,18,0.55) 100%)' }}
+      />
+
+      <div className="relative z-10 max-w-5xl mx-auto px-8">
         {/* Head */}
         <div ref={headRef} className="text-center mb-16 md:mb-20">
-          <p className="font-display text-xs tracking-[0.3em] uppercase text-canopy-light/50 mb-4">
+          <p className="font-display text-xs md:text-sm tracking-[0.3em] uppercase text-canopy-light/70 mb-4">
             {vision.label}
           </p>
-          <p className="font-body text-sm md:text-base text-sky-cream/40 italic mb-6">
+          <p className="font-body text-base md:text-lg text-sky-cream/70 italic mb-6">
             {vision.decoder}
           </p>
           <h2 className="font-display text-3xl md:text-5xl text-sky-cream leading-tight mb-8">
             {vision.headline}
           </h2>
-          <p className="font-body text-base md:text-lg text-sky-cream/60 italic leading-relaxed max-w-3xl mx-auto">
+          <p className="font-body text-lg md:text-xl text-sky-cream/85 italic leading-relaxed max-w-3xl mx-auto">
             {vision.description}
           </p>
         </div>
@@ -98,18 +110,18 @@ export default function TheVisionSection() {
             <div
               key={grove.id}
               data-grove-card
-              className="flex-shrink-0 w-[260px] md:w-auto snap-start bg-forest-night/50 border border-canopy-light/10 rounded-lg p-5 hover:border-canopy-light/25 transition-colors duration-500"
+              className="flex-shrink-0 w-[280px] md:w-auto snap-start bg-forest-night/75 backdrop-blur-sm border border-canopy-light/20 rounded-lg p-6 hover:border-canopy-light/40 transition-colors duration-500"
             >
-              <div className="flex items-baseline gap-2 mb-2">
-                <span className="font-mono text-xs text-canopy-light/40">{grove.id}</span>
-                <h3 className="font-display text-sm md:text-base text-sky-cream/90 tracking-wide">
+              <div className="flex items-baseline gap-3 mb-3">
+                <span className="font-mono text-sm text-canopy-light/70">{grove.id}</span>
+                <h3 className="font-display text-base md:text-lg text-sky-cream tracking-wide">
                   {grove.name}
                 </h3>
               </div>
-              <p className="font-body text-xs text-mango-gold/60 italic mb-2">
+              <p className="font-body text-sm md:text-base text-mango-gold/90 italic mb-3">
                 {grove.meaning}
               </p>
-              <p className="font-body text-xs text-sky-cream/40 leading-relaxed">
+              <p className="font-body text-sm md:text-base text-sky-cream/80 leading-relaxed">
                 {grove.ecologicalFunction}
               </p>
             </div>
@@ -118,12 +130,12 @@ export default function TheVisionSection() {
 
         {/* Footer */}
         <div ref={footRef} className="text-center">
-          <p className="font-body text-base md:text-lg text-sky-cream/50 italic mb-8">
+          <p className="font-body text-lg md:text-xl text-sky-cream/85 italic leading-relaxed mb-8 max-w-2xl mx-auto">
             {vision.timeline}
           </p>
           <Link
             to={vision.cta.href}
-            className="inline-block border border-canopy-light/20 text-canopy-light/60 hover:text-canopy-light hover:border-canopy-light/40 px-6 py-2 rounded-full font-display text-xs tracking-[0.2em] uppercase transition-all duration-500"
+            className="inline-block border border-canopy-light/40 text-canopy-light hover:text-sky-cream hover:border-canopy-light/70 px-8 py-3 rounded-full font-display text-sm tracking-[0.2em] uppercase transition-all duration-500"
           >
             {vision.cta.text}
           </Link>

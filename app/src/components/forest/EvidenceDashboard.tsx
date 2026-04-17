@@ -26,9 +26,9 @@ export default function EvidenceDashboard() {
           {stats.map(stat => (
             <div
               key={stat.label}
-              className="text-center p-5 md:p-6 rounded-xl border border-text-deep/10 bg-canvas"
+              className="text-center p-4 md:p-6 rounded-xl border border-text-deep/10 bg-canvas"
             >
-              <p className="font-mono text-3xl md:text-4xl text-turmeric font-medium">{stat.value}</p>
+              <p className="font-mono text-2xl sm:text-3xl md:text-4xl text-turmeric font-medium break-words">{stat.value}</p>
               <p className="font-display text-sm tracking-wider uppercase text-text-deep/85 mt-2">{stat.label}</p>
               <p className="font-body text-sm text-text-deep/50 italic">{stat.sublabel}</p>
             </div>

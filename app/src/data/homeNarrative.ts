@@ -119,7 +119,7 @@ export const narrativeBeats: NarrativeBeat[] = [
       'In roots.',
       'In those who could feel what was unfolding.',
     ],
-    background: 'roots-growing.mp4',
+    background: 'mimosa-pudica-closeup.mp4',
     isVideo: true,
   },
   {
@@ -187,14 +187,14 @@ export const narrativeBeats: NarrativeBeat[] = [
       'So\u2026 walk gently.',
       'Pause long enough.',
       '',
-      'Because if you are still\u2026',
-      'you may feel it too.',
+      'When you are still\u2026',
+      'you will feel it too.',
       '',
       'A quiet prayer\u2014',
       'for the flourishing of all life.',
     ],
-    background: 'peacock-plumage.jpeg',
-    isVideo: false,
+    background: 'meditation-drone-2.mp4',
+    isVideo: true,
     finale: true,
   },
 ]
@@ -203,7 +203,7 @@ export const narrativeBeats: NarrativeBeat[] = [
 
 export const villa = {
   label: 'The Living Wada',
-  headline: 'Not just a structure. A philosophy in stone, water, and wind.',
+  headline: 'A philosophy in stone, water, and wind. More than a structure.',
   values: [
     { name: 'Transparency', text: 'Glass walls that let light flow freely. Inside and outside speak to one another.' },
     { name: 'Honesty', text: 'Exposed brick and bare cement. What you see is what I am.' },
@@ -215,26 +215,43 @@ export const villa = {
   cta: { text: 'Stay within the forest', href: 'https://www.stayvista.com/villa/morpeace-a-rustic-haven-near-satara-villa-with-private-pool-cKBT' },
 }
 
-// ─── Visionaries ───
+// ─── Team ───
 
-export const visionaries = {
-  headline: 'Visionaries of Morpeace',
+export const team = {
+  headline: 'The people behind',
+  subhead: 'Morpeace is held \u2014 by many hands.',
   intro: [
-    'Morpeace is not shaped by one vision.',
-    'It is held\u2026 by many hands.',
-    '',
     'Some came to build.',
     'Some came to care.',
     'Some came to understand.',
     '',
-    'All of them stayed\u2026',
-    'because something here began to change them.',
+    'All of them stayed \u2014',
+    'because this land changes the people who listen to it.',
   ],
   members: [
+    {
+      id: 'rohit-komal',
+      name: 'Rohit & Komal Talwalkar',
+      role: 'Owners',
+      photo: 'photos/team/rohit-komal.jpeg',
+      quote: 'We didn\u2019t set out to build a resort.\n\nWe only wanted a place where the land could rest \u2014\nand where people could rest with it.\n\nEverything else \u2014 the trees, the trails, the silences \u2014\nfollowed.',
+      lang: 'en' as const,
+      initials: 'RK',
+    },
+    {
+      id: 'sharad-kishori',
+      name: 'Sharad & Kishori Talwalkar',
+      role: 'Parents of Rohit',
+      photo: 'photos/team/sharad-kishori.jpeg',
+      quote: 'We watched it change season by season.\n\nWhat began as a sugarcane field\nslowly became something else.\n\nNow we come and sit \u2014\nand let the trees do most of the talking.',
+      lang: 'en' as const,
+      initials: 'SK',
+    },
     {
       id: 'pawar',
       name: 'Pawar Family',
       role: 'Caretakers',
+      photo: 'photos/team/pawar-family.jpeg',
       quote: '\u0907\u0925\u0947 \u0906\u0932\u094B \u0924\u0947\u0935\u094D\u0939\u093E \u0935\u093E\u091F\u0932\u0902 \u2014\n\u0906\u092A\u0923 \u091C\u092E\u0940\u0928 \u0938\u093E\u0902\u092D\u093E\u0933\u0924\u094B\u092F.\n\n\u092A\u0923 \u0906\u0924\u093E \u092A\u091F\u0932\u0902\u2026\n\u0939\u0940 \u091C\u092E\u0940\u0928\u091A \u0906\u092E\u094D\u0939\u093E\u0932\u093E \u0938\u093E\u0902\u092D\u093E\u0933\u0924\u0947.\n\n\u0930\u094B\u091C \u0938\u0915\u093E\u0933\u0940 \u0927\u094D\u092F\u093E\u0928\u0917\u0941\u0939\u0947\u0924 \u0927\u094D\u092F\u093E\u0928 \u0915\u0930\u0924\u094B\u2026\n\u0924\u0947\u0935\u094D\u0939\u093E \u0905\u091C\u0942\u0928\u091A \u091C\u093E\u0923\u0935\u0924\u0902 \u2014\n\u0907\u0925\u0932\u0902 \u0938\u0917\u0933\u0902\u091A \u091C\u093F\u0935\u0902\u0924 \u0906\u0939\u0947\u2026\n\u0906\u0923\u093F \u0906\u092E\u094D\u0939\u093E\u0932\u093E \u0926\u093F\u0936\u093E \u0926\u093E\u0916\u0935\u0924\u0947 \u0906\u0939\u0947.',
       lang: 'mr' as const,
       initials: 'P',
@@ -243,6 +260,7 @@ export const visionaries = {
       id: 'dhumal',
       name: 'Dhumal Family',
       role: 'Caretakers',
+      photo: 'photos/team/dhumal-family.jpeg',
       quote: '\u0906\u0927\u0940 \u0930\u094B\u091C\u091A\u0902 \u0915\u093E\u092E \u0939\u094B\u0924\u0902\u2026\n\u0924\u0947\u091A \u0924\u0947\u2026 \u0938\u093E\u0902\u0917\u093F\u0924\u0932\u0947\u0932\u0902 \u0915\u0930\u093E\u092F\u091A\u0902.\n\n\u0906\u0924\u093E\u2026\n\u0938\u0915\u093E\u0933\u0940 \u0909\u0920\u0932\u094D\u092F\u093E\u0935\u0930 \u092C\u0918\u093E\u0935\u0902\u0938\u0902 \u0935\u093E\u091F\u0924\u0902 \u2014\n\u0915\u093E\u092F \u092C\u0926\u0932 \u091D\u093E\u0932\u093E\u092F.\n\n\u0930\u094B\u091C \u091C\u093E\u0923\u0935\u0924\u0902\u2026\n\u091C\u092E\u0940\u0928 \u0915\u093E\u0939\u0940\u0924\u0930\u0940 \u0938\u093E\u0902\u0917\u0924\u0947\u2026\n\u0928\u0935\u0902 \u0936\u093F\u0915\u0935\u0924\u0947\u2026\n\u0906\u0923\u093F \u0938\u094D\u0935\u0924\u0903\u091A \u092A\u094D\u0930\u092F\u094B\u0917 \u0915\u0930\u093E\u092F\u0932\u093E \u0932\u093E\u0935\u0924\u0947.',
       lang: 'mr' as const,
       initials: 'D',
@@ -250,7 +268,8 @@ export const visionaries = {
     {
       id: 'salunkhe',
       name: 'Salunkhe Mama',
-      role: '',
+      role: 'Farm Experimenter',
+      photo: 'photos/team/salunkhe.jpeg',
       quote: '\u0907\u0925\u0947 \u0916\u0942\u092A \u0917\u094B\u0937\u094D\u091F\u0940 \u0915\u0930\u0942\u0928 \u092A\u093E\u0939\u093F\u0932\u094D\u092F\u093E\u2026\n\u0907\u0928\u094D\u0938\u093F\u0928\u0930\u0947\u091F\u0930 \u092C\u0938\u0935\u0932\u0902, \u092C\u093E\u092F\u094B\u091A\u093E\u0930 \u0915\u0947\u0932\u0902,\n\u0936\u0947\u0921\u0928\u0947\u091F \u0917\u094D\u0930\u0940\u0928\u0939\u093E\u0909\u0938 \u0909\u092D\u093E\u0930\u0932\u0902\u2026\n\u0915\u093E\u092F\u092E\u0938\u094D\u0935\u0930\u0942\u092A\u0940 \u092C\u0947\u0921\u094D\u0938 \u092A\u0923 \u0924\u092F\u093E\u0930 \u0915\u0947\u0932\u0947.\n\n\u0928\u0947\u0939\u092E\u0940 \u0915\u093E\u0939\u0940\u0924\u0930\u0940 \u092C\u0926\u0932 \u0915\u0930\u0924 \u0930\u093E\u0939\u0924\u094B\u2026\n\n\u092E\u0917 \u091C\u092E\u0940\u0928\u091A \u0938\u093E\u0902\u0917\u0924\u0947 \u2014\n\u0915\u093E\u092F \u092C\u0930\u094B\u092C\u0930 \u0906\u0939\u0947\u2026\n\u0906\u0923\u093F \u092A\u0941\u0922\u0947 \u0915\u093E\u092F \u0915\u0930\u093E\u092F\u091A\u0902 \u0906\u0939\u0947.',
       lang: 'mr' as const,
       initials: 'S',
@@ -259,6 +278,7 @@ export const visionaries = {
       id: 'architect',
       name: 'Pratik Devi',
       role: 'Architect',
+      photo: 'photos/team/pratik-devi.jpeg',
       quote: 'At first, we thought we were designing something.\n\nBut slowly\u2026 it felt like the place already knew what it wanted to be.\n\nWe were just\u2026 helping it take shape.',
       lang: 'en' as const,
       initials: 'PD',
@@ -267,6 +287,7 @@ export const visionaries = {
       id: 'contractor',
       name: 'Narendra Pansare',
       role: 'Contractor',
+      photo: 'photos/team/narendra-pansare.jpeg',
       quote: 'We\u2019re used to drawings being final \u2014\nyou just execute and move on.\n\nHere, it was different.\n\nSome things only made sense as we were building\u2026\nlike they were evolving in front of us.\n\nWe just had to be patient with it.',
       lang: 'en' as const,
       initials: 'NP',
@@ -274,7 +295,8 @@ export const visionaries = {
     {
       id: 'tgc',
       name: 'The Green Concept',
-      role: 'Ecology & Technology',
+      role: 'Ecology & Technology partner',
+      photo: 'photos/team/tgc-team.jpeg',
       quote: 'When we first walked into Morpeace,\nit didn\u2019t feel like a typical project.\n\nIt felt like the thinking was already in place.\n\nAlmost like the land knew\nwhat it wanted to become.\n\nOur role was not to design it\u2026\nbut to hear it, understand it \u2014\nand give it ecological roots.\n\nTo bring in the science, the measurement\u2026\nand quietly support what is already unfolding \u2014\nsometimes\u2026 by simply getting out of the way.',
       lang: 'en' as const,
       initials: 'TGC',
@@ -295,14 +317,6 @@ export const invitation = {
     text: 'Write to us',
     href: 'mailto:rstalwalkar@yahoo.com?subject=Morpeace',
   },
-  location: '17.6105\u00B0N, 73.9895\u00B0E',
-  locationLabel: 'Near Satara, Maharashtra',
-  exploreLinks: [
-    { text: 'The Forest', href: '/the-forest' },
-    { text: 'Your Day', href: '/the-experience' },
-    { text: 'The Wada', href: '/the-wada' },
-    { text: 'Visionaries', href: '/visionaries' },
-  ],
 }
 
 // ─── Regeneration (used on /the-forest) ───
@@ -343,19 +357,6 @@ export const whyNow = {
     'Every private acre that chooses to become a sanctuary changes the equation.',
   ],
   closing: 'Morpeace is one answer. Ten acres in the Western Ghats. A living proof that forests can return.',
-}
-
-// ─── Team (legacy, now using visionaries) ───
-
-export const team = {
-  intro: 'Morpeace is not an idea. It is held by people.',
-  members: visionaries.members.map(m => ({
-    id: m.id,
-    name: m.name,
-    role: m.role,
-    description: m.quote.split('\n')[0],
-    initials: m.initials,
-  })),
 }
 
 // ─── Land Speaks (orphan component, kept for potential reuse) ───

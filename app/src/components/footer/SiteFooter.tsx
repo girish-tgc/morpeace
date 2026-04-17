@@ -1,16 +1,25 @@
 import { Link } from 'react-router-dom'
 
+const BASE = import.meta.env.BASE_URL
+
 export default function SiteFooter() {
   return (
-    <footer className="bg-[#1a2e1a] text-sky-cream/60 py-16 md:py-20">
+    <footer className="bg-[#014066] text-sky-cream/60 py-16 md:py-20 pad-safe-bottom">
       <div className="max-w-5xl mx-auto px-6 md:px-8">
         {/* Top section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 mb-12">
           {/* Brand */}
           <div>
-            <p className="font-display text-2xl text-sky-cream/90 mb-3">Morpeace</p>
-            <p className="font-body text-sm leading-relaxed text-sky-cream/50 italic">
-              A forest that remembers
+            <img
+              src={`${BASE}logo.png`}
+              alt="Morpeace"
+              className="h-12 md:h-14 w-auto mb-4"
+              style={{ filter: 'brightness(0) invert(1) drop-shadow(0 2px 8px rgba(1,46,67,0.4))' }}
+            />
+            <p className="font-body text-sm leading-relaxed text-sky-cream/55 italic">
+              Morpeace is not being built.
+              <br />
+              It is becoming.
             </p>
           </div>
 
@@ -21,7 +30,8 @@ export default function SiteFooter() {
               <Link to="/the-experience" className="font-body text-sm text-sky-cream/60 hover:text-sky-cream/90 transition-colors">Your Day</Link>
               <Link to="/the-forest" className="font-body text-sm text-sky-cream/60 hover:text-sky-cream/90 transition-colors">The Forest</Link>
               <Link to="/philosophy" className="font-body text-sm text-sky-cream/60 hover:text-sky-cream/90 transition-colors">Philosophy</Link>
-              <Link to="/visionaries" className="font-body text-sm text-sky-cream/60 hover:text-sky-cream/90 transition-colors">People Behind</Link>
+              <Link to="/gallery" className="font-body text-sm text-sky-cream/60 hover:text-sky-cream/90 transition-colors">Gallery</Link>
+              <Link to="/team" className="font-body text-sm text-sky-cream/60 hover:text-sky-cream/90 transition-colors">The Team</Link>
               <Link to="/reviews" className="font-body text-sm text-sky-cream/60 hover:text-sky-cream/90 transition-colors">Reviews</Link>
             </div>
           </div>
@@ -30,15 +40,16 @@ export default function SiteFooter() {
           <div>
             <p className="font-display text-xs tracking-[0.2em] uppercase text-sky-cream/40 mb-4">Find Us</p>
             <a
-              href="https://www.google.com/maps?q=17.6105,73.9895"
+              href="https://www.google.com/maps?q=Gat+No+267,+Shivajinagar,+Mugdul+Bhatachiwadi,+Satara,+Maharashtra+415519"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block group"
+              className="inline-block group not-italic"
             >
-              <p className="font-handwritten text-xl text-sky-cream/50 group-hover:text-mango-gold transition-colors">
-                17.6105°N, 73.9895°E
-              </p>
-              <p className="font-body text-xs text-sky-cream/30 mt-1">Near Satara, Maharashtra</p>
+              <address className="font-body text-sm leading-relaxed text-sky-cream/50 group-hover:text-[#FF7D6B] transition-colors not-italic">
+                Gat No 267, Shivajinagar,<br />
+                Mugdul Bhatachiwadi,<br />
+                Satara, Maharashtra 415519
+              </address>
             </a>
           </div>
         </div>
@@ -51,13 +62,13 @@ export default function SiteFooter() {
               href="https://thegreenconcept.co.in"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sky-cream/50 hover:text-canopy-light transition-colors"
+              className="text-sky-cream/50 hover:text-[#FF7D6B] transition-colors"
             >
               The Green Concept
             </a>
           </p>
           <p className="font-body text-xs text-sky-cream/30">
-            Morpeace · Near Satara, Maharashtra
+            Morpeace · Satara, Maharashtra
           </p>
         </div>
       </div>

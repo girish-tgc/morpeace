@@ -83,16 +83,16 @@ export default function TheVillaSection() {
       >
         <source src={`${BASE}photos/drone-shot.mp4`} type="video/mp4" />
       </video>
-      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-[#014066]/65" />
       <div
         className="absolute inset-0"
-        style={{ background: 'radial-gradient(ellipse at 50% 40%, transparent 20%, rgba(0,0,0,0.4) 100%)' }}
+        style={{ background: 'radial-gradient(ellipse at 50% 40%, transparent 20%, rgba(1,46,67,0.5) 100%)' }}
       />
 
       <div className="relative z-10 max-w-5xl mx-auto px-8">
         {/* Head */}
         <div ref={headRef} className="text-center mb-16 md:mb-20">
-          <p className="font-display text-xs tracking-[0.3em] uppercase text-mango-gold/50 mb-4">
+          <p className="eyebrow text-[#FF7D6B]/90 mb-4">
             {villa.label}
           </p>
           <h2 className="font-display text-3xl md:text-5xl text-sky-cream leading-tight mb-6">
@@ -106,12 +106,12 @@ export default function TheVillaSection() {
             <div
               key={val.name}
               ref={el => { cardRefs.current[i] = el }}
-              className="bg-black/30 backdrop-blur-sm border border-sky-cream/10 rounded-lg p-6 hover:border-mango-gold/20 transition-colors duration-500"
+              className="bg-[#012E43]/75 backdrop-blur-sm border border-sky-cream/20 rounded-lg p-6 hover:border-[#FF7D6B]/40 transition-colors duration-500"
             >
-              <h3 className="font-display text-sm tracking-[0.15em] uppercase text-mango-gold/70 mb-3">
+              <h3 className="font-display text-base md:text-lg tracking-[0.2em] uppercase text-[#FF7D6B] mb-3">
                 {val.name}
               </h3>
-              <p className="font-body text-sm md:text-base text-sky-cream/70 italic leading-relaxed">
+              <p className="font-body text-sm md:text-base text-sky-cream/90 italic leading-relaxed">
                 {val.text}
               </p>
             </div>
@@ -124,7 +124,7 @@ export default function TheVillaSection() {
             href={villa.cta.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-mango-gold/20 border border-mango-gold/30 text-mango-gold hover:bg-mango-gold/30 hover:border-mango-gold/50 px-8 py-3 rounded-full font-display text-xs tracking-[0.2em] uppercase transition-all duration-500"
+            className="inline-block bg-[#E94A3C]/18 border border-[#E94A3C]/40 text-[#FF7D6B] hover:bg-[#E94A3C]/28 hover:border-[#E94A3C]/60 hover:text-[#E94A3C] px-8 py-3 rounded-full cta-text transition-all duration-500"
           >
             {villa.cta.text}
           </a>

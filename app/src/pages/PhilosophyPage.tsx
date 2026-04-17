@@ -2,7 +2,7 @@ import TheVisionSection from '../components/home/TheVisionSection'
 import TheVillaSection from '../components/home/TheVillaSection'
 import MeditationCave from '../components/trail/MeditationCave'
 
-const textShadow = '0 2px 20px rgba(0,0,0,0.5), 0 1px 6px rgba(0,0,0,0.3)'
+const textShadow = '0 2px 20px rgba(1,46,67,0.55), 0 1px 6px rgba(1,46,67,0.35)'
 
 export default function PhilosophyPage() {
   return (
@@ -10,7 +10,7 @@ export default function PhilosophyPage() {
       {/* === HERO === */}
       <section
         className="relative min-h-[50vh] flex items-center justify-center overflow-hidden"
-        style={{ background: 'linear-gradient(to bottom, #0f2313, #1c1508)' }}
+        style={{ background: 'linear-gradient(to bottom, #016795, #014066)' }}
       >
         <div className="relative z-10 text-center px-8 py-20">
           <p
@@ -23,13 +23,13 @@ export default function PhilosophyPage() {
             className="font-display text-3xl md:text-5xl text-sky-cream mb-4"
             style={{ textShadow }}
           >
-            What Morpeace believes
+            Where our convictions take root
           </p>
           <p
             className="font-body text-lg md:text-xl text-sky-cream/70 italic max-w-xl mx-auto"
             style={{ textShadow }}
           >
-            Three philosophies. One living intention.
+            Outside in the groves. Inside the wada. Deeper still, the cave.
           </p>
         </div>
       </section>

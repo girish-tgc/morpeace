@@ -48,26 +48,33 @@ export default function AnchorNav({ sections }: Props) {
   }
 
   return (
-    <nav
-      ref={navRef}
-      className="sticky top-16 md:top-20 z-40 bg-white/95 backdrop-blur-md border-b border-[#e8e2d8] overflow-x-auto scrollbar-hide"
-    >
-      <div className="flex justify-start md:justify-center gap-6 md:gap-8 px-6 py-3.5 min-w-max">
-        {sections.map(({ id, label }) => (
-          <button
-            key={id}
-            data-nav={id}
-            onClick={() => handleClick(id)}
-            className={`font-display text-[0.7rem] tracking-[0.15em] uppercase whitespace-nowrap transition-colors duration-200 pb-0.5 border-b-2 ${
-              activeId === id
-                ? 'text-teal-deep border-teal-deep'
-                : 'text-text-deep/40 border-transparent hover:text-teal-deep'
-            }`}
-          >
-            {label}
-          </button>
-        ))}
-      </div>
-    </nav>
+    <div className="sticky top-[calc(4rem+env(safe-area-inset-top))] md:top-[calc(5rem+env(safe-area-inset-top))] z-40 bg-[#012E43]/85 backdrop-blur-md border-b border-sky-cream/10">
+      <nav
+        ref={navRef}
+        className="overflow-x-auto scrollbar-hide snap-x snap-mandatory"
+      >
+        <div className="flex justify-start md:justify-center gap-6 md:gap-8 px-6 py-3.5 min-w-max">
+          {sections.map(({ id, label }) => (
+            <button
+              key={id}
+              data-nav={id}
+              onClick={() => handleClick(id)}
+              className={`snap-start font-display text-xs tracking-[0.2em] uppercase whitespace-nowrap transition-colors duration-200 pb-0.5 border-b-2 ${
+                activeId === id
+                  ? 'text-[#FF7D6B] border-[#E94A3C]'
+                  : 'text-sky-cream/45 border-transparent hover:text-sky-cream/80'
+              }`}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+      </nav>
+      {/* Right-edge fade — hints at scrollable content on mobile */}
+      <div
+        className="pointer-events-none absolute top-0 right-0 bottom-0 w-10 bg-gradient-to-l from-[#012E43]/85 to-transparent md:hidden"
+        aria-hidden="true"
+      />
+    </div>
   )
 }

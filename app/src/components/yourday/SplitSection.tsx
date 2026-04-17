@@ -17,7 +17,7 @@ export default function SplitSection({ tag, heading, copy, imageSrc, imageAlt, r
   const resolvedSrc = isPlaceholder ? '' : (imageSrc.startsWith('http') ? imageSrc : `${BASE}${imageSrc}`)
 
   return (
-    <section className={altBg ? 'bg-[#F4EFE6]' : ''}>
+    <section className={altBg ? 'bg-[#012E43]/30' : ''}>
       <div
         id={id}
         data-animate
@@ -25,32 +25,35 @@ export default function SplitSection({ tag, heading, copy, imageSrc, imageAlt, r
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
           {/* Image */}
-          <div className={`rounded-2xl overflow-hidden aspect-[4/3] bg-[#e8e2d8] ${reverse ? 'md:order-2' : ''}`}>
+          <div className={`relative rounded-2xl overflow-hidden aspect-[4/3] bg-gradient-to-br from-[#014066]/60 to-[#096C6C]/60 ring-1 ring-sky-cream/10 ${reverse ? 'md:order-2' : ''}`}>
             {isPlaceholder ? (
-              <div className="w-full h-full flex items-center justify-center text-text-deep/30 font-body text-sm italic bg-gradient-to-br from-[#e8e2d8] to-[#d4cfc4]">
+              <div className="w-full h-full flex items-center justify-center text-sky-cream/50 font-body text-sm italic">
                 {imageSrc.replace('placeholder:', '')}
               </div>
             ) : (
-              <img
-                src={resolvedSrc}
-                alt={imageAlt || ''}
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
+              <>
+                <img
+                  src={resolvedSrc}
+                  alt={imageAlt || ''}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 pointer-events-none" style={{ background: 'rgba(50,104,114,0.14)', mixBlendMode: 'multiply' }} />
+              </>
             )}
           </div>
 
           {/* Text */}
           <div className={reverse ? 'md:order-1' : ''}>
-            <span className="font-display text-xs tracking-[0.2em] uppercase text-teal-deep/60 block mb-3">
+            <span className="eyebrow text-[#FF7D6B]/75 block mb-3">
               {tag}
             </span>
-            <h3 className="font-display text-2xl md:text-3xl text-text-deep mb-4">
+            <h3 className="font-display text-2xl md:text-3xl text-sky-cream mb-4">
               {heading}
             </h3>
-            <div className="w-10 h-0.5 bg-turmeric mb-5" />
+            <div className="w-10 h-0.5 bg-[#E94A3C]/70 mb-5" />
             {paragraphs.map((p, i) => (
-              <p key={i} className="font-body text-base md:text-lg text-text-deep/65 leading-relaxed mb-3">
+              <p key={i} className="font-body text-base md:text-lg text-sky-cream/75 leading-relaxed mb-3">
                 {p}
               </p>
             ))}

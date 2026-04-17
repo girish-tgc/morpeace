@@ -173,7 +173,7 @@ export default function TheStorySection() {
       {/* === PINNED BACKGROUND STACK === */}
       <div
         ref={bgContainerRef}
-        className="absolute md:sticky top-0 inset-x-0 w-full h-screen overflow-hidden"
+        className="absolute md:sticky top-0 inset-x-0 w-full h-[100svh] overflow-hidden"
         style={{ zIndex: 0 }}
       >
         {bgMeta.map((bg, i) => {
@@ -223,7 +223,7 @@ export default function TheStorySection() {
           <div
             key={beat.id}
             ref={el => { beatRefs.current[i] = el }}
-            className={`${beat.finale ? 'min-h-[50vh]' : beat.lines.filter(l => l !== '').length <= 4 ? 'min-h-[50vh]' : 'min-h-[60vh]'} flex items-center justify-center px-8 md:px-16 py-16`}
+            className={`${beat.finale ? 'min-h-[50vh]' : beat.lines.filter(l => l !== '').length <= 4 ? 'min-h-[50vh]' : 'min-h-[60vh]'} flex items-center justify-center px-5 sm:px-8 md:px-16 py-16`}
           >
             <div className="max-w-2xl mx-auto text-center">
               {beat.finale ? (

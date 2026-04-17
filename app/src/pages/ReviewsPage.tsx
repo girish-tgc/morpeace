@@ -91,7 +91,7 @@ export default function ReviewsPage() {
   return (
     <div
       className="min-h-screen"
-      style={{ background: 'linear-gradient(180deg, #0a0f07 0%, #0f2313 8%, #162a14 40%, #0f2313 85%, #0a0f07 100%)' }}
+      style={{ background: 'linear-gradient(180deg, #012E43 0%, #014066 12%, #096C6C 50%, #014066 100%)' }}
     >
       {/* ═══ HERO ═══ */}
       <section className="relative pt-32 md:pt-44 pb-16 md:pb-24 px-6 md:px-8 overflow-hidden">
@@ -110,7 +110,7 @@ export default function ReviewsPage() {
           {/* Decorative oversized quote mark */}
           <div data-hero-animate className="mb-4">
             <span
-              className="inline-block font-display text-[120px] md:text-[180px] leading-none text-mango-gold/[0.08] select-none"
+              className="inline-block font-display text-[72px] sm:text-[100px] md:text-[160px] lg:text-[180px] leading-none text-mango-gold/[0.08] select-none"
               aria-hidden="true"
             >
               &ldquo;
@@ -119,7 +119,7 @@ export default function ReviewsPage() {
 
           <h1
             data-hero-animate
-            className="font-display text-4xl md:text-6xl lg:text-7xl text-sky-cream/95 tracking-tight -mt-20 md:-mt-32 mb-6"
+            className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-sky-cream/95 tracking-tight -mt-16 sm:-mt-24 md:-mt-32 mb-6"
             style={{ textShadow: '0 2px 40px rgba(0,0,0,0.5)' }}
           >
             Guest Voices
@@ -156,7 +156,7 @@ export default function ReviewsPage() {
             {/* Badge */}
             <div className="flex items-center gap-2 mb-6">
               <div className="w-1.5 h-1.5 rounded-full bg-mango-gold" />
-              <span className="font-display text-[10px] md:text-xs tracking-[0.3em] uppercase text-mango-gold/70">
+              <span className="eyebrow text-mango-gold/75">
                 Featured Review
               </span>
             </div>
@@ -179,7 +179,7 @@ export default function ReviewsPage() {
 
             <div className="mt-6 flex flex-wrap gap-2">
               {featured.tags.map(tag => (
-                <span key={tag} className="font-display text-[10px] tracking-[0.15em] uppercase text-sky-cream/30 px-3 py-1 rounded-full border border-sky-cream/10">
+                <span key={tag} className="eyebrow text-sky-cream/35 px-3 py-1 rounded-full border border-sky-cream/10">
                   {TAG_LABELS[tag]}
                 </span>
               ))}
@@ -193,10 +193,10 @@ export default function ReviewsPage() {
         <div ref={filterRef} className="max-w-6xl mx-auto flex flex-wrap justify-center gap-2 md:gap-3">
           <button
             onClick={() => setActiveTag(null)}
-            className={`font-display text-[11px] md:text-xs tracking-[0.15em] uppercase px-5 py-2.5 rounded-full border transition-all duration-300 cursor-pointer ${
+            className={`cta-text px-5 py-2.5 rounded-full border transition-all duration-300 cursor-pointer ${
               activeTag === null
-                ? 'border-mango-gold/50 bg-mango-gold/15 text-mango-gold'
-                : 'border-sky-cream/10 text-sky-cream/40 hover:border-sky-cream/25 hover:text-sky-cream/60'
+                ? 'border-mango-gold/55 bg-mango-gold/18 text-mango-gold'
+                : 'border-sky-cream/10 text-sky-cream/45 hover:border-sky-cream/25 hover:text-sky-cream/65'
             }`}
           >
             All
@@ -207,10 +207,10 @@ export default function ReviewsPage() {
               <button
                 key={tag}
                 onClick={() => setActiveTag(activeTag === tag ? null : tag)}
-                className={`font-display text-[11px] md:text-xs tracking-[0.15em] uppercase px-5 py-2.5 rounded-full border transition-all duration-300 cursor-pointer ${
+                className={`cta-text px-5 py-2.5 rounded-full border transition-all duration-300 cursor-pointer ${
                   activeTag === tag
-                    ? 'border-mango-gold/50 bg-mango-gold/15 text-mango-gold'
-                    : 'border-sky-cream/10 text-sky-cream/40 hover:border-sky-cream/25 hover:text-sky-cream/60'
+                    ? 'border-mango-gold/55 bg-mango-gold/18 text-mango-gold'
+                    : 'border-sky-cream/10 text-sky-cream/45 hover:border-sky-cream/25 hover:text-sky-cream/65'
                 }`}
               >
                 {TAG_LABELS[tag]}&nbsp;&nbsp;{count}
@@ -228,23 +228,23 @@ export default function ReviewsPage() {
               <div
                 key={review.name}
                 data-review-card
-                className="group rounded-2xl border border-sky-cream/[0.06] bg-sky-cream/[0.03] backdrop-blur-sm p-6 md:p-8 transition-all duration-500 hover:border-sky-cream/15 hover:bg-sky-cream/[0.06] hover:-translate-y-1"
+                className="group rounded-2xl border border-sky-cream/15 bg-sky-cream/[0.06] backdrop-blur-sm p-6 md:p-8 transition-all duration-500 hover:border-sky-cream/30 hover:bg-sky-cream/[0.1] hover:-translate-y-1"
                 style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.15)' }}
               >
-                <Stars size={13} />
+                <Stars size={15} />
 
-                <blockquote className="mt-4 font-body text-sm md:text-[15px] text-sky-cream/70 leading-relaxed italic line-clamp-6 group-hover:line-clamp-none transition-all">
+                <blockquote className="mt-4 font-body text-base md:text-lg text-sky-cream/90 leading-relaxed italic line-clamp-6 md:group-hover:line-clamp-none transition-all">
                   &ldquo;{review.text}&rdquo;
                 </blockquote>
 
-                <div className="mt-6 pt-4 border-t border-sky-cream/[0.06]">
+                <div className="mt-6 pt-4 border-t border-sky-cream/15">
                   <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-full bg-canopy-light/10 border border-canopy-light/20 flex items-center justify-center shrink-0">
-                      <span className="font-display text-xs text-canopy-light/70">{review.name.charAt(0)}</span>
+                    <div className="w-10 h-10 rounded-full bg-canopy-light/15 border border-canopy-light/30 flex items-center justify-center shrink-0">
+                      <span className="font-display text-sm text-canopy-light">{review.name.charAt(0)}</span>
                     </div>
                     <div>
-                      <p className="font-display text-xs md:text-sm text-sky-cream/80">{review.name}</p>
-                      <p className="font-body text-[11px] text-sky-cream/35 italic">{review.date}</p>
+                      <p className="font-display text-sm md:text-base text-sky-cream">{review.name}</p>
+                      <p className="font-body text-xs md:text-sm text-sky-cream/65 italic">{review.date}</p>
                     </div>
                   </div>
 
@@ -252,7 +252,7 @@ export default function ReviewsPage() {
                     {review.tags.map(tag => (
                       <span
                         key={tag}
-                        className="font-display text-[9px] tracking-[0.12em] uppercase text-sky-cream/25 px-2 py-0.5 rounded-full border border-sky-cream/[0.06]"
+                        className="font-display text-xs tracking-[0.2em] uppercase text-sky-cream/70 px-2.5 py-1 rounded-full border border-sky-cream/20"
                       >
                         {TAG_LABELS[tag]}
                       </span>
@@ -266,10 +266,10 @@ export default function ReviewsPage() {
           {/* Empty state */}
           {filtered.length === 0 && (
             <div className="text-center py-20">
-              <p className="font-body text-lg text-sky-cream/40 italic">No reviews match this filter</p>
+              <p className="font-body text-lg text-sky-cream/40 italic">Try a different filter to see more stories</p>
               <button
                 onClick={() => setActiveTag(null)}
-                className="mt-4 font-display text-xs tracking-[0.15em] uppercase text-mango-gold/60 hover:text-mango-gold transition-colors cursor-pointer"
+                className="mt-4 cta-text text-mango-gold/65 hover:text-mango-gold transition-colors cursor-pointer"
               >
                 Show all reviews
               </button>

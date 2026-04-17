@@ -39,21 +39,21 @@ export default function MobileMenu({ open, onClose, links }: Props) {
       {/* Overlay */}
       <div
         ref={overlayRef}
-        className="absolute inset-0 bg-black/40 opacity-0"
+        className="absolute inset-0 bg-[#012E43]/50 opacity-0"
         onClick={onClose}
       />
 
       {/* Slide-out panel */}
       <div
         ref={panelRef}
-        className="absolute top-0 right-0 bottom-0 w-72 bg-parchment shadow-2xl flex flex-col"
+        className="absolute top-0 right-0 bottom-0 w-[85vw] max-w-sm bg-mist shadow-2xl flex flex-col overflow-y-auto pad-safe-top pad-safe-bottom"
         style={{ transform: 'translateX(100%)' }}
       >
         {/* Close button */}
         <div className="flex justify-end p-4">
           <button
             onClick={onClose}
-            className="p-2 text-[#1a2e1a]/60 hover:text-[#1a2e1a]"
+            className="p-2 text-[#012E43]/60 hover:text-[#012E43]"
             aria-label="Close menu"
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -73,8 +73,8 @@ export default function MobileMenu({ open, onClose, links }: Props) {
                 onClick={onClose}
                 className={`font-body text-lg py-3 px-4 rounded-xl transition-colors ${
                   active
-                    ? 'text-[#1B6B5A] bg-[#1B6B5A]/10'
-                    : 'text-[#1a2e1a]/80 hover:text-[#1a2e1a] hover:bg-[#1a2e1a]/5'
+                    ? 'text-[#016795] bg-[#016795]/10'
+                    : 'text-[#012E43]/80 hover:text-[#012E43] hover:bg-[#012E43]/5'
                 }`}
               >
                 {link.label}
@@ -90,17 +90,19 @@ export default function MobileMenu({ open, onClose, links }: Props) {
             target="_blank"
             rel="noopener noreferrer"
             onClick={onClose}
-            className="block text-center font-display text-sm tracking-wider px-5 py-3 rounded-full border border-[#C99A2E] text-[#C99A2E] hover:bg-[#C99A2E]/10 transition-all"
+            className="block text-center cta-text px-5 py-3 rounded-full border border-[#E94A3C] text-[#E94A3C] hover:bg-[#E94A3C]/10 transition-all"
           >
             Book Now
           </a>
         </div>
 
         {/* Footer */}
-        <div className="mt-auto p-6 border-t border-[#1a2e1a]/10">
-          <p className="font-handwritten text-lg text-[#1a2e1a]/40">
-            17.6105°N, 73.9895°E
-          </p>
+        <div className="mt-auto p-6 border-t border-[#012E43]/10">
+          <address className="font-body text-xs leading-relaxed text-[#012E43]/55 not-italic">
+            Gat No 267, Shivajinagar,<br />
+            Mugdul Bhatachiwadi,<br />
+            Satara, Maharashtra 415519
+          </address>
         </div>
       </div>
     </div>

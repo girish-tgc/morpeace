@@ -10,23 +10,10 @@ const ts = '0 2px 24px rgba(0,0,0,0.7), 0 1px 8px rgba(0,0,0,0.5)'
 
 export default function LandSpeaksSection() {
   const sectionRef = useRef<HTMLDivElement>(null)
-  const videoRef = useRef<HTMLVideoElement>(null)
   const lineRefs = useRef<(HTMLParagraphElement | null)[]>([])
 
   useEffect(() => {
     if (!sectionRef.current) return
-
-    // Video play/pause
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (videoRef.current) {
-          if (entry.isIntersecting) videoRef.current.play().catch(() => {})
-          else videoRef.current.pause()
-        }
-      },
-      { threshold: 0.1 }
-    )
-    if (sectionRef.current) observer.observe(sectionRef.current)
 
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
@@ -51,7 +38,7 @@ export default function LandSpeaksSection() {
       })
     }, sectionRef)
 
-    return () => { ctx.revert(); observer.disconnect() }
+    return () => { ctx.revert() }
   }, [])
 
   // Filter out empty lines for rendering, but keep them as spacers
@@ -59,19 +46,11 @@ export default function LandSpeaksSection() {
 
   return (
     <section ref={sectionRef} className="relative py-24 md:py-40 overflow-hidden">
-      {/* Video background */}
-      <video
-        ref={videoRef}
-        muted
-        loop
-        playsInline
-        preload="none"
-        poster={`${BASE}photos/forest-path.jpeg`}
-        className="absolute inset-0 w-full h-full object-cover"
-      >
-        <source src={`${BASE}photos/roots-growing.mp4`} type="video/mp4" />
-      </video>
-      <div className="absolute inset-0 bg-black/65" />
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${BASE}photos/forest-path.jpeg)` }}
+      />
+      <div className="absolute inset-0 bg-black/55" />
       <div
         className="absolute inset-0 pointer-events-none"
         style={{ background: 'radial-gradient(ellipse at 50% 50%, transparent 30%, rgba(0,0,0,0.4) 100%)' }}

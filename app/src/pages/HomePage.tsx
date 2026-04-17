@@ -1,9 +1,6 @@
-import { Link } from 'react-router-dom'
 import HeroSection from '../components/home/HeroSection'
 import TheStorySection from '../components/home/TheStorySection'
 import { invitation } from '../data/homeNarrative'
-
-const BASE = import.meta.env.BASE_URL
 
 export default function HomePage() {
   return (
@@ -15,60 +12,44 @@ export default function HomePage() {
       <TheStorySection />
 
       {/* Finale — CTA */}
-      <section className="relative py-20 md:py-32 overflow-hidden">
-        <img
-          src={`${BASE}photos/peacock-plumage.jpeg`}
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover ken-burns-c"
-          style={{ filter: 'brightness(0.12) saturate(1.2)' }}
+      <section
+        className="relative py-20 md:py-32 overflow-hidden"
+        style={{ background: 'linear-gradient(180deg, #012E43 0%, #014066 15%, #096C6C 50%, #014066 100%)' }}
+      >
+        {/* Ocean bloom */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 45%, rgba(1,103,149,0.25) 0%, transparent 70%)' }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/60" />
+        {/* Infrared glint */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse 30% 25% at 85% 15%, rgba(233,74,60,0.08) 0%, transparent 60%)' }}
+        />
 
         <div className="relative z-10 max-w-3xl mx-auto px-8 text-center">
-          <p className="font-body text-lg md:text-2xl text-sky-cream/70 italic mb-10">
-            {invitation.text}
+          <p
+            className="font-display text-4xl sm:text-5xl md:text-5xl lg:text-6xl text-sky-cream mb-10 md:mb-14"
+            style={{ textShadow: '0 2px 24px rgba(1,46,67,0.6)' }}
+          >
+            Come experience it.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href={invitation.primaryCta.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-mango-gold/20 border border-mango-gold/30 text-mango-gold hover:bg-mango-gold/30 hover:border-mango-gold/50 px-8 py-3 rounded-full font-display text-xs tracking-[0.2em] uppercase transition-all duration-500"
+              className="inline-block bg-[#E94A3C] border border-[#E94A3C] text-white hover:bg-[#B3271E] hover:border-[#B3271E] px-8 py-3 rounded-full cta-text transition-all duration-500"
             >
               {invitation.primaryCta.text}
             </a>
             <a
               href={invitation.secondaryCta.href}
-              className="inline-block border border-sky-cream/15 text-sky-cream/50 hover:text-sky-cream/80 hover:border-sky-cream/30 px-8 py-3 rounded-full font-display text-xs tracking-[0.2em] uppercase transition-all duration-500"
+              className="inline-block border border-sky-cream/40 text-sky-cream/85 hover:text-sky-cream hover:border-sky-cream/70 px-8 py-3 rounded-full cta-text transition-all duration-500"
             >
               {invitation.secondaryCta.text}
             </a>
-          </div>
-
-          {/* Explore links */}
-          <div className="flex flex-wrap justify-center gap-x-6 gap-y-3">
-            {invitation.exploreLinks.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                className="font-display text-[10px] tracking-[0.2em] uppercase text-sky-cream/25 hover:text-sky-cream/60 transition-colors duration-500"
-              >
-                {link.text}
-              </Link>
-            ))}
-          </div>
-
-          <div className="mt-10">
-            <a
-              href="https://www.google.com/maps?q=17.6105,73.9895"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-handwritten text-base text-sky-cream/20 hover:text-sky-cream/40 transition-colors"
-            >
-              {invitation.location}
-            </a>
-            <p className="font-body text-[10px] text-sky-cream/15 mt-1">{invitation.locationLabel}</p>
           </div>
         </div>
       </section>

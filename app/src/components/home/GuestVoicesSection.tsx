@@ -6,11 +6,11 @@ import { guestReviews } from '../../data/reviews'
 gsap.registerPlugin(ScrollTrigger)
 
 const tagColors: Record<string, string> = {
-  peace: 'bg-teal-deep/20 text-teal-deep',
-  nature: 'bg-canopy-light/20 text-canopy-light',
-  food: 'bg-mango-gold/20 text-mango-gold',
-  architecture: 'bg-bark-sienna/20 text-bark-sienna',
-  hospitality: 'bg-flower-purple/20 text-flower-purple',
+  peace: 'bg-[#016795]/25 text-[#4AA7CC]',
+  nature: 'bg-[#096C6C]/25 text-[#5FB3B3]',
+  food: 'bg-[#E94A3C]/20 text-[#FF7D6B]',
+  architecture: 'bg-[#326872]/30 text-[#8FB4BC]',
+  hospitality: 'bg-[#5A8A93]/25 text-[#A8CCD4]',
 }
 
 export default function GuestVoicesSection() {
@@ -68,7 +68,7 @@ export default function GuestVoicesSection() {
       <div className="max-w-6xl mx-auto px-8">
         {/* Head */}
         <div ref={headRef} className="text-center mb-12 md:mb-16">
-          <p className="font-display text-xs tracking-[0.3em] uppercase text-canopy-light/40 mb-4">
+          <p className="eyebrow text-[#7FB0B5]/55 mb-4">
             What our guests say
           </p>
           <h2 className="font-display text-3xl md:text-4xl text-sky-cream leading-tight">
@@ -83,7 +83,7 @@ export default function GuestVoicesSection() {
               {/* Stars */}
               <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="text-mango-gold/70">
+                  <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="text-[#FF7D6B]/75">
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                   </svg>
                 ))}
@@ -121,7 +121,7 @@ export default function GuestVoicesSection() {
               {/* Stars */}
               <div className="flex gap-0.5 mb-3">
                 {[...Array(5)].map((_, si) => (
-                  <svg key={si} width="12" height="12" viewBox="0 0 24 24" fill="currentColor" className="text-mango-gold/50">
+                  <svg key={si} width="12" height="12" viewBox="0 0 24 24" fill="currentColor" className="text-[#FF7D6B]/55">
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                   </svg>
                 ))}
