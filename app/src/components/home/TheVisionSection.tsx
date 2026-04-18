@@ -104,7 +104,7 @@ export default function TheVisionSection() {
         {/* 9 Groves — horizontal scroll on mobile, grid on desktop */}
         <div
           ref={scrollRef}
-          className="flex md:grid md:grid-cols-3 gap-4 overflow-x-auto md:overflow-visible pb-4 md:pb-0 scrollbar-hide snap-x snap-mandatory mb-16 md:mb-20"
+          className="flex md:grid md:grid-cols-3 gap-4 overflow-x-auto md:overflow-visible pb-4 md:pb-0 scrollbar-hide snap-x snap-proximity mb-16 md:mb-20"
         >
           {pasaydanGroves.map((grove) => (
             <div

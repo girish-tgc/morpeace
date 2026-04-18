@@ -33,13 +33,17 @@ export default function AnchorNav({ sections }: Props) {
     return () => observer.disconnect()
   }, [sections])
 
-  // Auto-scroll active link into view on mobile
+  // Auto-scroll active link into view on mobile — scroll only the nav's
+  // horizontal axis. scrollIntoView bubbles up to ancestor scroll containers
+  // on iOS Safari and can drag the page vertically when this nav is sticky,
+  // so we manipulate the nav's scrollLeft directly instead.
   useEffect(() => {
-    if (!navRef.current) return
-    const activeLink = navRef.current.querySelector(`[data-nav="${activeId}"]`)
-    if (activeLink) {
-      activeLink.scrollIntoView({ inline: 'center', behavior: 'smooth', block: 'nearest' })
-    }
+    const nav = navRef.current
+    if (!nav) return
+    const activeLink = nav.querySelector<HTMLElement>(`[data-nav="${activeId}"]`)
+    if (!activeLink) return
+    const target = activeLink.offsetLeft + activeLink.offsetWidth / 2 - nav.clientWidth / 2
+    nav.scrollTo({ left: Math.max(0, target), behavior: 'smooth' })
   }, [activeId])
 
   const handleClick = (id: string) => {
@@ -51,7 +55,7 @@ export default function AnchorNav({ sections }: Props) {
     <div className="sticky top-[calc(4rem+env(safe-area-inset-top))] md:top-[calc(5rem+env(safe-area-inset-top))] z-40 bg-[#012E43]/85 backdrop-blur-md border-b border-sky-cream/10">
       <nav
         ref={navRef}
-        className="overflow-x-auto scrollbar-hide snap-x snap-mandatory"
+        className="overflow-x-auto scrollbar-hide"
       >
         <div className="flex justify-start md:justify-center gap-6 md:gap-8 px-6 py-3.5 min-w-max">
           {sections.map(({ id, label }) => (
@@ -59,7 +63,7 @@ export default function AnchorNav({ sections }: Props) {
               key={id}
               data-nav={id}
               onClick={() => handleClick(id)}
-              className={`snap-start font-display text-xs tracking-[0.2em] uppercase whitespace-nowrap transition-colors duration-200 pb-0.5 border-b-2 ${
+              className={`font-display text-xs tracking-[0.2em] uppercase whitespace-nowrap transition-colors duration-200 pb-0.5 border-b-2 ${
                 activeId === id
                   ? 'text-[#FF7D6B] border-[#E94A3C]'
                   : 'text-sky-cream/45 border-transparent hover:text-sky-cream/80'
