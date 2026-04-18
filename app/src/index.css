@@ -67,14 +67,17 @@
    Do NOT add unlayered * rules — they override Tailwind's layered utilities. */
 
 html {
-  overflow-x: hidden;
+  /* overflow-x: clip prevents horizontal scroll without promoting overflow-y
+     to auto (which overflow-x: hidden does per spec) — the auto promotion
+     makes body a scroll container and breaks position: sticky on mobile */
+  overflow-x: clip;
   background-color: var(--color-canvas);
 }
 
 body {
   font-family: var(--font-body);
   color: var(--color-text-deep);
-  overflow-x: hidden;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.8;

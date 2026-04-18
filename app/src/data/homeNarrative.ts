@@ -297,6 +297,7 @@ export const team = {
       name: 'The Green Concept',
       role: 'Ecology & Technology partner',
       photo: 'photos/team/tgc-watercolor.png',
+      fit: 'contain' as const,
       quote: 'When we first walked into Morpeace,\nit didn\u2019t feel like a typical project.\n\nIt felt like the thinking was already in place.\n\nAlmost like the land knew\nwhat it wanted to become.\n\nOur role was not to design it\u2026\nbut to hear it, understand it \u2014\nand give it ecological roots.\n\nTo bring in the science, the measurement\u2026\nand quietly support what is already unfolding \u2014\nsometimes\u2026 by simply getting out of the way.',
       lang: 'en' as const,
       initials: 'TGC',

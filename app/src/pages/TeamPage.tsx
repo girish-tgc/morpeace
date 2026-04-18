@@ -12,6 +12,7 @@ type Member = typeof team.members[number]
 function MemberPortrait({ member }: { member: Member }) {
   const [failed, setFailed] = useState(false)
   const src = `${BASE}${member.photo}`
+  const fit = 'fit' in member && member.fit === 'contain' ? 'object-contain' : 'object-cover'
 
   return (
     <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm bg-gradient-to-br from-[#016795]/25 to-[#096C6C]/25 ring-1 ring-[#F0F5F7]/10 shadow-[0_30px_80px_-30px_rgba(1,46,67,0.6)]">
@@ -20,7 +21,7 @@ function MemberPortrait({ member }: { member: Member }) {
           src={src}
           alt={member.name}
           onError={() => setFailed(true)}
-          className="absolute inset-0 h-full w-full object-cover"
+          className={`absolute inset-0 h-full w-full ${fit}`}
         />
       )}
       {failed && (
