@@ -173,7 +173,7 @@ export default function TheStorySection() {
       {/* === PINNED BACKGROUND STACK === */}
       <div
         ref={bgContainerRef}
-        className="absolute md:sticky top-0 inset-x-0 w-full h-[100svh] overflow-hidden"
+        className="sticky top-0 inset-x-0 w-full h-[100svh] overflow-hidden"
         style={{ zIndex: 0 }}
       >
         {bgMeta.map((bg, i) => {
