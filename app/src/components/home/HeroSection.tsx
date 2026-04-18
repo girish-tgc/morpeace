@@ -5,7 +5,7 @@ const BASE = import.meta.env.BASE_URL
 
 type Feather = {
   left: number
-  size: number
+  sizeVw: number    // width in vw, clamped min/max
   delay: number
   duration: number
   swayDuration: number
@@ -15,19 +15,27 @@ type Feather = {
   opacity: number
 }
 
+// Distribute feathers across evenly-spaced horizontal lanes so they never
+// cluster side-by-side. Delays are spread across the fall duration so the
+// vertical positions stagger too, avoiding wall-clock pile-ups.
 function makeFeathers(count: number): Feather[] {
   const rand = (min: number, max: number) => min + Math.random() * (max - min)
-  return Array.from({ length: count }, () => ({
-    left: rand(5, 95),
-    size: rand(150, 230),      // substantial, not tiny
-    delay: rand(-80, 0),       // spread initial staggered positions
-    duration: rand(65, 95),    // very slow descent — ~1 to 1.5 min per feather
-    swayDuration: rand(9, 14),
-    swayDelay: rand(-8, 0),
-    drift: rand(-90, 90),
-    rotate: rand(-25, 25),
-    opacity: rand(0.28, 0.5),
-  }))
+  const laneWidth = 100 / count
+  return Array.from({ length: count }, (_, i) => {
+    const duration = rand(70, 95)
+    const lane = laneWidth * (i + 0.5)
+    return {
+      left: lane + rand(-laneWidth * 0.2, laneWidth * 0.2),
+      sizeVw: rand(15, 20),
+      delay: -(i / count) * duration + rand(-4, 4),
+      duration,
+      swayDuration: rand(9, 14),
+      swayDelay: rand(-8, 0),
+      drift: rand(-40, 40),       // small drift — stay in lane
+      rotate: rand(-20, 20),
+      opacity: rand(0.3, 0.5),
+    }
+  })
 }
 
 export default function HeroSection() {
@@ -111,7 +119,7 @@ export default function HeroSection() {
                 loading="lazy"
                 decoding="async"
                 style={{
-                  width: `${f.size}px`,
+                  width: `clamp(80px, ${f.sizeVw}vw, 220px)`,
                   height: 'auto',
                   opacity: f.opacity,
                   transform: `rotate(${f.rotate}deg)`,
