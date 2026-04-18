@@ -54,7 +54,7 @@ export default function MeditationCave() {
       >
         <source src={`${import.meta.env.BASE_URL}photos/meditation-drone-1.mp4`} type="video/mp4" />
       </video>
-      <div className="absolute inset-0 bg-forest-night/65" />
+      <div className="absolute inset-0 bg-forest-night/40" />
       <div
         className="absolute inset-0"
         style={{ background: 'radial-gradient(ellipse at 50% 40%, rgba(20,35,20,0.15) 0%, rgba(10,15,7,0.4) 40%, rgba(28,21,8,0.55) 100%)' }}

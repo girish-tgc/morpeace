@@ -83,7 +83,7 @@ export default function TheVillaSection() {
       >
         <source src={`${BASE}photos/drone-shot.mp4`} type="video/mp4" />
       </video>
-      <div className="absolute inset-0 bg-[#014066]/65" />
+      <div className="absolute inset-0 bg-[#014066]/40" />
       <div
         className="absolute inset-0"
         style={{ background: 'radial-gradient(ellipse at 50% 40%, transparent 20%, rgba(1,46,67,0.5) 100%)' }}

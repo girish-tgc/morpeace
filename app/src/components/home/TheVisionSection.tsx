@@ -78,7 +78,7 @@ export default function TheVisionSection() {
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${BASE}photos/forest-dense-vegetation.jpeg)` }}
       />
-      <div className="absolute inset-0 bg-forest-night/70" />
+      <div className="absolute inset-0 bg-forest-night/40" />
       <div
         className="absolute inset-0"
         style={{ background: 'radial-gradient(ellipse at 50% 40%, transparent 20%, rgba(6,22,18,0.55) 100%)' }}
