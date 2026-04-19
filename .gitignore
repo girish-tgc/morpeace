@@ -1,5 +1,8 @@
-# Raw media / source files
+# Raw media / source files (workspace root only — un-slugged originals)
 media/
+# But the slugged copies inside the app's deployed public folder ARE tracked
+!app/public/media/
+!app/public/media/**
 /*.mp4
 /*.gpx
 /*.kml
