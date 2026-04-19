@@ -72,11 +72,12 @@ export default function YourDayPage() {
       }
 
       animEls.forEach((el) => {
+        const isHero = el.hasAttribute('data-hero-hold')
         gsap.fromTo(el,
           { opacity: 0, y: 24 },
           {
             opacity: 1, y: 0,
-            duration: 0.8,
+            duration: isHero ? 1.8 : 0.8,
             ease: 'power3.out',
             scrollTrigger: {
               trigger: el,
@@ -108,18 +109,29 @@ export default function YourDayPage() {
             />
           </div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-[#012E43]/40 via-[#014066]/50 to-[#012E43]/75" />
-        <div data-animate className="relative z-10 text-center px-8 py-20">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#012E43]/35 via-[#012E43]/25 to-[#012E43]/55" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(1,46,67,0.45)_0%,rgba(1,46,67,0.15)_55%,rgba(1,46,67,0.05)_100%)]" />
+        <div data-animate data-hero-hold className="relative z-10 text-center px-8 py-20 max-w-2xl mx-auto">
           <h1 className="font-display text-4xl md:text-6xl text-sky-cream mb-5"
-            style={{ textShadow: '0 2px 20px rgba(1,46,67,0.55)' }}
+            style={{ textShadow: '0 2px 18px rgba(0,0,0,0.95), 0 0 28px rgba(0,0,0,0.75), 0 0 6px rgba(0,0,0,0.9)' }}
           >
-            Your Day at Morpeace
+            A Day at Morpeace
           </h1>
-          <p className="font-body text-lg md:text-xl text-sky-cream/80 italic max-w-lg mx-auto"
-            style={{ textShadow: '0 1px 12px rgba(1,46,67,0.45)' }}
+          <p className="font-body text-lg md:text-xl text-sky-cream italic mb-10"
+            style={{ textShadow: '0 1px 14px rgba(0,0,0,0.95), 0 0 22px rgba(0,0,0,0.7), 0 0 4px rgba(0,0,0,0.85)' }}
           >
-            A quiet place to slow down, explore, and simply be.
+            Unhurried. Unscripted. Real.
           </p>
+          <div
+            className="font-body text-base md:text-lg text-sky-cream leading-relaxed space-y-4"
+            style={{ textShadow: '0 1px 14px rgba(0,0,0,0.95), 0 0 20px rgba(0,0,0,0.7), 0 0 4px rgba(0,0,0,0.85)' }}
+          >
+            <p>You wake to birds, not alarms.</p>
+            <p>Meals arrive—fresh, seasonal, often gathered from the land itself.</p>
+            <p>Your room, thoughtfully designed—modern comforts, set gently within nature.</p>
+            <p className="pt-3">Nothing is rushed. Nothing is required.</p>
+            <p>You simply arrive… and begin to notice again.</p>
+          </div>
         </div>
       </section>
 

@@ -17,8 +17,8 @@ const doorways = [
   },
   {
     to: '/the-experience',
-    title: 'Your Day',
-    subtitle: 'A quiet place to slow down, explore, and simply be.',
+    title: 'At Morpeace',
+    subtitle: 'Unhurried. Unscripted. Real.',
     image: `${BASE}photos/mangoes-sunlight.jpeg`,
   },
 ] as const

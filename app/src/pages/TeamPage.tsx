@@ -189,6 +189,11 @@ export default function TeamPage() {
                         {member.role}
                       </p>
                     )}
+                    {'members' in member && member.members && (
+                      <p className="mt-2 font-body text-base text-sky-cream/75 md:text-lg">
+                        {member.members}
+                      </p>
+                    )}
 
                     <div className="mt-6 h-px w-10 bg-[#E94A3C]/70" />
 

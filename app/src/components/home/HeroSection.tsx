@@ -1,46 +1,11 @@
-import { useEffect, useMemo, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
+import { hero, invitation } from '../../data/homeNarrative'
 
 const BASE = import.meta.env.BASE_URL
 
-type Feather = {
-  left: number
-  sizeVw: number    // width in vw, clamped min/max
-  delay: number
-  duration: number
-  swayDuration: number
-  swayDelay: number
-  drift: number
-  rotate: number
-  opacity: number
-}
-
-// Distribute feathers across evenly-spaced horizontal lanes so they never
-// cluster side-by-side. Delays are spread across the fall duration so the
-// vertical positions stagger too, avoiding wall-clock pile-ups.
-function makeFeathers(count: number): Feather[] {
-  const rand = (min: number, max: number) => min + Math.random() * (max - min)
-  const laneWidth = 100 / count
-  return Array.from({ length: count }, (_, i) => {
-    const duration = rand(70, 95)
-    const lane = laneWidth * (i + 0.5)
-    return {
-      left: lane + rand(-laneWidth * 0.2, laneWidth * 0.2),
-      sizeVw: rand(15, 20),
-      delay: -(i / count) * duration + rand(-4, 4),
-      duration,
-      swayDuration: rand(9, 14),
-      swayDelay: rand(-8, 0),
-      drift: rand(-40, 40),       // small drift — stay in lane
-      rotate: rand(-20, 20),
-      opacity: rand(0.3, 0.5),
-    }
-  })
-}
-
 export default function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null)
-  const feathers = useMemo(() => makeFeathers(5), [])
 
   useEffect(() => {
     if (!containerRef.current) return
@@ -48,10 +13,11 @@ export default function HeroSection() {
 
     const logo = containerRef.current.querySelector('[data-hero-logo]')
     const lines = containerRef.current.querySelectorAll('[data-hero-line]')
+    const cta = containerRef.current.querySelector('[data-hero-cta]')
     const enter = containerRef.current.querySelector('[data-hero-enter]')
 
     if (prefersReduced) {
-      gsap.set([logo, ...lines, enter], { opacity: 1 })
+      gsap.set([logo, ...lines, cta, enter], { opacity: 1 })
     } else {
       gsap.fromTo(logo,
         { opacity: 0, scale: 0.92 },
@@ -61,9 +27,13 @@ export default function HeroSection() {
         { opacity: 0, y: 20 },
         { opacity: 1, y: 0, duration: 1.8, delay: 1.8, stagger: 0.6, ease: 'power3.out' }
       )
+      gsap.fromTo(cta,
+        { opacity: 0, y: 12 },
+        { opacity: 1, y: 0, duration: 1.6, delay: 4.4, ease: 'power2.out' }
+      )
       gsap.fromTo(enter,
         { opacity: 0 },
-        { opacity: 1, duration: 2, delay: 4, ease: 'power2.inOut' }
+        { opacity: 1, duration: 2, delay: 5.2, ease: 'power2.inOut' }
       )
     }
   }, [])
@@ -95,41 +65,13 @@ export default function HeroSection() {
         }}
       />
 
-      {/* Slow-drifting peacock feathers — large, atmospheric */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden motion-reduce:hidden" aria-hidden="true">
-        {feathers.map((f, i) => (
-          <span
-            key={i}
-            className="absolute top-0"
-            style={{
-              left: `${f.left}%`,
-              animation: `feather-fall ${f.duration}s linear ${f.delay}s infinite`,
-              ['--feather-drift' as string]: `${f.drift}px`,
-            }}
-          >
-            <span
-              className="block"
-              style={{
-                animation: `feather-sway ${f.swayDuration}s ease-in-out ${f.swayDelay}s infinite alternate`,
-              }}
-            >
-              <img
-                src={`${BASE}feather2.png`}
-                alt=""
-                loading="lazy"
-                decoding="async"
-                style={{
-                  width: `clamp(80px, ${f.sizeVw}vw, 220px)`,
-                  height: 'auto',
-                  opacity: f.opacity,
-                  transform: `rotate(${f.rotate}deg)`,
-                  filter: 'drop-shadow(0 6px 18px rgba(1,46,67,0.5))',
-                }}
-              />
-            </span>
-          </span>
-        ))}
-      </div>
+      {/* Text scrim — dark pool behind the content so copy reads cleanly */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: 'radial-gradient(ellipse 55% 55% at 50% 50%, rgba(2,18,28,0.55) 0%, rgba(2,18,28,0.25) 45%, transparent 75%)',
+        }}
+      />
 
       <div ref={containerRef} className="relative z-10 flex flex-col items-center justify-center text-center px-8 max-w-3xl">
         {/* Logo */}
@@ -137,34 +79,60 @@ export default function HeroSection() {
           data-hero-logo
           src={`${BASE}logo.png`}
           alt="Morpeace"
-          className="opacity-0 w-[260px] sm:w-[340px] md:w-[500px] lg:w-[600px] mb-12 md:mb-16"
+          className="opacity-0 w-[260px] sm:w-[340px] md:w-[500px] lg:w-[600px] mb-8 md:mb-12"
           style={{ filter: 'brightness(0) invert(1) drop-shadow(0 6px 30px rgba(1,46,67,0.6)) drop-shadow(0 2px 10px rgba(233,74,60,0.15))' }}
         />
 
         {/* Tagline */}
         <p
           data-hero-line
-          className="opacity-0 font-body text-xl md:text-2xl lg:text-3xl italic text-sky-cream/85 mb-10 md:mb-14"
+          className="opacity-0 font-body text-xl md:text-2xl lg:text-3xl italic text-sky-cream/85 mb-6 md:mb-10"
           style={{ textShadow: '0 2px 20px rgba(1,46,67,0.5)' }}
         >
-          A forest, <em>unfolding.</em>
+          {hero.subtitle}
         </p>
 
         {/* Brand anchor */}
-        <div data-hero-line className="opacity-0 mb-20 md:mb-28">
+        <div data-hero-line className="opacity-0 mb-8 md:mb-12">
           <p
-            className="font-body text-sm md:text-base text-sky-cream/55 leading-relaxed tracking-wide"
-            style={{ textShadow: '0 1px 12px rgba(1,46,67,0.4)' }}
+            className="font-body text-lg md:text-xl lg:text-2xl text-white leading-relaxed tracking-wide font-medium"
+            style={{ textShadow: '0 1px 0 rgba(2,18,28,0.9), 0 2px 10px rgba(2,18,28,0.9), 0 0 28px rgba(2,18,28,0.7)' }}
           >
             Morpeace is not being built.
           </p>
           <p
-            className="font-body text-sm md:text-base text-sky-cream/55 leading-relaxed tracking-wide"
-            style={{ textShadow: '0 1px 12px rgba(1,46,67,0.4)' }}
+            className="font-body text-lg md:text-xl lg:text-2xl text-white leading-relaxed tracking-wide font-medium"
+            style={{ textShadow: '0 1px 0 rgba(2,18,28,0.9), 0 2px 10px rgba(2,18,28,0.9), 0 0 28px rgba(2,18,28,0.7)' }}
           >
             It is becoming.
           </p>
         </div>
+
+        {/* Segment capsules — four quiet invitations, each meant to land for a different visitor */}
+        <div
+          data-hero-line
+          className="opacity-0 mb-8 md:mb-10 flex flex-wrap justify-center gap-x-3 gap-y-3 md:gap-x-4 md:gap-y-4 max-w-2xl"
+        >
+          {hero.capsules.map((line) => (
+            <span
+              key={line}
+              className="inline-flex items-center rounded-full border border-sky-cream/25 bg-sky-cream/[0.06] backdrop-blur-sm px-4 py-1.5 md:px-5 md:py-2 font-display italic text-sm md:text-base lg:text-lg text-sky-cream/90 leading-none whitespace-nowrap shadow-[0_2px_18px_rgba(2,18,28,0.45)] hover:border-mango-gold/40 hover:text-sky-cream transition-colors duration-500"
+            >
+              {line}
+            </span>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <a
+          data-hero-cta
+          href={invitation.primaryCta.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="opacity-0 inline-block border border-sky-cream/40 text-sky-cream/85 hover:text-sky-cream hover:border-sky-cream/70 px-7 py-2.5 rounded-full cta-text transition-all duration-500 mb-10 md:mb-14"
+        >
+          {hero.cta.text}
+        </a>
 
         {/* Enter gently */}
         <p

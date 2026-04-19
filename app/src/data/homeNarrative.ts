@@ -2,9 +2,20 @@
 
 export const hero = {
   title: 'Morpeace',
-  subtitle: 'A forest, unfolding.',
+  subtitle: 'A forest unfolding to let you meet yourself everywhere.',
   brandAnchor: 'Morpeace is not being built. It is becoming.',
   scrollPrompt: 'Enter gently',
+  // Four indirect capsules — each meant to be recognised by a different kind of
+  // visitor without being aimed at them. No marketing verbs, no segment names.
+  capsules: [
+    'For those who walk slowly',
+    'When the week needs to end',
+    'A few hours off the highway \u2014 then a valley',
+    'Where an afternoon becomes a memory',
+  ],
+  cta: {
+    text: 'Stay with us',
+  },
 }
 
 export interface NarrativeBeat {
@@ -231,27 +242,28 @@ export const team = {
   members: [
     {
       id: 'rohit-komal',
-      name: 'Rohit & Komal Talwalkar',
+      name: 'Komal & Rohit Talwalkar',
       role: 'Trustees',
       photo: 'photos/team/rohit-komal-children.png',
       fit: 'contain' as const,
       quote: 'Morpeace was never just a place for us.\n\nIt was a feeling\u2026 a memory\u2026 a quiet longing.\n\nWhat began as a dream emerging from a tragedy\nslowly unfolded into something we were meant to care for.\n\nToday, we hold it gently \u2014\nnot as creators, but as trustees of what continues to emerge.',
       lang: 'en' as const,
-      initials: 'RK',
+      initials: 'KR',
     },
     {
       id: 'sharad-arundhati',
-      name: 'Sharad & Arundhati Talwalkar',
+      name: 'Arundhati & Sharad Talwalkar',
       role: 'Guiding Force behind Morpeace',
-      photo: 'photos/team/sharad-arundhati.jpeg',
+      photo: 'photos/team/sharad-arundhati-watercolor.png',
       quote: 'We have cared for and guided this land with patience and intent.\n\nWhat Morpeace has become fills us with quiet pride \u2014\nyet it feels shaped by a wisdom beyond our own.\n\nNow we just come and sit \u2014\nand let the trees do most of the talking.',
       lang: 'en' as const,
-      initials: 'SA',
+      initials: 'AS',
     },
     {
       id: 'pawar',
       name: 'Pawar Family',
       role: 'Caretakers',
+      members: 'Sangeeta & Rajendra Pawar',
       photo: 'photos/team/pawar-watercolor.png',
       quote: '\u0907\u0925\u0947 \u0906\u0932\u094B \u0924\u0947\u0935\u094D\u0939\u093E \u0935\u093E\u091F\u0932\u0902 \u2014\n\u0906\u092A\u0923 \u091C\u092E\u0940\u0928 \u0938\u093E\u0902\u092D\u093E\u0933\u0924\u094B\u092F.\n\n\u092A\u0923 \u0906\u0924\u093E \u092A\u091F\u0932\u0902\u2026\n\u0939\u0940 \u091C\u092E\u0940\u0928\u091A \u0906\u092E\u094D\u0939\u093E\u0932\u093E \u0938\u093E\u0902\u092D\u093E\u0933\u0924\u0947.\n\n\u0930\u094B\u091C \u0938\u0915\u093E\u0933\u0940 \u0927\u094D\u092F\u093E\u0928\u0917\u0941\u0939\u0947\u0924 \u0927\u094D\u092F\u093E\u0928 \u0915\u0930\u0924\u094B\u2026\n\u0924\u0947\u0935\u094D\u0939\u093E \u0905\u091C\u0942\u0928\u091A \u091C\u093E\u0923\u0935\u0924\u0902 \u2014\n\u0907\u0925\u0932\u0902 \u0938\u0917\u0933\u0902\u091A \u091C\u093F\u0935\u0902\u0924 \u0906\u0939\u0947\u2026\n\u0906\u0923\u093F \u0906\u092E\u094D\u0939\u093E\u0932\u093E \u0926\u093F\u0936\u093E \u0926\u093E\u0916\u0935\u0924\u0947 \u0906\u0939\u0947.',
       lang: 'mr' as const,
@@ -261,6 +273,7 @@ export const team = {
       id: 'dhumal',
       name: 'Dhumal Family',
       role: 'Caretakers',
+      members: 'Tara & Hari  ·  Mayuri & Ganesh',
       photo: 'photos/team/dhumal-family.jpeg',
       quote: '\u0906\u0927\u0940 \u0930\u094B\u091C\u091A\u0902 \u0915\u093E\u092E \u0939\u094B\u0924\u0902\u2026\n\u0924\u0947\u091A \u0924\u0947\u2026 \u0938\u093E\u0902\u0917\u093F\u0924\u0932\u0947\u0932\u0902 \u0915\u0930\u093E\u092F\u091A\u0902.\n\n\u0906\u0924\u093E\u2026\n\u0938\u0915\u093E\u0933\u0940 \u0909\u0920\u0932\u094D\u092F\u093E\u0935\u0930 \u092C\u0918\u093E\u0935\u0902\u0938\u0902 \u0935\u093E\u091F\u0924\u0902 \u2014\n\u0915\u093E\u092F \u092C\u0926\u0932 \u091D\u093E\u0932\u093E\u092F.\n\n\u0930\u094B\u091C \u091C\u093E\u0923\u0935\u0924\u0902\u2026\n\u091C\u092E\u0940\u0928 \u0915\u093E\u0939\u0940\u0924\u0930\u0940 \u0938\u093E\u0902\u0917\u0924\u0947\u2026\n\u0928\u0935\u0902 \u0936\u093F\u0915\u0935\u0924\u0947\u2026\n\u0906\u0923\u093F \u0938\u094D\u0935\u0924\u0903\u091A \u092A\u094D\u0930\u092F\u094B\u0917 \u0915\u0930\u093E\u092F\u0932\u093E \u0932\u093E\u0935\u0924\u0947.',
       lang: 'mr' as const,

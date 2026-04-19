@@ -15,7 +15,13 @@ const points = [
     n: '03',
     title: 'An avifauna that already speaks',
     body:
-      '58 bird species in a ~10-acre footprint — including snake eagle, honey buzzard, hornbill, owlet, two sunbird species and multiple babblers — tells us that water bodies, tree canopy, and ground cover are collectively providing nesting, foraging and predator niches. The wildlife is already voting with its wings.',
+      '58 bird species detected on the property so far — including snake eagle, honey buzzard, hornbill, owlet, two sunbird species and multiple babblers — tells us that water bodies, tree canopy, and ground cover are collectively providing nesting, foraging and predator niches. The wildlife is already voting with its wings.',
+  },
+  {
+    n: '04',
+    title: 'Air you can measure, not just feel',
+    body:
+      'Ambient AQI on the property sits between 20 and 40 — squarely in the CPCB "Good" band, and a world away from the 150–300 range typical of Indian urban centres. The canopy, the water bodies and the absence of combustion sources are doing the work: this is one of the few ecosystem services a guest registers within minutes of arriving.',
   },
 ]
 
@@ -30,7 +36,7 @@ export default function EcologicalSignificance() {
         <div className="text-center max-w-2xl mx-auto mb-14 md:mb-16">
           <p className="eyebrow text-[#FF7D6B]/80 mb-3">§4 Ecological Significance</p>
           <h2 className="font-display text-3xl md:text-4xl text-sky-cream mb-4">
-            Three signals stand out.
+            Four signals stand out.
           </h2>
           <div className="w-12 h-0.5 bg-[#E94A3C]/70 mx-auto" />
         </div>

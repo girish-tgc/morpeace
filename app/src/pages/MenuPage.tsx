@@ -416,7 +416,7 @@ export default function MenuPage() {
               to="/the-experience"
               className="inline-block cta-text text-[#6B4A24]/75 hover:text-[#6B4A24] px-4 py-4 tracking-[0.2em] transition-colors"
             >
-              ← Back to Your Day
+              ← Back to Morpeace
             </Link>
           </div>
         </div>

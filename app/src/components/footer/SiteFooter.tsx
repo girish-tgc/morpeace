@@ -27,7 +27,7 @@ export default function SiteFooter() {
           <div>
             <p className="font-display text-xs tracking-[0.2em] uppercase text-sky-cream/40 mb-4">Explore</p>
             <div className="flex flex-col gap-2">
-              <Link to="/the-experience" className="font-body text-sm text-sky-cream/60 hover:text-sky-cream/90 transition-colors">Your Day</Link>
+              <Link to="/the-experience" className="font-body text-sm text-sky-cream/60 hover:text-sky-cream/90 transition-colors">At Morpeace</Link>
               <Link to="/the-forest" className="font-body text-sm text-sky-cream/60 hover:text-sky-cream/90 transition-colors">The Forest</Link>
               <Link to="/philosophy" className="font-body text-sm text-sky-cream/60 hover:text-sky-cream/90 transition-colors">Philosophy</Link>
               <Link to="/gallery" className="font-body text-sm text-sky-cream/60 hover:text-sky-cream/90 transition-colors">Gallery</Link>

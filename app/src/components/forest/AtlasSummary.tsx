@@ -19,16 +19,17 @@ export default function AtlasSummary() {
     >
       <div className="mx-auto max-w-6xl px-6 md:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-          <p className="eyebrow text-[#FF7D6B]/80 mb-3">§Executive Summary · Year-0 Baseline</p>
+          <p className="eyebrow text-[#FF7D6B]/80 mb-3">§Interim Report · Year-0 Baseline (Partial Survey)</p>
           <h2 className="font-display text-3xl md:text-5xl text-sky-cream mb-5 leading-tight">
-            Every tree tagged.<br/>Every creature photographed.
+            A first pass through<br/>part of the forest.
           </h2>
           <div className="w-12 h-0.5 bg-[#E94A3C]/70 mx-auto mb-6" />
           <p className="font-body text-base md:text-lg text-sky-cream/75 leading-relaxed">
-            Between 16 and 18 April 2026, every standing tree on the 10-acre property was individually
-            tagged, measured, geo-located and catalogued through the <a href="https://tgctree.web.app/" target="_blank" rel="noopener" className="underline decoration-[#FF7D6B]/60 underline-offset-4 hover:text-[#FF7D6B]">tgctree</a> platform.
-            In parallel, a photographic and acoustic survey documented the property's resident fauna.
-            This is the Year-0 baseline against which the next decade of ecological restoration will be measured.
+            Between 16 and 18 April 2026, a portion of the 10-acre property was surveyed: standing trees
+            in the covered area were individually tagged, measured, geo-located and catalogued through the <a href="https://tgctree.web.app/" target="_blank" rel="noopener" className="underline decoration-[#FF7D6B]/60 underline-offset-4 hover:text-[#FF7D6B]">tgctree</a> platform.
+            In parallel, a photographic and acoustic survey began documenting the property's resident fauna.
+            What follows is an interim Year-0 baseline drawn from this partial survey — the rest of the
+            property will be added as the work continues.
           </p>
         </div>
 
