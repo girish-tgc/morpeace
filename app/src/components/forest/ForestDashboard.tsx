@@ -42,10 +42,10 @@ export default function ForestDashboard({ mode }: Props) {
 
       {mode === 'seasons' && (
         <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-          <SeasonCard season="Monsoon" months="Jun&#x2013;Sep" description="The lake fills. Wild greens appear. The forest breathes deepest." photo={`${import.meta.env.BASE_URL}photos/fish-pond.jpeg`} />
-          <SeasonCard season="Winter" months="Oct&#x2013;Feb" description="Cool winds. Strawberries ripen. Birds migrate in." photo={`${import.meta.env.BASE_URL}photos/strawberries.jpeg`} />
-          <SeasonCard season="Spring" months="Feb&#x2013;Apr" description="Flowers explode. Bees arrive. The air is sweet." photo={`${import.meta.env.BASE_URL}photos/flowers-vivid-pink.jpeg`} />
-          <SeasonCard season="Summer" months="Apr&#x2013;Jun" description="Mango season. 40+ varieties ripen. The forest feeds." photo={`${import.meta.env.BASE_URL}photos/mango-tree-ripe.jpeg`} />
+          <SeasonCard season="Monsoon" months="Jun&#x2013;Sep" description="The lake fills. Wild greens appear. The forest breathes deepest." photo={`${import.meta.env.BASE_URL}photos/fish-pond.webp`} />
+          <SeasonCard season="Winter" months="Oct&#x2013;Feb" description="Cool winds. Strawberries ripen. Birds migrate in." photo={`${import.meta.env.BASE_URL}photos/strawberries.webp`} />
+          <SeasonCard season="Spring" months="Feb&#x2013;Apr" description="Flowers explode. Bees arrive. The air is sweet." photo={`${import.meta.env.BASE_URL}photos/flowers-vivid-pink.webp`} />
+          <SeasonCard season="Summer" months="Apr&#x2013;Jun" description="Mango season. 40+ varieties ripen. The forest feeds." photo={`${import.meta.env.BASE_URL}photos/mango-tree-ripe.webp`} />
         </div>
       )}
 

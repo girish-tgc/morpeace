@@ -11,7 +11,7 @@ export default function SiteFooter() {
           {/* Brand */}
           <div>
             <img
-              src={`${BASE}logo.png`}
+              src={`${BASE}logo.webp`}
               alt="Morpeace"
               className="h-12 md:h-14 w-auto mb-4"
               style={{ filter: 'brightness(0) invert(1) drop-shadow(0 2px 8px rgba(1,46,67,0.4))' }}

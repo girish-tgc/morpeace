@@ -7,19 +7,19 @@ const doorways = [
     to: '/the-becoming',
     title: 'The Becoming',
     subtitle: 'How a child\'s memory became a forest\'s return.',
-    image: `${BASE}photos/forest-path.jpeg`,
+    image: `${BASE}photos/forest-path.webp`,
   },
   {
     to: '/the-forest',
     title: 'The Forest',
     subtitle: '18 trees. 10 stories. The living map of Morpeace.',
-    image: `${BASE}photos/forest-dense-vegetation.jpeg`,
+    image: `${BASE}photos/forest-dense-vegetation.webp`,
   },
   {
     to: '/the-experience',
     title: 'At Morpeace',
     subtitle: 'Unhurried. Unscripted. Real.',
-    image: `${BASE}photos/mangoes-sunlight.jpeg`,
+    image: `${BASE}photos/mangoes-sunlight.webp`,
   },
 ] as const
 

@@ -258,7 +258,7 @@ function ChapterDivider() {
     <div className="py-10 md:py-14 flex items-center justify-center gap-6" aria-hidden="true">
       <span className="block w-16 md:w-28 h-px bg-[#8B6F3D]/35" />
       <img
-        src={`${BASE}feather2.png`}
+        src={`${BASE}feather2.webp`}
         alt=""
         className="h-6 md:h-8 opacity-70"
         style={{ filter: 'sepia(0.5) saturate(0.9)' }}
@@ -342,7 +342,7 @@ export default function MenuPage() {
         <div className="absolute inset-0 overflow-hidden">
           <div className="ken-burns-a absolute inset-0">
             <img
-              src={`${BASE}photos/mangoes-sunlight.jpeg`}
+              src={`${BASE}photos/mangoes-sunlight.webp`}
               alt=""
               className="absolute inset-0 w-full h-full object-cover scale-110"
               aria-hidden="true"

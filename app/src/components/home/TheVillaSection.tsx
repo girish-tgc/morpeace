@@ -78,7 +78,7 @@ export default function TheVillaSection() {
         loop
         playsInline
         preload="none"
-        poster={`${BASE}photos/forest-dense-vegetation.jpeg`}
+        poster={`${BASE}photos/forest-dense-vegetation.webp`}
         className="absolute inset-0 w-full h-full object-cover"
       >
         <source src={`${BASE}photos/drone-shot.mp4`} type="video/mp4" />

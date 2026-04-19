@@ -76,7 +76,7 @@ export default function TheVisionSection() {
     <section ref={sectionRef} className="relative py-24 md:py-40 overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${BASE}photos/forest-dense-vegetation.jpeg)` }}
+        style={{ backgroundImage: `url(${BASE}photos/forest-dense-vegetation.webp)` }}
       />
       <div className="absolute inset-0 bg-forest-night/40" />
       <div

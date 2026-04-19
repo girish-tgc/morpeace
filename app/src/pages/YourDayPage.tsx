@@ -103,7 +103,7 @@ export default function YourDayPage() {
         <div className="absolute inset-0 overflow-hidden">
           <div className="ken-burns-a absolute inset-0">
             <img
-              src={`${BASE}photos/forest-path.jpeg`}
+              src={`${BASE}photos/forest-path.webp`}
               alt="Forest path at Morpeace"
               className="absolute inset-0 w-full h-full object-cover scale-110"
             />
@@ -160,7 +160,7 @@ export default function YourDayPage() {
           'The forest at Morpeace is something you enter, not just see. Walk the trails, climb the watchtower, or sit and watch the birds return.',
           'Spread across the property, the forest is home to over 1,500 native trees and a growing diversity of wildlife.',
         ]}
-        imageSrc="photos/forest-path.jpeg"
+        imageSrc="photos/forest-path.webp"
         reverse
         altBg
       />
@@ -229,7 +229,7 @@ export default function YourDayPage() {
         <div className="absolute inset-0 overflow-hidden">
           <div className="ken-burns-b absolute inset-0">
             <img
-              src={`${BASE}photos/mangoes-sunlight.jpeg`}
+              src={`${BASE}photos/mangoes-sunlight.webp`}
               alt="Food at Morpeace"
               className="absolute inset-0 w-full h-full object-cover scale-110"
               loading="lazy"

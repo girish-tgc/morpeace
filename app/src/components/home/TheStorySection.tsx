@@ -193,7 +193,7 @@ export default function TheStorySection() {
                   loop
                   playsInline
                   preload="none"
-                  poster={`${BASE}photos/forest-dense-vegetation.jpeg`}
+                  poster={`${BASE}photos/forest-dense-vegetation.webp`}
                   className="absolute inset-0 w-full h-full object-cover"
                 />
               ) : (

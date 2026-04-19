@@ -27,12 +27,12 @@ const bgLayers = [
   { type: 'video' as const, src: `${BASE}photos/golden-hour-leaves.mp4` },
   { type: 'video' as const, src: `${BASE}photos/mimosa-shy-plant.mp4` },
   { type: 'video' as const, src: `${BASE}photos/hands-planting.mp4` },
-  { type: 'image' as const, src: `${BASE}photos/tree-stump-fog.jpeg` },
-  { type: 'image' as const, src: `${BASE}photos/forest-path.jpeg` },
+  { type: 'image' as const, src: `${BASE}photos/tree-stump-fog.webp` },
+  { type: 'image' as const, src: `${BASE}photos/forest-path.webp` },
   { type: 'video' as const, src: `${BASE}photos/mimosa-pudica-closeup.mp4` },
-  { type: 'image' as const, src: `${BASE}photos/peacock-plumage.jpeg` },
+  { type: 'image' as const, src: `${BASE}photos/peacock-plumage.webp` },
   { type: 'video' as const, src: `${BASE}photos/drone-shot.mp4` },
-  { type: 'image' as const, src: `${BASE}photos/forest-dense-vegetation.jpeg` },
+  { type: 'image' as const, src: `${BASE}photos/forest-dense-vegetation.webp` },
 ]
 
 const beats: Beat[] = [

@@ -48,7 +48,7 @@ export default function LandSpeaksSection() {
     <section ref={sectionRef} className="relative py-24 md:py-40 overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${BASE}photos/forest-path.jpeg)` }}
+        style={{ backgroundImage: `url(${BASE}photos/forest-path.webp)` }}
       />
       <div className="absolute inset-0 bg-black/55" />
       <div

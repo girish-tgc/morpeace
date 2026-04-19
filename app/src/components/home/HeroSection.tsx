@@ -77,7 +77,7 @@ export default function HeroSection() {
         {/* Logo */}
         <img
           data-hero-logo
-          src={`${BASE}logo.png`}
+          src={`${BASE}logo.webp`}
           alt="Morpeace"
           className="opacity-0 w-[260px] sm:w-[340px] md:w-[500px] lg:w-[600px] mb-8 md:mb-12"
           style={{ filter: 'brightness(0) invert(1) drop-shadow(0 6px 30px rgba(1,46,67,0.6)) drop-shadow(0 2px 10px rgba(233,74,60,0.15))' }}

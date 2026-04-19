@@ -56,7 +56,7 @@ export default function SiteNav() {
           {/* Logo */}
           <Link to="/" className="flex items-center" aria-label="Morpeace">
             <img
-              src={`${BASE}logo.png`}
+              src={`${BASE}logo.webp`}
               alt="Morpeace"
               className="h-10 md:h-12 w-auto transition-[filter] duration-500"
               style={{

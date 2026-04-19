@@ -17,7 +17,7 @@ export default function OurDream() {
           <div className="ken-burns-a absolute inset-0">
             <img
               ref={bgRef}
-              src={`${import.meta.env.BASE_URL}photos/forest-dense-vegetation.jpeg`}
+              src={`${import.meta.env.BASE_URL}photos/forest-dense-vegetation.webp`}
               alt=""
               className="absolute inset-0 w-full h-full object-cover scale-110"
               loading="lazy"
