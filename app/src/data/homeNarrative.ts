@@ -5,14 +5,14 @@ export const hero = {
   subtitle: 'A forest unfolding to let you meet yourself everywhere.',
   brandAnchor: 'Morpeace is not being built. It is becoming.',
   scrollPrompt: 'Enter gently',
-  // Four indirect capsules — each meant to be recognised by a different kind of
-  // visitor without being aimed at them. No marketing verbs, no segment names.
+  // Four single-word doorways. Each word is a handle; the reel behind it
+  // carries the feeling. Order left-to-right: arrival, warmth, wander, depth.
   capsules: [
-    'For those who walk slowly',
-    'When the week needs to end',
-    'A few hours off the highway \u2014 then a valley',
-    'Where an afternoon becomes a memory',
-  ],
+    { label: 'Pause', href: '/the-experience', reel: 'photos/meditation-drone-1.mp4' },
+    { label: 'Celebrate', href: '/gallery', reel: 'photos/golden-hour-leaves.mp4' },
+    { label: 'Explore', href: '/the-forest', reel: 'photos/drone-shot.mp4' },
+    { label: 'Reconnect', href: '/philosophy', reel: 'photos/meditation-drone-2.mp4' },
+  ] as const,
   cta: {
     text: 'Stay with us',
   },

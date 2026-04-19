@@ -1,4 +1,5 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { hero, invitation } from '../../data/homeNarrative'
 
@@ -6,6 +7,7 @@ const BASE = import.meta.env.BASE_URL
 
 export default function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null)
+  const [activeReel, setActiveReel] = useState<number | null>(null)
 
   useEffect(() => {
     if (!containerRef.current) return
@@ -108,18 +110,41 @@ export default function HeroSection() {
           </p>
         </div>
 
-        {/* Segment capsules — four quiet invitations, each meant to land for a different visitor */}
+        {/* Four single-word doorways — each a handle to a different page, reel on hover */}
         <div
           data-hero-line
-          className="opacity-0 mb-8 md:mb-10 flex flex-wrap justify-center gap-x-3 gap-y-3 md:gap-x-4 md:gap-y-4 max-w-2xl"
+          className="opacity-0 mb-8 md:mb-10 relative flex flex-wrap justify-center gap-x-3 gap-y-3 md:gap-x-4"
         >
-          {hero.capsules.map((line) => (
-            <span
-              key={line}
-              className="inline-flex items-center rounded-full border border-sky-cream/25 bg-sky-cream/[0.06] backdrop-blur-sm px-4 py-1.5 md:px-5 md:py-2 font-display italic text-sm md:text-base lg:text-lg text-sky-cream/90 leading-none whitespace-nowrap shadow-[0_2px_18px_rgba(2,18,28,0.45)] hover:border-mango-gold/40 hover:text-sky-cream transition-colors duration-500"
+          {/* Shared reel preview — floats above the row on hover (desktop only, lazy-mounts) */}
+          <div
+            className="pointer-events-none absolute left-1/2 -translate-x-1/2 bottom-full mb-4 hidden md:block w-56 lg:w-64 aspect-[4/5]"
+            aria-hidden
+          >
+            {activeReel !== null && (
+              <video
+                key={hero.capsules[activeReel].label}
+                src={`${BASE}${hero.capsules[activeReel].reel}`}
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover rounded-2xl border border-sky-cream/20 shadow-[0_10px_40px_rgba(2,18,28,0.6)]"
+              />
+            )}
+          </div>
+
+          {hero.capsules.map((c, i) => (
+            <Link
+              key={c.label}
+              to={c.href}
+              onMouseEnter={() => setActiveReel(i)}
+              onMouseLeave={() => setActiveReel(null)}
+              onFocus={() => setActiveReel(i)}
+              onBlur={() => setActiveReel(null)}
+              className="inline-flex items-center rounded-full border border-sky-cream/25 bg-sky-cream/[0.06] backdrop-blur-sm px-5 py-2 md:px-7 md:py-2.5 font-display text-base md:text-lg lg:text-xl tracking-wide text-sky-cream/90 leading-none shadow-[0_2px_18px_rgba(2,18,28,0.45)] hover:border-mango-gold/50 hover:text-sky-cream hover:bg-sky-cream/[0.1] transition-colors duration-500"
             >
-              {line}
-            </span>
+              {c.label}
+            </Link>
           ))}
         </div>
 
