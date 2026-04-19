@@ -1,4 +1,5 @@
 import { useRef, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SectionHeader from '../components/yourday/SectionHeader'
@@ -234,9 +235,15 @@ export default function YourDayPage() {
           <p className="font-body text-base md:text-lg text-sky-cream/85 leading-relaxed mb-3">
             Dishes made from forgotten grains, foraged greens, and seasonal harvests. Recipes that have quietly survived in village kitchens. Some ingredients come from the land you're sitting on.
           </p>
-          <p className="font-body text-base md:text-lg text-sky-cream/85 leading-relaxed">
+          <p className="font-body text-base md:text-lg text-sky-cream/85 leading-relaxed mb-7">
             Meals are cooked slowly — patient, nourishing, and deeply rooted.
           </p>
+          <Link
+            to="/menu"
+            className="inline-block cta-text border border-[#E94A3C] text-[#FF7D6B] hover:bg-[#E94A3C]/15 hover:text-[#E94A3C] px-8 py-3 rounded-full transition-all duration-300"
+          >
+            See the Menu
+          </Link>
         </div>
       </section>
 

@@ -1,4 +1,8 @@
-// All gallery media, grouped into sections. Auto-organized from media/ folder.
+// Gallery — aesthetic record of the land: Property, Days, Aerial, Origins.
+//
+// Flora, Trees, Orchard, and Wildlife now live on /the-forest as the
+// Biodiversity Atlas (see data/species.ts and data/fauna.ts). The photo
+// files remain in public/media/ and are referenced from there.
 
 export type GalleryItem = {
   src: string
@@ -54,65 +58,6 @@ export const gallerySections: GallerySection[] = [
     ],
   },
   {
-    id: 'flora',
-    label: 'Flora',
-    heading: 'Blooms & Botanicals',
-    description: 'A shifting palette of native and cultivated blooms across the seasons.',
-    items: [
-      { src: 'media/flowers/angel-s-trumpets-brugmansia.jpeg', alt: 'Angel\'s Trumpets Brugmansia', type: 'image' },
-      { src: 'media/flowers/hibiscus-mutabilis-pink.jpeg', alt: 'Hibiscus mutabilis pink', type: 'image' },
-      { src: 'media/flowers/hibiscus-mutabilis-white.jpeg', alt: 'Hibiscus mutabilis white', type: 'image' },
-      { src: 'media/flowers/img-20260216-wa0025.jpg', alt: 'Flowers at Morpeace', type: 'image' },
-      { src: 'media/flowers/img-20260218-wa0001.jpg', alt: 'Flowers at Morpeace', type: 'image' },
-      { src: 'media/flowers/img-20260218-wa0003.jpg', alt: 'Flowers at Morpeace', type: 'image' },
-      { src: 'media/flowers/img-20260218-wa0006.jpg', alt: 'Flowers at Morpeace', type: 'image' },
-      { src: 'media/flowers/img-20260218-wa0009.jpg', alt: 'Flowers at Morpeace', type: 'image' },
-      { src: 'media/flowers/img-20260218-wa0010.jpg', alt: 'Flowers at Morpeace', type: 'image' },
-      { src: 'media/flowers/img-20260218-wa0020.jpg', alt: 'Flowers at Morpeace', type: 'image' },
-      { src: 'media/flowers/img-20260218-wa0021.jpg', alt: 'Flowers at Morpeace', type: 'image' },
-      { src: 'media/flowers/img-20260218-wa0023.jpg', alt: 'Flowers at Morpeace', type: 'image' },
-      { src: 'media/flowers/whatsapp-image-2026-02-17-at-11-16-34-pm-1.jpeg', alt: 'Flowers at Morpeace', type: 'image' },
-      { src: 'media/flowers/whatsapp-image-2026-02-17-at-11-16-34-pm-4.jpeg', alt: 'Flowers at Morpeace', type: 'image' },
-      { src: 'media/flowers/whatsapp-image-2026-02-17-at-11-16-34-pm-5.jpeg', alt: 'Flowers at Morpeace', type: 'image' },
-      { src: 'media/flowers/whatsapp-image-2026-02-17-at-11-16-34-pm-6.jpeg', alt: 'Flowers at Morpeace', type: 'image' },
-      { src: 'media/flowers/whatsapp-image-2026-02-17-at-11-16-34-pm.jpeg', alt: 'Flowers at Morpeace', type: 'image' },
-      { src: 'media/flowers/whatsapp-video-2026-02-17-at-11-16-34-pm-1.mp4', alt: 'Flowers at Morpeace', type: 'video', poster: 'media/flowers/angel-s-trumpets-brugmansia.jpeg' },
-      { src: 'media/flowers/whatsapp-video-2026-02-17-at-11-16-34-pm.mp4', alt: 'Flowers at Morpeace', type: 'video', poster: 'media/flowers/angel-s-trumpets-brugmansia.jpeg' },
-      { src: 'media/flowers/ajan-flowers.jpeg', alt: 'Ajan flowers', type: 'image' },
-      { src: 'media/flowers/bel.jpeg', alt: 'Bel', type: 'image' },
-      { src: 'media/flowers/morning-glory.jpeg', alt: 'Morning glory', type: 'image' },
-      { src: 'media/flowers/water-liiy.jpeg', alt: 'Water liiy', type: 'image' },
-    ],
-  },
-  {
-    id: 'trees',
-    label: 'Trees',
-    heading: 'Canopy & Bark',
-    description: 'The standing residents — bamboo, mango, and the older companions of the land.',
-    items: [
-      { src: 'media/trees/whatsapp-image-2026-02-06-at-11-18-14-pm-1.jpeg', alt: 'Trees at Morpeace', type: 'image' },
-      { src: 'media/trees/whatsapp-image-2026-02-06-at-11-18-14-pm.jpeg', alt: 'Trees at Morpeace', type: 'image' },
-      { src: 'media/trees/bamboo.jpeg', alt: 'Bamboo', type: 'image' },
-      { src: 'media/trees/mango-flowring-1.jpeg', alt: 'Mango flowring 1', type: 'image' },
-      { src: 'media/trees/mango-flowring-2.jpeg', alt: 'Mango flowring 2', type: 'image' },
-      { src: 'media/trees/mango-flowring.jpeg', alt: 'Mango flowring', type: 'image' },
-    ],
-  },
-  {
-    id: 'orchard',
-    label: 'Orchard',
-    heading: 'Fruit & Harvest',
-    description: 'Mangoes ripening, the first sweet taste of summer.',
-    items: [
-      { src: 'media/fruits/whatsapp-image-2026-02-06-at-11-18-14-pm-2.jpeg', alt: 'Fruits at Morpeace', type: 'image' },
-      { src: 'media/fruits/whatsapp-image-2026-02-06-at-11-18-14-pm-3.jpeg', alt: 'Fruits at Morpeace', type: 'image' },
-      { src: 'media/fruits/whatsapp-image-2026-02-06-at-11-18-15-pm-1.jpeg', alt: 'Fruits at Morpeace', type: 'image' },
-      { src: 'media/fruits/whatsapp-image-2026-02-06-at-11-18-15-pm.jpeg', alt: 'Fruits at Morpeace', type: 'image' },
-      { src: 'media/fruits/whatsapp-image-2026-02-06-at-11-18-16-pm-1.jpeg', alt: 'Fruits at Morpeace', type: 'image' },
-      { src: 'media/fruits/whatsapp-image-2026-02-06-at-11-18-16-pm.jpeg', alt: 'Fruits at Morpeace', type: 'image' },
-    ],
-  },
-  {
     id: 'days',
     label: 'Days at Morpeace',
     heading: 'How time passes here',
@@ -132,16 +77,6 @@ export const gallerySections: GallerySection[] = [
       { src: 'media/kids/on-gallery.jpeg', alt: 'On gallery', type: 'image' },
       { src: 'media/dining-and-food/whatsapp-video-2026-02-16-at-10-56-35-pm.mp4', alt: 'Dining at Morpeace', type: 'video', poster: 'media/property/lobby.jpeg' },
       { src: 'media/dining-and-food/whatsapp-video-2026-02-16-at-10-56-38-pm.mp4', alt: 'Dining at Morpeace', type: 'video', poster: 'media/property/lobby.jpeg' },
-    ],
-  },
-  {
-    id: 'wildlife',
-    label: 'Wildlife',
-    heading: 'Creatures of Morpeace',
-    description: 'The companions that arrived as the land settled.',
-    items: [
-      { src: 'media/animals/gecko.jpeg', alt: 'Gecko', type: 'image' },
-      { src: 'media/animals/tilapia.jpg', alt: 'Tilapia', type: 'image' },
     ],
   },
   {

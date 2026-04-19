@@ -8,6 +8,7 @@ import ReviewsPage from './pages/ReviewsPage'
 import PhilosophyPage from './pages/PhilosophyPage'
 import TeamPage from './pages/TeamPage'
 import GalleryPage from './pages/GalleryPage'
+import MenuPage from './pages/MenuPage'
 import NotFoundPage from './pages/NotFoundPage'
 
 export const router = createBrowserRouter(
@@ -29,6 +30,7 @@ export const router = createBrowserRouter(
         { path: 'visionaries', element: <Navigate to="/team" replace /> },
         { path: 'reviews', element: <ReviewsPage /> },
         { path: 'gallery', element: <GalleryPage /> },
+        { path: 'menu', element: <MenuPage /> },
         { path: '*', element: <NotFoundPage /> },
       ],
     },

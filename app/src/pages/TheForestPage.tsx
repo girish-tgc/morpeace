@@ -1,56 +1,95 @@
-import { trees } from '../data/trees'
-import TreeCard from '../components/forest/TreeCard'
-import EvidenceDashboard from '../components/forest/EvidenceDashboard'
-import RegenerationSection from '../components/home/RegenerationSection'
+import { useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
+import AtlasSummary from '../components/forest/AtlasSummary'
+import ConservationHighlights from '../components/forest/ConservationHighlights'
+import NativeExoticBars from '../components/forest/NativeExoticBars'
+import SpeciesGrid from '../components/forest/SpeciesGrid'
+import FaunaGrid from '../components/forest/FaunaGrid'
+import Checklists from '../components/forest/Checklists'
+import EcologicalSignificance from '../components/forest/EcologicalSignificance'
+import BaselineTable from '../components/forest/BaselineTable'
 
-const textShadow = '0 2px 20px rgba(1,46,67,0.55), 0 1px 6px rgba(1,46,67,0.35)'
+const heroShadow = '0 2px 20px rgba(1,46,67,0.55), 0 1px 6px rgba(1,46,67,0.35)'
 
 export default function TheForestPage() {
+  const heroRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!heroRef.current) return
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (prefersReduced) return
+    const ctx = gsap.context(() => {
+      const lines = heroRef.current!.querySelectorAll('[data-hero-line]')
+      gsap.fromTo(
+        lines,
+        { opacity: 0, y: 26 },
+        { opacity: 1, y: 0, duration: 1.1, stagger: 0.14, ease: 'power3.out' },
+      )
+    }, heroRef)
+    return () => ctx.revert()
+  }, [])
+
   return (
     <div>
       {/* === HERO === */}
       <section
-        className="relative min-h-[50vh] flex items-center justify-center overflow-hidden"
-        style={{ background: 'linear-gradient(to bottom, #016795, #014066)' }}
+        className="relative min-h-[72vh] flex items-center justify-center overflow-hidden"
+        style={{ background: 'linear-gradient(180deg, #016795 0%, #014066 50%, #012E43 100%)' }}
       >
-        <div className="relative z-10 text-center px-8 py-20">
-          <p className="font-display text-sm md:text-base tracking-[0.3em] uppercase text-leaf-new/70 mb-6" style={{ textShadow }}>
-            The Living Forest
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{ background: 'radial-gradient(ellipse at top, rgba(9,108,108,0.4), transparent 65%)' }}
+        />
+        <div ref={heroRef} className="relative z-10 text-center px-8 py-24 max-w-3xl">
+          <p data-hero-line className="eyebrow text-[#FF7D6B] mb-6" style={{ textShadow: heroShadow }}>
+            Morpeace · Living Pasaydan · Year 0 Baseline
           </p>
-          <p className="font-display text-3xl md:text-5xl text-sky-cream mb-4" style={{ textShadow }}>
-            Come, meet my companions.
+          <h1
+            data-hero-line
+            className="font-display text-4xl md:text-6xl lg:text-7xl text-sky-cream leading-[1.05] mb-6"
+            style={{ textShadow: heroShadow }}
+          >
+            The Biodiversity Atlas
+          </h1>
+          <p
+            data-hero-line
+            className="font-body text-lg md:text-xl italic text-sky-cream/75 max-w-xl mx-auto"
+            style={{ textShadow: heroShadow }}
+          >
+            Flora &amp; Fauna · ~10 acres · Satara, Maharashtra
           </p>
-          <p className="font-body text-lg md:text-xl text-sky-cream/70 italic max-w-xl mx-auto" style={{ textShadow }}>
-            Each one measured. Each one carries a story.
-          </p>
+
+          <div
+            data-hero-line
+            className="mt-10 mx-auto w-24 h-px bg-gradient-to-r from-transparent via-[#E94A3C]/60 to-transparent"
+          />
+
+          <div data-hero-line className="mt-10 max-w-xl mx-auto">
+            <p className="font-devanagari text-lg md:text-xl text-sky-cream/90" style={{ textShadow: heroShadow }}>
+              जो जे वांछिल तो ते लाभो, प्राणिजात ।
+            </p>
+            <p className="font-body text-sm md:text-base italic text-sky-cream/60 mt-2" style={{ textShadow: heroShadow }}>
+              Whatever all beings desire, may that be granted to them. — Pasaydan
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* === REGENERATION — measurable impact === */}
-      <RegenerationSection />
+      <AtlasSummary />
 
-      {/* === TREE GRID (light background) === */}
-      <section className="py-16 md:py-20 px-6 md:px-8 bg-canvas">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-10">
-            <p className="font-display text-xs tracking-[0.3em] uppercase text-teal-deep/60 mb-3">
-              All Trees
-            </p>
-            <p className="font-display text-2xl md:text-3xl text-text-deep">
-              The 18 Sentinels of Morpeace
-            </p>
-          </div>
+      <ConservationHighlights />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-            {trees.map(tree => (
-              <TreeCard key={tree.id} tree={tree} />
-            ))}
-          </div>
-        </div>
-      </section>
+      <NativeExoticBars />
 
-      {/* === EVIDENCE DASHBOARD === */}
-      <EvidenceDashboard />
+      <SpeciesGrid />
+
+      <FaunaGrid />
+
+      <Checklists />
+
+      <EcologicalSignificance />
+
+      <BaselineTable />
     </div>
   )
 }
