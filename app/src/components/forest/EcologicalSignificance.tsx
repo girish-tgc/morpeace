@@ -19,9 +19,9 @@ const points = [
   },
   {
     n: '04',
-    title: 'Air you can measure, not just feel',
+    title: 'Breathe, deeply.',
     body:
-      'Ambient AQI on the property sits between 20 and 40 — squarely in the CPCB "Good" band, and a world away from the 150–300 range typical of Indian urban centres. The canopy, the water bodies and the absence of combustion sources are doing the work: this is one of the few ecosystem services a guest registers within minutes of arriving.',
+      'Air quality at Morpeace is actively monitored and typically ranges between AQI 10–50 — clean, light, and restorative. For context, most Indian urban centres sit in the 150–300 band. The canopy, the water bodies and the absence of combustion sources do the work; guests register the difference within minutes of arriving.',
   },
 ]
 

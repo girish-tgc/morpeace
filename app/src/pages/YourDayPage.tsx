@@ -127,6 +127,7 @@ export default function YourDayPage() {
             style={{ textShadow: '0 1px 14px rgba(0,0,0,0.95), 0 0 20px rgba(0,0,0,0.7), 0 0 4px rgba(0,0,0,0.85)' }}
           >
             <p>You wake to birds, not alarms.</p>
+            <p>Breathe, deeply—air quality here is actively monitored and typically ranges between AQI 10–50. Clean, light, restorative.</p>
             <p>Meals arrive—fresh, seasonal, often gathered from the land itself.</p>
             <p>Your room, thoughtfully designed—modern comforts, set gently within nature.</p>
             <p className="pt-3">Nothing is rushed. Nothing is required.</p>

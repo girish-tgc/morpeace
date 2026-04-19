@@ -301,7 +301,7 @@ export const team = {
       id: 'contractor',
       name: 'Narendra Pansare',
       role: 'Contractor',
-      photo: 'photos/team/narendra-pansare.jpeg',
+      photo: 'photos/team/pansare-watercolor.png',
       quote: 'We\u2019re used to drawings being final \u2014\nyou just execute and move on.\n\nHere, it was different.\n\nSome things only made sense as we were building\u2026\nlike they were evolving in front of us.\n\nWe just had to be patient with it.',
       lang: 'en' as const,
       initials: 'NP',
