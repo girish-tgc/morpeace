@@ -219,6 +219,24 @@ export default function TheStorySection() {
 
       {/* === SCROLLING TEXT BEATS === */}
       <div className="relative" style={{ zIndex: 1 }}>
+        {/* Origin title — overture before the narrative begins */}
+        <div className="min-h-[60vh] flex items-center justify-center px-5 sm:px-8 md:px-16 py-16">
+          <div className="max-w-2xl mx-auto text-center">
+            <p
+              className="eyebrow text-sky-cream/60 mb-5"
+              style={{ textShadow: ts }}
+            >
+              The Origin of Morpeace
+            </p>
+            <p
+              className="font-display text-4xl md:text-6xl lg:text-7xl leading-tight text-sky-cream"
+              style={{ textShadow: ts }}
+            >
+              A story, told by a leaf.
+            </p>
+          </div>
+        </div>
+
         {narrativeBeats.map((beat, i) => (
           <div
             key={beat.id}
