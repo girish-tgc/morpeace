@@ -144,9 +144,21 @@ export default function TheStorySection() {
       }, 4000)
     }
 
-    const startDelay = setTimeout(() => {
-      if (!userInteracting) startAutoScroll()
-    }, 9000)
+    // Hero holds for 4s, then smooth-scroll past the hero to the story.
+    // The slow creep takes over once the hand-off lands.
+    const heroHold = setTimeout(() => {
+      if (userInteracting) return
+      const target = window.innerHeight
+      gsap.to(window, {
+        scrollTo: { y: target, autoKill: true },
+        duration: 1.6,
+        ease: 'power2.inOut',
+        onComplete: () => {
+          if (!userInteracting) startAutoScroll()
+        },
+      })
+    }, 4000)
+    const startDelay = heroHold
 
     const events = ['wheel', 'touchstart', 'mousedown', 'keydown'] as const
     events.forEach(evt => window.addEventListener(evt, pauseAutoScroll, { passive: true }))
