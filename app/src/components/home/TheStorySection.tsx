@@ -146,7 +146,7 @@ export default function TheStorySection() {
 
     const startDelay = setTimeout(() => {
       if (!userInteracting) startAutoScroll()
-    }, 3000)
+    }, 5000)
 
     const events = ['wheel', 'touchstart', 'mousedown', 'keydown'] as const
     events.forEach(evt => window.addEventListener(evt, pauseAutoScroll, { passive: true }))
