@@ -25,9 +25,17 @@ export interface NarrativeBeat {
   isVideo: boolean
   accent?: string
   finale?: boolean
+  title?: boolean
 }
 
 export const narrativeBeats: NarrativeBeat[] = [
+  {
+    id: 'origin',
+    lines: ['The origin of Morpeace'],
+    background: 'mimosa-shy-plant.mp4',
+    isVideo: true,
+    title: true,
+  },
   {
     id: 'voice',
     lines: [

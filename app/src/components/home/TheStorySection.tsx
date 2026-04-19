@@ -144,39 +144,25 @@ export default function TheStorySection() {
       }, 4000)
     }
 
-    // Staged intro: hero (4s) → snap to Origin overture → hold (4s) →
-    // snap to first beat → slow creep takes over.
-    let secondSnap: ReturnType<typeof setTimeout> | null = null
-    const heroHold = setTimeout(() => {
+    // Hero holds 7s, then one gentle scroll past the hero, then the slow
+    // creep takes over — Origin title and beats scroll at the same pace.
+    const startDelay = setTimeout(() => {
       if (userInteracting) return
       gsap.to(window, {
         scrollTo: { y: window.innerHeight, autoKill: true },
-        duration: 1.6,
+        duration: 2.2,
         ease: 'power2.inOut',
         onComplete: () => {
-          if (userInteracting) return
-          secondSnap = setTimeout(() => {
-            if (userInteracting) return
-            gsap.to(window, {
-              scrollTo: { y: window.innerHeight * 1.6, autoKill: true },
-              duration: 1.2,
-              ease: 'power2.inOut',
-              onComplete: () => {
-                if (!userInteracting) startAutoScroll()
-              },
-            })
-          }, 4000)
+          if (!userInteracting) startAutoScroll()
         },
       })
-    }, 4000)
-    const startDelay = heroHold
+    }, 7000)
 
     const events = ['wheel', 'touchstart', 'mousedown', 'keydown'] as const
     events.forEach(evt => window.addEventListener(evt, pauseAutoScroll, { passive: true }))
 
     return () => {
       clearTimeout(startDelay)
-      if (secondSnap) clearTimeout(secondSnap)
       if (idleTimer) clearTimeout(idleTimer)
       if (autoTween) autoTween.kill()
       events.forEach(evt => window.removeEventListener(evt, pauseAutoScroll))
@@ -243,23 +229,11 @@ export default function TheStorySection() {
 
       {/* === SCROLLING TEXT BEATS === */}
       <div className="relative" style={{ zIndex: 1 }}>
-        {/* Origin title — overture before the narrative begins */}
-        <div className="min-h-[60vh] flex items-center justify-center px-5 sm:px-8 md:px-16 py-16">
-          <div className="max-w-2xl mx-auto text-center">
-            <p
-              className="font-display text-4xl md:text-6xl lg:text-7xl leading-tight text-sky-cream"
-              style={{ textShadow: ts }}
-            >
-              The origin of Morpeace
-            </p>
-          </div>
-        </div>
-
         {narrativeBeats.map((beat, i) => (
           <div
             key={beat.id}
             ref={el => { beatRefs.current[i] = el }}
-            className={`${beat.finale ? 'min-h-[50vh]' : beat.lines.filter(l => l !== '').length <= 4 ? 'min-h-[50vh]' : 'min-h-[60vh]'} flex items-center justify-center px-5 sm:px-8 md:px-16 py-16`}
+            className={`${beat.finale || beat.title ? 'min-h-[50vh]' : beat.lines.filter(l => l !== '').length <= 4 ? 'min-h-[50vh]' : 'min-h-[60vh]'} flex items-center justify-center px-5 sm:px-8 md:px-16 py-16`}
           >
             <div className="max-w-2xl mx-auto text-center">
               {beat.finale ? (
@@ -278,6 +252,17 @@ export default function TheStorySection() {
                     </p>
                   ))}
                 </>
+              ) : beat.title ? (
+                beat.lines.map((line, li) => (
+                  <p
+                    key={li}
+                    data-line
+                    className="font-display text-4xl md:text-6xl lg:text-7xl leading-tight text-sky-cream"
+                    style={{ textShadow: ts }}
+                  >
+                    {line}
+                  </p>
+                ))
               ) : (
                 <div className="space-y-3 md:space-y-5">
                   {beat.lines.map((line, li) => {
