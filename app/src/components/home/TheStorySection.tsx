@@ -144,17 +144,28 @@ export default function TheStorySection() {
       }, 4000)
     }
 
-    // Hero holds for 4s, then smooth-scroll past the hero to the story.
-    // The slow creep takes over once the hand-off lands.
+    // Staged intro: hero (4s) → snap to Origin overture → hold (4s) →
+    // snap to first beat → slow creep takes over.
+    let secondSnap: ReturnType<typeof setTimeout> | null = null
     const heroHold = setTimeout(() => {
       if (userInteracting) return
-      const target = window.innerHeight
       gsap.to(window, {
-        scrollTo: { y: target, autoKill: true },
+        scrollTo: { y: window.innerHeight, autoKill: true },
         duration: 1.6,
         ease: 'power2.inOut',
         onComplete: () => {
-          if (!userInteracting) startAutoScroll()
+          if (userInteracting) return
+          secondSnap = setTimeout(() => {
+            if (userInteracting) return
+            gsap.to(window, {
+              scrollTo: { y: window.innerHeight * 1.6, autoKill: true },
+              duration: 1.2,
+              ease: 'power2.inOut',
+              onComplete: () => {
+                if (!userInteracting) startAutoScroll()
+              },
+            })
+          }, 4000)
         },
       })
     }, 4000)
@@ -165,6 +176,7 @@ export default function TheStorySection() {
 
     return () => {
       clearTimeout(startDelay)
+      if (secondSnap) clearTimeout(secondSnap)
       if (idleTimer) clearTimeout(idleTimer)
       if (autoTween) autoTween.kill()
       events.forEach(evt => window.removeEventListener(evt, pauseAutoScroll))
@@ -235,16 +247,10 @@ export default function TheStorySection() {
         <div className="min-h-[60vh] flex items-center justify-center px-5 sm:px-8 md:px-16 py-16">
           <div className="max-w-2xl mx-auto text-center">
             <p
-              className="eyebrow text-sky-cream/60 mb-5"
-              style={{ textShadow: ts }}
-            >
-              The Origin of Morpeace
-            </p>
-            <p
               className="font-display text-4xl md:text-6xl lg:text-7xl leading-tight text-sky-cream"
               style={{ textShadow: ts }}
             >
-              A story, told by a leaf.
+              The origin of Morpeace
             </p>
           </div>
         </div>
