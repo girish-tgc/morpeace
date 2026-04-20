@@ -2,6 +2,8 @@ import { useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import SeoHead from '../components/SeoHead'
+import { breadcrumbSchema } from '../lib/seo/schema'
 import SectionHeader from '../components/yourday/SectionHeader'
 import ActivityCard from '../components/yourday/ActivityCard'
 import SplitSection from '../components/yourday/SplitSection'
@@ -19,6 +21,7 @@ const ANCHOR_SECTIONS = [
   { id: 'recreation', label: 'Recreation' },
   { id: 'children', label: 'Children' },
   { id: 'library', label: 'Library' },
+  { id: 'meditation', label: 'Meditation' },
   { id: 'food', label: 'Food' },
   { id: 'sustainability', label: 'Sustainability' },
   { id: 'celebrations', label: 'Celebrations' },
@@ -113,6 +116,15 @@ export default function YourDayPage() {
       className="text-sky-cream"
       style={{ background: 'linear-gradient(180deg, #012E43 0%, #014066 10%, #096C6C 55%, #014066 100%)' }}
     >
+      <SeoHead
+        title="A Day at Morpeace — The Experience | Western Ghats Villa Stay"
+        description="What a day at Morpeace feels like — cow feeding, forest walks, hammock rest, stargazing from the watchtower, farm-to-table meals, and excursions to Kaas Plateau, Thoseghar, and Koyna."
+        path="/the-experience"
+        jsonLd={breadcrumbSchema([
+          { name: 'Home', path: '/' },
+          { name: 'The Experience', path: '/the-experience' },
+        ])}
+      />
       {/* === HERO === */}
       <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
@@ -222,7 +234,7 @@ export default function YourDayPage() {
           'Morpeace is as much for the curious child as it is for the seeking adult. Children swim under open skies, play board games without screens, and run freely without boundaries.',
           'No curated distractions — just space to be playful, present, and free.',
         ]}
-        imageSrc="media/kids/fun.webp"
+        imageSrc="media/kids/kids1.webp"
       />
 
       {/* === THE LIBRARY === */}
@@ -235,6 +247,47 @@ export default function YourDayPage() {
         reverse
         altBg
       />
+
+      {/* === MEDITATION CAVE === */}
+      <section
+        id="meditation"
+        className="relative min-h-[70vh] flex items-center overflow-hidden scroll-mt-28"
+      >
+        <video
+          muted
+          loop
+          playsInline
+          autoPlay
+          preload="metadata"
+          poster={`${BASE}media/property/meditation-room-circle.webp`}
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src={`${BASE}photos/meditation-drone-2.mp4`} type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-[#012E43]/75" />
+        <div
+          className="absolute inset-0"
+          style={{ background: 'radial-gradient(ellipse at 50% 40%, rgba(1,64,102,0.2) 0%, rgba(6,72,72,0.55) 45%, rgba(1,46,67,0.78) 100%)' }}
+        />
+        <div data-animate className="relative z-10 max-w-2xl mx-auto px-8 md:px-16 py-20 text-center">
+          <span className="eyebrow text-[#FF7D6B] block mb-3">Meditation</span>
+          <h2 className="font-display text-3xl md:text-5xl text-sky-cream mb-5"
+            style={{ textShadow: '0 2px 20px rgba(1,46,67,0.6)' }}
+          >
+            The Cave of the Inner Star
+          </h2>
+          <div className="w-12 h-0.5 bg-[#E94A3C]/70 mx-auto mb-6" />
+          <p className="font-body text-lg md:text-xl text-sky-cream/85 italic leading-relaxed mb-5">
+            Step down into the meditation cave — a womb carved below the ground, cool and hushed.
+          </p>
+          <p className="font-body text-base md:text-lg text-sky-cream/75 leading-relaxed mb-4">
+            You expect darkness when you descend underground. That is the first illusion the cave dissolves. Underground is not beneath life — it is beneath distraction.
+          </p>
+          <p className="font-body text-base md:text-lg text-sky-cream/75 leading-relaxed">
+            Sit. Breathe. Stay as long as you like. Stillness is always welcome here.
+          </p>
+        </div>
+      </section>
 
       {/* === FOOD === */}
       <section

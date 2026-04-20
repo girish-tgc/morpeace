@@ -1,6 +1,7 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom'
 import RootLayout from './layouts/RootLayout'
 import HomePage from './pages/HomePage'
+import LandingMockPage from './pages/LandingMockPage'
 import TheForestPage from './pages/TheForestPage'
 import TreeDetailPage from './pages/TreeDetailPage'
 import YourDayPage from './pages/YourDayPage'
@@ -18,6 +19,7 @@ export const router = createBrowserRouter(
       element: <RootLayout />,
       children: [
         { index: true, element: <HomePage /> },
+        { path: 'landing-mock', element: <LandingMockPage /> },
         { path: 'the-forest', element: <TheForestPage /> },
         { path: 'the-forest/:treeId', element: <TreeDetailPage /> },
         { path: 'the-experience', element: <YourDayPage /> },
