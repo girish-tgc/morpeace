@@ -192,17 +192,27 @@ export default function LandingMockPage() {
           alt="Morpeace villa reflected on the lake at dusk"
           className="absolute inset-0 w-full h-full object-cover"
         />
+        {/* Base tonal wash */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(180deg, rgba(30,62,77,0.55) 0%, rgba(30,62,77,0.35) 45%, rgba(30,62,77,0.85) 100%)',
+              'linear-gradient(180deg, rgba(10,26,35,0.55) 0%, rgba(10,26,35,0.4) 45%, rgba(10,26,35,0.9) 100%)',
           }}
         />
+        {/* Left-weighted scrim so the copy column sits on a dark backdrop */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: 'radial-gradient(ellipse 50% 40% at 20% 80%, rgba(36,190,185,0.18) 0%, transparent 65%)',
+            background:
+              'linear-gradient(90deg, rgba(10,26,35,0.88) 0%, rgba(10,26,35,0.72) 35%, rgba(10,26,35,0.3) 65%, rgba(10,26,35,0) 90%)',
+          }}
+        />
+        {/* Aqua glow kept as a subtle accent in the lower right, away from text */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'radial-gradient(ellipse 40% 35% at 85% 85%, rgba(36,190,185,0.16) 0%, transparent 65%)',
           }}
         />
 
@@ -220,13 +230,21 @@ export default function LandingMockPage() {
             </span>
             <h1
               className="font-display text-5xl sm:text-6xl md:text-8xl leading-[1.05] mb-6"
-              style={{ color: PALETTE.cream, textShadow: '0 2px 24px rgba(30,62,77,0.85)' }}
+              style={{
+                color: PALETTE.cream,
+                textShadow:
+                  '0 2px 4px rgba(0,0,0,0.95), 0 6px 24px rgba(0,0,0,0.8), 0 0 12px rgba(0,0,0,0.7)',
+              }}
             >
               A stay inside a forest.
             </h1>
             <p
               className="font-body text-xl md:text-3xl max-w-3xl leading-relaxed mb-10"
-              style={{ color: PALETTE.sand, textShadow: '0 1px 12px rgba(30,62,77,0.8)' }}
+              style={{
+                color: '#F5EBD0',
+                textShadow:
+                  '0 1px 2px rgba(0,0,0,0.95), 0 3px 14px rgba(0,0,0,0.8), 0 0 8px rgba(0,0,0,0.6)',
+              }}
             >
               Morpeace is a boutique villa on ten regenerated acres in the Western Ghats — a private
               pool, a lake, 1,500+ native trees, and food grown on the land. Sleeps up to 10.
