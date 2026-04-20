@@ -1,6 +1,8 @@
 import { useRef, useEffect, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import SeoHead from '../components/SeoHead'
+import { breadcrumbSchema, personSchema } from '../lib/seo/schema'
 import { team } from '../data/homeNarrative'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -13,9 +15,11 @@ function MemberPortrait({ member }: { member: Member }) {
   const [failed, setFailed] = useState(false)
   const src = `${BASE}${member.photo}`
   const fit = 'fit' in member && member.fit === 'contain' ? 'object-contain' : 'object-cover'
+  const landscape = 'orientation' in member && member.orientation === 'landscape'
+  const aspect = landscape ? 'aspect-[3/2]' : 'aspect-[4/5]'
 
   return (
-    <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm bg-gradient-to-br from-[#016795]/25 to-[#096C6C]/25 ring-1 ring-[#F0F5F7]/10 shadow-[0_30px_80px_-30px_rgba(1,46,67,0.6)]">
+    <div className={`relative ${aspect} w-full overflow-hidden rounded-sm bg-gradient-to-br from-[#016795]/25 to-[#096C6C]/25 ring-1 ring-[#F0F5F7]/10 shadow-[0_30px_80px_-30px_rgba(1,46,67,0.6)]`}>
       {!failed && (
         <img
           src={src}
@@ -101,6 +105,29 @@ export default function TeamPage() {
       className="text-sky-cream"
       style={{ background: 'linear-gradient(180deg, #012E43 0%, #014066 12%, #096C6C 55%, #014066 100%)' }}
     >
+      <SeoHead
+        title="The People of Morpeace — Trustees, Ecologists, Caretakers & Craft"
+        description="Meet the people who shape Morpeace — trustees Komal and Rohit Talwalkar, the guiding force of Arundhati and Sharad, the Pawar and Dhumal caretaker families, and the ecologists at The Green Concept."
+        path="/team"
+        jsonLd={[
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Team', path: '/team' },
+          ]),
+          personSchema({
+            name: 'Rohit Talwalkar',
+            jobTitle: 'Founder, Morpeace',
+            description: 'Founder of Morpeace Consulting LLP and steward of the 10-acre forest sanctuary at Rustic Haven.',
+          }),
+          personSchema({
+            name: 'Dr. Girish Kulkarni',
+            jobTitle: 'Co-founder, The Green Concept',
+            description: 'Data scientist and ecologist. Architect of Morpeace\'s ecological monitoring and biodiversity analytics.',
+            sameAs: ['https://thegreenconcept.co.in'],
+            knowsAbout: ['Ecology', 'Biodiversity', 'Data Science', 'Restoration ecology', 'Western Ghats'],
+          }),
+        ]}
+      />
       {/* Hero */}
       <section className="relative overflow-hidden pt-36 pb-24 md:pt-48 md:pb-32">
         <div className="pointer-events-none absolute inset-0">
@@ -159,6 +186,9 @@ export default function TeamPage() {
           <div className="space-y-24 md:space-y-36">
             {team.members.map((member, i) => {
               const reverse = i % 2 === 1
+              const landscape = 'orientation' in member && member.orientation === 'landscape'
+              const photoSpan = landscape ? 'md:col-span-7' : 'md:col-span-5'
+              const bodySpan = landscape ? 'md:col-span-5' : 'md:col-span-7'
               return (
                 <article
                   key={member.id}
@@ -169,7 +199,7 @@ export default function TeamPage() {
                     reverse ? 'md:[&>[data-row-photo]]:order-2' : ''
                   }`}
                 >
-                  <div data-row-photo className="md:col-span-5">
+                  <div data-row-photo className={photoSpan}>
                     <div className="relative">
                       <span className="absolute -top-3 -left-3 eyebrow text-[#FF7D6B]/80">
                         {String(i + 1).padStart(2, '0')}
@@ -178,7 +208,7 @@ export default function TeamPage() {
                     </div>
                   </div>
 
-                  <div data-row-body className="md:col-span-7">
+                  <div data-row-body className={bodySpan}>
                     <div className="flex items-baseline gap-4">
                       <h2 className="font-display text-3xl leading-tight text-sky-cream md:text-4xl">
                         {member.name}
