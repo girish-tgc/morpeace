@@ -2,7 +2,7 @@
 
 export const hero = {
   title: 'Morpeace',
-  subtitle: 'A prayer unfolding as a forest, to let you meet yourself.',
+  subtitle: 'A prayer unfolding as a forest.',
   brandAnchor: 'Morpeace is not being built. It is becoming.',
   scrollPrompt: 'Enter gently',
   // Four single-word doorways. Each word is a handle; the reel behind it
