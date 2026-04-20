@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect, useMemo } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import SeoHead from '../components/SeoHead'
+import { breadcrumbSchema, lodgingBusinessSchema } from '../lib/seo/schema'
 import { guestReviews, type ReviewTag } from '../data/reviews'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -93,6 +95,18 @@ export default function ReviewsPage() {
       className="min-h-screen"
       style={{ background: 'linear-gradient(180deg, #012E43 0%, #014066 12%, #096C6C 50%, #014066 100%)' }}
     >
+      <SeoHead
+        title="Guest Reviews — Morpeace | Rustic Haven by StayVista (4.95★, 98 reviews)"
+        description="Heartfelt reflections from guests who stayed at Morpeace. 4.95★ across 98 reviews on StayVista, Google, AirBnb and MakeMyTrip — hospitality, cuisine, nature, architecture, and the deep quiet."
+        path="/reviews"
+        jsonLd={[
+          lodgingBusinessSchema(),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Reviews', path: '/reviews' },
+          ]),
+        ]}
+      />
       {/* ═══ HERO ═══ */}
       <section className="relative pt-32 md:pt-44 pb-16 md:pb-24 px-6 md:px-8 overflow-hidden">
         {/* Subtle dot texture */}

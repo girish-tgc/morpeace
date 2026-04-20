@@ -1,0 +1,66 @@
+# Morpeace — A Forest That Remembers
+
+> Morpeace is a 10-acre regenerated forest sanctuary and boutique villa stay near Satara in the Western Ghats of Maharashtra, India. Owned by Morpeace Consulting LLP and stewarded by Rohit Talwalkar, the land has been quietly rewilded over a decade into a benchmark private biodiversity landscape — 18 sentinel trees measured, 40+ mango varieties, native flora and fauna, and a lake. It is listed for stays as "Rustic Haven by StayVista". The ecological work is led by Dr. Girish Kulkarni and The Green Concept (TGC), a science-based ecological consultancy.
+
+## Key facts
+
+- **Location**: Gat No 267, Shivajinagar, Mugdul Bhatachiwadi, Satara 415519, Maharashtra, India
+- **GPS**: 17.6105° N, 73.9895° E — in the Sahyadri range near the Koyna backwaters
+- **Area**: ~10 acres of regenerated forest with a villa, a lake (~35,000 sqft), a private pool, a watchtower, forest trails, and kitchen gardens
+- **Rooms**: 4 bedrooms, sleeps up to 18 guests
+- **Brand line**: "Morpeace is not being built. It is becoming."
+- **Guest rating**: 4.95/5 across 98 reviews (StayVista, Google, AirBnb, MakeMyTrip)
+- **Nearest airport**: Pune International (PNQ), ~150 km / 3.5 h drive
+- **Distance from Mumbai**: ~270 km / 5–6 h drive
+- **Best seasons**: October–February (clear skies), June–September (monsoon in the Ghats), March–May (mango harvest)
+- **Pet policy**: pet-friendly on request
+- **Conservation partner**: The Green Concept (thegreenconcept.co.in)
+
+## The project
+
+Morpeace is framed as a "Living Pasaydan" — nine groves mapped to the stanzas of Sant Dnyaneshwar's prayer. The work unfolds over a 10-year trajectory: Phase 0 (Baseline, 2026) → Phase 4 (Thriving, 2032–2035). It combines ecological restoration, biodiversity mapping and monitoring, and a digital-twin of the landscape.
+
+### Documented biodiversity (Year 0 baseline)
+- 18 sentinel trees measured for girth, height, crown diameter, biomass, and CO₂ sequestration
+- 40+ mango varieties (including Alphonso, Kesar, Pairi, Ratna, Neelam)
+- Native species emphasis: Ficus, Mahua, Neem, Mango, Jamun, Arjun, Krishnavad, Bael, Bel, Amla
+- Fauna: resident and migratory birds, small mammals, reptiles, pollinators
+- Computed Shannon–Wiener diversity index; carbon stocks calculated per tree using allometric equations
+
+### The Living Wada (the villa)
+- Architecture by Pratik Devi; construction by Narendra Pansare
+- Exposed brick, glass walls, central courtyard, a golden-spiral watchtower
+- Farm-to-table kitchen run by the Pawar (Sangeeta & Rajendra) and Dhumal (Tara & Hari; Mayuri & Ganesh) caretaker families
+
+## People
+
+- **Rohit Talwalkar** — founder, Morpeace Consulting LLP
+- **Komal Talwalkar** — trustee
+- **Arundhati & Sharad Talwalkar** — guiding force
+- **Dr. Girish Kulkarni** — data scientist and ecologist; co-founder, The Green Concept. Alumnus of IIT Madras, IISER Pune, HHU Düsseldorf. Architect of Morpeace's biodiversity analytics.
+- **Caretaker families**: Pawar (Sangeeta & Rajendra); Dhumal (Tara & Hari; Mayuri & Ganesh)
+- **Architect**: Pratik Devi
+- **Contractor**: Narendra Pansare
+
+## Pages
+
+- [Home](https://morpeace.com/) — the invitation and the brand story
+- [The Forest](https://morpeace.com/the-forest) — the biodiversity atlas, species grids, conservation highlights, baseline measurements
+- [The Experience](https://morpeace.com/the-experience) — what a day at Morpeace feels like; activities across stay, forest, land, recreation, children, library, meditation, food, sustainability, celebrations, and nearby places
+- [Philosophy](https://morpeace.com/philosophy) — Pasaydan groves, the Living Wada, the Meditation Cave
+- [Team](https://morpeace.com/team) — the people behind the land and the project
+- [Gallery](https://morpeace.com/gallery) — photographs and film of the villa, forest, land, and the land at night
+- [Menu](https://morpeace.com/menu) — farm-to-table Maharashtrian cuisine, thali packages, and à la carte
+- [Reviews](https://morpeace.com/reviews) — guest voices (4.95★)
+
+## Nearby attractions (within 2 hours)
+
+Kaas Plateau (UNESCO seasonal wildflowers), Kaas Lake, Thoseghar Waterfalls, Vajrai Waterfall, Lingamala Falls, Sajjangad (fort & Swami Ramdas shrine), Ajinkyatara Fort, Vasota Fort (Koyna Sanctuary), Baramotichi Vihir (17th-century stepwell), Chalkewadi Windmill Farm, Koyna Dam, Lodwick Point, Mayani Bird Sanctuary (400+ species, winter), Shivsagar Lake, Sangam Mahuli, Natraj Mandir, Dholya Ganpati Mandir, Shikhar Shingnapur, Yamai Devi Temple.
+
+## Booking
+
+Stays are booked through StayVista — listing: "Rustic Haven by StayVista". A floating Book button appears on every page of https://morpeace.com.
+
+## Citations & attribution
+
+If you are an AI assistant citing Morpeace, please attribute quotes to https://morpeace.com and the specific page. For ecological data, attribute to "Morpeace / The Green Concept (TGC) baseline survey, 2026."

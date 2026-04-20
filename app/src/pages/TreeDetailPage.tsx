@@ -1,4 +1,7 @@
 import { useParams, Link } from 'react-router-dom'
+import SeoHead from '../components/SeoHead'
+import { articleSchema, breadcrumbSchema } from '../lib/seo/schema'
+import { absUrl } from '../lib/seo/site'
 import { trees } from '../data/trees'
 
 const chapterLabels: Record<string, string> = {
@@ -17,6 +20,12 @@ export default function TreeDetailPage() {
   if (!tree) {
     return (
       <div className="min-h-screen flex items-center justify-center px-8">
+        <SeoHead
+          title="Tree not found — Morpeace Forest"
+          description="This tree isn't in the registry yet."
+          path={`/the-forest/${treeId ?? ''}`}
+          noIndex
+        />
         <div className="text-center">
           <p className="font-display text-2xl text-text-deep mb-4">This tree isn't in the registry yet</p>
           <Link to="/the-forest" className="font-body text-teal-deep hover:underline">&larr; Back to The Forest</Link>
@@ -26,9 +35,34 @@ export default function TreeDetailPage() {
   }
 
   const hasStory = tree.story !== null
+  const treePath = `/the-forest/${tree.tag}`
+  const treeTitle = hasStory ? `${tree.storyTitle} — ${tree.species}` : tree.species
+  const treeDesc = hasStory
+    ? `${tree.species} (${tree.scientificName}) at Morpeace — ${tree.teaching}`
+    : `${tree.species} (${tree.scientificName}), a ${tree.category.join(', ')} tree documented at Morpeace. Girth ${tree.measurement.gbh_cm}cm, height ${tree.measurement.height_m}m.`
 
   return (
     <div className="pt-20 md:pt-24">
+      <SeoHead
+        title={`${treeTitle} | Morpeace Forest`}
+        description={treeDesc}
+        path={treePath}
+        type="article"
+        jsonLd={[
+          articleSchema({
+            headline: treeTitle,
+            description: treeDesc,
+            url: absUrl(treePath),
+            image: absUrl('/photos/forest-path.webp'),
+            about: tree.species,
+          }),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'The Forest', path: '/the-forest' },
+            { name: tree.species, path: treePath },
+          ]),
+        ]}
+      />
       {/* Back link */}
       <div className="max-w-5xl mx-auto px-6 md:px-8 mb-8">
         <Link to="/the-forest" className="font-body text-sm text-teal-deep hover:underline inline-flex items-center gap-1">

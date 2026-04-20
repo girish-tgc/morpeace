@@ -1,6 +1,8 @@
 import { useRef, useEffect } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import SeoHead from '../components/SeoHead'
+import { breadcrumbSchema } from '../lib/seo/schema'
 import { gallerySections } from '../data/gallery'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -116,6 +118,15 @@ export default function GalleryPage() {
       className="text-sky-cream"
       style={{ background: 'linear-gradient(180deg, #012E43 0%, #014066 10%, #096C6C 50%, #014066 100%)' }}
     >
+      <SeoHead
+        title="Gallery — Morpeace | The Villa, The Forest, The Land at Night"
+        description="Photographs and film from Morpeace — the villa and its glass-wall interiors, the 10-acre regenerated forest, the pool and lake, the watchtower, and the land at night."
+        path="/gallery"
+        jsonLd={breadcrumbSchema([
+          { name: 'Home', path: '/' },
+          { name: 'Gallery', path: '/gallery' },
+        ])}
+      />
       {/* Hero */}
       <section className="relative overflow-hidden pt-36 pb-20 md:pt-48 md:pb-28">
         <div className="pointer-events-none absolute inset-0">

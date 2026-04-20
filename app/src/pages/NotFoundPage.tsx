@@ -1,13 +1,20 @@
 import { Link } from 'react-router-dom'
+import SeoHead from '../components/SeoHead'
 
 export default function NotFoundPage() {
   return (
     <div className="min-h-screen flex items-center justify-center px-8">
+      <SeoHead
+        title="Not Found — Morpeace"
+        description="This path through the forest doesn't exist yet."
+        path="/404"
+        noIndex
+      />
       <div className="text-center max-w-md">
         <p className="font-display text-4xl md:text-6xl text-teal-deep/30 mb-6">404</p>
-        <p className="font-display text-2xl text-text-deep mb-4">
+        <h1 className="font-display text-2xl text-text-deep mb-4">
           The trail ends here
-        </p>
+        </h1>
         <p className="font-body text-lg text-text-deep/60 italic mb-8">
           This path through the forest doesn't exist yet.
         </p>

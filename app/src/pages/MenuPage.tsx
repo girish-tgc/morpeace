@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import SeoHead from '../components/SeoHead'
+import { breadcrumbSchema, menuSchema } from '../lib/seo/schema'
 import {
   MENU_CHAPTERS,
   MEAL_INCLUSIONS,
@@ -337,6 +339,23 @@ export default function MenuPage() {
           'radial-gradient(ellipse 90% 60% at 50% 0%, #F7EFDE 0%, #F4ECDE 35%, #EFE4D0 100%)',
       }}
     >
+      <SeoHead
+        title="The Menu — Rustic Heaven at Morpeace | Farm-to-Table Maharashtrian Cuisine"
+        description="A menu of age-old recipes, cooked slow and served warm — Maharashtrian thalis, clay-oven breads, Gavran chicken, farm vegetables, and seasonal mangoes from our own groves."
+        path="/menu"
+        jsonLd={[
+          menuSchema(
+            MENU_CHAPTERS.map((c) => ({
+              name: c.title,
+              items: c.sections.flatMap((s) => s.items.map((i) => i.name)),
+            })),
+          ),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Menu', path: '/menu' },
+          ]),
+        ]}
+      />
       {/* ═══ HERO ═══ */}
       <section className="relative min-h-[70vh] md:min-h-[78vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">

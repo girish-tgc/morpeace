@@ -212,11 +212,12 @@ export default function LandingMockPage() {
         <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-10 py-24 md:py-32 w-full">
           <div data-animate>
             <span
-              className="font-display inline-block px-4 py-1.5 rounded-full text-sm md:text-base tracking-[0.25em] uppercase mb-6"
+              className="font-display inline-block px-4 py-1.5 rounded-full text-sm md:text-base tracking-[0.25em] uppercase mb-6 backdrop-blur-sm"
               style={{
-                backgroundColor: `${PALETTE.aqua}22`,
-                color: PALETTE.aqua,
-                border: `1px solid ${PALETTE.aqua}55`,
+                backgroundColor: 'rgba(10, 22, 30, 0.55)',
+                color: PALETTE.sand,
+                border: `1px solid ${PALETTE.sand}66`,
+                textShadow: '0 1px 2px rgba(0,0,0,0.8)',
               }}
             >
               Western Ghats · Satara, Maharashtra
@@ -242,7 +243,7 @@ export default function LandingMockPage() {
               Morpeace is a boutique villa on ten regenerated acres in the Western Ghats — a private
               pool, a lake, 1,000+ native trees, and food grown on the land. Sleeps up to 10.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <div className="flex">
               <a
                 href={BOOKING_URL}
                 target="_blank"
@@ -251,13 +252,6 @@ export default function LandingMockPage() {
                 style={{ backgroundColor: PALETTE.aqua, color: PALETTE.ink, boxShadow: `0 10px 30px ${PALETTE.aqua}55` }}
               >
                 Book your stay
-              </a>
-              <a
-                href="#what"
-                className="inline-flex items-center justify-center px-10 py-4 rounded-full font-display tracking-[0.2em] uppercase text-lg md:text-xl transition-colors duration-300"
-                style={{ border: `1px solid ${PALETTE.sand}66`, color: PALETTE.sand }}
-              >
-                What is Morpeace?
               </a>
             </div>
           </div>
@@ -399,8 +393,8 @@ export default function LandingMockPage() {
             />
           </div>
           <div data-animate>
-            <Eyebrow>Your stay</Eyebrow>
-            <Heading>Simple, quiet, intentional.</Heading>
+            <Eyebrow>A look inside</Eyebrow>
+            <Heading>Serene, generous, exclusive.</Heading>
             <p className="font-body text-lg md:text-xl leading-relaxed mb-3" style={{ color: `${PALETTE.sand}cc` }}>
               Four private rooms designed around light, air, and stillness. Clean spaces with natural
               materials, open views into the forest, and comfort without excess.

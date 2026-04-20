@@ -1,5 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
+import SeoHead from '../components/SeoHead'
+import { breadcrumbSchema, placeSchema } from '../lib/seo/schema'
 import AtlasSummary from '../components/forest/AtlasSummary'
 import ConservationHighlights from '../components/forest/ConservationHighlights'
 import NativeExoticBars from '../components/forest/NativeExoticBars'
@@ -31,6 +33,18 @@ export default function TheForestPage() {
 
   return (
     <div>
+      <SeoHead
+        title="The Biodiversity Atlas — Morpeace Forest | Western Ghats"
+        description="A scientifically documented 10-acre biodiversity sanctuary in the Western Ghats near Satara. 18 sentinel trees measured, 40+ mango varieties, native flora and fauna, and a decade of regeneration."
+        path="/the-forest"
+        jsonLd={[
+          placeSchema(),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'The Forest', path: '/the-forest' },
+          ]),
+        ]}
+      />
       {/* === HERO === */}
       <section
         className="relative min-h-[72vh] flex items-center justify-center overflow-hidden"

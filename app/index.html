@@ -3,26 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <title>Morpeace — A Forest That Remembers</title>
-    <meta name="description" content="A 10-acre forest sanctuary near Satara, Maharashtra. Ten years of regeneration, told by the trees themselves." />
-    <meta property="og:title" content="Morpeace — A Forest That Remembers" />
-    <meta property="og:description" content="10 acres of regenerated forest, 40+ mango varieties, and trees that tell their own stories." />
+    <meta name="theme-color" content="#012E43" />
+
+    <!-- Defaults — the homepage's meta. Per-route SeoHead overrides via react-helmet-async when JS runs. -->
+    <title>Morpeace — A Forest That Remembers | Boutique Villa & 10-Acre Forest Sanctuary near Satara</title>
+    <meta name="description" content="A 10-acre regenerated forest sanctuary and boutique villa near Satara in the Western Ghats. 40+ mango varieties, a lake, private pool, and ten years of quiet rewilding." />
+    <link rel="canonical" href="https://morpeace.com/" />
+    <meta property="og:site_name" content="Morpeace" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://girish-tgc.github.io/morpeace/" />
-    <meta property="og:image" content="https://girish-tgc.github.io/morpeace/photos/forest-path.webp" />
+    <meta property="og:url" content="https://morpeace.com/" />
+    <meta property="og:title" content="Morpeace — A Forest That Remembers" />
+    <meta property="og:description" content="A 10-acre regenerated forest sanctuary and boutique villa near Satara in the Western Ghats. 40+ mango varieties, a lake, private pool, and ten years of quiet rewilding." />
+    <meta property="og:image" content="https://morpeace.com/photos/forest-path.webp" />
     <meta property="og:image:width" content="1280" />
     <meta property="og:image:height" content="720" />
+    <meta property="og:locale" content="en_IN" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Morpeace — A Forest That Remembers" />
-    <meta name="twitter:description" content="10 acres of regenerated forest, 40+ mango varieties, and trees that tell their own stories." />
-    <meta name="twitter:image" content="https://girish-tgc.github.io/morpeace/photos/forest-path.webp" />
+    <meta name="twitter:description" content="A 10-acre regenerated forest sanctuary and boutique villa near Satara in the Western Ghats. 40+ mango varieties, a lake, private pool, and ten years of quiet rewilding." />
+    <meta name="twitter:image" content="https://morpeace.com/photos/forest-path.webp" />
+    <meta name="author" content="Morpeace Consulting LLP" />
+
+    <!-- Icons -->
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
     <link rel="shortcut icon" href="/favicon.png" />
-    <meta name="theme-color" content="#012E43" />
+
+    <!-- Preconnect to critical origins -->
+    <link rel="preconnect" href="https://www.stayvista.com" />
+    <link rel="dns-prefetch" href="https://www.stayvista.com" />
+
+    <!-- Preload hero LCP image -->
+    <link rel="preload" as="image" href="/logo.webp" fetchpriority="high" />
   </head>
   <body>
     <div id="root"></div>
+    <noscript>
+      <div style="max-width: 720px; margin: 4rem auto; padding: 0 1.5rem; font-family: Georgia, serif; color: #012E43; line-height: 1.6;">
+        <h1 style="font-size: 2.25rem; margin-bottom: 1rem;">Morpeace — A Forest That Remembers</h1>
+        <p><em>Morpeace is not being built. It is becoming.</em></p>
+        <p>A 10-acre regenerated forest sanctuary and boutique villa near Satara, in the Western Ghats of Maharashtra.
+        Forty-plus mango varieties, a lake, a private pool, a watchtower, and ten years of quiet rewilding.
+        Listed for stays as Rustic Haven by StayVista.</p>
+        <p>This site is interactive and requires JavaScript. Please enable it, or visit
+        <a href="https://www.stayvista.com/homes/maharashtra-rustic-haven-by-stayvista">the StayVista listing</a>.</p>
+        <p>Contact: hello@morpeace.com &middot; Morpeace Consulting LLP &middot; Satara, Maharashtra 415519</p>
+      </div>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
