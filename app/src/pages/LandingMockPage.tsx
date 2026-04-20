@@ -38,9 +38,9 @@ const NAV_SECTIONS = [
 
 const FACTS = [
   { k: '10', v: 'acres of regenerated forest' },
-  { k: '4', v: 'rooms · sleeps up to 18' },
+  { k: '4', v: 'rooms · sleeps up to 10' },
   { k: '40+', v: 'heirloom mango varieties' },
-  { k: '3.5 hr', v: 'drive from Pune' },
+  { k: '2 hr', v: 'drive from Pune' },
 ]
 
 const DAY_BEATS = [
@@ -99,7 +99,7 @@ const NEARBY_PLACES = [
 // ── tiny helpers for consistent visual language ───────────────────────────
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <p className="text-xs tracking-[0.3em] uppercase mb-3" style={{ color: PALETTE.aqua }}>
+    <p className="text-sm md:text-base tracking-[0.3em] uppercase mb-4 font-semibold" style={{ color: PALETTE.aqua }}>
       {children}
     </p>
   )
@@ -108,7 +108,7 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
 function Heading({ children, large }: { children: React.ReactNode; large?: boolean }) {
   return (
     <h2
-      className={`font-display ${large ? 'text-4xl md:text-6xl' : 'text-3xl md:text-5xl'} mb-5`}
+      className={`font-display ${large ? 'text-5xl md:text-7xl' : 'text-4xl md:text-6xl'} mb-6 leading-tight`}
       style={{ color: PALETTE.cream }}
     >
       {children}
@@ -119,19 +119,19 @@ function Heading({ children, large }: { children: React.ReactNode; large?: boole
 function ActivityGridItem({ icon, title, description }: { icon: string; title: string; description: string }) {
   return (
     <div
-      className="p-5 rounded-2xl transition-transform duration-300 hover:-translate-y-1"
+      className="p-6 rounded-2xl transition-transform duration-300 hover:-translate-y-1"
       style={{
         backgroundColor: `${PALETTE.ink}cc`,
         border: `1px solid ${PALETTE.aqua}33`,
       }}
     >
-      <div className="text-2xl mb-2" aria-hidden>
+      <div className="text-3xl mb-3" aria-hidden>
         {icon}
       </div>
-      <h3 className="font-display text-lg mb-1.5" style={{ color: PALETTE.cream }}>
+      <h3 className="font-display text-xl md:text-2xl mb-2" style={{ color: PALETTE.cream }}>
         {title}
       </h3>
-      <p className="font-body text-sm leading-relaxed" style={{ color: `${PALETTE.sand}b3` }}>
+      <p className="font-body text-lg md:text-xl leading-relaxed" style={{ color: `${PALETTE.sand}cc` }}>
         {description}
       </p>
     </div>
@@ -209,7 +209,7 @@ export default function LandingMockPage() {
         <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-10 py-24 md:py-32 w-full">
           <div data-animate>
             <span
-              className="inline-block px-3 py-1 rounded-full text-xs tracking-[0.25em] uppercase mb-6"
+              className="inline-block px-4 py-1.5 rounded-full text-sm md:text-base tracking-[0.25em] uppercase mb-6 font-semibold"
               style={{
                 backgroundColor: `${PALETTE.aqua}22`,
                 color: PALETTE.aqua,
@@ -219,31 +219,31 @@ export default function LandingMockPage() {
               Western Ghats · Satara, Maharashtra
             </span>
             <h1
-              className="font-display text-4xl sm:text-5xl md:text-7xl leading-tight mb-5"
+              className="font-display text-5xl sm:text-6xl md:text-8xl leading-[1.05] mb-6"
               style={{ color: PALETTE.cream, textShadow: '0 2px 24px rgba(30,62,77,0.85)' }}
             >
               A stay inside a forest.
             </h1>
             <p
-              className="font-body text-lg md:text-2xl max-w-2xl leading-relaxed mb-10"
+              className="font-body text-xl md:text-3xl max-w-3xl leading-relaxed mb-10"
               style={{ color: PALETTE.sand, textShadow: '0 1px 12px rgba(30,62,77,0.8)' }}
             >
               Morpeace is a boutique villa on ten regenerated acres in the Western Ghats — a private
-              pool, a lake, 1,500+ native trees, and food grown on the land. Sleeps up to 18.
+              pool, a lake, 1,500+ native trees, and food grown on the land. Sleeps up to 10.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <a
                 href={BOOKING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-8 py-3.5 rounded-full cta-text transition-transform duration-300 hover:scale-[1.02]"
+                className="inline-flex items-center justify-center px-10 py-4 rounded-full cta-text text-lg md:text-xl transition-transform duration-300 hover:scale-[1.02]"
                 style={{ backgroundColor: PALETTE.aqua, color: PALETTE.ink, boxShadow: `0 10px 30px ${PALETTE.aqua}55` }}
               >
                 Book your stay
               </a>
               <a
                 href="#what"
-                className="inline-flex items-center justify-center px-8 py-3.5 rounded-full cta-text transition-colors duration-300"
+                className="inline-flex items-center justify-center px-10 py-4 rounded-full cta-text text-lg md:text-xl transition-colors duration-300"
                 style={{ border: `1px solid ${PALETTE.sand}66`, color: PALETTE.sand }}
               >
                 What is Morpeace?
@@ -253,7 +253,7 @@ export default function LandingMockPage() {
         </div>
 
         <div
-          className="absolute bottom-6 left-1/2 -translate-x-1/2 text-xs tracking-[0.25em] uppercase opacity-60"
+          className="absolute bottom-6 left-1/2 -translate-x-1/2 text-sm tracking-[0.25em] uppercase opacity-70"
           style={{ color: PALETTE.sand }}
         >
           scroll to explore
@@ -266,10 +266,10 @@ export default function LandingMockPage() {
           <div data-animate className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             {FACTS.map((f) => (
               <div key={f.v} className="text-center">
-                <p className="font-display text-4xl md:text-5xl mb-2" style={{ color: PALETTE.aqua }}>
+                <p className="font-display text-5xl md:text-6xl mb-3" style={{ color: PALETTE.aqua }}>
                   {f.k}
                 </p>
-                <p className="font-body text-sm md:text-base" style={{ color: `${PALETTE.sand}cc` }}>
+                <p className="font-body text-base md:text-lg leading-snug" style={{ color: `${PALETTE.sand}e6` }}>
                   {f.v}
                 </p>
               </div>
@@ -287,13 +287,13 @@ export default function LandingMockPage() {
         }}
       >
         <div className="max-w-6xl mx-auto px-4 md:px-6 overflow-x-auto">
-          <ul className="flex gap-1 md:gap-2 py-2.5 whitespace-nowrap">
+          <ul className="flex gap-1 md:gap-2 py-3 whitespace-nowrap">
             {NAV_SECTIONS.map((s) => (
               <li key={s.id}>
                 <a
                   href={`#${s.id}`}
-                  className="inline-block px-3 py-1.5 rounded-full text-xs md:text-sm transition-colors"
-                  style={{ color: `${PALETTE.sand}b3` }}
+                  className="inline-block px-4 py-2 rounded-full text-sm md:text-base font-medium transition-colors"
+                  style={{ color: `${PALETTE.sand}d9` }}
                 >
                   {s.label}
                 </a>
@@ -315,8 +315,8 @@ export default function LandingMockPage() {
           <Eyebrow>A day at Morpeace</Eyebrow>
           <Heading>Unhurried. Unscripted. Real.</Heading>
           <div
-            className="font-body text-base md:text-lg leading-relaxed space-y-3"
-            style={{ color: `${PALETTE.sand}cc` }}
+            className="font-body text-lg md:text-2xl leading-relaxed space-y-4"
+            style={{ color: `${PALETTE.sand}e6` }}
           >
             {DAY_BEATS.map((b, i) => (
               <p key={i}>{b}</p>
@@ -346,11 +346,11 @@ export default function LandingMockPage() {
         <div data-animate className="relative z-10 max-w-xl px-8 md:px-16 py-20">
           <Eyebrow>The forest</Eyebrow>
           <Heading>Walk without a destination.</Heading>
-          <p className="font-body text-base md:text-lg leading-relaxed mb-3" style={{ color: `${PALETTE.sand}d9` }}>
+          <p className="font-body text-lg md:text-xl leading-relaxed mb-3" style={{ color: `${PALETTE.sand}d9` }}>
             Over 1,500 native trees across ten regenerated acres. Walk the trails, climb the
             watchtower, or sit and watch the birds return.
           </p>
-          <p className="font-body text-base md:text-lg leading-relaxed" style={{ color: `${PALETTE.sand}b3` }}>
+          <p className="font-body text-lg md:text-xl leading-relaxed" style={{ color: `${PALETTE.sand}b3` }}>
             Forest walks, hammock rest, sky gazing, cow and fish feeding, and seasonal fruit plucking —
             join in when you feel like it.
           </p>
@@ -390,11 +390,11 @@ export default function LandingMockPage() {
           <div data-animate>
             <Eyebrow>Your stay</Eyebrow>
             <Heading>Simple, quiet, intentional.</Heading>
-            <p className="font-body text-base md:text-lg leading-relaxed mb-3" style={{ color: `${PALETTE.sand}cc` }}>
+            <p className="font-body text-lg md:text-xl leading-relaxed mb-3" style={{ color: `${PALETTE.sand}cc` }}>
               Four private rooms designed around light, air, and stillness. Clean spaces with natural
               materials, open views into the forest, and comfort without excess.
             </p>
-            <p className="font-body text-base md:text-lg leading-relaxed mb-6" style={{ color: `${PALETTE.sand}b3` }}>
+            <p className="font-body text-lg md:text-xl leading-relaxed mb-6" style={{ color: `${PALETTE.sand}b3` }}>
               Open-air pool, a quiet library corner, table tennis, board games. No schedule, no
               demands — your day unfolds at your own pace.
             </p>
@@ -408,7 +408,7 @@ export default function LandingMockPage() {
                   <div className="text-lg mb-0.5" aria-hidden>
                     {r.icon}
                   </div>
-                  <div className="font-body text-xs" style={{ color: `${PALETTE.sand}cc` }}>
+                  <div className="font-body text-sm md:text-base" style={{ color: `${PALETTE.sand}e6` }}>
                     {r.title}
                   </div>
                 </div>
@@ -437,11 +437,11 @@ export default function LandingMockPage() {
           <div data-animate className="md:order-1">
             <Eyebrow>For children</Eyebrow>
             <Heading>Space to be free.</Heading>
-            <p className="font-body text-base md:text-lg leading-relaxed mb-3" style={{ color: `${PALETTE.sand}cc` }}>
+            <p className="font-body text-lg md:text-xl leading-relaxed mb-3" style={{ color: `${PALETTE.sand}cc` }}>
               Morpeace is as much for the curious child as it is for the seeking adult. Children swim
               under open skies, play board games without screens, and run freely without boundaries.
             </p>
-            <p className="font-body text-base md:text-lg leading-relaxed" style={{ color: `${PALETTE.sand}b3` }}>
+            <p className="font-body text-lg md:text-xl leading-relaxed" style={{ color: `${PALETTE.sand}b3` }}>
               No curated distractions — just space to be playful, present, and free.
             </p>
           </div>
@@ -479,7 +479,7 @@ export default function LandingMockPage() {
           <p className="font-body text-lg md:text-xl italic leading-relaxed mb-5" style={{ color: `${PALETTE.sand}d9` }}>
             Step down into the meditation cave — a womb carved below the ground, cool and hushed.
           </p>
-          <p className="font-body text-base md:text-lg leading-relaxed" style={{ color: `${PALETTE.sand}bf` }}>
+          <p className="font-body text-lg md:text-xl leading-relaxed" style={{ color: `${PALETTE.sand}bf` }}>
             Underground is not beneath life — it is beneath distraction. Sit. Breathe. Stay as long
             as you like. Stillness is always welcome here.
           </p>
@@ -506,11 +506,11 @@ export default function LandingMockPage() {
         <div data-animate className="relative z-10 max-w-xl px-8 md:px-16 py-20">
           <Eyebrow>Food</Eyebrow>
           <Heading>A return to memory.</Heading>
-          <p className="font-body text-base md:text-lg leading-relaxed mb-3" style={{ color: `${PALETTE.sand}d9` }}>
+          <p className="font-body text-lg md:text-xl leading-relaxed mb-3" style={{ color: `${PALETTE.sand}d9` }}>
             Forgotten grains, foraged greens, seasonal harvests. Recipes that quietly survived in
             village kitchens. Some ingredients come from the land you're sitting on.
           </p>
-          <p className="font-body text-base md:text-lg leading-relaxed mb-7" style={{ color: `${PALETTE.sand}b3` }}>
+          <p className="font-body text-lg md:text-xl leading-relaxed mb-7" style={{ color: `${PALETTE.sand}b3` }}>
             Meals cooked slowly — patient, nourishing, deeply rooted.
           </p>
           <Link
@@ -529,7 +529,7 @@ export default function LandingMockPage() {
           <div data-animate className="mb-8 md:mb-12 text-center">
             <Eyebrow>The work beneath</Eyebrow>
             <Heading>Quiet experiments.</Heading>
-            <p className="font-body text-base md:text-lg max-w-2xl mx-auto" style={{ color: `${PALETTE.sand}b3` }}>
+            <p className="font-body text-lg md:text-xl max-w-2xl mx-auto" style={{ color: `${PALETTE.sand}cc` }}>
               Small experiments across the forest and farm — not as display, but as inquiry into what
               sustains.
             </p>
@@ -545,7 +545,7 @@ export default function LandingMockPage() {
                 <div className="text-2xl mb-1.5" aria-hidden>
                   {s.icon}
                 </div>
-                <div className="font-body text-xs md:text-sm" style={{ color: `${PALETTE.sand}cc` }}>
+                <div className="font-body text-sm md:text-base" style={{ color: `${PALETTE.sand}e6` }}>
                   {s.title}
                 </div>
               </div>
@@ -560,11 +560,11 @@ export default function LandingMockPage() {
           <div data-animate>
             <Eyebrow>Celebrations & gatherings</Eyebrow>
             <Heading>Held gently by the land.</Heading>
-            <p className="font-body text-base md:text-lg leading-relaxed mb-3" style={{ color: `${PALETTE.sand}cc` }}>
+            <p className="font-body text-lg md:text-xl leading-relaxed mb-3" style={{ color: `${PALETTE.sand}cc` }}>
               Morpeace has hosted intimate gatherings, pre-wedding shoots, pre-natal shoots,
               birthdays, and moments of togetherness.
             </p>
-            <p className="font-body text-base md:text-lg leading-relaxed" style={{ color: `${PALETTE.sand}b3` }}>
+            <p className="font-body text-lg md:text-xl leading-relaxed" style={{ color: `${PALETTE.sand}b3` }}>
               The space adapts to your celebration — without losing its stillness. Gatherings of up
               to 50 guests.
             </p>
@@ -630,10 +630,10 @@ export default function LandingMockPage() {
                   border: `1px solid ${PALETTE.aqua}26`,
                 }}
               >
-                <span className="font-display text-base font-medium" style={{ color: PALETTE.cream }}>
+                <span className="font-display text-lg md:text-xl font-medium" style={{ color: PALETTE.cream }}>
                   {p.name}
                 </span>
-                <span className="font-body text-sm" style={{ color: `${PALETTE.sand}99` }}>
+                <span className="font-body text-base md:text-lg" style={{ color: `${PALETTE.sand}b3` }}>
                   {p.meta}
                 </span>
               </div>
@@ -649,16 +649,16 @@ export default function LandingMockPage() {
             <Eyebrow>Where we are</Eyebrow>
             <Heading>Near Satara, inside the Western Ghats.</Heading>
             <address
-              className="not-italic font-body text-base md:text-lg leading-relaxed mb-6"
+              className="not-italic font-body text-lg md:text-xl leading-relaxed mb-6"
               style={{ color: `${PALETTE.sand}cc` }}
             >
               Gat No 267, Shivajinagar,<br />
               Mugdul Bhatachiwadi,<br />
               Satara, Maharashtra 415519
             </address>
-            <ul className="space-y-2 mb-8 font-body text-sm" style={{ color: `${PALETTE.sand}99` }}>
-              <li>· ~150 km from Pune International Airport (3.5 hr drive)</li>
-              <li>· ~270 km from Mumbai (5–6 hr drive)</li>
+            <ul className="space-y-2.5 mb-8 font-body text-base md:text-lg" style={{ color: `${PALETTE.sand}cc` }}>
+              <li>· ~150 km from Pune International Airport (2 hr drive)</li>
+              <li>· ~270 km from Mumbai (5 hr drive)</li>
               <li>· Minutes from Kaas Plateau, Thoseghar & Vajrai Falls</li>
             </ul>
             <div className="flex flex-col sm:flex-row gap-3">
@@ -666,7 +666,7 @@ export default function LandingMockPage() {
                 href={MAPS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-full cta-text"
+                className="inline-flex items-center justify-center px-7 py-3.5 rounded-full cta-text text-base md:text-lg"
                 style={{ backgroundColor: PALETTE.blue, color: PALETTE.cream }}
               >
                 Open in Google Maps
@@ -675,7 +675,7 @@ export default function LandingMockPage() {
                 href={BOOKING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-full cta-text"
+                className="inline-flex items-center justify-center px-7 py-3.5 rounded-full cta-text text-base md:text-lg"
                 style={{ border: `1px solid ${PALETTE.sand}55`, color: PALETTE.sand }}
               >
                 Book your stay
@@ -714,7 +714,7 @@ export default function LandingMockPage() {
         />
         <div data-animate className="relative z-10 max-w-3xl mx-auto text-center">
           <Heading large>Come stay in the forest.</Heading>
-          <p className="font-body text-lg md:text-xl mb-10" style={{ color: `${PALETTE.sand}cc` }}>
+          <p className="font-body text-xl md:text-2xl mb-10" style={{ color: `${PALETTE.sand}e6` }}>
             Book direct through StayVista. The whole villa is yours.
           </p>
           <a
