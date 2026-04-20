@@ -4,6 +4,7 @@ import Lenis from 'lenis'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SiteNav from '../components/nav/SiteNav'
+import FloatingBookButton from '../components/nav/FloatingBookButton'
 import SiteFooter from '../components/footer/SiteFooter'
 import ErrorBoundary from '../components/ErrorBoundary'
 import { useScrollToTop } from '../hooks/useScrollToTop'
@@ -43,6 +44,7 @@ export default function RootLayout() {
         </ErrorBoundary>
       </main>
       <SiteFooter />
+      <FloatingBookButton />
     </div>
   )
 }
