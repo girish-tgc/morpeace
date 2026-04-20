@@ -99,7 +99,7 @@ const NEARBY_PLACES = [
 // ── tiny helpers for consistent visual language ───────────────────────────
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <p className="text-sm md:text-base tracking-[0.3em] uppercase mb-4 font-semibold" style={{ color: PALETTE.aqua }}>
+    <p className="font-display text-sm md:text-base tracking-[0.3em] uppercase mb-4" style={{ color: PALETTE.aqua }}>
       {children}
     </p>
   )
@@ -209,7 +209,7 @@ export default function LandingMockPage() {
         <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-10 py-24 md:py-32 w-full">
           <div data-animate>
             <span
-              className="inline-block px-4 py-1.5 rounded-full text-sm md:text-base tracking-[0.25em] uppercase mb-6 font-semibold"
+              className="font-display inline-block px-4 py-1.5 rounded-full text-sm md:text-base tracking-[0.25em] uppercase mb-6"
               style={{
                 backgroundColor: `${PALETTE.aqua}22`,
                 color: PALETTE.aqua,
@@ -236,14 +236,14 @@ export default function LandingMockPage() {
                 href={BOOKING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-10 py-4 rounded-full cta-text text-lg md:text-xl transition-transform duration-300 hover:scale-[1.02]"
+                className="inline-flex items-center justify-center px-10 py-4 rounded-full font-display tracking-[0.2em] uppercase text-lg md:text-xl transition-transform duration-300 hover:scale-[1.02]"
                 style={{ backgroundColor: PALETTE.aqua, color: PALETTE.ink, boxShadow: `0 10px 30px ${PALETTE.aqua}55` }}
               >
                 Book your stay
               </a>
               <a
                 href="#what"
-                className="inline-flex items-center justify-center px-10 py-4 rounded-full cta-text text-lg md:text-xl transition-colors duration-300"
+                className="inline-flex items-center justify-center px-10 py-4 rounded-full font-display tracking-[0.2em] uppercase text-lg md:text-xl transition-colors duration-300"
                 style={{ border: `1px solid ${PALETTE.sand}66`, color: PALETTE.sand }}
               >
                 What is Morpeace?
@@ -515,7 +515,7 @@ export default function LandingMockPage() {
           </p>
           <Link
             to="/menu"
-            className="inline-flex items-center justify-center px-6 py-3 rounded-full cta-text"
+            className="inline-flex items-center justify-center px-6 py-3 rounded-full font-display tracking-[0.2em] uppercase"
             style={{ border: `1px solid ${PALETTE.sand}80`, color: PALETTE.sand }}
           >
             See the menu
@@ -666,7 +666,7 @@ export default function LandingMockPage() {
                 href={MAPS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-7 py-3.5 rounded-full cta-text text-base md:text-lg"
+                className="inline-flex items-center justify-center px-7 py-3.5 rounded-full font-display tracking-[0.2em] uppercase text-base md:text-lg"
                 style={{ backgroundColor: PALETTE.blue, color: PALETTE.cream }}
               >
                 Open in Google Maps
@@ -675,7 +675,7 @@ export default function LandingMockPage() {
                 href={BOOKING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-7 py-3.5 rounded-full cta-text text-base md:text-lg"
+                className="inline-flex items-center justify-center px-7 py-3.5 rounded-full font-display tracking-[0.2em] uppercase text-base md:text-lg"
                 style={{ border: `1px solid ${PALETTE.sand}55`, color: PALETTE.sand }}
               >
                 Book your stay
@@ -721,7 +721,7 @@ export default function LandingMockPage() {
             href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-10 py-4 rounded-full cta-text text-lg transition-transform duration-300 hover:scale-[1.03]"
+            className="inline-flex items-center justify-center px-10 py-4 rounded-full font-display tracking-[0.2em] uppercase text-lg transition-transform duration-300 hover:scale-[1.03]"
             style={{
               backgroundColor: PALETTE.aqua,
               color: PALETTE.ink,
