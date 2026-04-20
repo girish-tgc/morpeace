@@ -40,7 +40,7 @@ export default function SiteFooter() {
           <div>
             <p className="font-display text-xs tracking-[0.2em] uppercase text-sky-cream/40 mb-4">Find Us</p>
             <a
-              href="https://www.google.com/maps?q=Gat+No+267,+Shivajinagar,+Mugdul+Bhatachiwadi,+Satara,+Maharashtra+415519"
+              href="https://www.google.com/maps/place/StayVista+at+Rustic+Haven+%7C+Villa+with+Private+Pool+in+Satara/@17.6105128,73.9891524,17z"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block group not-italic"
