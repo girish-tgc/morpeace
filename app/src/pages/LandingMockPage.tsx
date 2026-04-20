@@ -192,27 +192,27 @@ export default function LandingMockPage() {
           alt="Morpeace villa reflected on the lake at dusk"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        {/* Base tonal wash */}
+        {/* Light tonal wash — keeps the dusk lake photo visible */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(180deg, rgba(10,26,35,0.55) 0%, rgba(10,26,35,0.4) 45%, rgba(10,26,35,0.9) 100%)',
+              'linear-gradient(180deg, rgba(30,62,77,0.35) 0%, rgba(30,62,77,0.2) 45%, rgba(30,62,77,0.7) 100%)',
           }}
         />
-        {/* Left-weighted scrim so the copy column sits on a dark backdrop */}
+        {/* Soft localized darken behind the text column only */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              'linear-gradient(90deg, rgba(10,26,35,0.88) 0%, rgba(10,26,35,0.72) 35%, rgba(10,26,35,0.3) 65%, rgba(10,26,35,0) 90%)',
+              'radial-gradient(ellipse 60% 55% at 28% 55%, rgba(6,18,26,0.55) 0%, rgba(6,18,26,0.25) 45%, transparent 75%)',
           }}
         />
-        {/* Aqua glow kept as a subtle accent in the lower right, away from text */}
+        {/* Aqua glow kept as a subtle accent, away from text */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: 'radial-gradient(ellipse 40% 35% at 85% 85%, rgba(36,190,185,0.16) 0%, transparent 65%)',
+            background: 'radial-gradient(ellipse 40% 35% at 85% 85%, rgba(36,190,185,0.14) 0%, transparent 65%)',
           }}
         />
 
