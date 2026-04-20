@@ -181,7 +181,7 @@ export default function LandingMockPage() {
     >
       <SeoHead
         title="Morpeace — A Forest Villa near Satara | Boutique Stay in the Western Ghats"
-        description="A boutique forest villa on 10 acres in the Western Ghats. Private pool, lake, 1,500+ native trees, farm-to-table meals. Sleeps up to 10. Book your stay at Morpeace."
+        description="A boutique forest villa on 10 acres in the Western Ghats. Private pool, lake, 1,000+ native trees, farm-to-table meals. Sleeps up to 10. Book your stay at Morpeace."
         path="/"
       />
 
@@ -192,12 +192,12 @@ export default function LandingMockPage() {
           alt="Morpeace villa reflected on the lake at dusk"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        {/* Light tonal wash — keeps the dusk lake photo visible */}
+        {/* Bottom-only vignette for CTA legibility — photo stays bright above */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              'linear-gradient(180deg, rgba(30,62,77,0.35) 0%, rgba(30,62,77,0.2) 45%, rgba(30,62,77,0.7) 100%)',
+              'linear-gradient(180deg, transparent 0%, transparent 55%, rgba(10,22,30,0.45) 100%)',
           }}
         />
         {/* Soft localized darken behind the text column only */}
@@ -205,14 +205,7 @@ export default function LandingMockPage() {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              'radial-gradient(ellipse 60% 55% at 28% 55%, rgba(6,18,26,0.55) 0%, rgba(6,18,26,0.25) 45%, transparent 75%)',
-          }}
-        />
-        {/* Aqua glow kept as a subtle accent, away from text */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background: 'radial-gradient(ellipse 40% 35% at 85% 85%, rgba(36,190,185,0.14) 0%, transparent 65%)',
+              'radial-gradient(ellipse 55% 50% at 28% 55%, rgba(6,18,26,0.42) 0%, rgba(6,18,26,0.18) 45%, transparent 75%)',
           }}
         />
 
@@ -247,7 +240,7 @@ export default function LandingMockPage() {
               }}
             >
               Morpeace is a boutique villa on ten regenerated acres in the Western Ghats — a private
-              pool, a lake, 1,500+ native trees, and food grown on the land. Sleeps up to 10.
+              pool, a lake, 1,000+ native trees, and food grown on the land. Sleeps up to 10.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <a
@@ -365,7 +358,7 @@ export default function LandingMockPage() {
           <Eyebrow>The forest</Eyebrow>
           <Heading>Walk without a destination.</Heading>
           <p className="font-body text-lg md:text-xl leading-relaxed mb-3" style={{ color: `${PALETTE.sand}d9` }}>
-            Over 1,500 native trees across ten regenerated acres. Walk the trails, climb the
+            Over 1,000 native trees across ten regenerated acres. Walk the trails, climb the
             watchtower, or sit and watch the birds return.
           </p>
           <p className="font-body text-lg md:text-xl leading-relaxed" style={{ color: `${PALETTE.sand}b3` }}>
