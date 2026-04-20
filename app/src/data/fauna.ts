@@ -22,13 +22,31 @@ export interface FaunaSpecies {
 }
 
 export const fauna: FaunaSpecies[] = [
-  // ---------- Birds (3 photographed of 58 confirmed) ----------
+  // ---------- Birds (photographed, of 58 confirmed) ----------
   {
     id: 'oriental-turtle-dove',
     common: 'Oriental Turtle Dove',
     scientific: 'Streptopelia orientalis',
     category: 'birds',
     photos: ['media/fauna/oriental-turtle-dove-1.webp', 'media/fauna/oriental-turtle-dove-2.webp'],
+  },
+  {
+    id: 'oriental-magpie-robin',
+    common: 'Oriental Magpie-Robin',
+    scientific: 'Copsychus saularis',
+    family: 'Muscicapidae',
+    category: 'birds',
+    photos: ['media/animals/bird.webp'],
+    note: 'A resident songbird, perched in the palm canopy',
+  },
+  {
+    id: 'cattle-egret',
+    common: 'Cattle Egret',
+    scientific: 'Bubulcus ibis',
+    family: 'Ardeidae',
+    category: 'birds',
+    photos: ['media/animals/egret.webp'],
+    note: 'Flock foraging at the edge of the lake',
   },
   {
     id: 'sunbird-nest',
@@ -193,7 +211,7 @@ export const fauna: FaunaSpecies[] = [
     common: 'Dwarf honeybee',
     scientific: 'Apis florea',
     category: 'insects',
-    photos: ['media/fauna/apis-florea-3.webp'],
+    photos: ['media/fauna/apis-florea-3.webp', 'media/animals/bee.webp'],
     note: 'Wild pollinator — open-nest coloniser',
   },
   {

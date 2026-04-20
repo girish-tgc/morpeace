@@ -53,6 +53,20 @@ export default function TheForestPage() {
           </h1>
           <p
             data-hero-line
+            className="font-body text-xl md:text-2xl lg:text-3xl text-sky-cream leading-snug max-w-2xl mx-auto mb-4"
+            style={{ textShadow: heroShadow }}
+          >
+            Morpeace &mdash; the most biodiverse private landscape.
+          </p>
+          <p
+            data-hero-line
+            className="font-body text-base md:text-lg italic text-[#FFD29A]/90 max-w-xl mx-auto mb-6"
+            style={{ textShadow: heroShadow }}
+          >
+            A scientifically documented, benchmark biodiversity sanctuary.
+          </p>
+          <p
+            data-hero-line
             className="font-body text-lg md:text-xl italic text-sky-cream/75 max-w-xl mx-auto"
             style={{ textShadow: heroShadow }}
           >

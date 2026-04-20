@@ -233,7 +233,7 @@ export default function ReviewsPage() {
               >
                 <Stars size={15} />
 
-                <blockquote className="mt-4 font-body text-base md:text-lg text-sky-cream/90 leading-relaxed italic line-clamp-6 md:group-hover:line-clamp-none transition-all">
+                <blockquote className="mt-4 font-body text-base md:text-lg text-sky-cream/90 leading-relaxed italic">
                   &ldquo;{review.text}&rdquo;
                 </blockquote>
 

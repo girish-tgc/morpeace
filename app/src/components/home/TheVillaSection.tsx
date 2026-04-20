@@ -124,7 +124,7 @@ export default function TheVillaSection() {
             href={villa.cta.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-[#E94A3C]/18 border border-[#E94A3C]/40 text-[#FF7D6B] hover:bg-[#E94A3C]/28 hover:border-[#E94A3C]/60 hover:text-[#E94A3C] px-8 py-3 rounded-full cta-text transition-all duration-500"
+            className="inline-block bg-[#F0E6CD]/12 border border-[#F0E6CD]/50 text-[#F0E6CD] hover:bg-[#F0E6CD]/22 hover:border-[#F0E6CD]/70 hover:text-[#F5EDD9] px-8 py-3 rounded-full cta-text transition-all duration-500"
           >
             {villa.cta.text}
           </a>

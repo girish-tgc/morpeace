@@ -94,6 +94,18 @@ export const gallerySections: GallerySection[] = [
     ],
   },
   {
+    id: 'night',
+    label: 'At Night',
+    heading: 'When the land turns in',
+    description: 'Lake under dusk, pool lit against the dark, the tower catching the last light — Morpeace after sundown.',
+    items: [
+      { src: 'media/at-night/night.webp', alt: 'Night falling over Morpeace', type: 'image' },
+      { src: 'media/at-night/lake-view.webp', alt: 'Lake at night', type: 'image' },
+      { src: 'media/at-night/pool-view.webp', alt: 'Pool lit at night', type: 'image' },
+      { src: 'media/at-night/top-view.webp', alt: 'Top view of Morpeace at night', type: 'image' },
+    ],
+  },
+  {
     id: 'days',
     label: 'Days at Morpeace',
     heading: 'How time passes here',

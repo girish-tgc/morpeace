@@ -121,7 +121,7 @@ export default function TheStorySection() {
     let idleTimer: ReturnType<typeof setTimeout> | null = null
     let userInteracting = false
 
-    const SPEED = 50 // px per second — slower cinematic pace
+    const SPEED = 90 // px per second — cinematic but keeps beats flowing
 
     function startAutoScroll() {
       if (autoTween) autoTween.kill()
@@ -144,14 +144,14 @@ export default function TheStorySection() {
       }, 4000)
     }
 
-    // Hero holds 7s, then one gentle scroll past the hero, then the slow
-    // creep takes over — Origin title and beats scroll at the same pace.
+    // Hero holds 7s, then a quick smooth glide past the hero that hands off
+    // to the slow creep without a pause — text keeps flowing throughout.
     const startDelay = setTimeout(() => {
       if (userInteracting) return
       gsap.to(window, {
         scrollTo: { y: window.innerHeight, autoKill: true },
-        duration: 2.2,
-        ease: 'power2.inOut',
+        duration: 1.2,
+        ease: 'power1.out',
         onComplete: () => {
           if (!userInteracting) startAutoScroll()
         },

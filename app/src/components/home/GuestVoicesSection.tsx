@@ -126,7 +126,7 @@ export default function GuestVoicesSection() {
                   </svg>
                 ))}
               </div>
-              <p className="font-body text-sm text-sky-cream/65 italic leading-relaxed mb-4 line-clamp-6">
+              <p className="font-body text-sm text-sky-cream/65 italic leading-relaxed mb-4">
                 "{review.text}"
               </p>
               <div className="flex items-center justify-between">

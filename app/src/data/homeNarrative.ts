@@ -2,16 +2,16 @@
 
 export const hero = {
   title: 'Morpeace',
-  subtitle: 'A forest unfolding to let you meet yourself.',
+  subtitle: 'A prayer unfolding as a forest, to let you meet yourself.',
   brandAnchor: 'Morpeace is not being built. It is becoming.',
   scrollPrompt: 'Enter gently',
   // Four single-word doorways. Each word is a handle; the reel behind it
   // carries the feeling. Order left-to-right: arrival, warmth, wander, depth.
   capsules: [
-    { label: 'Pause', href: '/the-experience', reel: 'photos/meditation-drone-1.mp4' },
-    { label: 'Celebrate', href: '/gallery', reel: 'photos/golden-hour-leaves.mp4' },
-    { label: 'Explore', href: '/the-forest', reel: 'photos/drone-shot.mp4' },
-    { label: 'Reconnect', href: '/philosophy', reel: 'photos/meditation-drone-2.mp4' },
+    { label: 'Wake gently', reel: 'photos/meditation-drone-1.mp4' },
+    { label: 'Breathe deeply', reel: 'photos/golden-hour-leaves.mp4' },
+    { label: 'Eat real', reel: 'photos/drone-shot.mp4' },
+    { label: 'Be natural', reel: 'photos/meditation-drone-2.mp4' },
   ] as const,
   cta: {
     text: 'Stay with us',
@@ -231,7 +231,7 @@ export const villa = {
     { name: 'Depth', text: 'The lake that carries mist at dawn, gold at dusk, stars at night.' },
     { name: 'Aspiration', text: 'A golden spiral tower rising from the courtyard. Each step invites awareness.' },
   ],
-  cta: { text: 'Stay within the forest', href: 'https://www.stayvista.com/villa/morpeace-a-rustic-haven-near-satara-villa-with-private-pool-cKBT' },
+  cta: { text: 'Stay within the forest', href: 'https://www.stayvista.com/villa/rustic-haven' },
 }
 
 // ─── Team ───
@@ -334,7 +334,7 @@ export const invitation = {
   text: 'Come experience it.',
   primaryCta: {
     text: 'Stay within the forest',
-    href: 'https://www.stayvista.com/villa/morpeace-a-rustic-haven-near-satara-villa-with-private-pool-cKBT',
+    href: 'https://www.stayvista.com/villa/rustic-haven',
   },
   secondaryCta: {
     text: 'Write to us',

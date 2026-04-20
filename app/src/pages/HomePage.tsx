@@ -40,7 +40,7 @@ export default function HomePage() {
               href={invitation.primaryCta.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-[#E94A3C] border border-[#E94A3C] text-white hover:bg-[#B3271E] hover:border-[#B3271E] px-8 py-3 rounded-full cta-text transition-all duration-500"
+              className="inline-block bg-[#F0E6CD] border border-[#F0E6CD] text-[#012E43] hover:bg-[#F5EDD9] hover:border-[#F5EDD9] px-8 py-3 rounded-full cta-text transition-all duration-500"
             >
               {invitation.primaryCta.text}
             </a>

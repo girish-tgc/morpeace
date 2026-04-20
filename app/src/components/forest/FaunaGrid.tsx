@@ -11,7 +11,7 @@ const CATEGORY_ORDER: { id: FaunaCategory; label: string; blurb: string; countFa
   {
     id: 'birds',
     label: 'Birds',
-    blurb: '58 species recorded on site by sight and Merlin Sound ID. 3 photographed during the survey window.',
+    blurb: '58 species recorded on site by sight and Merlin Sound ID. A handful photographed — the ones that held still long enough.',
     countFact: `${faunaStats.birds.confirmed} recorded · ${faunaStats.birds.photographed} photographed`,
   },
   {

@@ -50,10 +50,25 @@ const SUSTAINABILITY_ITEMS = [
 ]
 
 const NEARBY_PLACES = [
-  { name: 'Kaas Plateau', meta: 'Seasonal · UNESCO site' },
+  { name: 'Kaas Plateau', meta: 'Seasonal \u00b7 UNESCO site' },
+  { name: 'Kaas Lake', meta: 'Quiet water beside the plateau' },
   { name: 'Thoseghar Waterfalls', meta: 'Monsoon season' },
-  { name: 'Sajjangad', meta: 'Historic fort & temple' },
+  { name: 'Vajrai Waterfall', meta: 'Among India\u2019s tallest \u00b7 monsoon' },
+  { name: 'Lingamala Falls', meta: 'Monsoon cascade' },
+  { name: 'Sajjangad', meta: 'Fort & Swami Ramdas shrine' },
   { name: 'Ajinkyatara Fort', meta: 'Hilltop panoramic views' },
+  { name: 'Vasota Fort', meta: 'Trek through Koyna Sanctuary' },
+  { name: 'Baramotichi Vihir', meta: '17th-c ornate stepwell' },
+  { name: 'Chalkewadi Windmill Farm', meta: 'Plateau of windmills' },
+  { name: 'Koyna Dam', meta: 'Scenic \u00b7 permit required' },
+  { name: 'Lodwick Point', meta: 'Valley viewpoint' },
+  { name: 'Mayani Bird Sanctuary', meta: '400+ species \u00b7 winter' },
+  { name: 'Shivsagar Lake', meta: 'Quiet picnic waters' },
+  { name: 'Sangam Mahuli', meta: '18th-c riverside temples' },
+  { name: 'Natraj Mandir', meta: 'Chidambaram-style Shiva temple' },
+  { name: 'Dholya Ganpati Mandir', meta: 'Ganesha shrine at Wai' },
+  { name: 'Shikhar Shingnapur', meta: 'Hilltop Shiva temple' },
+  { name: 'Yamai Devi Temple', meta: 'Hilltop shrine at Aundh' },
 ]
 
 export default function YourDayPage() {
@@ -148,7 +163,7 @@ export default function YourDayPage() {
           'The spaces at Morpeace are designed around light, air, and stillness. Clean rooms with natural materials, open views into the forest, and comfort without excess.',
           'There is no schedule here. Your day unfolds at your own pace.',
         ]}
-        imageSrc="placeholder:Villa interior / room with natural light"
+        imageSrc="media/rustic-haven/rh-05.webp"
       />
 
       {/* === THE FOREST === */}
@@ -207,7 +222,7 @@ export default function YourDayPage() {
           'Morpeace is as much for the curious child as it is for the seeking adult. Children swim under open skies, play board games without screens, and run freely without boundaries.',
           'No curated distractions — just space to be playful, present, and free.',
         ]}
-        imageSrc="placeholder:Kids at the pool / playing outdoors"
+        imageSrc="media/kids/fun.webp"
       />
 
       {/* === THE LIBRARY === */}
@@ -216,7 +231,7 @@ export default function YourDayPage() {
         tag="The Library"
         heading="A Quiet Corner"
         copy="A thoughtfully curated collection in a warm reading corner. Sit, read, reflect — or simply pause between pages."
-        imageSrc="placeholder:Reading corner / bookshelves"
+        imageSrc="media/rustic-haven/rh-09.webp"
         reverse
         altBg
       />
@@ -253,7 +268,7 @@ export default function YourDayPage() {
           </p>
           <Link
             to="/menu"
-            className="inline-block cta-text border border-[#E94A3C] text-[#FF7D6B] hover:bg-[#E94A3C]/15 hover:text-[#E94A3C] px-8 py-3 rounded-full transition-all duration-300"
+            className="inline-block cta-text border border-[#F0E6CD]/50 text-[#F0E6CD] hover:bg-[#F0E6CD]/15 hover:border-[#F0E6CD]/70 hover:text-[#F5EDD9] px-8 py-3 rounded-full transition-all duration-300"
           >
             See the Menu
           </Link>
@@ -286,7 +301,7 @@ export default function YourDayPage() {
           'Morpeace has hosted intimate gatherings, pre-wedding shoots, pre-natal shoots, birthdays, and moments of togetherness.',
           'The space adapts to your celebration — without losing its stillness. Gatherings of up to 50 guests.',
         ]}
-        imageSrc="placeholder:Gathering / celebration at Morpeace"
+        imageSrc="media/property/sham-kane-renonwed-tabla-player.webp"
         altBg
       />
 
@@ -348,7 +363,7 @@ export default function YourDayPage() {
           href={BOOKING_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block cta-text border border-[#E94A3C] text-[#FF7D6B] hover:bg-[#E94A3C]/15 hover:text-[#E94A3C] px-10 py-4 rounded-full transition-all duration-300"
+          className="inline-block cta-text border border-[#F0E6CD]/50 text-[#F0E6CD] hover:bg-[#F0E6CD]/15 hover:border-[#F0E6CD]/70 hover:text-[#F5EDD9] px-10 py-4 rounded-full transition-all duration-300"
         >
           Book Your Stay
         </a>

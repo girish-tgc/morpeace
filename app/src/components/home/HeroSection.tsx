@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { hero, invitation } from '../../data/homeNarrative'
 
@@ -134,17 +133,14 @@ export default function HeroSection() {
           </div>
 
           {hero.capsules.map((c, i) => (
-            <Link
+            <span
               key={c.label}
-              to={c.href}
               onMouseEnter={() => setActiveReel(i)}
               onMouseLeave={() => setActiveReel(null)}
-              onFocus={() => setActiveReel(i)}
-              onBlur={() => setActiveReel(null)}
-              className="inline-flex items-center rounded-full border border-sky-cream/25 bg-sky-cream/[0.06] backdrop-blur-sm px-5 py-2 md:px-7 md:py-2.5 font-display text-base md:text-lg lg:text-xl tracking-wide text-sky-cream/90 leading-none shadow-[0_2px_18px_rgba(2,18,28,0.45)] hover:border-mango-gold/50 hover:text-sky-cream hover:bg-sky-cream/[0.1] transition-colors duration-500"
+              className="inline-flex items-center rounded-full border border-sky-cream/25 bg-sky-cream/[0.06] backdrop-blur-sm px-5 py-2 md:px-7 md:py-2.5 font-display text-base md:text-lg lg:text-xl tracking-wide text-sky-cream/90 leading-none shadow-[0_2px_18px_rgba(2,18,28,0.45)]"
             >
               {c.label}
-            </Link>
+            </span>
           ))}
         </div>
 
