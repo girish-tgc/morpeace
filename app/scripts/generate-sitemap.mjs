@@ -9,6 +9,7 @@ const root = path.resolve(__dirname, '..')
 const SITE = 'https://morpeace.com'
 const STATIC_ROUTES = [
   { path: '/', priority: '1.0', changefreq: 'weekly' },
+  { path: '/origin', priority: '0.8', changefreq: 'monthly' },
   { path: '/the-forest', priority: '0.9', changefreq: 'monthly' },
   { path: '/the-experience', priority: '0.9', changefreq: 'monthly' },
   { path: '/philosophy', priority: '0.8', changefreq: 'monthly' },

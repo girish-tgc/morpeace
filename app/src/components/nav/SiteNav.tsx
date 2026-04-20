@@ -6,6 +6,7 @@ const BASE = import.meta.env.BASE_URL
 
 const NAV_LINKS = [
   { to: '/', label: 'Morpeace' },
+  { to: '/origin', label: 'Origin' },
   { to: '/the-experience', label: 'At Morpeace' },
   { to: '/the-forest', label: 'The Forest' },
   { to: '/philosophy', label: 'Philosophy' },

@@ -1,10 +1,63 @@
 import HeroSection from '../components/home/HeroSection'
 import TheStorySection from '../components/home/TheStorySection'
+import SeoHead from '../components/SeoHead'
 import { invitation } from '../data/homeNarrative'
+import {
+  faqPageSchema,
+  lodgingBusinessSchema,
+  organizationSchema,
+} from '../lib/seo/schema'
+
+const HOME_FAQS = [
+  {
+    question: 'Where is Morpeace located?',
+    answer:
+      'Morpeace sits on 10 acres near Satara in the Western Ghats of Maharashtra, India — about 3.5 hours by road from Pune and 5–6 hours from Mumbai. Full address: Gat No 267, Shivajinagar, Mugdul Bhatachiwadi, Satara 415519.',
+  },
+  {
+    question: 'How do I book a stay at Morpeace?',
+    answer:
+      'Morpeace is listed as "Rustic Haven by StayVista". Bookings are handled through StayVista — visit the Reviews page for the direct booking link, or tap the floating Book button on any page.',
+  },
+  {
+    question: 'What is the nearest airport to Morpeace?',
+    answer:
+      'Pune International Airport (PNQ) is the closest, about 150 km away — roughly a 3.5-hour drive. Mumbai (BOM) is an alternative at ~270 km / 5–6 hours.',
+  },
+  {
+    question: 'Is Morpeace pet-friendly?',
+    answer: 'Yes — well-behaved pets are welcome. Please inform StayVista at the time of booking.',
+  },
+  {
+    question: 'What is included in a stay?',
+    answer:
+      'The villa sleeps up to 18 guests across 4 rooms, with a private pool, lake access, farm-to-table meals prepared by the caretaker families, forest trails through a regenerated 10-acre sanctuary, a watchtower for stargazing, and access to organic kitchen gardens with 40+ mango varieties.',
+  },
+  {
+    question: 'When is the best time to visit?',
+    answer:
+      'October to February for pleasant weather and crisp skies; June–September for the monsoon drama of the Western Ghats; March–May for the mango harvest. Each season reveals a different forest.',
+  },
+  {
+    question: 'What is there to do nearby?',
+    answer:
+      'Kaas Plateau (UNESCO seasonal wildflowers), Thoseghar & Vajrai waterfalls, Sajjangad and Ajinkyatara forts, Koyna Dam, and Mayani Bird Sanctuary are all within a 2-hour radius.',
+  },
+]
 
 export default function HomePage() {
   return (
     <div>
+      <SeoHead
+        title="The Origin of Morpeace — A Forest That Remembers"
+        description="The origin story of Morpeace — a 10-acre regenerated forest sanctuary near Satara in the Western Ghats. Told through the voice of the Touch-Me-Not, the forest's smallest plant."
+        path="/origin"
+        jsonLd={[
+          organizationSchema(),
+          lodgingBusinessSchema(),
+          faqPageSchema(HOME_FAQS),
+        ]}
+      />
       {/* Hero */}
       <HeroSection />
 

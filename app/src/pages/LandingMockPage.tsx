@@ -180,9 +180,9 @@ export default function LandingMockPage() {
       }}
     >
       <SeoHead
-        title="Morpeace — Stay in a Forest Villa near Satara (Mock Landing)"
-        description="A boutique forest villa on 10 acres in the Western Ghats. Private pool, lake, forest trails, farm-to-table meals. Book your stay at Morpeace."
-        path="/landing-mock"
+        title="Morpeace — A Forest Villa near Satara | Boutique Stay in the Western Ghats"
+        description="A boutique forest villa on 10 acres in the Western Ghats. Private pool, lake, 1,500+ native trees, farm-to-table meals. Sleeps up to 10. Book your stay at Morpeace."
+        path="/"
       />
 
       {/* ============================================= HERO */}

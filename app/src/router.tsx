@@ -18,8 +18,9 @@ export const router = createBrowserRouter(
       path: '/',
       element: <RootLayout />,
       children: [
-        { index: true, element: <HomePage /> },
-        { path: 'landing-mock', element: <LandingMockPage /> },
+        { index: true, element: <LandingMockPage /> },
+        { path: 'origin', element: <HomePage /> },
+        { path: 'landing-mock', element: <Navigate to="/" replace /> },
         { path: 'the-forest', element: <TheForestPage /> },
         { path: 'the-forest/:treeId', element: <TreeDetailPage /> },
         { path: 'the-experience', element: <YourDayPage /> },
