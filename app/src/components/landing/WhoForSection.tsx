@@ -1,5 +1,4 @@
 import PairedBookingCTAs from '../nav/PairedBookingCTAs'
-import { whatsappLink } from '../../data/contact'
 
 const PALETTE = {
   ink: '#1E3E4D',
@@ -103,7 +102,7 @@ export default function WhoForSection() {
             >
               <p
                 className="font-display text-[11px] md:text-xs tracking-[0.22em] uppercase mb-2.5"
-                style={{ color: '#FF7D6B' }}
+                style={{ color: '#F5EBD0' }}
               >
                 {card.intent}
               </p>
@@ -125,15 +124,6 @@ export default function WhoForSection() {
               >
                 {card.meta}
               </p>
-              <a
-                href={whatsappLink(card.whatsappPrefill)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-display text-xs tracking-[0.18em] uppercase underline underline-offset-4 decoration-1 hover:decoration-2 self-start transition-all"
-                style={{ color: '#FF7D6B' }}
-              >
-                WhatsApp to plan yours →
-              </a>
             </div>
           ))}
         </div>

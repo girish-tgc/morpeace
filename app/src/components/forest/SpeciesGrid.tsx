@@ -22,7 +22,7 @@ function OriginPill({ origin }: { origin: Origin }) {
 function LeaderCard({ s, rank, maxCount }: { s: Species; rank: number; maxCount: number }) {
   const pct = Math.max(8, (s.count / maxCount) * 100)
   const body = (
-    <div className="relative p-5 md:p-6 rounded-xl ring-1 ring-sky-cream/10 bg-[#012E43]/40 hover:ring-[#FF7D6B]/45 transition-all duration-500">
+    <div className="relative p-5 md:p-6 rounded-xl ring-1 ring-sky-cream/10 bg-[#012E43]/40 hover:ring-[#F5EBD0]/45 transition-all duration-500">
       <div className="flex items-start gap-5">
         <div className="font-display text-3xl md:text-4xl text-sky-cream/25 tabular-nums leading-none pt-1">
           {String(rank).padStart(2, '0')}
@@ -32,7 +32,7 @@ function LeaderCard({ s, rank, maxCount }: { s: Species; rank: number; maxCount:
           <div className="flex items-baseline gap-3 flex-wrap">
             <h3 className="font-display text-xl md:text-2xl text-sky-cream leading-tight">{s.common}</h3>
             {s.iucn === 'VU' && (
-              <span className="eyebrow text-[10px] px-2 py-0.5 rounded-full border border-[#E94A3C]/60 text-[#FF7D6B] bg-[#E94A3C]/10">
+              <span className="eyebrow text-[10px] px-2 py-0.5 rounded-full border border-[#E94A3C]/60 text-[#F5EBD0] bg-[#E94A3C]/10">
                 IUCN VU
               </span>
             )}
@@ -50,7 +50,7 @@ function LeaderCard({ s, rank, maxCount }: { s: Species; rank: number; maxCount:
           <div className="mt-4 flex items-center gap-3">
             <div className="flex-1 h-1.5 rounded-full bg-sky-cream/8 overflow-hidden">
               <div
-                className="h-full rounded-full bg-gradient-to-r from-[#FF7D6B] to-turmeric transition-all duration-700"
+                className="h-full rounded-full bg-gradient-to-r from-[#F5EBD0] to-turmeric transition-all duration-700"
                 style={{ width: `${pct}%` }}
               />
             </div>
@@ -154,7 +154,7 @@ export default function SpeciesGrid() {
     >
       <div className="mx-auto max-w-5xl px-6 md:px-8">
         <div className="text-center max-w-2xl mx-auto mb-14 md:mb-20">
-          <p className="eyebrow text-[#FF7D6B]/80 mb-3">§2 — Flora · Tree Survey</p>
+          <p className="eyebrow text-[#F5EBD0]/80 mb-3">§2 — Flora · Tree Survey</p>
           <h2 className="font-display text-3xl md:text-5xl text-sky-cream mb-4">The Wider Canopy</h2>
           <div className="w-12 h-0.5 bg-[#E94A3C]/70 mx-auto mb-5" />
           <p className="font-body text-base md:text-lg italic text-sky-cream/70">
@@ -185,7 +185,7 @@ export default function SpeciesGrid() {
           <button
             type="button"
             onClick={() => setExpanded((e) => !e)}
-            className="eyebrow text-[#FF7D6B] hover:text-sky-cream transition-colors"
+            className="eyebrow text-[#F5EBD0] hover:text-sky-cream transition-colors"
           >
             {expanded ? 'Collapse' : `Show remaining ${rest.length} →`}
           </button>

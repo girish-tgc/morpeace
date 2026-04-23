@@ -46,7 +46,7 @@ export default function SiteFooter() {
               rel="noopener noreferrer"
               className="inline-block group not-italic"
             >
-              <address className="font-body text-sm leading-relaxed text-sky-cream/50 group-hover:text-[#FF7D6B] transition-colors not-italic">
+              <address className="font-body text-sm leading-relaxed text-sky-cream/50 group-hover:text-[#F5EBD0] transition-colors not-italic">
                 {ADDRESS_LINES.flatMap((line, i) =>
                   i === 0 ? [line] : [<br key={`br-${i}`} />, line],
                 )}
@@ -63,7 +63,7 @@ export default function SiteFooter() {
               href="https://thegreenconcept.co.in"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sky-cream/50 hover:text-[#FF7D6B] transition-colors"
+              className="text-sky-cream/50 hover:text-[#F5EBD0] transition-colors"
             >
               The Green Concept
             </a>

@@ -34,7 +34,7 @@ export default function EcologicalSignificance() {
     >
       <div className="mx-auto max-w-4xl px-6 md:px-8">
         <div className="text-center max-w-2xl mx-auto mb-14 md:mb-16">
-          <p className="eyebrow text-[#FF7D6B]/80 mb-3">§4 Ecological Significance</p>
+          <p className="eyebrow text-[#F5EBD0]/80 mb-3">§4 Ecological Significance</p>
           <h2 className="font-display text-3xl md:text-4xl text-sky-cream mb-4">
             Four signals stand out.
           </h2>
@@ -44,7 +44,7 @@ export default function EcologicalSignificance() {
         <div className="space-y-10 md:space-y-12">
           {points.map((p) => (
             <div key={p.n} className="grid grid-cols-[auto_1fr] gap-5 md:gap-8 items-start">
-              <div className="font-display text-4xl md:text-5xl text-[#FF7D6B]/40 tabular-nums leading-none">
+              <div className="font-display text-4xl md:text-5xl text-[#F5EBD0]/40 tabular-nums leading-none">
                 {p.n}
               </div>
               <div>

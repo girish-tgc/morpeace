@@ -45,7 +45,7 @@ export default function SplitSection({ tag, heading, copy, imageSrc, imageAlt, r
 
           {/* Text */}
           <div className={reverse ? 'md:order-1' : ''}>
-            <span className="eyebrow text-[#FF7D6B]/75 block mb-3">
+            <span className="eyebrow text-[#F5EBD0]/75 block mb-3">
               {tag}
             </span>
             <h3 className="font-display text-2xl md:text-3xl text-sky-cream mb-4">

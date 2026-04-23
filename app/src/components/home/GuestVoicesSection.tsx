@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger)
 const tagColors: Record<string, string> = {
   peace: 'bg-[#016795]/25 text-[#4AA7CC]',
   nature: 'bg-[#096C6C]/25 text-[#5FB3B3]',
-  food: 'bg-[#E94A3C]/20 text-[#FF7D6B]',
+  food: 'bg-[#E94A3C]/20 text-[#F5EBD0]',
   architecture: 'bg-[#326872]/30 text-[#8FB4BC]',
   hospitality: 'bg-[#5A8A93]/25 text-[#A8CCD4]',
 }
@@ -83,7 +83,7 @@ export default function GuestVoicesSection() {
               {/* Stars */}
               <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="text-[#FF7D6B]/75">
+                  <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="text-[#F5EBD0]/75">
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                   </svg>
                 ))}
@@ -121,7 +121,7 @@ export default function GuestVoicesSection() {
               {/* Stars */}
               <div className="flex gap-0.5 mb-3">
                 {[...Array(5)].map((_, si) => (
-                  <svg key={si} width="12" height="12" viewBox="0 0 24 24" fill="currentColor" className="text-[#FF7D6B]/55">
+                  <svg key={si} width="12" height="12" viewBox="0 0 24 24" fill="currentColor" className="text-[#F5EBD0]/55">
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                   </svg>
                 ))}

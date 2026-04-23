@@ -16,7 +16,7 @@ export default function NativeExoticBars() {
     >
       <div className="mx-auto max-w-4xl px-6 md:px-8">
         <div className="mb-8">
-          <p className="eyebrow text-[#FF7D6B]/80 mb-3">§2.2 Native vs. Exotic composition</p>
+          <p className="eyebrow text-[#F5EBD0]/80 mb-3">§2.2 Native vs. Exotic composition</p>
           <h3 className="font-display text-2xl md:text-3xl text-sky-cream mb-2">Four in five trees are native.</h3>
           <p className="font-body text-sm italic text-sky-cream/65 max-w-2xl">
             The property exceeds the threshold at which the landscape is recognisable as Indian —

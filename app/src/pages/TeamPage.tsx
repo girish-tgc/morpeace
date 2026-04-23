@@ -30,8 +30,8 @@ function MemberPortrait({ member }: { member: Member }) {
       )}
       {failed && (
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 px-6 text-center">
-          <div className="flex h-20 w-20 items-center justify-center rounded-full border border-[#FF7D6B]/35 bg-[#014066]/60 backdrop-blur-sm">
-            <span className="font-display text-xl tracking-[0.2em] text-[#FF7D6B]">
+          <div className="flex h-20 w-20 items-center justify-center rounded-full border border-[#F5EBD0]/35 bg-[#014066]/60 backdrop-blur-sm">
+            <span className="font-display text-xl tracking-[0.2em] text-[#F5EBD0]">
               {member.initials}
             </span>
           </div>
@@ -138,7 +138,7 @@ export default function TeamPage() {
         <div ref={heroRef} className="relative z-10 mx-auto max-w-4xl px-6 md:px-8">
           <p
             data-hero-line
-            className="mb-8 eyebrow text-[#FF7D6B]"
+            className="mb-8 eyebrow text-[#F5EBD0]"
           >
             Morpeace &nbsp;&mdash;&nbsp; the people
           </p>
@@ -201,7 +201,7 @@ export default function TeamPage() {
                 >
                   <div data-row-photo className={photoSpan}>
                     <div className="relative">
-                      <span className="absolute -top-3 -left-3 eyebrow text-[#FF7D6B]/80">
+                      <span className="absolute -top-3 -left-3 eyebrow text-[#F5EBD0]/80">
                         {String(i + 1).padStart(2, '0')}
                       </span>
                       <MemberPortrait member={member} />

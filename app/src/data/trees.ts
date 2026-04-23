@@ -852,7 +852,7 @@ const rawTrees: Omit<Tree, 'carbon' | 'nearbyTreeIds'>[] = [
     species: 'Kailaspati', scientificName: 'Couroupita guianensis', marathiName: 'कैलासपती',
     measurement: { gbh_cm: 10, height_m: 9, crown_diameter_m: 0 },
     story: kailaspatiStory, storyTitle: 'The Gift That Bloomed', teaching: 'A true gift continues to give.',
-    accentColor: '#FF7D6B', notes: 'Kailashpati',
+    accentColor: '#F5EBD0', notes: 'Kailashpati',
     category: ['sacred', 'flowering']
   },
   {

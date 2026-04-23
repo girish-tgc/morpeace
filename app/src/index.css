@@ -27,7 +27,7 @@
   /* Infrared accent — the lone warm */
   --color-infrared: #E94A3C;
   --color-infrared-deep: #B3271E;
-  --color-infrared-soft: #FF7D6B;
+  --color-infrared-soft: #F5EBD0;
 
   /* === Legacy aliases — retarget so existing components retune instantly === */
   --color-soil-deep: #014066;       /* was #1c1508 */

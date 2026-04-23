@@ -11,11 +11,11 @@ function ChecklistPanel({ title, eyebrow, note, items }: { title: string; eyebro
         className="w-full text-left px-6 py-5 md:px-8 md:py-6 flex items-baseline justify-between gap-4 hover:bg-[#012E43]/55 transition-colors"
       >
         <div>
-          <p className="eyebrow text-[#FF7D6B]/80 mb-1">{eyebrow}</p>
+          <p className="eyebrow text-[#F5EBD0]/80 mb-1">{eyebrow}</p>
           <h3 className="font-display text-xl md:text-2xl text-sky-cream">{title}</h3>
           <p className="font-body text-sm italic text-sky-cream/60 mt-1 max-w-2xl">{note}</p>
         </div>
-        <span className="eyebrow text-[#FF7D6B] whitespace-nowrap">
+        <span className="eyebrow text-[#F5EBD0] whitespace-nowrap">
           {open ? 'Collapse' : `Show all ${items.length} →`}
         </span>
       </button>
@@ -42,7 +42,7 @@ export default function Checklists() {
     >
       <div className="mx-auto max-w-5xl px-6 md:px-8">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <p className="eyebrow text-[#FF7D6B]/80 mb-3">Appendix B · Full Fauna Checklists</p>
+          <p className="eyebrow text-[#F5EBD0]/80 mb-3">Appendix B · Full Fauna Checklists</p>
           <h2 className="font-display text-3xl md:text-4xl text-sky-cream mb-4">
             The broader catalogue
           </h2>

@@ -29,7 +29,7 @@ function MediaTile({ src, alt, type, poster }: { src: string; alt: string; type:
   return (
     <div
       data-gallery-tile
-      className="group relative overflow-hidden rounded-xl aspect-[3/2] md:aspect-[4/3] bg-[#014066]/40 ring-1 ring-sky-cream/10 hover:ring-[#FF7D6B]/40 transition-all duration-500"
+      className="group relative overflow-hidden rounded-xl aspect-[3/2] md:aspect-[4/3] bg-[#014066]/40 ring-1 ring-sky-cream/10 hover:ring-[#F5EBD0]/40 transition-all duration-500"
     >
       {type === 'image' ? (
         <img
@@ -135,7 +135,7 @@ export default function GalleryPage() {
         </div>
 
         <div ref={heroRef} className="relative z-10 mx-auto max-w-4xl px-6 md:px-8 text-center">
-          <p data-hero-line className="mb-8 eyebrow text-[#FF7D6B]">
+          <p data-hero-line className="mb-8 eyebrow text-[#F5EBD0]">
             Morpeace &nbsp;&mdash;&nbsp; the archive
           </p>
           <h1
@@ -162,7 +162,7 @@ export default function GalleryPage() {
             <a
               key={s.id}
               href={`#${s.id}`}
-              className="eyebrow text-sky-cream/55 hover:text-[#FF7D6B] transition-colors whitespace-nowrap"
+              className="eyebrow text-sky-cream/55 hover:text-[#F5EBD0] transition-colors whitespace-nowrap"
             >
               {s.label}
             </a>
@@ -176,7 +176,7 @@ export default function GalleryPage() {
           <section key={section.id} id={section.id} className="relative scroll-mt-28 py-16 md:py-24">
             <div className="mx-auto max-w-6xl px-6 md:px-8">
               <div data-section-header className="text-center max-w-2xl mx-auto mb-10 md:mb-14">
-                <p className="eyebrow text-[#FF7D6B]/75 mb-3">{section.label}</p>
+                <p className="eyebrow text-[#F5EBD0]/75 mb-3">{section.label}</p>
                 <h2 className="font-display text-3xl md:text-4xl text-sky-cream mb-4">
                   {section.heading}
                 </h2>

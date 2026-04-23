@@ -1,7 +1,10 @@
+import { useLocation } from 'react-router-dom'
 import PairedBookingCTAs from './PairedBookingCTAs'
 import { whatsappLink, telLink, CONTACT } from '../../data/contact'
 
 export default function FloatingContactCluster() {
+  const { pathname } = useLocation()
+  if (pathname.startsWith('/hero-')) return null
   return (
     <div
       className="fixed bottom-3 left-3 md:bottom-6 md:left-6 z-40 flex flex-col gap-2 pointer-events-none"

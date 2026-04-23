@@ -7,7 +7,7 @@ export default function ConservationHighlights() {
     >
       <div className="mx-auto max-w-5xl px-6 md:px-8">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <p className="eyebrow text-[#FF7D6B]/80 mb-3">§2.4 Conservation highlights</p>
+          <p className="eyebrow text-[#F5EBD0]/80 mb-3">§2.4 Conservation highlights</p>
           <h2 className="font-display text-3xl md:text-4xl text-sky-cream mb-4">
             What the count reveals
           </h2>
@@ -18,7 +18,7 @@ export default function ConservationHighlights() {
           {/* Sandalwood */}
           <div className="rounded-xl ring-1 ring-[#E94A3C]/40 bg-[#E94A3C]/5 p-6">
             <div className="flex items-baseline gap-3 mb-3 flex-wrap">
-              <span className="eyebrow text-[10px] px-2 py-0.5 rounded-full border border-[#E94A3C]/70 text-[#FF7D6B] bg-[#E94A3C]/15">
+              <span className="eyebrow text-[10px] px-2 py-0.5 rounded-full border border-[#E94A3C]/70 text-[#F5EBD0] bg-[#E94A3C]/15">
                 IUCN Vulnerable
               </span>
               <span className="font-mono text-xs text-sky-cream/60">64 individuals</span>

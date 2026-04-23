@@ -230,7 +230,7 @@ export default function YourDayPage() {
           style={{ background: 'radial-gradient(ellipse at 50% 40%, rgba(1,64,102,0.2) 0%, rgba(6,72,72,0.55) 45%, rgba(1,46,67,0.78) 100%)' }}
         />
         <div data-animate className="relative z-10 max-w-2xl mx-auto px-8 md:px-16 py-20 text-center">
-          <span className="eyebrow text-[#FF7D6B] block mb-3">Meditation</span>
+          <span className="eyebrow text-[#F5EBD0] block mb-3">Meditation</span>
           <h2 className="font-display text-3xl md:text-5xl text-sky-cream mb-5"
             style={{ textShadow: '0 2px 20px rgba(1,46,67,0.6)' }}
           >
@@ -267,7 +267,7 @@ export default function YourDayPage() {
         <div className="absolute inset-0 pointer-events-none" style={{ background: 'rgba(50,104,114,0.16)', mixBlendMode: 'multiply' }} />
         <div className="absolute inset-0 bg-gradient-to-r from-[#012E43]/80 via-[#014066]/50 to-transparent" />
         <div data-animate className="relative z-10 max-w-xl px-8 md:px-16 py-20">
-          <span className="eyebrow text-[#FF7D6B] block mb-3">Food</span>
+          <span className="eyebrow text-[#F5EBD0] block mb-3">Food</span>
           <h2 className="font-display text-3xl md:text-4xl text-sky-cream mb-5"
             style={{ textShadow: '0 2px 20px rgba(1,46,67,0.55)' }}
           >
@@ -331,7 +331,7 @@ export default function YourDayPage() {
               <div
                 key={p.name}
                 data-animate
-                className="flex justify-between items-center bg-[#014066]/45 backdrop-blur-sm border border-sky-cream/10 rounded-lg px-5 py-4 hover:border-[#FF7D6B]/30 transition-colors"
+                className="flex justify-between items-center bg-[#014066]/45 backdrop-blur-sm border border-sky-cream/10 rounded-lg px-5 py-4 hover:border-[#F5EBD0]/30 transition-colors"
               >
                 <span className="font-display text-base text-sky-cream font-medium">{p.name}</span>
                 <span className="font-body text-sm text-sky-cream/55">{p.meta}</span>
@@ -358,7 +358,7 @@ export default function YourDayPage() {
                 'Stillness here rewards those who settle into it',
               ].map((item, i) => (
                 <li key={i} className="font-body text-base text-sky-cream/80 leading-relaxed">
-                  <span className="text-[#FF7D6B] mr-2">—</span>{item}
+                  <span className="text-[#F5EBD0] mr-2">—</span>{item}
                 </li>
               ))}
             </ul>

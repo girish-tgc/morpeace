@@ -131,14 +131,7 @@ export const fauna: FaunaSpecies[] = [
     scientific: 'Rhene sp.',
     family: 'Salticidae',
     category: 'spiders',
-    photos: [
-      'media/fauna/rhene-sp-2.webp',
-      'media/fauna/rhene-sp-4.webp',
-      'media/fauna/rhene-sp-6.webp',
-      'media/fauna/rhene-sp-8.webp',
-      'media/fauna/rhene-sp-19.webp',
-      'media/fauna/rhene-sp-21.webp',
-    ],
+    photos: ['media/fauna/rhene-sp-2.webp'],
     note: 'Active day-hunter — sight-driven, no web',
   },
   {

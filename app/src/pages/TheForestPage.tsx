@@ -55,7 +55,7 @@ export default function TheForestPage() {
           style={{ background: 'radial-gradient(ellipse at top, rgba(9,108,108,0.4), transparent 65%)' }}
         />
         <div ref={heroRef} className="relative z-10 text-center px-8 py-24 max-w-3xl">
-          <p data-hero-line className="eyebrow text-[#FF7D6B] mb-6" style={{ textShadow: heroShadow }}>
+          <p data-hero-line className="eyebrow text-[#F5EBD0] mb-6" style={{ textShadow: heroShadow }}>
             Morpeace · Living Pasaydan · Year 0 Baseline
           </p>
           <h1

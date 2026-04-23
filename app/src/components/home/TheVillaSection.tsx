@@ -93,7 +93,7 @@ export default function TheVillaSection() {
       <div className="relative z-10 max-w-5xl mx-auto px-8">
         {/* Head */}
         <div ref={headRef} className="text-center mb-16 md:mb-20">
-          <p className="eyebrow text-[#FF7D6B]/90 mb-4">
+          <p className="eyebrow text-[#F5EBD0]/90 mb-4">
             {villa.label}
           </p>
           <h2 className="font-display text-3xl md:text-5xl text-sky-cream leading-tight mb-6">
@@ -107,9 +107,9 @@ export default function TheVillaSection() {
             <div
               key={val.name}
               ref={el => { cardRefs.current[i] = el }}
-              className="bg-[#012E43]/75 backdrop-blur-sm border border-sky-cream/20 rounded-lg p-6 hover:border-[#FF7D6B]/40 transition-colors duration-500"
+              className="bg-[#012E43]/75 backdrop-blur-sm border border-sky-cream/20 rounded-lg p-6 hover:border-[#F5EBD0]/40 transition-colors duration-500"
             >
-              <h3 className="font-display text-base md:text-lg tracking-[0.2em] uppercase text-[#FF7D6B] mb-3">
+              <h3 className="font-display text-base md:text-lg tracking-[0.2em] uppercase text-[#F5EBD0] mb-3">
                 {val.name}
               </h3>
               <p className="font-body text-sm md:text-base text-sky-cream/90 italic leading-relaxed">

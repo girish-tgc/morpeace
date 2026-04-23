@@ -8,7 +8,7 @@ interface Props {
 export default function SectionHeader({ tag, heading, subtext, id }: Props) {
   return (
     <div id={id} data-animate className="text-center max-w-3xl mx-auto mb-10 md:mb-14 scroll-mt-28">
-      <span className="eyebrow text-[#FF7D6B]/75 block mb-3">
+      <span className="eyebrow text-[#F5EBD0]/75 block mb-3">
         {tag}
       </span>
       <h2 className="font-display text-3xl md:text-4xl text-sky-cream font-normal">

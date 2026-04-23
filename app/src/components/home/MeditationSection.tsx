@@ -73,7 +73,7 @@ export default function MeditationSection() {
       <div className="relative z-10 max-w-3xl mx-auto px-8 text-center">
         {/* Label + Headline */}
         <div ref={el => { textRefs.current[0] = el }}>
-          <p className="eyebrow text-[#FF7D6B]/60 mb-4">
+          <p className="eyebrow text-[#F5EBD0]/60 mb-4">
             {meditation.label}
           </p>
           <h2 className="font-display text-3xl md:text-5xl text-sky-cream/90 mb-6">

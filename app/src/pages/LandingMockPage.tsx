@@ -1,9 +1,13 @@
 import { useEffect, useRef } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SeoHead from '../components/SeoHead'
 import PairedBookingCTAs from '../components/nav/PairedBookingCTAs'
+import HeroVariantA from '../components/hero/HeroVariantA'
+import HeroVariantB from '../components/hero/HeroVariantB'
+import HeroVariantC from '../components/hero/HeroVariantC'
+import HeroVariantSwitcher from '../components/hero/HeroVariantSwitcher'
 import InclusionsStrip from '../components/landing/InclusionsStrip'
 import WhoForSection from '../components/landing/WhoForSection'
 import ActivitiesSection from '../components/landing/ActivitiesSection'
@@ -93,7 +97,7 @@ function ActivityGridItem({ icon: IconCmp, title, description }: ActivityItem) {
         border: `1px solid ${PALETTE.aqua}33`,
       }}
     >
-      <IconCmp size={30} weight="thin" className="mb-3" style={{ color: '#FF7D6B' }} aria-hidden />
+      <IconCmp size={30} weight="thin" className="mb-3" style={{ color: '#F5EBD0' }} aria-hidden />
       <h3 className="font-display text-xl md:text-2xl mb-2" style={{ color: PALETTE.cream }}>
         {title}
       </h3>
@@ -108,6 +112,12 @@ function ActivityGridItem({ icon: IconCmp, title, description }: ActivityItem) {
 
 export default function LandingMockPage() {
   const pageRef = useRef<HTMLDivElement>(null)
+  const { pathname } = useLocation()
+  const heroVariant =
+    pathname === '/hero-a' ? 'A'
+    : pathname === '/hero-b' ? 'B'
+    : pathname === '/hero-c' ? 'C'
+    : null
 
   useEffect(() => {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -148,10 +158,17 @@ export default function LandingMockPage() {
       <SeoHead
         title="Morpeace — A Forest Villa near Satara | Boutique Stay in the Western Ghats"
         description="A boutique forest villa on 10 acres in the Western Ghats. Private pool, lake, 1,000+ native trees, farm-to-table meals. Sleeps up to 10. Book your stay at Morpeace."
-        path="/"
+        path={heroVariant ? `/hero-${heroVariant.toLowerCase()}` : '/'}
+        noIndex={heroVariant !== null}
       />
 
+      <HeroVariantSwitcher />
+
       {/* ============================================= HERO */}
+      {heroVariant === 'A' && <HeroVariantA />}
+      {heroVariant === 'B' && <HeroVariantB />}
+      {heroVariant === 'C' && <HeroVariantC />}
+      {heroVariant === null && (
       <section className="relative min-h-[100svh] flex items-center overflow-hidden">
         <img
           src={`${BASE}media/property/at-night-lake-view.webp`}
@@ -229,6 +246,7 @@ export default function LandingMockPage() {
           scroll to explore
         </div>
       </section>
+      )}
 
       {/* ============================================= FACTS STRIP */}
       <section id="what" className="py-14 md:py-20 px-6 md:px-10 scroll-mt-28" style={{ backgroundColor: PALETTE.deep }}>

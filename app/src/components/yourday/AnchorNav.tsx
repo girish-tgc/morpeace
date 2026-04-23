@@ -65,7 +65,7 @@ export default function AnchorNav({ sections }: Props) {
               onClick={() => handleClick(id)}
               className={`font-display text-xs tracking-[0.2em] uppercase whitespace-nowrap transition-colors duration-200 pb-0.5 border-b-2 ${
                 activeId === id
-                  ? 'text-[#FF7D6B] border-[#E94A3C]'
+                  ? 'text-[#F5EBD0] border-[#E94A3C]'
                   : 'text-sky-cream/45 border-transparent hover:text-sky-cream/80'
               }`}
             >

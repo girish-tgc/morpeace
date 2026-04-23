@@ -91,7 +91,7 @@ export default function InclusionsStrip() {
             target="_blank"
             rel="noopener noreferrer"
             className="font-display text-sm md:text-base tracking-[0.2em] uppercase underline underline-offset-4 decoration-1 hover:decoration-2 transition-all"
-            style={{ color: '#FF7D6B' }}
+            style={{ color: '#F5EBD0' }}
           >
             Questions? WhatsApp us →
           </a>

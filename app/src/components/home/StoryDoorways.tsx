@@ -47,7 +47,7 @@ export default function StoryDoorways() {
 
               {/* Content */}
               <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8">
-                <h3 className="font-display text-2xl md:text-3xl text-sky-cream mb-2 group-hover:text-[#FF7D6B] transition-colors">
+                <h3 className="font-display text-2xl md:text-3xl text-sky-cream mb-2 group-hover:text-[#F5EBD0] transition-colors">
                   {d.title}
                 </h3>
                 <p className="font-body text-sm md:text-base text-sky-cream/70 italic leading-relaxed">
