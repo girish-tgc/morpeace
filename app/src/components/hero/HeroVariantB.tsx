@@ -8,7 +8,6 @@ export default function HeroVariantB() {
         src: 'media/property/at-night-lake-view.webp',
         alt: 'Morpeace villa reflected on the lake at dusk',
       }}
-      ctaCaption="Solo room or whole villa · sleeps 10"
     >
       <div className="relative z-10 flex-1 flex items-end px-6 md:px-10 pb-40 md:pb-48">
         <div data-animate className="flex flex-col items-start gap-4 max-w-4xl">

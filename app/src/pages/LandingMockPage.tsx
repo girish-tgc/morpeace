@@ -226,16 +226,6 @@ export default function LandingMockPage() {
               Morpeace is a boutique villa on ten regenerated acres in the Western Ghats — a private
               pool, a lake, 1,000+ native trees, and food grown on the land. Sleeps up to 10.
             </p>
-            <PairedBookingCTAs size="lg" tone="peacock" />
-            <p
-              className="font-body text-base md:text-lg mt-5 max-w-2xl"
-              style={{
-                color: '#F5EBD0',
-                textShadow: '0 1px 2px rgba(0,0,0,0.85), 0 2px 12px rgba(0,0,0,0.7)',
-              }}
-            >
-              Stay solo in a room, or reserve the whole villa · sleeps up to 10.
-            </p>
           </div>
         </div>
 

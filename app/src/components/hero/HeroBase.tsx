@@ -1,5 +1,4 @@
 import type { ReactNode } from 'react'
-import PairedBookingCTAs from '../nav/PairedBookingCTAs'
 
 const BASE = import.meta.env.BASE_URL
 
@@ -16,10 +15,9 @@ interface Props {
   media?: HeroMedia
   backgroundSlot?: ReactNode
   children: ReactNode
-  ctaCaption?: string
 }
 
-export default function HeroBase({ media, backgroundSlot, children, ctaCaption }: Props) {
+export default function HeroBase({ media, backgroundSlot, children }: Props) {
   return (
     <section className="relative min-h-[100svh] flex items-stretch overflow-hidden">
       {backgroundSlot}
@@ -65,26 +63,6 @@ export default function HeroBase({ media, backgroundSlot, children, ctaCaption }
       />
 
       {children}
-
-      <div className="absolute bottom-4 right-4 md:bottom-8 md:right-8 z-20 flex flex-col items-end gap-2 max-w-[92vw]">
-        <div className="md:hidden">
-          <PairedBookingCTAs size="md" tone="peacock" />
-        </div>
-        <div className="hidden md:block">
-          <PairedBookingCTAs size="lg" tone="peacock" />
-        </div>
-        {ctaCaption && (
-          <p
-            className="font-body text-[11px] md:text-xs tracking-wide text-right max-w-[22rem]"
-            style={{
-              color: '#F5EBD0',
-              textShadow: '0 1px 2px rgba(0,0,0,0.85), 0 2px 8px rgba(0,0,0,0.55)',
-            }}
-          >
-            {ctaCaption}
-          </p>
-        )}
-      </div>
 
       <div
         className="absolute bottom-4 left-4 md:bottom-8 md:left-8 z-10 text-[10px] md:text-xs tracking-[0.25em] uppercase opacity-70 pointer-events-none"

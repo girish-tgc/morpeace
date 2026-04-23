@@ -35,7 +35,6 @@ export default function HeroVariantA() {
           alt="Scenes from Morpeace — the forest, the villa, the life"
         />
       }
-      ctaCaption="Solo room or whole villa · sleeps 10"
     >
       <div className="relative z-10 flex-1 flex items-center justify-center px-6 md:px-10 py-24 md:py-32">
         <div data-animate className="flex flex-col items-center text-center max-w-3xl">

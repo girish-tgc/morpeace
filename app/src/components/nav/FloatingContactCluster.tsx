@@ -4,7 +4,19 @@ import { whatsappLink, telLink, CONTACT } from '../../data/contact'
 
 export default function FloatingContactCluster() {
   const { pathname } = useLocation()
-  if (pathname.startsWith('/hero-')) return null
+  const isHeroRoute = pathname === '/' || pathname.startsWith('/hero-')
+
+  if (isHeroRoute) {
+    return (
+      <div
+        className="fixed bottom-3 right-3 md:bottom-6 md:right-6 z-40 pointer-events-auto"
+        style={{ paddingBottom: 'max(0rem, env(safe-area-inset-bottom))' }}
+      >
+        <PairedBookingCTAs size="md" tone="peacock" />
+      </div>
+    )
+  }
+
   return (
     <div
       className="fixed bottom-3 left-3 md:bottom-6 md:left-6 z-40 flex flex-col gap-2 pointer-events-none"

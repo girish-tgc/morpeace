@@ -8,7 +8,6 @@ export default function HeroVariantC() {
         src: 'media/property/at-night-pool-view.webp',
         alt: 'Open-air pool at Morpeace surrounded by the forest',
       }}
-      ctaCaption="Solo room or whole villa · sleeps 10"
     >
       <div
         aria-hidden
