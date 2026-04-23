@@ -83,42 +83,35 @@ export default function HeroVideoPlaylist({ items, alt }: Props) {
   const fadeStyle = { transitionDuration: `${FADE_MS}ms` }
 
   return (
-    <>
-      <img
-        src={`${BASE}${items[currentIdx].poster}`}
-        alt={alt}
-        className="absolute inset-0 w-full h-full object-cover md:hidden"
-      />
-      <div className="absolute inset-0 hidden md:block">
-        <video
-          ref={videoA}
-          className={aClasses}
-          style={fadeStyle}
-          autoPlay
-          muted
-          playsInline
-          preload="auto"
-          poster={`${BASE}${slotA.poster}`}
-          aria-label={alt}
-          onEnded={advance}
-        >
-          <source src={`${BASE}${slotA.src}`} type="video/mp4" />
-        </video>
-        <video
-          ref={videoB}
-          className={bClasses}
-          style={fadeStyle}
-          autoPlay
-          muted
-          playsInline
-          preload="auto"
-          poster={`${BASE}${slotB.poster}`}
-          aria-label={alt}
-          onEnded={advance}
-        >
-          <source src={`${BASE}${slotB.src}`} type="video/mp4" />
-        </video>
-      </div>
-    </>
+    <div className="absolute inset-0">
+      <video
+        ref={videoA}
+        className={aClasses}
+        style={fadeStyle}
+        autoPlay
+        muted
+        playsInline
+        preload="auto"
+        poster={`${BASE}${slotA.poster}`}
+        aria-label={alt}
+        onEnded={advance}
+      >
+        <source src={`${BASE}${slotA.src}`} type="video/mp4" />
+      </video>
+      <video
+        ref={videoB}
+        className={bClasses}
+        style={fadeStyle}
+        autoPlay
+        muted
+        playsInline
+        preload="auto"
+        poster={`${BASE}${slotB.poster}`}
+        aria-label={alt}
+        onEnded={advance}
+      >
+        <source src={`${BASE}${slotB.src}`} type="video/mp4" />
+      </video>
+    </div>
   )
 }

@@ -36,6 +36,14 @@ export default function HeroVariantA() {
         />
       }
     >
+      <div
+        aria-hidden
+        className="absolute inset-0 z-[1] pointer-events-none"
+        style={{
+          background:
+            'radial-gradient(ellipse 55% 45% at 50% 50%, rgba(3,18,28,0.75) 0%, rgba(3,18,28,0.5) 35%, rgba(3,18,28,0.2) 60%, transparent 80%)',
+        }}
+      />
       <div className="relative z-10 flex-1 flex items-center justify-center px-6 md:px-10 py-24 md:py-32">
         <div data-animate className="flex flex-col items-center text-center max-w-3xl">
           <h1
@@ -43,7 +51,7 @@ export default function HeroVariantA() {
             style={{
               color: '#F5F1E3',
               textShadow:
-                '0 2px 6px rgba(0,0,0,0.7), 0 8px 36px rgba(0,0,0,0.55)',
+                '0 2px 6px rgba(0,0,0,0.85), 0 8px 40px rgba(0,0,0,0.7)',
               letterSpacing: '-0.01em',
             }}
           >
@@ -54,16 +62,16 @@ export default function HeroVariantA() {
             className="h-px w-20 my-8"
             style={{
               background:
-                'linear-gradient(90deg, transparent 0%, rgba(245,235,208,0.75) 50%, transparent 100%)',
+                'linear-gradient(90deg, transparent 0%, rgba(245,235,208,0.8) 50%, transparent 100%)',
             }}
           />
           <p
             className="font-body italic text-xl md:text-3xl leading-snug"
             style={{
-              color: '#F5EBD0',
-              fontWeight: 400,
+              color: '#F7EEDA',
+              fontWeight: 450,
               textShadow:
-                '0 1px 3px rgba(0,0,0,0.85), 0 3px 14px rgba(0,0,0,0.55)',
+                '0 1px 3px rgba(0,0,0,0.95), 0 3px 18px rgba(0,0,0,0.75)',
             }}
           >
             Ten quiet acres. A lake, a forest. Yours for a few days.
