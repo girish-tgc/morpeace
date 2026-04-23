@@ -231,7 +231,6 @@ export const villa = {
     { name: 'Depth', text: 'The lake that carries mist at dawn, gold at dusk, stars at night.' },
     { name: 'Aspiration', text: 'A golden spiral tower rising from the courtyard. Each step invites awareness.' },
   ],
-  cta: { text: 'Stay within the forest', href: 'https://www.stayvista.com/villa/rustic-haven' },
 }
 
 // ─── Team ───
@@ -335,10 +334,6 @@ export const team = {
 export const invitation = {
   brandAnchor: 'Morpeace is not being built. It is becoming.',
   text: 'Come experience it.',
-  primaryCta: {
-    text: 'Stay within the forest',
-    href: 'https://www.stayvista.com/villa/rustic-haven',
-  },
   secondaryCta: {
     text: 'Write to us',
     href: 'mailto:rstalwalkar@yahoo.com?subject=Morpeace',

@@ -13,11 +13,11 @@ import {
   type MenuSection,
   type MenuChapter,
 } from '../data/menu'
+import PairedBookingCTAs from '../components/nav/PairedBookingCTAs'
 
 gsap.registerPlugin(ScrollTrigger)
 
 const BASE = import.meta.env.BASE_URL
-const BOOKING_URL = 'https://www.stayvista.com/villa/rustic-haven?adult=6&child=0&infant=0&pax_selected=false&rooms_booked=3&reference_number=prop673b7f18be369lqw7kij&from=card'
 
 // ─── small decorative flourish that echoes the PDF's brown motifs ──
 function Flourish({ className = '' }: { className?: string }) {
@@ -422,18 +422,11 @@ export default function MenuPage() {
             Kindly share your preferences a day in advance so we can source the freshest from the
             farm, the forest, and the village around us.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block cta-text border border-[#8B3A24] text-[#8B3A24] hover:bg-[#8B3A24]/8 px-10 py-4 rounded-full transition-all duration-300"
-            >
-              Book Your Stay
-            </a>
+          <div className="flex flex-col items-center gap-5">
+            <PairedBookingCTAs size="md" tone="light" />
             <Link
               to="/the-experience"
-              className="inline-block cta-text text-[#6B4A24]/75 hover:text-[#6B4A24] px-4 py-4 tracking-[0.2em] transition-colors"
+              className="inline-block cta-text text-[#6B4A24]/75 hover:text-[#6B4A24] px-4 py-2 tracking-[0.2em] transition-colors"
             >
               ← Back to Morpeace
             </Link>

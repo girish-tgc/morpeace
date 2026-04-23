@@ -2,6 +2,7 @@ import HeroSection from '../components/home/HeroSection'
 import TheStorySection from '../components/home/TheStorySection'
 import SeoHead from '../components/SeoHead'
 import { invitation } from '../data/homeNarrative'
+import PairedBookingCTAs from '../components/nav/PairedBookingCTAs'
 import {
   faqPageSchema,
   lodgingBusinessSchema,
@@ -17,7 +18,7 @@ const HOME_FAQS = [
   {
     question: 'How do I book a stay at Morpeace?',
     answer:
-      'Morpeace is listed as "Rustic Haven by StayVista". Bookings are handled through StayVista — visit the Reviews page for the direct booking link, or tap the floating Book button on any page.',
+      'Morpeace is listed as "Rustic Haven by StayVista". Book a single room or the whole villa (sleeps up to 10) — use the Book a room / Book the villa buttons on any page, or WhatsApp us directly.',
   },
   {
     question: 'What is the nearest airport to Morpeace?',
@@ -88,15 +89,8 @@ export default function HomePage() {
             Come experience it.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={invitation.primaryCta.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-[#F0E6CD] border border-[#F0E6CD] text-[#012E43] hover:bg-[#F5EDD9] hover:border-[#F5EDD9] px-8 py-3 rounded-full cta-text transition-all duration-500"
-            >
-              {invitation.primaryCta.text}
-            </a>
+          <div className="flex flex-col items-center gap-4">
+            <PairedBookingCTAs size="md" tone="dark" />
             <a
               href={invitation.secondaryCta.href}
               className="inline-block border border-sky-cream/40 text-sky-cream/85 hover:text-sky-cream hover:border-sky-cream/70 px-8 py-3 rounded-full cta-text transition-all duration-500"

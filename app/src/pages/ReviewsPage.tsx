@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SeoHead from '../components/SeoHead'
 import { breadcrumbSchema, lodgingBusinessSchema } from '../lib/seo/schema'
 import { guestReviews, type ReviewTag } from '../data/reviews'
+import PairedBookingCTAs from '../components/nav/PairedBookingCTAs'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -16,7 +17,6 @@ const TAG_LABELS: Record<ReviewTag, string> = {
   peace: 'Serenity',
 }
 
-const BOOKING_URL = 'https://www.stayvista.com/villa/rustic-haven?adult=6&child=0&infant=0&pax_selected=false&rooms_booked=3&reference_number=prop673b7f18be369lqw7kij&from=card'
 
 function Stars({ count = 5, size = 14 }: { count?: number; size?: number }) {
   return (
@@ -298,14 +298,9 @@ export default function ReviewsPage() {
         <p className="font-body text-lg md:text-xl text-sky-cream/40 italic max-w-xl mx-auto leading-relaxed mb-8">
           Every visit writes a new chapter in the story of Morpeace
         </p>
-        <a
-          href={BOOKING_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block font-display text-xs tracking-[0.2em] uppercase px-8 py-3.5 rounded-full border border-mango-gold/40 text-mango-gold/80 hover:bg-mango-gold/10 hover:border-mango-gold/60 transition-all duration-300"
-        >
-          Write Your Own Story
-        </a>
+        <div className="flex justify-center">
+          <PairedBookingCTAs size="md" tone="light" />
+        </div>
       </section>
     </div>
   )

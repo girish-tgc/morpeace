@@ -2,6 +2,7 @@ import { useRef, useEffect } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { invitation } from '../../data/homeNarrative'
+import PairedBookingCTAs from '../nav/PairedBookingCTAs'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -64,15 +65,8 @@ export default function InvitationSection() {
         </p>
 
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href={invitation.primaryCta.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-[#E94A3C]/20 border border-[#E94A3C]/45 text-[#FF7D6B] hover:bg-[#E94A3C]/30 hover:border-[#E94A3C]/65 hover:text-[#E94A3C] px-8 py-3 rounded-full cta-text transition-all duration-500"
-          >
-            {invitation.primaryCta.text}
-          </a>
+        <div className="flex flex-col items-center gap-4">
+          <PairedBookingCTAs size="md" tone="dark" />
           <a
             href={invitation.secondaryCta.href}
             className="inline-block border border-sky-cream/15 text-sky-cream/55 hover:text-sky-cream/85 hover:border-sky-cream/35 px-8 py-3 rounded-full cta-text transition-all duration-500"

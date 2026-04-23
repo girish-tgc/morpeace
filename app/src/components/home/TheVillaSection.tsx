@@ -2,6 +2,7 @@ import { useRef, useEffect } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { villa } from '../../data/homeNarrative'
+import PairedBookingCTAs from '../nav/PairedBookingCTAs'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -119,15 +120,8 @@ export default function TheVillaSection() {
         </div>
 
         {/* CTA */}
-        <div ref={ctaRef} className="text-center">
-          <a
-            href={villa.cta.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-[#F0E6CD]/12 border border-[#F0E6CD]/50 text-[#F0E6CD] hover:bg-[#F0E6CD]/22 hover:border-[#F0E6CD]/70 hover:text-[#F5EDD9] px-8 py-3 rounded-full cta-text transition-all duration-500"
-          >
-            {villa.cta.text}
-          </a>
+        <div ref={ctaRef} className="flex justify-center">
+          <PairedBookingCTAs size="md" tone="dark" />
         </div>
       </div>
     </section>

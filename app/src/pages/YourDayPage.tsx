@@ -8,11 +8,17 @@ import SectionHeader from '../components/yourday/SectionHeader'
 import ActivityCard from '../components/yourday/ActivityCard'
 import SplitSection from '../components/yourday/SplitSection'
 import AnchorNav from '../components/yourday/AnchorNav'
+import PairedBookingCTAs from '../components/nav/PairedBookingCTAs'
+import {
+  LAND_ACTIVITIES,
+  RECREATION_ACTIVITIES,
+  SUSTAINABILITY_ITEMS,
+} from '../data/activities'
+import { NEARBY_PLACES } from '../data/nearbyPlaces'
 
 gsap.registerPlugin(ScrollTrigger)
 
 const BASE = import.meta.env.BASE_URL
-const BOOKING_URL = 'https://www.stayvista.com/villa/rustic-haven?adult=6&child=0&infant=0&pax_selected=false&rooms_booked=3&reference_number=prop673b7f18be369lqw7kij&from=card'
 
 const ANCHOR_SECTIONS = [
   { id: 'stay', label: 'Stay' },
@@ -26,52 +32,6 @@ const ANCHOR_SECTIONS = [
   { id: 'sustainability', label: 'Sustainability' },
   { id: 'celebrations', label: 'Celebrations' },
   { id: 'nearby', label: 'Nearby' },
-]
-
-const LAND_ACTIVITIES = [
-  { icon: '🐄', title: 'Cow Feeding', description: 'Spend time with the cows in the morning. No rush, no audience.' },
-  { icon: '🐟', title: 'Fish Feeding', description: 'Sit by the water and feed the fish. A surprisingly calming ritual.' },
-  { icon: '🍋', title: 'Fruit Plucking', description: 'Pick seasonal fruit straight from the trees when it\'s ready.' },
-  { icon: '🌿', title: 'Hammock Rest', description: 'Find a spot, lie down, and watch the forest move above you.' },
-  { icon: '🌅', title: 'Sky Gazing', description: 'Clear skies at night. Stars you won\'t see from the city.' },
-  { icon: '🚶', title: 'Forest Walk', description: 'Guided or solo trails through the restored forest.' },
-]
-
-const RECREATION_ACTIVITIES = [
-  { icon: '🏊', title: 'Swimming Pool', description: 'Open-air pool surrounded by greenery. Open all day.' },
-  { icon: '🏓', title: 'Table Tennis', description: 'Indoor table tennis for friendly competition.' },
-  { icon: '🎲', title: 'Board Games', description: 'A collection of classics. Great for evenings with family or friends.' },
-]
-
-const SUSTAINABILITY_ITEMS = [
-  { icon: '🔥', title: 'Biochar', description: 'Returning life to the soil through carbon-rich amendments.' },
-  { icon: '🌱', title: 'Shed-Net Greenhouse', description: 'Nurturing delicate growth in controlled environments.' },
-  { icon: '💧', title: 'Hydroponics', description: 'Exploring water-led cultivation methods.' },
-  { icon: '♻️', title: 'Biogas', description: 'Transforming organic waste into energy, quietly.' },
-  { icon: '🗑️', title: 'Zero-Waste Incinerator', description: 'Designed to leave nothing behind.' },
-  { icon: '🌾', title: 'Open Growing Structures', description: 'Working with the land, not against it.' },
-]
-
-const NEARBY_PLACES = [
-  { name: 'Kaas Plateau', meta: 'Seasonal \u00b7 UNESCO site' },
-  { name: 'Kaas Lake', meta: 'Quiet water beside the plateau' },
-  { name: 'Thoseghar Waterfalls', meta: 'Monsoon season' },
-  { name: 'Vajrai Waterfall', meta: 'Among India\u2019s tallest \u00b7 monsoon' },
-  { name: 'Lingamala Falls', meta: 'Monsoon cascade' },
-  { name: 'Sajjangad', meta: 'Fort & Swami Ramdas shrine' },
-  { name: 'Ajinkyatara Fort', meta: 'Hilltop panoramic views' },
-  { name: 'Vasota Fort', meta: 'Trek through Koyna Sanctuary' },
-  { name: 'Baramotichi Vihir', meta: '17th-c ornate stepwell' },
-  { name: 'Chalkewadi Windmill Farm', meta: 'Plateau of windmills' },
-  { name: 'Koyna Dam', meta: 'Scenic \u00b7 permit required' },
-  { name: 'Lodwick Point', meta: 'Valley viewpoint' },
-  { name: 'Mayani Bird Sanctuary', meta: '400+ species \u00b7 winter' },
-  { name: 'Shivsagar Lake', meta: 'Quiet picnic waters' },
-  { name: 'Sangam Mahuli', meta: '18th-c riverside temples' },
-  { name: 'Natraj Mandir', meta: 'Chidambaram-style Shiva temple' },
-  { name: 'Dholya Ganpati Mandir', meta: 'Ganesha shrine at Wai' },
-  { name: 'Shikhar Shingnapur', meta: 'Hilltop Shiva temple' },
-  { name: 'Yamai Devi Temple', meta: 'Hilltop shrine at Aundh' },
 ]
 
 export default function YourDayPage() {
@@ -410,16 +370,11 @@ export default function YourDayPage() {
       <section data-animate className="text-center py-20 md:py-28 px-6">
         <h2 className="font-display text-3xl md:text-4xl text-sky-cream mb-4">Ready to arrive?</h2>
         <p className="font-body text-base md:text-lg text-sky-cream/65 mb-10">
-          Book your stay at Morpeace and let the day unfold.
+          A single room, or the whole villa. Let the day unfold.
         </p>
-        <a
-          href={BOOKING_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block cta-text border border-[#F0E6CD]/50 text-[#F0E6CD] hover:bg-[#F0E6CD]/15 hover:border-[#F0E6CD]/70 hover:text-[#F5EDD9] px-10 py-4 rounded-full transition-all duration-300"
-        >
-          Book Your Stay
-        </a>
+        <div className="flex justify-center">
+          <PairedBookingCTAs size="md" tone="dark" />
+        </div>
       </section>
     </div>
   )
