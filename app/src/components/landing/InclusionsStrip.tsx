@@ -26,25 +26,25 @@ export default function InclusionsStrip() {
     <section
       id="inclusions"
       className="py-14 md:py-20 px-6 md:px-10 scroll-mt-28"
-      style={{ backgroundColor: `${PALETTE.deep}b3` }}
+      style={{ backgroundColor: '#F0E6CD' }}
     >
       <div className="max-w-6xl mx-auto">
         <div data-animate className="mb-8 md:mb-10 text-center">
           <p
             className="font-display text-sm md:text-base tracking-[0.3em] uppercase mb-3"
-            style={{ color: PALETTE.aqua }}
+            style={{ color: '#0E5D6E' }}
           >
             What's included
           </p>
           <h2
             className="font-display text-3xl md:text-5xl leading-tight mb-4"
-            style={{ color: PALETTE.cream }}
+            style={{ color: PALETTE.ink }}
           >
             Book a single room, or the whole villa.
           </h2>
           <p
             className="font-body text-lg md:text-xl max-w-2xl mx-auto"
-            style={{ color: `${PALETTE.sand}d9` }}
+            style={{ color: `${PALETTE.ink}cc` }}
           >
             Every stay — solo, couple, family, or full-villa buyout — comes with all four meals, full access to the land, and people on hand to help when you need it.
           </p>
@@ -57,18 +57,22 @@ export default function InclusionsStrip() {
               <div
                 key={item.title}
                 className="p-5 rounded-xl"
-                style={{ backgroundColor: `${PALETTE.ink}b3`, border: `1px solid ${PALETTE.aqua}22` }}
+                style={{
+                  backgroundColor: '#FFFFFF',
+                  border: `1px solid ${PALETTE.ink}1a`,
+                  boxShadow: '0 8px 24px rgba(30, 62, 77, 0.06)',
+                }}
               >
                 <IconCmp size={26} weight="thin" className="mb-2.5" style={{ color: PALETTE.aqua }} aria-hidden />
                 <h3
                   className="font-display text-base md:text-lg mb-1 leading-snug"
-                  style={{ color: PALETTE.cream }}
+                  style={{ color: PALETTE.ink }}
                 >
                   {item.title}
                 </h3>
                 <p
                   className="font-body text-sm md:text-base leading-relaxed"
-                  style={{ color: `${PALETTE.sand}b3` }}
+                  style={{ color: `${PALETTE.ink}b3` }}
                 >
                   {item.detail}
                 </p>
@@ -81,17 +85,17 @@ export default function InclusionsStrip() {
           <Link
             to="/menu"
             className="font-display text-sm md:text-base tracking-[0.2em] uppercase underline underline-offset-4 decoration-1 hover:decoration-2 transition-all"
-            style={{ color: PALETTE.aqua }}
+            style={{ color: '#0E5D6E' }}
           >
             See the full menu →
           </Link>
-          <span className="hidden sm:inline" style={{ color: `${PALETTE.sand}55` }}>·</span>
+          <span className="hidden sm:inline" style={{ color: `${PALETTE.ink}55` }}>·</span>
           <a
             href={whatsappLink(roomMessage)}
             target="_blank"
             rel="noopener noreferrer"
             className="font-display text-sm md:text-base tracking-[0.2em] uppercase underline underline-offset-4 decoration-1 hover:decoration-2 transition-all"
-            style={{ color: '#F5EBD0' }}
+            style={{ color: PALETTE.blue }}
           >
             Questions? WhatsApp us →
           </a>

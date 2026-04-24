@@ -54,13 +54,6 @@ export default function HeroBase({ media, backgroundSlot, children }: Props) {
             'linear-gradient(180deg, rgba(6,18,26,0.35) 0%, transparent 28%, transparent 60%, rgba(6,18,26,0.55) 100%)',
         }}
       />
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            'radial-gradient(ellipse 55% 45% at 85% 90%, rgba(6,18,26,0.6) 0%, rgba(6,18,26,0.25) 45%, transparent 75%)',
-        }}
-      />
 
       {children}
 
