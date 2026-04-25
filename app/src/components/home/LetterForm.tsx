@@ -43,7 +43,7 @@ export default function LetterForm({ dark }: Props) {
               <button
                 onClick={handleSend}
                 disabled={!letter.trim()}
-                className="group flex items-center gap-3 px-8 py-3 rounded-full transition-all disabled:opacity-30 disabled:cursor-not-allowed hover:scale-105 bg-leaf-new/15 border border-leaf-new/30"
+                className="group flex items-center gap-3 px-8 py-3.5 min-h-[44px] rounded-full transition-all disabled:opacity-30 disabled:cursor-not-allowed hover:scale-105 bg-leaf-new/15 border border-leaf-new/30"
               >
                 <span className="font-display text-sm tracking-wider text-canopy-light/80">Send</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-canopy-light/60 group-hover:translate-x-1 transition-transform">
@@ -86,7 +86,7 @@ export default function LetterForm({ dark }: Props) {
             <button
               onClick={handleSend}
               disabled={!letter.trim()}
-              className="group flex items-center gap-3 px-8 py-3 rounded-full transition-all disabled:opacity-30 disabled:cursor-not-allowed hover:scale-105 border border-teal-deep/30 hover:bg-teal-deep/5"
+              className="group flex items-center gap-3 px-8 py-3.5 min-h-[44px] rounded-full transition-all disabled:opacity-30 disabled:cursor-not-allowed hover:scale-105 border border-teal-deep/30 hover:bg-teal-deep/5"
             >
               <span className="font-display text-sm tracking-wider text-teal-deep">Send</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-teal-deep/60 group-hover:translate-x-1 transition-transform">

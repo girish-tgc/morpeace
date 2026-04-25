@@ -31,7 +31,7 @@ export default function OurPromise() {
       </div>
 
       {/* Content */}
-      <div ref={contentRef} className="relative z-10 text-center px-8 py-24 max-w-3xl mx-auto">
+      <div ref={contentRef} className="relative z-10 text-center px-6 md:px-8 py-20 md:py-24 max-w-3xl mx-auto">
         <p
           data-animate
           className="font-display text-lg md:text-xl tracking-[0.3em] uppercase text-mango-gold mb-10"

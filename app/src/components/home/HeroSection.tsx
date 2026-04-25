@@ -27,7 +27,7 @@ export default function HeroSection() {
   }, [])
 
   return (
-    <section className="min-h-[100svh] h-[100svh] flex flex-col items-center justify-center relative overflow-hidden">
+    <section className="min-h-[100svh] flex flex-col items-center justify-center relative overflow-hidden">
       {/* Cool ocean radial gradient background */}
       <div
         className="absolute inset-0"
@@ -61,7 +61,7 @@ export default function HeroSection() {
         }}
       />
 
-      <div ref={containerRef} className="relative z-10 flex flex-col items-center justify-center text-center px-8 max-w-3xl">
+      <div ref={containerRef} className="relative z-10 flex flex-col items-center justify-center text-center px-6 md:px-8 max-w-3xl">
         {/* Tagline */}
         <p
           data-hero-line

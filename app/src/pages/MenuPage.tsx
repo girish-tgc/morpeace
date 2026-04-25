@@ -50,7 +50,7 @@ function MenuAnchorNav({ chapters, activeChapter, onJump }: {
 }) {
   return (
     <div className="sticky top-[calc(4rem+env(safe-area-inset-top))] md:top-[calc(5rem+env(safe-area-inset-top))] z-40 bg-[#F4ECDE]/92 backdrop-blur-md border-b border-[#8B6F3D]/18">
-      <nav className="overflow-x-auto scrollbar-hide">
+      <nav className="overflow-x-auto scrollbar-hide [mask-image:linear-gradient(to_right,black_calc(100%-28px),transparent)] md:[mask-image:none]">
         <div className="flex justify-start md:justify-center gap-6 md:gap-10 px-6 py-3.5 min-w-max">
           <button
             onClick={() => onJump('packages')}
@@ -148,7 +148,7 @@ function Chapter({ chapter }: { chapter: MenuChapter }) {
           <span className="font-display uppercase tracking-[0.3em] text-xs text-[#8B3A24]/85">
             {chapter.tag}
           </span>
-          <h2 className="font-display text-3xl md:text-5xl text-[#2C1810] mt-3 leading-tight">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-[#2C1810] mt-3 leading-tight">
             {chapter.title}
           </h2>
           {chapter.tagline && (
@@ -175,7 +175,7 @@ function PackagesBlock() {
           <span className="font-display uppercase tracking-[0.3em] text-xs text-[#8B3A24]/85">
             Meal Packages
           </span>
-          <h2 className="font-display text-3xl md:text-5xl text-[#2C1810] mt-3 leading-tight">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-[#2C1810] mt-3 leading-tight">
             What Comes with Your Stay
           </h2>
           <p className="font-body italic text-[#6B4A24] text-base md:text-lg mt-5 max-w-2xl mx-auto leading-relaxed">
@@ -372,7 +372,7 @@ export default function MenuPage() {
         <div className="relative z-10 text-center px-8 py-20 max-w-3xl">
           <div data-animate>
             <h1
-              className="font-display text-5xl md:text-7xl text-[#FBF4E4] leading-[1.05]"
+              className="font-display text-4xl sm:text-5xl md:text-7xl text-[#FBF4E4] leading-[1.05]"
               style={{ textShadow: '0 2px 24px rgba(44,24,16,0.65)' }}
             >
               The Menu
@@ -423,7 +423,7 @@ export default function MenuPage() {
             <PairedBookingCTAs size="md" tone="light" />
             <Link
               to="/the-experience"
-              className="inline-block cta-text text-[#6B4A24]/75 hover:text-[#6B4A24] px-4 py-2 tracking-[0.2em] transition-colors"
+              className="inline-block cta-text text-[#6B4A24]/75 hover:text-[#6B4A24] px-4 py-3 min-h-[44px] tracking-[0.2em] transition-colors"
             >
               ← Back to Morpeace
             </Link>

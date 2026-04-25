@@ -78,7 +78,7 @@ export default function RegenerationSection() {
 
   return (
     <section ref={sectionRef} className="py-24 md:py-40 bg-parchment">
-      <div className="max-w-5xl mx-auto px-8">
+      <div className="max-w-5xl mx-auto px-6 md:px-8">
         {/* Header */}
         <div ref={headRef} className="text-center mb-16 md:mb-24">
           <p className="font-display text-xs tracking-[0.3em] uppercase text-teal-deep/50 mb-4">

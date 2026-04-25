@@ -41,7 +41,7 @@ export default function EcologicalSignificance() {
           <div className="w-12 h-0.5 bg-[#E94A3C]/70 mx-auto" />
         </div>
 
-        <div className="space-y-10 md:space-y-12">
+        <div className="space-y-8 md:space-y-12">
           {points.map((p) => (
             <div key={p.n} className="grid grid-cols-[auto_1fr] gap-5 md:gap-8 items-start">
               <div className="font-display text-4xl md:text-5xl text-[#F5EBD0]/40 tabular-nums leading-none">

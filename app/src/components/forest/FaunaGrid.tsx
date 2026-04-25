@@ -98,7 +98,7 @@ function Lightbox({ f, onClose }: { f: FaunaSpecies; onClose: () => void }) {
         type="button"
         onClick={onClose}
         aria-label="Close"
-        className="absolute top-4 right-4 md:top-6 md:right-6 w-10 h-10 rounded-full flex items-center justify-center text-sky-cream/80 hover:text-[#F5EBD0] bg-[#012E43]/60 ring-1 ring-sky-cream/15"
+        className="absolute top-4 right-4 md:top-6 md:right-6 w-11 h-11 rounded-full flex items-center justify-center text-2xl leading-none text-sky-cream/80 hover:text-[#F5EBD0] bg-[#012E43]/60 ring-1 ring-sky-cream/15"
       >
         ×
       </button>
@@ -115,7 +115,7 @@ function Lightbox({ f, onClose }: { f: FaunaSpecies; onClose: () => void }) {
             <button
               type="button"
               onClick={() => setIdx((i) => (i - 1 + total) % total)}
-              className="absolute left-2 md:-left-14 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center text-sky-cream/80 hover:text-[#F5EBD0] bg-[#012E43]/60 ring-1 ring-sky-cream/15"
+              className="absolute left-2 md:-left-14 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full flex items-center justify-center text-2xl leading-none text-sky-cream/80 hover:text-[#F5EBD0] bg-[#012E43]/60 ring-1 ring-sky-cream/15"
               aria-label="Previous"
             >
               ‹
@@ -123,7 +123,7 @@ function Lightbox({ f, onClose }: { f: FaunaSpecies; onClose: () => void }) {
             <button
               type="button"
               onClick={() => setIdx((i) => (i + 1) % total)}
-              className="absolute right-2 md:-right-14 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center text-sky-cream/80 hover:text-[#F5EBD0] bg-[#012E43]/60 ring-1 ring-sky-cream/15"
+              className="absolute right-2 md:-right-14 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full flex items-center justify-center text-2xl leading-none text-sky-cream/80 hover:text-[#F5EBD0] bg-[#012E43]/60 ring-1 ring-sky-cream/15"
               aria-label="Next"
             >
               ›
@@ -190,7 +190,7 @@ export default function FaunaGrid() {
       <div className="mx-auto max-w-6xl px-6 md:px-8">
         <div className="text-center max-w-2xl mx-auto mb-14 md:mb-20">
           <p className="eyebrow text-[#F5EBD0]/80 mb-3">§3 — Fauna · Photographic Plates</p>
-          <h2 className="font-display text-3xl md:text-5xl text-sky-cream mb-4">Companions</h2>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-sky-cream mb-4">Companions</h2>
           <div className="w-12 h-0.5 bg-[#E94A3C]/70 mx-auto mb-5" />
           <p className="font-body text-base md:text-lg italic text-sky-cream/70">
             The wildlife is already voting with its wings.

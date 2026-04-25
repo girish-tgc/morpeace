@@ -98,8 +98,8 @@ export default function YourDayPage() {
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-[#012E43]/35 via-[#012E43]/25 to-[#012E43]/55" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(1,46,67,0.45)_0%,rgba(1,46,67,0.15)_55%,rgba(1,46,67,0.05)_100%)]" />
-        <div data-animate data-hero-hold className="relative z-10 text-center px-8 py-20 max-w-2xl mx-auto">
-          <h1 className="font-display text-4xl md:text-6xl text-sky-cream mb-5"
+        <div data-animate data-hero-hold className="relative z-10 text-center px-6 md:px-8 py-20 max-w-2xl mx-auto">
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl text-sky-cream mb-5"
             style={{ textShadow: '0 2px 18px rgba(0,0,0,0.95), 0 0 28px rgba(0,0,0,0.75), 0 0 6px rgba(0,0,0,0.9)' }}
           >
             A Day at Morpeace
@@ -229,9 +229,9 @@ export default function YourDayPage() {
           className="absolute inset-0"
           style={{ background: 'radial-gradient(ellipse at 50% 40%, rgba(1,64,102,0.2) 0%, rgba(6,72,72,0.55) 45%, rgba(1,46,67,0.78) 100%)' }}
         />
-        <div data-animate className="relative z-10 max-w-2xl mx-auto px-8 md:px-16 py-20 text-center">
+        <div data-animate className="relative z-10 max-w-2xl mx-auto px-6 md:px-16 py-16 md:py-20 text-center">
           <span className="eyebrow text-[#F5EBD0] block mb-3">Meditation</span>
-          <h2 className="font-display text-3xl md:text-5xl text-sky-cream mb-5"
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-sky-cream mb-5"
             style={{ textShadow: '0 2px 20px rgba(1,46,67,0.6)' }}
           >
             The Cave of the Inner Star
@@ -266,7 +266,7 @@ export default function YourDayPage() {
         </div>
         <div className="absolute inset-0 pointer-events-none" style={{ background: 'rgba(50,104,114,0.16)', mixBlendMode: 'multiply' }} />
         <div className="absolute inset-0 bg-gradient-to-r from-[#012E43]/80 via-[#014066]/50 to-transparent" />
-        <div data-animate className="relative z-10 max-w-xl px-8 md:px-16 py-20">
+        <div data-animate className="relative z-10 max-w-xl px-6 md:px-16 py-16 md:py-20">
           <span className="eyebrow text-[#F5EBD0] block mb-3">Food</span>
           <h2 className="font-display text-3xl md:text-4xl text-sky-cream mb-5"
             style={{ textShadow: '0 2px 20px rgba(1,46,67,0.55)' }}
@@ -281,7 +281,7 @@ export default function YourDayPage() {
           </p>
           <Link
             to="/menu"
-            className="inline-block cta-text border border-[#F0E6CD]/50 text-[#F0E6CD] hover:bg-[#F0E6CD]/15 hover:border-[#F0E6CD]/70 hover:text-[#F5EDD9] px-8 py-3 rounded-full transition-all duration-300"
+            className="inline-block cta-text border border-[#F0E6CD]/50 text-[#F0E6CD] hover:bg-[#F0E6CD]/15 hover:border-[#F0E6CD]/70 hover:text-[#F5EDD9] px-6 md:px-8 py-3.5 min-h-[44px] rounded-full transition-all duration-300"
           >
             See the Menu
           </Link>

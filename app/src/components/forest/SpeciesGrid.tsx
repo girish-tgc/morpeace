@@ -155,7 +155,7 @@ export default function SpeciesGrid() {
       <div className="mx-auto max-w-5xl px-6 md:px-8">
         <div className="text-center max-w-2xl mx-auto mb-14 md:mb-20">
           <p className="eyebrow text-[#F5EBD0]/80 mb-3">§2 — Flora · Tree Survey</p>
-          <h2 className="font-display text-3xl md:text-5xl text-sky-cream mb-4">The Wider Canopy</h2>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-sky-cream mb-4">The Wider Canopy</h2>
           <div className="w-12 h-0.5 bg-[#E94A3C]/70 mx-auto mb-5" />
           <p className="font-body text-base md:text-lg italic text-sky-cream/70">
             447 tagged trees. 62 species. The first fifteen carry most of the carbon —
@@ -185,7 +185,7 @@ export default function SpeciesGrid() {
           <button
             type="button"
             onClick={() => setExpanded((e) => !e)}
-            className="eyebrow text-[#F5EBD0] hover:text-sky-cream transition-colors"
+            className="eyebrow text-[#F5EBD0] hover:text-sky-cream transition-colors min-h-[44px] px-2"
           >
             {expanded ? 'Collapse' : `Show remaining ${rest.length} →`}
           </button>

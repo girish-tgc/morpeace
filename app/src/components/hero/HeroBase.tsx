@@ -58,7 +58,7 @@ export default function HeroBase({ media, backgroundSlot, children }: Props) {
       {children}
 
       <div
-        className="absolute bottom-4 left-4 md:bottom-8 md:left-8 z-10 text-[10px] md:text-xs tracking-[0.25em] uppercase opacity-70 pointer-events-none"
+        className="absolute bottom-4 left-4 md:bottom-8 md:left-8 z-10 text-xs tracking-[0.25em] uppercase opacity-70 pointer-events-none"
         style={{ color: '#C1B589' }}
       >
         scroll ↓
@@ -119,7 +119,7 @@ export function LogoPanel({
         />
         {tagline && (
           <p
-            className="relative z-10 font-display mt-3 md:mt-4 text-[11px] md:text-sm tracking-[0.35em] uppercase"
+            className="relative z-10 font-display mt-3 md:mt-4 text-xs md:text-sm tracking-[0.35em] uppercase"
             style={{
               color: '#F5EBD0',
               textShadow:
@@ -150,7 +150,7 @@ export function LogoPanel({
       />
       {tagline && (
         <p
-          className="font-display mt-2 md:mt-3 text-[11px] md:text-sm tracking-[0.35em] uppercase"
+          className="font-display mt-2 md:mt-3 text-xs md:text-sm tracking-[0.35em] uppercase"
           style={{ color: '#F5EBD0', textShadow: '0 1px 2px rgba(0,0,0,0.4)' }}
         >
           {tagline}

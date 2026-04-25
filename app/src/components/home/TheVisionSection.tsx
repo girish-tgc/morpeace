@@ -84,7 +84,7 @@ export default function TheVisionSection() {
         style={{ background: 'radial-gradient(ellipse at 50% 40%, transparent 20%, rgba(6,22,18,0.55) 100%)' }}
       />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-8">
+      <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-8">
         {/* Head */}
         <div ref={headRef} className="text-center mb-16 md:mb-20">
           <p className="font-display text-xs md:text-sm tracking-[0.3em] uppercase text-canopy-light/70 mb-4">
@@ -93,7 +93,7 @@ export default function TheVisionSection() {
           <p className="font-body text-base md:text-lg text-sky-cream/70 italic mb-6">
             {vision.decoder}
           </p>
-          <h2 className="font-display text-3xl md:text-5xl text-sky-cream leading-tight mb-8">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-sky-cream leading-tight mb-8">
             {vision.headline}
           </h2>
           <p className="font-body text-lg md:text-xl text-sky-cream/85 italic leading-relaxed max-w-3xl mx-auto">
@@ -110,7 +110,7 @@ export default function TheVisionSection() {
             <div
               key={grove.id}
               data-grove-card
-              className="flex-shrink-0 w-[280px] md:w-auto snap-start bg-forest-night/75 backdrop-blur-sm border border-canopy-light/20 rounded-lg p-6 hover:border-canopy-light/40 transition-colors duration-500"
+              className="flex-shrink-0 w-[260px] sm:w-[280px] md:w-auto snap-start bg-forest-night/75 backdrop-blur-sm border border-canopy-light/20 rounded-lg p-6 hover:border-canopy-light/40 transition-colors duration-500"
             >
               <div className="flex items-baseline gap-3 mb-3">
                 <span className="font-mono text-sm text-canopy-light/70">{grove.id}</span>
@@ -135,7 +135,7 @@ export default function TheVisionSection() {
           </p>
           <Link
             to={vision.cta.href}
-            className="inline-block border border-canopy-light/40 text-canopy-light hover:text-sky-cream hover:border-canopy-light/70 px-8 py-3 rounded-full font-display text-sm tracking-[0.2em] uppercase transition-all duration-500"
+            className="inline-block border border-canopy-light/40 text-canopy-light hover:text-sky-cream hover:border-canopy-light/70 px-6 md:px-8 py-3.5 min-h-[44px] rounded-full font-display text-sm tracking-[0.2em] uppercase transition-all duration-500"
           >
             {vision.cta.text}
           </Link>

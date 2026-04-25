@@ -20,7 +20,7 @@ export default function AtlasSummary() {
       <div className="mx-auto max-w-6xl px-6 md:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
           <p className="eyebrow text-[#F5EBD0]/80 mb-3">§Interim Report · Year-0 Baseline (Partial Survey)</p>
-          <h2 className="font-display text-3xl md:text-5xl text-sky-cream mb-5 leading-tight">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-sky-cream mb-5 leading-tight">
             A first pass through<br/>part of the forest.
           </h2>
           <div className="w-12 h-0.5 bg-[#E94A3C]/70 mx-auto mb-6" />

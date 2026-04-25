@@ -37,7 +37,7 @@ export default function InclusionsStrip() {
             What's included
           </p>
           <h2
-            className="font-display text-3xl md:text-5xl leading-tight mb-4"
+            className="font-display text-3xl sm:text-4xl md:text-5xl leading-tight mb-4"
             style={{ color: PALETTE.ink }}
           >
             Book a single room, or the whole villa.

@@ -15,9 +15,9 @@ interface Props {
 }
 
 const sizeCls: Record<Size, string> = {
-  sm: 'text-[10px] px-3 py-1.5 tracking-[0.15em]',
-  md: 'text-xs px-5 py-2.5 tracking-[0.2em]',
-  lg: 'text-base md:text-lg px-7 md:px-9 py-3.5 md:py-4 tracking-[0.2em]',
+  sm: 'text-[11px] px-4 py-2 tracking-[0.18em] min-h-[44px]',
+  md: 'text-xs px-5 py-2.5 tracking-[0.2em] min-h-[44px]',
+  lg: 'text-base md:text-lg px-7 md:px-9 py-3.5 md:py-4 tracking-[0.2em] min-h-[48px]',
 }
 
 const toneRoom: Record<Tone, string> = {

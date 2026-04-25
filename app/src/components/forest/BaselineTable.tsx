@@ -28,22 +28,24 @@ export default function BaselineTable() {
           </p>
         </div>
 
-        <div className="rounded-xl border border-text-deep/12 bg-white/50 overflow-hidden">
-          <div className="grid grid-cols-[1fr_auto_auto] gap-4 md:gap-8 px-5 md:px-7 py-4 border-b border-text-deep/12 bg-text-deep/5">
-            <span className="eyebrow text-text-deep/55">Indicator</span>
-            <span className="eyebrow text-text-deep/55">Year-0</span>
-            <span className="eyebrow text-text-deep/55">Next survey</span>
-          </div>
-          {rows.map((r) => (
-            <div
-              key={r.indicator}
-              className="grid grid-cols-[1fr_auto_auto] gap-4 md:gap-8 px-5 md:px-7 py-4 border-b last:border-b-0 border-text-deep/8 items-baseline"
-            >
-              <span className="font-display text-sm md:text-base text-text-deep/90">{r.indicator}</span>
-              <span className="font-mono text-sm md:text-base text-turmeric tabular-nums">{r.value}</span>
-              <span className="font-body text-xs md:text-sm text-text-deep/55 italic">{r.next}</span>
+        <div className="-mx-6 md:mx-0 px-6 md:px-0 overflow-x-auto">
+          <div className="min-w-[34rem] rounded-xl border border-text-deep/12 bg-white/50 overflow-hidden">
+            <div className="grid grid-cols-[1fr_auto_auto] gap-4 md:gap-8 px-5 md:px-7 py-4 border-b border-text-deep/12 bg-text-deep/5">
+              <span className="eyebrow text-text-deep/55">Indicator</span>
+              <span className="eyebrow text-text-deep/55">Year-0</span>
+              <span className="eyebrow text-text-deep/55">Next survey</span>
             </div>
-          ))}
+            {rows.map((r) => (
+              <div
+                key={r.indicator}
+                className="grid grid-cols-[1fr_auto_auto] gap-4 md:gap-8 px-5 md:px-7 py-4 border-b last:border-b-0 border-text-deep/8 items-baseline"
+              >
+                <span className="font-display text-sm md:text-base text-text-deep/90">{r.indicator}</span>
+                <span className="font-mono text-sm md:text-base text-turmeric tabular-nums">{r.value}</span>
+                <span className="font-body text-xs md:text-sm text-text-deep/55 italic">{r.next}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
         <p className="font-body text-xs italic text-text-deep/50 mt-6 leading-relaxed max-w-3xl">

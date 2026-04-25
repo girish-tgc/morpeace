@@ -28,7 +28,7 @@ export default function TheUnfolding() {
         <div className="light-dapple" />
       </div>
 
-      <div ref={contentRef} className="relative z-10 text-center px-8 py-24 max-w-3xl mx-auto">
+      <div ref={contentRef} className="relative z-10 text-center px-6 md:px-8 py-20 md:py-24 max-w-3xl mx-auto">
         <div data-animate className="space-y-8 mb-12">
           <p
             className="font-display text-2xl md:text-3xl lg:text-4xl text-sky-cream leading-snug"

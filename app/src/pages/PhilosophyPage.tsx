@@ -22,7 +22,7 @@ export default function PhilosophyPage() {
         className="relative min-h-[50vh] flex items-center justify-center overflow-hidden"
         style={{ background: 'linear-gradient(to bottom, #016795, #014066)' }}
       >
-        <div className="relative z-10 text-center px-8 py-20">
+        <div className="relative z-10 text-center px-6 md:px-8 py-16 md:py-20">
           <p
             className="font-display text-sm md:text-base tracking-[0.3em] uppercase text-canopy-light/50 mb-6"
             style={{ textShadow }}
@@ -30,7 +30,7 @@ export default function PhilosophyPage() {
             The Philosophy
           </p>
           <h1
-            className="font-display text-3xl md:text-5xl text-sky-cream mb-4"
+            className="font-display text-3xl sm:text-4xl md:text-5xl text-sky-cream mb-4"
             style={{ textShadow }}
           >
             Where our convictions take root

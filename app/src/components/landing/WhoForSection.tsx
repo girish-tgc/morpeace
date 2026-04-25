@@ -87,7 +87,7 @@ export default function WhoForSection() {
             Why you might come
           </p>
           <h2
-            className="font-display text-4xl md:text-6xl mb-5 leading-tight"
+            className="font-display text-4xl sm:text-5xl md:text-6xl mb-5 leading-tight"
             style={{ color: PALETTE.cream }}
           >
             Many reasons, one forest.
@@ -111,7 +111,7 @@ export default function WhoForSection() {
               }}
             >
               <p
-                className="font-display text-[11px] md:text-xs tracking-[0.22em] uppercase mb-2.5"
+                className="font-display text-xs tracking-[0.22em] uppercase mb-2.5"
                 style={{ color: '#F5EBD0' }}
               >
                 {card.intent}
@@ -129,7 +129,7 @@ export default function WhoForSection() {
                 {card.description}
               </p>
               <p
-                className="font-display text-[11px] md:text-xs tracking-[0.18em] uppercase mb-4"
+                className="font-display text-xs tracking-[0.18em] uppercase mb-4"
                 style={{ color: PALETTE.aqua }}
               >
                 {card.meta}

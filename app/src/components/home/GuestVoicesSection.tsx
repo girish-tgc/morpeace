@@ -65,7 +65,7 @@ export default function GuestVoicesSection() {
 
   return (
     <section ref={sectionRef} className="section-dark py-24 md:py-40 overflow-hidden">
-      <div className="max-w-6xl mx-auto px-8">
+      <div className="max-w-6xl mx-auto px-6 md:px-8">
         {/* Head */}
         <div ref={headRef} className="text-center mb-12 md:mb-16">
           <p className="eyebrow text-[#7FB0B5]/55 mb-4">
@@ -116,7 +116,7 @@ export default function GuestVoicesSection() {
           {others.map((review, i) => (
             <div
               key={i}
-              className="flex-shrink-0 w-[300px] md:w-[340px] snap-start bg-forest-night/30 border border-sky-cream/8 rounded-lg p-6 hover:border-sky-cream/15 transition-colors duration-500"
+              className="flex-shrink-0 w-[260px] sm:w-[300px] md:w-[340px] snap-start bg-forest-night/30 border border-sky-cream/8 rounded-lg p-6 hover:border-sky-cream/15 transition-colors duration-500"
             >
               {/* Stars */}
               <div className="flex gap-0.5 mb-3">

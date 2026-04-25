@@ -238,7 +238,7 @@ export default function TheStorySection() {
             <div className="max-w-2xl mx-auto text-center">
               {beat.finale ? (
                 <>
-                  <p data-line className="font-display text-5xl md:text-7xl lg:text-8xl leading-tight tracking-wide peacock-text mb-6">
+                  <p data-line className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-tight tracking-wide peacock-text mb-6">
                     Morpeace
                   </p>
                   {beat.lines.map((line, li) => (
@@ -257,7 +257,7 @@ export default function TheStorySection() {
                   <p
                     key={li}
                     data-line
-                    className="font-display text-4xl md:text-6xl lg:text-7xl leading-tight text-sky-cream"
+                    className="font-display text-3xl sm:text-4xl md:text-6xl lg:text-7xl leading-tight text-sky-cream"
                     style={{ textShadow: ts }}
                   >
                     {line}

@@ -149,7 +149,7 @@ export default function MobileMenu({ open, onClose, links }: Props) {
                   i === 0 ? [line] : [<br key={`br-${i}`} />, line],
                 )}
               </address>
-              <span className="mt-1.5 inline-flex items-center gap-1 font-display text-[10px] tracking-[0.18em] uppercase text-[#012E43]/70 group-hover:text-[#012E43] transition-colors">
+              <span className="mt-1.5 inline-flex items-center gap-1 font-display text-xs tracking-[0.18em] uppercase text-[#012E43]/70 group-hover:text-[#012E43] transition-colors">
                 Open in Google Maps
                 <svg className="w-2.5 h-2.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                   <path d="M7 17L17 7" />

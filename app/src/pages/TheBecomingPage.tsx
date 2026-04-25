@@ -363,11 +363,11 @@ export default function TheBecomingPage() {
       <div className="relative" style={{ zIndex: 1 }}>
         {/* Opening spacer — let the first bg breathe */}
         <div className="h-[70vh] flex items-center justify-center">
-          <div className="text-center px-8">
+          <div className="text-center px-6 md:px-8">
             <p className="font-display text-sm md:text-base tracking-[0.3em] uppercase text-canopy-light/60 mb-6">
               The Becoming
             </p>
-            <p className="font-display text-4xl md:text-6xl lg:text-7xl text-sky-cream mb-4" style={{ textShadow: ts }}>
+            <p className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-sky-cream mb-4" style={{ textShadow: ts }}>
               How a forest returned
             </p>
             <p className="font-body text-lg md:text-xl text-sky-cream/70 italic max-w-xl mx-auto">

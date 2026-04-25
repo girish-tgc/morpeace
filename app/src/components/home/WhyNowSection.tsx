@@ -70,7 +70,7 @@ export default function WhyNowSection() {
 
   return (
     <section ref={sectionRef} className="py-24 md:py-40 bg-parchment">
-      <div className="max-w-3xl mx-auto px-8 text-center">
+      <div className="max-w-3xl mx-auto px-6 md:px-8 text-center">
         <h2
           ref={headlineRef}
           className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-text-deep leading-tight mb-16 md:mb-24"

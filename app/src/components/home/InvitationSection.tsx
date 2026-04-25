@@ -50,7 +50,7 @@ export default function InvitationSection() {
         style={{ background: 'radial-gradient(ellipse 30% 25% at 85% 15%, rgba(233,74,60,0.08) 0%, transparent 60%)' }}
       />
 
-      <div ref={contentRef} className="relative z-10 max-w-3xl mx-auto px-8 text-center">
+      <div ref={contentRef} className="relative z-10 max-w-3xl mx-auto px-6 md:px-8 text-center">
         {/* Brand anchor */}
         <p
           className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl peacock-text mb-8 md:mb-12"
@@ -69,7 +69,7 @@ export default function InvitationSection() {
           <PairedBookingCTAs size="md" tone="dark" />
           <a
             href={invitation.secondaryCta.href}
-            className="inline-block border border-sky-cream/15 text-sky-cream/55 hover:text-sky-cream/85 hover:border-sky-cream/35 px-8 py-3 rounded-full cta-text transition-all duration-500"
+            className="inline-block border border-sky-cream/15 text-sky-cream/55 hover:text-sky-cream/85 hover:border-sky-cream/35 px-6 md:px-8 py-3.5 min-h-[44px] rounded-full cta-text transition-all duration-500"
           >
             {invitation.secondaryCta.text}
           </a>

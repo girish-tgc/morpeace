@@ -140,7 +140,7 @@ export default function GalleryPage() {
           </p>
           <h1
             data-hero-line
-            className="font-display text-4xl md:text-6xl lg:text-7xl text-sky-cream leading-[1.05]"
+            className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-sky-cream leading-[1.05]"
             style={{ textShadow: '0 2px 20px rgba(1,46,67,0.5)' }}
           >
             Gallery

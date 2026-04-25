@@ -54,13 +54,13 @@ export default function TheForestPage() {
           className="pointer-events-none absolute inset-0"
           style={{ background: 'radial-gradient(ellipse at top, rgba(9,108,108,0.4), transparent 65%)' }}
         />
-        <div ref={heroRef} className="relative z-10 text-center px-8 py-24 max-w-3xl">
+        <div ref={heroRef} className="relative z-10 text-center px-6 md:px-8 py-20 md:py-24 max-w-3xl">
           <p data-hero-line className="eyebrow text-[#F5EBD0] mb-6" style={{ textShadow: heroShadow }}>
             Morpeace · Living Pasaydan · Year 0 Baseline
           </p>
           <h1
             data-hero-line
-            className="font-display text-4xl md:text-6xl lg:text-7xl text-sky-cream leading-[1.05] mb-6"
+            className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-sky-cream leading-[1.05] mb-6"
             style={{ textShadow: heroShadow }}
           >
             The Biodiversity Atlas

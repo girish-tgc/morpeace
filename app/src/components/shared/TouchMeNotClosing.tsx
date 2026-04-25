@@ -43,7 +43,7 @@ export default function TouchMeNotClosing() {
         <div className="absolute inset-0 bg-black/60" />
       </div>
 
-      <div ref={contentRef} className="relative z-10 max-w-3xl mx-auto px-8 py-24 text-center">
+      <div ref={contentRef} className="relative z-10 max-w-3xl mx-auto px-6 md:px-8 py-20 md:py-24 text-center">
         <div className="space-y-10 md:space-y-12">
           <div data-animate>
             <p className="font-poem text-xl md:text-2xl lg:text-3xl text-sky-cream/90 italic leading-relaxed" style={{ textShadow: shadow }}>

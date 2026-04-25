@@ -81,7 +81,7 @@ export default function HomePage() {
           style={{ background: 'radial-gradient(ellipse 30% 25% at 85% 15%, rgba(233,74,60,0.08) 0%, transparent 60%)' }}
         />
 
-        <div className="relative z-10 max-w-3xl mx-auto px-8 text-center">
+        <div className="relative z-10 max-w-3xl mx-auto px-6 md:px-8 text-center">
           <p
             className="font-display text-4xl sm:text-5xl md:text-5xl lg:text-6xl text-sky-cream mb-10 md:mb-14"
             style={{ textShadow: '0 2px 24px rgba(1,46,67,0.6)' }}
@@ -93,7 +93,7 @@ export default function HomePage() {
             <PairedBookingCTAs size="md" tone="dark" />
             <a
               href={invitation.secondaryCta.href}
-              className="inline-block border border-sky-cream/40 text-sky-cream/85 hover:text-sky-cream hover:border-sky-cream/70 px-8 py-3 rounded-full cta-text transition-all duration-500"
+              className="inline-block border border-sky-cream/40 text-sky-cream/85 hover:text-sky-cream hover:border-sky-cream/70 px-6 md:px-8 py-3.5 min-h-[44px] rounded-full cta-text transition-all duration-500"
             >
               {invitation.secondaryCta.text}
             </a>

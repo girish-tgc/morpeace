@@ -19,7 +19,7 @@ export default function TreeDetailPage() {
 
   if (!tree) {
     return (
-      <div className="min-h-screen flex items-center justify-center px-8">
+      <div className="min-h-screen flex items-center justify-center px-6 md:px-8">
         <SeoHead
           title="Tree not found — Morpeace Forest"
           description="This tree isn't in the registry yet."

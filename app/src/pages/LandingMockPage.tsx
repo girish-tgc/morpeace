@@ -47,23 +47,32 @@ const FACTS = [
 ]
 
 // ── tiny helpers for consistent visual language ───────────────────────────
-function Eyebrow({ children }: { children: React.ReactNode }) {
+function Eyebrow({ children, color }: { children: React.ReactNode; color?: string }) {
   return (
-    <p className="font-display text-sm md:text-base tracking-[0.3em] uppercase mb-4" style={{ color: PALETTE.aqua }}>
+    <p className="font-display text-sm md:text-base tracking-[0.3em] uppercase mb-4" style={{ color: color ?? PALETTE.aqua }}>
       {children}
     </p>
   )
 }
 
-function Heading({ children, large }: { children: React.ReactNode; large?: boolean }) {
+function Heading({ children, large, color }: { children: React.ReactNode; large?: boolean; color?: string }) {
   return (
     <h2
-      className={`font-display ${large ? 'text-5xl md:text-7xl' : 'text-4xl md:text-6xl'} mb-6 leading-tight`}
-      style={{ color: PALETTE.cream }}
+      className={`font-display ${large ? 'text-4xl sm:text-5xl md:text-7xl' : 'text-3xl sm:text-4xl md:text-6xl'} mb-6 leading-tight`}
+      style={{ color: color ?? PALETTE.cream }}
     >
       {children}
     </h2>
   )
+}
+
+// Per-section atmosphere — distinct mood/tint for each editorial beat
+const SECTION_BG = {
+  forest: '#1a3a48',     // slightly deeper teal — canopy shade
+  stay: '#ECE2C8',       // warm cream — the only light section (interior feel)
+  children: '#235264',   // brighter airier teal — sunlit
+  meditation: '#0a1822', // near-black indigo — cave depth
+  food: '#4a2418',       // deep terracotta — clay vessels, tandoor walls
 }
 
 // ─────────────────────────────────────────────────────────────────────────
@@ -142,7 +151,7 @@ export default function LandingMockPage() {
           borderBottom: `1px solid ${PALETTE.aqua}22`,
         }}
       >
-        <div className="max-w-6xl mx-auto px-4 md:px-6 overflow-x-auto">
+        <div className="max-w-6xl mx-auto px-4 md:px-6 overflow-x-auto [mask-image:linear-gradient(to_right,black_calc(100%-28px),transparent)] md:[mask-image:none]">
           <ul className="flex gap-1 md:gap-2 py-3 whitespace-nowrap">
             {NAV_SECTIONS.map((s) => (
               <li key={s.id}>
@@ -188,7 +197,7 @@ export default function LandingMockPage() {
           <div className="mt-10 md:mt-12 flex justify-center">
             <Link
               to="/philosophy"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-display text-xs md:text-sm tracking-[0.3em] uppercase backdrop-blur-sm transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3.5 min-h-[44px] rounded-full font-display text-xs md:text-sm tracking-[0.3em] uppercase backdrop-blur-sm transition-colors"
               style={{
                 color: PALETTE.cream,
                 border: `1px solid ${PALETTE.aqua}66`,
@@ -203,8 +212,24 @@ export default function LandingMockPage() {
       </section>
 
       {/* ============================================= FOREST */}
-      <section id="forest" className="py-20 md:py-28 px-6 md:px-10 scroll-mt-28">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-center">
+      <section
+        id="forest"
+        className="relative py-20 md:py-28 px-6 md:px-10 scroll-mt-28 overflow-hidden"
+        style={{ backgroundColor: SECTION_BG.forest }}
+      >
+        {/* dappled canopy light */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: `
+              radial-gradient(circle at 18% 22%, ${PALETTE.aqua}26 0%, transparent 32%),
+              radial-gradient(circle at 78% 32%, ${PALETTE.aqua}14 0%, transparent 30%),
+              radial-gradient(circle at 38% 80%, ${PALETTE.blue}1f 0%, transparent 34%),
+              radial-gradient(circle at 88% 88%, ${PALETTE.aqua}10 0%, transparent 26%)
+            `,
+          }}
+        />
+        <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14 items-center">
           <div
             data-animate
             className="relative rounded-2xl overflow-hidden aspect-[4/3] ring-1 md:order-2"
@@ -228,12 +253,23 @@ export default function LandingMockPage() {
       </section>
 
       {/* ============================================= STAY + RECREATION (split) */}
-      <section id="stay" className="py-20 md:py-28 px-6 md:px-10 scroll-mt-28" style={{ backgroundColor: `${PALETTE.deep}cc` }}>
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-center">
+      <section
+        id="stay"
+        className="relative py-20 md:py-28 px-6 md:px-10 scroll-mt-28 overflow-hidden"
+        style={{ backgroundColor: SECTION_BG.stay }}
+      >
+        {/* warm wash from above — interior daylight */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: `radial-gradient(ellipse 90% 60% at 50% 0%, ${PALETTE.sand}40 0%, transparent 70%)`,
+          }}
+        />
+        <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14 items-center">
           <div
             data-animate
             className="relative rounded-2xl overflow-hidden aspect-[4/3] ring-1"
-            style={{ borderColor: `${PALETTE.sand}22`, boxShadow: `0 10px 40px rgba(30,62,77,0.4)` }}
+            style={{ borderColor: `${PALETTE.ink}26`, boxShadow: `0 12px 40px rgba(30,62,77,0.18)` }}
           >
             <img
               src={`${BASE}media/rustic-haven/rh-05.webp`}
@@ -243,13 +279,13 @@ export default function LandingMockPage() {
             />
           </div>
           <div data-animate>
-            <Eyebrow>A look inside</Eyebrow>
-            <Heading>Serene, luxurious, exclusive.</Heading>
-            <p className="font-body text-lg md:text-xl leading-relaxed mb-3" style={{ color: `${PALETTE.sand}cc` }}>
+            <Eyebrow color={PALETTE.blue}>A look inside</Eyebrow>
+            <Heading color={PALETTE.ink}>Serene, luxurious, exclusive.</Heading>
+            <p className="font-body text-lg md:text-xl leading-relaxed mb-3" style={{ color: `${PALETTE.ink}d9` }}>
               Three private rooms designed around light, air, and stillness. Clean spaces with natural
               materials, open views into the forest, and comfort without excess.
             </p>
-            <p className="font-body text-lg md:text-xl leading-relaxed" style={{ color: `${PALETTE.sand}b3` }}>
+            <p className="font-body text-lg md:text-xl leading-relaxed" style={{ color: `${PALETTE.ink}b3` }}>
               Open-air pool, a quiet library corner. No schedule, no demands — your day unfolds at
               your own pace.
             </p>
@@ -258,8 +294,19 @@ export default function LandingMockPage() {
       </section>
 
       {/* ============================================= CHILDREN */}
-      <section id="children" className="py-20 md:py-28 px-6 md:px-10 scroll-mt-28">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-center">
+      <section
+        id="children"
+        className="relative py-20 md:py-28 px-6 md:px-10 scroll-mt-28 overflow-hidden"
+        style={{ backgroundColor: SECTION_BG.children }}
+      >
+        {/* sunlit airiness from above */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: `radial-gradient(ellipse 100% 70% at 50% -10%, ${PALETTE.aqua}33 0%, transparent 65%)`,
+          }}
+        />
+        <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14 items-center">
           <div data-animate className="md:order-2">
             <div
               className="relative rounded-2xl overflow-hidden aspect-[4/3] ring-1"
@@ -287,8 +334,19 @@ export default function LandingMockPage() {
       </section>
 
       {/* ============================================= MEDITATION */}
-      <section id="meditation" className="py-20 md:py-28 px-6 md:px-10 scroll-mt-28" style={{ backgroundColor: `${PALETTE.deep}cc` }}>
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-center">
+      <section
+        id="meditation"
+        className="relative py-20 md:py-28 px-6 md:px-10 scroll-mt-28 overflow-hidden"
+        style={{ backgroundColor: SECTION_BG.meditation }}
+      >
+        {/* edge vignette — cave hush */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'radial-gradient(ellipse 80% 70% at 50% 50%, transparent 30%, rgba(0,0,0,0.55) 100%)',
+          }}
+        />
+        <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14 items-center">
           <div data-animate className="md:order-1">
             <div
               className="relative rounded-2xl overflow-hidden aspect-[4/3] ring-1"
@@ -317,8 +375,22 @@ export default function LandingMockPage() {
       </section>
 
       {/* ============================================= FOOD */}
-      <section id="food" className="py-20 md:py-28 px-6 md:px-10 scroll-mt-28">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-center">
+      <section
+        id="food"
+        className="relative py-20 md:py-28 px-6 md:px-10 scroll-mt-28 overflow-hidden"
+        style={{ backgroundColor: SECTION_BG.food }}
+      >
+        {/* saffron hearth glow — firelight on clay */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: `
+              radial-gradient(ellipse 60% 55% at 85% 25%, rgba(214,128,52,0.22) 0%, transparent 60%),
+              radial-gradient(ellipse 70% 60% at 15% 85%, rgba(168,85,28,0.16) 0%, transparent 60%)
+            `,
+          }}
+        />
+        <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14 items-center">
           <div
             data-animate
             className="relative rounded-2xl overflow-hidden aspect-[4/3] ring-1 md:order-2"
@@ -349,7 +421,7 @@ export default function LandingMockPage() {
             </p>
             <Link
               to="/menu"
-              className="inline-flex items-center justify-center px-6 py-3 rounded-full font-display tracking-[0.2em] uppercase"
+              className="inline-flex items-center justify-center px-6 py-3.5 min-h-[44px] rounded-full font-display tracking-[0.2em] uppercase"
               style={{ border: `1px solid ${PALETTE.sand}80`, color: PALETTE.sand }}
             >
               See the menu
@@ -421,7 +493,7 @@ export default function LandingMockPage() {
 
       {/* ============================================= LOCATION + MAP */}
       <section id="location" className="py-20 md:py-28 px-6 md:px-10 scroll-mt-28">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-center">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14 items-center">
           <div data-animate>
             <Eyebrow>Where we are</Eyebrow>
             <Heading>Near Satara, inside the Western Ghats.</Heading>

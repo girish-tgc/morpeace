@@ -56,7 +56,7 @@ export default function LandSpeaksSection() {
         style={{ background: 'radial-gradient(ellipse at 50% 50%, transparent 30%, rgba(0,0,0,0.4) 100%)' }}
       />
 
-      <div className="relative z-10 max-w-2xl mx-auto px-8">
+      <div className="relative z-10 max-w-2xl mx-auto px-6 md:px-8">
         {/* Section label */}
         <p className="text-center font-display text-xs tracking-[0.3em] uppercase text-sky-cream/30 mb-16 md:mb-24">
           If this land could speak

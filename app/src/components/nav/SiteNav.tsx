@@ -54,7 +54,7 @@ export default function SiteNav() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-8 flex items-center justify-between h-16 md:h-20">
-          <Link to="/" className="flex items-center" aria-label="Morpeace">
+          <Link to="/" className="flex items-center min-h-[44px]" aria-label="Morpeace">
             <img
               src={`${BASE}logo.webp`}
               alt="Morpeace"
@@ -90,7 +90,7 @@ export default function SiteNav() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Message us on WhatsApp"
-                className={`inline-flex items-center justify-center w-9 h-9 rounded-full transition-all md:hover:scale-105 active:scale-95 ${
+                className={`inline-flex items-center justify-center w-11 h-11 md:w-9 md:h-9 rounded-full transition-all md:hover:scale-105 active:scale-95 ${
                   solid
                     ? 'bg-[#25D366] text-white hover:bg-[#1fb558]'
                     : 'bg-[#25D366]/90 text-white hover:bg-[#25D366]'
@@ -110,7 +110,7 @@ export default function SiteNav() {
 
           <button
             onClick={() => setMobileOpen(true)}
-            className={`md:hidden p-2 transition-colors ${
+            className={`md:hidden p-3 -mr-2 transition-colors ${
               solid ? 'text-[#012E43]' : 'text-sky-cream'
             }`}
             aria-label="Open menu"

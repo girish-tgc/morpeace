@@ -60,7 +60,7 @@ export default function MeditationCave() {
         style={{ background: 'radial-gradient(ellipse at 50% 40%, rgba(20,35,20,0.15) 0%, rgba(10,15,7,0.4) 40%, rgba(28,21,8,0.55) 100%)' }}
       />
 
-      <div className="relative z-10 max-w-3xl mx-auto px-8">
+      <div className="relative z-10 max-w-3xl mx-auto px-6 md:px-8">
         <div ref={el => { textRefs.current[0] = el }} className="text-center mb-16">
           <h2 className="font-display text-xs md:text-sm tracking-[0.3em] uppercase text-mango-gold mb-6">
             The Meditation Cave

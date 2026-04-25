@@ -90,13 +90,13 @@ export default function TheVillaSection() {
         style={{ background: 'radial-gradient(ellipse at 50% 40%, transparent 20%, rgba(1,46,67,0.5) 100%)' }}
       />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-8">
+      <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-8">
         {/* Head */}
         <div ref={headRef} className="text-center mb-16 md:mb-20">
           <p className="eyebrow text-[#F5EBD0]/90 mb-4">
             {villa.label}
           </p>
-          <h2 className="font-display text-3xl md:text-5xl text-sky-cream leading-tight mb-6">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-sky-cream leading-tight mb-6">
             {villa.headline}
           </h2>
         </div>

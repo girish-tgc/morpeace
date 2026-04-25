@@ -3,7 +3,7 @@ import SeoHead from '../components/SeoHead'
 
 export default function NotFoundPage() {
   return (
-    <div className="min-h-screen flex items-center justify-center px-8">
+    <div className="min-h-screen flex items-center justify-center px-6 md:px-8">
       <SeoHead
         title="Not Found — Morpeace"
         description="This path through the forest doesn't exist yet."
@@ -20,7 +20,7 @@ export default function NotFoundPage() {
         </p>
         <Link
           to="/"
-          className="inline-block font-display text-sm tracking-wider uppercase px-8 py-3 rounded-full border border-teal-deep/30 text-teal-deep hover:bg-teal-deep/10 transition-colors"
+          className="inline-block font-display text-sm tracking-wider uppercase px-6 md:px-8 py-3.5 min-h-[44px] rounded-full border border-teal-deep/30 text-teal-deep hover:bg-teal-deep/10 transition-colors"
         >
           Return Home
         </Link>

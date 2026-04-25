@@ -69,7 +69,7 @@ export default function ActivitiesSection() {
             Things to do here
           </p>
           <h2
-            className="font-display text-4xl md:text-6xl mb-5 leading-tight"
+            className="font-display text-4xl sm:text-5xl md:text-6xl mb-5 leading-tight"
             style={{ color: PALETTE.cream }}
           >
             Pick anything. Skip anything.

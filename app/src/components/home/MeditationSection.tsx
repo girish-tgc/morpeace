@@ -70,13 +70,13 @@ export default function MeditationSection() {
         style={{ background: 'radial-gradient(ellipse at 50% 40%, rgba(1,64,102,0.22) 0%, rgba(6,72,72,0.5) 40%, rgba(1,46,67,0.72) 100%)' }}
       />
 
-      <div className="relative z-10 max-w-3xl mx-auto px-8 text-center">
+      <div className="relative z-10 max-w-3xl mx-auto px-6 md:px-8 text-center">
         {/* Label + Headline */}
         <div ref={el => { textRefs.current[0] = el }}>
           <p className="eyebrow text-[#F5EBD0]/60 mb-4">
             {meditation.label}
           </p>
-          <h2 className="font-display text-3xl md:text-5xl text-sky-cream/90 mb-6">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-sky-cream/90 mb-6">
             {meditation.headline}
           </h2>
         </div>

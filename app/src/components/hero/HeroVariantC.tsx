@@ -47,7 +47,7 @@ export default function HeroVariantC() {
       <div className="relative z-10 flex-1 flex flex-col px-6 md:px-10 py-24 md:py-32">
         <div data-animate className="max-w-xl md:max-w-2xl">
           <span
-            className="font-display inline-block text-[11px] md:text-xs tracking-[0.4em] uppercase mb-6"
+            className="font-display inline-block text-xs md:text-sm tracking-[0.4em] uppercase mb-6"
             style={{
               color: '#E6D8A8',
               textShadow: '0 1px 2px rgba(0,0,0,0.8)',
