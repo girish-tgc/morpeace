@@ -9,10 +9,10 @@ const BASE = import.meta.env.BASE_URL
 const NAV_LINKS = [
   { to: '/', label: 'Morpeace' },
   { to: '/origin', label: 'Origin' },
-  { to: '/the-forest', label: 'The Forest' },
+  { to: '/the-forest', label: 'Biodiversity' },
   { to: '/gallery', label: 'Gallery' },
   { to: '/menu', label: 'Menu' },
-  { to: '/team', label: 'The Team' },
+  { to: '/team', label: 'Team' },
   { to: '/reviews', label: 'Reviews' },
 ] as const
 

@@ -1,22 +1,13 @@
 import { useEffect, useRef } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SeoHead from '../components/SeoHead'
 import PairedBookingCTAs from '../components/nav/PairedBookingCTAs'
-import HeroVariantA from '../components/hero/HeroVariantA'
-import HeroVariantB from '../components/hero/HeroVariantB'
 import HeroVariantC from '../components/hero/HeroVariantC'
-import HeroVariantSwitcher from '../components/hero/HeroVariantSwitcher'
-import InclusionsStrip from '../components/landing/InclusionsStrip'
 import WhoForSection from '../components/landing/WhoForSection'
 import ActivitiesSection from '../components/landing/ActivitiesSection'
-import {
-  LAND_ACTIVITIES,
-  RECREATION_ACTIVITIES,
-  SUSTAINABILITY_ITEMS,
-  type ActivityItem,
-} from '../data/activities'
+import { SUSTAINABILITY_ITEMS } from '../data/activities'
 import { FEATURED_NEARBY_PLACES } from '../data/nearbyPlaces'
 import { ADDRESS_LINES, MAPS_URL, MAPS_EMBED_URL } from '../data/contact'
 import { DAY_BEATS } from '../data/dayBeats'
@@ -36,7 +27,6 @@ const PALETTE = {
 }
 
 const NAV_SECTIONS = [
-  { id: 'inclusions', label: 'Included' },
   { id: 'who-for', label: 'Who for' },
   { id: 'things-to-do', label: 'Do' },
   { id: 'day', label: 'A day' },
@@ -45,8 +35,6 @@ const NAV_SECTIONS = [
   { id: 'children', label: 'Children' },
   { id: 'meditation', label: 'Meditation' },
   { id: 'food', label: 'Food' },
-  { id: 'celebrations', label: 'Celebrations' },
-  { id: 'gallery', label: 'Gallery' },
   { id: 'nearby', label: 'Nearby' },
   { id: 'location', label: 'Location' },
 ]
@@ -56,16 +44,6 @@ const FACTS = [
   { k: '4', v: 'rooms · sleeps up to 10' },
   { k: '40+', v: 'heirloom mango varieties' },
   { k: '2 hr', v: 'drive from Pune' },
-]
-
-const GALLERY: { src: string; alt: string; span?: string }[] = [
-  { src: 'media/property/at-night-lake-view.webp', alt: 'Villa reflected on the lake at dusk', span: 'md:col-span-2 md:row-span-2' },
-  { src: 'media/property/swimming-pool.webp', alt: 'Open-air pool surrounded by forest' },
-  { src: 'media/rustic-haven/rh-05.webp', alt: 'Interior of the villa' },
-  { src: 'photos/forest-path.webp', alt: 'A path through the forest' },
-  { src: 'media/property/meditation-room-circle.webp', alt: 'The circular meditation room' },
-  { src: 'photos/mangoes-sunlight.webp', alt: 'Mangoes in the afternoon light' },
-  { src: 'media/kids/kids1.webp', alt: 'Children playing with clay figurines' },
 ]
 
 // ── tiny helpers for consistent visual language ───────────────────────────
@@ -88,36 +66,10 @@ function Heading({ children, large }: { children: React.ReactNode; large?: boole
   )
 }
 
-function ActivityGridItem({ icon: IconCmp, title, description }: ActivityItem) {
-  return (
-    <div
-      className="p-6 rounded-2xl transition-transform duration-300 hover:-translate-y-1"
-      style={{
-        backgroundColor: `${PALETTE.ink}cc`,
-        border: `1px solid ${PALETTE.aqua}33`,
-      }}
-    >
-      <IconCmp size={30} weight="thin" className="mb-3" style={{ color: '#F5EBD0' }} aria-hidden />
-      <h3 className="font-display text-xl md:text-2xl mb-2" style={{ color: PALETTE.cream }}>
-        {title}
-      </h3>
-      <p className="font-body text-lg md:text-xl leading-relaxed" style={{ color: `${PALETTE.sand}cc` }}>
-        {description}
-      </p>
-    </div>
-  )
-}
-
 // ─────────────────────────────────────────────────────────────────────────
 
 export default function LandingMockPage() {
   const pageRef = useRef<HTMLDivElement>(null)
-  const { pathname } = useLocation()
-  const heroVariant =
-    pathname === '/hero-a' ? 'A'
-    : pathname === '/hero-b' ? 'B'
-    : pathname === '/hero-c' ? 'C'
-    : null
 
   useEffect(() => {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -158,85 +110,11 @@ export default function LandingMockPage() {
       <SeoHead
         title="Morpeace — A Forest Villa near Satara | Boutique Stay in the Western Ghats"
         description="A boutique forest villa on 10 acres in the Western Ghats. Private pool, lake, 1,000+ native trees, farm-to-table meals. Sleeps up to 10. Book your stay at Morpeace."
-        path={heroVariant ? `/hero-${heroVariant.toLowerCase()}` : '/'}
-        noIndex={heroVariant !== null}
+        path="/"
       />
 
-      <HeroVariantSwitcher />
-
       {/* ============================================= HERO */}
-      {heroVariant === 'A' && <HeroVariantA />}
-      {heroVariant === 'B' && <HeroVariantB />}
-      {heroVariant === 'C' && <HeroVariantC />}
-      {heroVariant === null && (
-      <section className="relative min-h-[100svh] flex items-center overflow-hidden">
-        <img
-          src={`${BASE}media/property/at-night-lake-view.webp`}
-          alt="Morpeace villa reflected on the lake at dusk"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        {/* Bottom-only vignette for CTA legibility — photo stays bright above */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              'linear-gradient(180deg, transparent 0%, transparent 55%, rgba(10,22,30,0.45) 100%)',
-          }}
-        />
-        {/* Soft localized darken behind the text column only */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              'radial-gradient(ellipse 55% 50% at 28% 55%, rgba(6,18,26,0.42) 0%, rgba(6,18,26,0.18) 45%, transparent 75%)',
-          }}
-        />
-
-        <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-10 py-24 md:py-32 w-full">
-          <div data-animate>
-            <span
-              className="font-display inline-block px-4 py-1.5 rounded-full text-sm md:text-base tracking-[0.25em] uppercase mb-6 backdrop-blur-sm"
-              style={{
-                backgroundColor: 'rgba(10, 22, 30, 0.55)',
-                color: PALETTE.sand,
-                border: `1px solid ${PALETTE.sand}66`,
-                textShadow: '0 1px 2px rgba(0,0,0,0.8)',
-              }}
-            >
-              Western Ghats · Satara, Maharashtra
-            </span>
-            <h1
-              className="font-display text-5xl sm:text-6xl md:text-8xl leading-[1.05] mb-6"
-              style={{
-                color: PALETTE.cream,
-                textShadow:
-                  '0 2px 4px rgba(0,0,0,0.95), 0 6px 24px rgba(0,0,0,0.8), 0 0 12px rgba(0,0,0,0.7)',
-              }}
-            >
-              A stay inside a forest.
-            </h1>
-            <p
-              className="font-body text-xl md:text-3xl max-w-3xl leading-relaxed mb-10"
-              style={{
-                color: '#F5EBD0',
-                textShadow:
-                  '0 1px 2px rgba(0,0,0,0.95), 0 3px 14px rgba(0,0,0,0.8), 0 0 8px rgba(0,0,0,0.6)',
-              }}
-            >
-              Morpeace is a boutique villa on ten regenerated acres in the Western Ghats — a private
-              pool, a lake, 1,000+ native trees, and food grown on the land. Sleeps up to 10.
-            </p>
-          </div>
-        </div>
-
-        <div
-          className="absolute bottom-6 left-1/2 -translate-x-1/2 text-sm tracking-[0.25em] uppercase opacity-70"
-          style={{ color: PALETTE.sand }}
-        >
-          scroll to explore
-        </div>
-      </section>
-      )}
+      <HeroVariantC />
 
       {/* ============================================= FACTS STRIP */}
       <section id="what" className="py-14 md:py-20 px-6 md:px-10 scroll-mt-28" style={{ backgroundColor: PALETTE.deep }}>
@@ -281,9 +159,6 @@ export default function LandingMockPage() {
         </div>
       </nav>
 
-      {/* ============================================= INCLUSIONS (new) */}
-      <InclusionsStrip />
-
       {/* ============================================= WHO FOR (new) */}
       <WhoForSection />
 
@@ -310,51 +185,44 @@ export default function LandingMockPage() {
             ))}
             <p className="pt-2 italic">You simply arrive… and begin to notice again.</p>
           </div>
+          <div className="mt-10 md:mt-12 flex justify-center">
+            <Link
+              to="/philosophy"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-display text-xs md:text-sm tracking-[0.3em] uppercase backdrop-blur-sm transition-colors"
+              style={{
+                color: PALETTE.cream,
+                border: `1px solid ${PALETTE.aqua}66`,
+                backgroundColor: `${PALETTE.ink}66`,
+              }}
+            >
+              <span>The philosophy behind Morpeace</span>
+              <span aria-hidden style={{ color: PALETTE.aqua }}>→</span>
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* ============================================= FOREST */}
-      <section
-        id="forest"
-        className="relative min-h-[70vh] flex items-center overflow-hidden scroll-mt-28"
-      >
-        <img
-          src={`${BASE}photos/forest-path.webp`}
-          alt="A forest path at Morpeace"
-          className="absolute inset-0 w-full h-full object-cover"
-          loading="lazy"
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background: `linear-gradient(90deg, ${PALETTE.ink}e6 0%, ${PALETTE.deep}99 55%, transparent 100%)`,
-          }}
-        />
-        <div data-animate className="relative z-10 max-w-xl px-8 md:px-16 py-20">
-          <Eyebrow>The forest</Eyebrow>
-          <Heading>Walk without a destination.</Heading>
-          <p className="font-body text-lg md:text-xl leading-relaxed mb-3" style={{ color: `${PALETTE.sand}d9` }}>
-            Over 1,000 native trees across ten regenerated acres. Walk the trails, climb the
-            watchtower, or sit and watch the birds return.
-          </p>
-          <p className="font-body text-lg md:text-xl leading-relaxed" style={{ color: `${PALETTE.sand}b3` }}>
-            Forest walks, hammock rest, sky gazing, cow and fish feeding, and seasonal fruit plucking —
-            join in when you feel like it.
-          </p>
-        </div>
-      </section>
-
-      {/* ============================================= LIFE ON THE LAND (cards) */}
-      <section className="py-16 md:py-24 px-6 md:px-8">
-        <div className="max-w-6xl mx-auto">
-          <div data-animate className="mb-8 md:mb-12 text-center">
-            <Eyebrow>Life on the land</Eyebrow>
-            <Heading>The simple things.</Heading>
+      <section id="forest" className="py-20 md:py-28 px-6 md:px-10 scroll-mt-28">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-center">
+          <div
+            data-animate
+            className="relative rounded-2xl overflow-hidden aspect-[4/3] ring-1 md:order-2"
+            style={{ borderColor: `${PALETTE.sand}22`, boxShadow: `0 10px 40px rgba(30,62,77,0.4)` }}
+          >
+            <img
+              src={`${BASE}photos/forest-path.webp`}
+              alt="A forest path at Morpeace"
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+            />
           </div>
-          <div data-animate className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {LAND_ACTIVITIES.map((a) => (
-              <ActivityGridItem key={a.title} {...a} />
-            ))}
+          <div data-animate className="md:order-1">
+            <Eyebrow>The forest</Eyebrow>
+            <Heading>Walk without a destination.</Heading>
+            <p className="font-body text-lg md:text-xl leading-relaxed" style={{ color: `${PALETTE.sand}cc` }}>
+              1,000+ native trees, 10 regenerated acres.
+            </p>
           </div>
         </div>
       </section>
@@ -376,32 +244,15 @@ export default function LandingMockPage() {
           </div>
           <div data-animate>
             <Eyebrow>A look inside</Eyebrow>
-            <Heading>Serene, generous, exclusive.</Heading>
+            <Heading>Serene, luxurious, exclusive.</Heading>
             <p className="font-body text-lg md:text-xl leading-relaxed mb-3" style={{ color: `${PALETTE.sand}cc` }}>
-              Four private rooms designed around light, air, and stillness. Clean spaces with natural
+              Three private rooms designed around light, air, and stillness. Clean spaces with natural
               materials, open views into the forest, and comfort without excess.
             </p>
-            <p className="font-body text-lg md:text-xl leading-relaxed mb-6" style={{ color: `${PALETTE.sand}b3` }}>
-              Open-air pool, a quiet library corner, table tennis, board games. No schedule, no
-              demands — your day unfolds at your own pace.
+            <p className="font-body text-lg md:text-xl leading-relaxed" style={{ color: `${PALETTE.sand}b3` }}>
+              Open-air pool, a quiet library corner. No schedule, no demands — your day unfolds at
+              your own pace.
             </p>
-            <div className="grid grid-cols-3 gap-2">
-              {RECREATION_ACTIVITIES.map((r) => {
-                const RIcon = r.icon
-                return (
-                  <div
-                    key={r.title}
-                    className="px-3 py-2 rounded-lg text-center flex flex-col items-center gap-1"
-                    style={{ backgroundColor: `${PALETTE.ink}b3`, border: `1px solid ${PALETTE.aqua}22` }}
-                  >
-                    <RIcon size={20} weight="thin" style={{ color: PALETTE.aqua }} aria-hidden />
-                    <div className="font-body text-sm md:text-base" style={{ color: `${PALETTE.sand}e6` }}>
-                      {r.title}
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
           </div>
         </div>
       </section>
@@ -426,8 +277,7 @@ export default function LandingMockPage() {
             <Eyebrow>For children</Eyebrow>
             <Heading>Space to be free.</Heading>
             <p className="font-body text-lg md:text-xl leading-relaxed mb-3" style={{ color: `${PALETTE.sand}cc` }}>
-              Morpeace is as much for the curious child as it is for the seeking adult. Children swim
-              under open skies, play board games without screens, and run freely without boundaries.
+              Morpeace is as much for the curious child as it is for the seeking adult.
             </p>
             <p className="font-body text-lg md:text-xl leading-relaxed" style={{ color: `${PALETTE.sand}b3` }}>
               No curated distractions — just space to be playful, present, and free.
@@ -437,77 +287,74 @@ export default function LandingMockPage() {
       </section>
 
       {/* ============================================= MEDITATION */}
-      <section
-        id="meditation"
-        className="relative min-h-[70vh] flex items-center overflow-hidden scroll-mt-28"
-      >
-        <video
-          muted
-          loop
-          playsInline
-          autoPlay
-          preload="metadata"
-          poster={`${BASE}media/property/meditation-room-circle.webp`}
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src={`${BASE}photos/meditation-drone-2.mp4`} type="video/mp4" />
-        </video>
-        <div className="absolute inset-0" style={{ backgroundColor: `${PALETTE.ink}d9` }} />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              'radial-gradient(ellipse at 50% 40%, rgba(14,126,192,0.25) 0%, rgba(30,62,77,0.65) 45%, rgba(30,62,77,0.88) 100%)',
-          }}
-        />
-        <div data-animate className="relative z-10 max-w-2xl mx-auto px-8 md:px-16 py-20 text-center">
-          <Eyebrow>Meditation</Eyebrow>
-          <Heading>The Cave of the Inner Star.</Heading>
-          <div className="w-12 h-0.5 mx-auto mb-6" style={{ backgroundColor: `${PALETTE.aqua}b3` }} />
-          <p className="font-body text-lg md:text-xl italic leading-relaxed mb-5" style={{ color: `${PALETTE.sand}d9` }}>
-            Step down into the meditation cave — a womb carved below the ground, cool and hushed.
-          </p>
-          <p className="font-body text-lg md:text-xl leading-relaxed" style={{ color: `${PALETTE.sand}bf` }}>
-            Underground is not beneath life — it is beneath distraction. Sit. Breathe. Stay as long
-            as you like. Stillness is always welcome here.
-          </p>
+      <section id="meditation" className="py-20 md:py-28 px-6 md:px-10 scroll-mt-28" style={{ backgroundColor: `${PALETTE.deep}cc` }}>
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-center">
+          <div data-animate className="md:order-1">
+            <div
+              className="relative rounded-2xl overflow-hidden aspect-[4/3] ring-1"
+              style={{ borderColor: `${PALETTE.sand}22`, boxShadow: `0 10px 40px rgba(30,62,77,0.4)` }}
+            >
+              <img
+                src={`${BASE}media/property/meditation-room-circle.webp`}
+                alt="The meditation cave at Morpeace"
+                className="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div data-animate className="md:order-2">
+            <Eyebrow>Meditation</Eyebrow>
+            <Heading>The Cave of the Inner Star.</Heading>
+            <p className="font-body text-lg md:text-xl italic leading-relaxed mb-3" style={{ color: `${PALETTE.sand}cc` }}>
+              Step down into the meditation cave — a womb carved below the ground, cool and hushed.
+            </p>
+            <p className="font-body text-lg md:text-xl leading-relaxed" style={{ color: `${PALETTE.sand}b3` }}>
+              Underground is not beneath life — it is beneath distraction. Sit. Breathe. Stay as long
+              as you like. Stillness is always welcome here.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* ============================================= FOOD */}
-      <section
-        id="food"
-        className="relative min-h-[55vh] flex items-center overflow-hidden scroll-mt-28"
-      >
-        <img
-          src={`${BASE}photos/mangoes-sunlight.webp`}
-          alt="Mangoes in the sunlight"
-          className="absolute inset-0 w-full h-full object-cover"
-          loading="lazy"
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background: `linear-gradient(90deg, ${PALETTE.ink}e6 0%, ${PALETTE.deep}99 55%, transparent 100%)`,
-          }}
-        />
-        <div data-animate className="relative z-10 max-w-xl px-8 md:px-16 py-20">
-          <Eyebrow>Food</Eyebrow>
-          <Heading>A return to memory.</Heading>
-          <p className="font-body text-lg md:text-xl leading-relaxed mb-3" style={{ color: `${PALETTE.sand}d9` }}>
-            Forgotten grains, foraged greens, seasonal harvests. Recipes that quietly survived in
-            village kitchens. Some ingredients come from the land you're sitting on.
-          </p>
-          <p className="font-body text-lg md:text-xl leading-relaxed mb-7" style={{ color: `${PALETTE.sand}b3` }}>
-            Meals cooked slowly — patient, nourishing, deeply rooted.
-          </p>
-          <Link
-            to="/menu"
-            className="inline-flex items-center justify-center px-6 py-3 rounded-full font-display tracking-[0.2em] uppercase"
-            style={{ border: `1px solid ${PALETTE.sand}80`, color: PALETTE.sand }}
+      <section id="food" className="py-20 md:py-28 px-6 md:px-10 scroll-mt-28">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-center">
+          <div
+            data-animate
+            className="relative rounded-2xl overflow-hidden aspect-[4/3] ring-1 md:order-2"
+            style={{ borderColor: `${PALETTE.sand}22`, boxShadow: `0 10px 40px rgba(30,62,77,0.4)` }}
           >
-            See the menu
-          </Link>
+            <img
+              src={`${BASE}media/food/feast-spread.jpeg`}
+              alt="A traditional thali spread on banana leaves at Morpeace"
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div data-animate className="md:order-1">
+            <Eyebrow>Food</Eyebrow>
+            <Heading>A return to memory.</Heading>
+            <p
+              className="font-display tracking-[0.22em] uppercase text-xs md:text-sm mb-4"
+              style={{ color: PALETTE.aqua }}
+            >
+              Organic · Sustainable · Farm to table
+            </p>
+            <p className="font-body text-lg md:text-xl leading-relaxed mb-3" style={{ color: `${PALETTE.sand}cc` }}>
+              Forgotten grains, foraged greens, seasonal harvests — grown organically on the land
+              you're sitting on. Recipes that quietly survived in village kitchens.
+            </p>
+            <p className="font-body text-lg md:text-xl leading-relaxed mb-7" style={{ color: `${PALETTE.sand}b3` }}>
+              Meals cooked slowly — patient, nourishing, sustainably rooted.
+            </p>
+            <Link
+              to="/menu"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-full font-display tracking-[0.2em] uppercase"
+              style={{ border: `1px solid ${PALETTE.sand}80`, color: PALETTE.sand }}
+            >
+              See the menu
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -539,65 +386,6 @@ export default function LandingMockPage() {
                 </div>
               )
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* ============================================= CELEBRATIONS */}
-      <section id="celebrations" className="py-20 md:py-28 px-6 md:px-10 scroll-mt-28" style={{ backgroundColor: `${PALETTE.deep}cc` }}>
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-center">
-          <div data-animate>
-            <Eyebrow>Celebrations & gatherings</Eyebrow>
-            <Heading>Held gently by the land.</Heading>
-            <p className="font-body text-lg md:text-xl leading-relaxed mb-3" style={{ color: `${PALETTE.sand}cc` }}>
-              Morpeace has hosted intimate gatherings, pre-wedding shoots, pre-natal shoots,
-              birthdays, and moments of togetherness.
-            </p>
-            <p className="font-body text-lg md:text-xl leading-relaxed" style={{ color: `${PALETTE.sand}b3` }}>
-              The space adapts to your celebration — without losing its stillness. Gatherings of up
-              to 50 guests.
-            </p>
-          </div>
-          <div
-            data-animate
-            className="relative rounded-2xl overflow-hidden aspect-[4/3] ring-1"
-            style={{ borderColor: `${PALETTE.sand}22`, boxShadow: `0 10px 40px rgba(30,62,77,0.4)` }}
-          >
-            <img
-              src={`${BASE}media/property/sham-kane-renonwed-tabla-player.webp`}
-              alt="Gathering at Morpeace"
-              className="absolute inset-0 w-full h-full object-cover"
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* ============================================= GALLERY */}
-      <section id="gallery" className="py-20 md:py-28 px-6 md:px-10 scroll-mt-28">
-        <div className="max-w-6xl mx-auto">
-          <div data-animate className="mb-10 md:mb-14">
-            <Eyebrow>A look inside</Eyebrow>
-            <Heading>Quiet, generous, real.</Heading>
-          </div>
-          <div
-            data-animate
-            className="grid grid-cols-2 md:grid-cols-4 auto-rows-[180px] md:auto-rows-[220px] gap-3 md:gap-4"
-          >
-            {GALLERY.map((g) => (
-              <div
-                key={g.src}
-                className={`relative overflow-hidden rounded-xl ring-1 ${g.span ?? ''}`}
-                style={{ boxShadow: `0 10px 30px rgba(30,62,77,0.4)`, borderColor: `${PALETTE.sand}22` }}
-              >
-                <img
-                  src={`${BASE}${g.src}`}
-                  alt={g.alt}
-                  loading="lazy"
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                />
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -637,14 +425,36 @@ export default function LandingMockPage() {
           <div data-animate>
             <Eyebrow>Where we are</Eyebrow>
             <Heading>Near Satara, inside the Western Ghats.</Heading>
-            <address
-              className="not-italic font-body text-lg md:text-xl leading-relaxed mb-6"
-              style={{ color: `${PALETTE.sand}cc` }}
+            <a
+              href={MAPS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-start gap-3 group not-italic mb-6"
+              aria-label="Open property location in Google Maps"
             >
-              {ADDRESS_LINES.flatMap((line, i) =>
-                i === 0 ? [line] : [<br key={`br-${i}`} />, line],
-              )}
-            </address>
+              <svg
+                className="w-5 h-5 md:w-6 md:h-6 mt-1 flex-shrink-0 transition-transform group-hover:-translate-y-0.5"
+                style={{ color: `${PALETTE.sand}cc` }}
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <address
+                className="not-italic font-body text-lg md:text-xl leading-relaxed underline decoration-current/30 underline-offset-4 group-hover:decoration-current/70 transition-colors"
+                style={{ color: `${PALETTE.sand}cc` }}
+              >
+                {ADDRESS_LINES.flatMap((line, i) =>
+                  i === 0 ? [line] : [<br key={`br-${i}`} />, line],
+                )}
+              </address>
+            </a>
             <ul className="space-y-2.5 mb-8 font-body text-base md:text-lg" style={{ color: `${PALETTE.sand}cc` }}>
               <li>· ~150 km from Pune International Airport (2 hr drive)</li>
               <li>· ~270 km from Mumbai (5 hr drive)</li>

@@ -1,14 +1,40 @@
 import HeroBase from './HeroBase'
+import HeroImagePlaylist, { type ImagePlaylistItem } from './HeroImagePlaylist'
+
+const PLAYLIST: ImagePlaylistItem[] = [
+  {
+    src: 'media/property/at-night-pool-view.webp',
+    alt: 'Open-air pool at Morpeace surrounded by the forest',
+  },
+  {
+    src: 'media/rustic-haven/rh-23.webp',
+    alt: 'Aerial of Morpeace with the mountain range behind',
+  },
+  {
+    src: 'media/rustic-haven/rh-05.webp',
+    alt: 'Bedroom with palm-framed windows',
+  },
+  {
+    src: 'media/rustic-haven/rh-09.webp',
+    alt: 'Reading nook with bookshelf and writing desk',
+  },
+  {
+    src: 'media/property/whatsapp-image-2026-02-16-at-10-56-39-pm-1.webp',
+    alt: 'Outdoor table set with bruschetta, bread and flowers',
+  },
+  {
+    src: 'media/rustic-haven/rh-24.webp',
+    alt: 'Infinity pool and tower lit at night',
+  },
+  {
+    src: 'media/property/whatsapp-image-2026-02-16-at-10-56-29-pm-1.webp',
+    alt: 'Sofa with flowers in the hall',
+  },
+]
 
 export default function HeroVariantC() {
   return (
-    <HeroBase
-      media={{
-        type: 'image',
-        src: 'media/property/at-night-pool-view.webp',
-        alt: 'Open-air pool at Morpeace surrounded by the forest',
-      }}
-    >
+    <HeroBase backgroundSlot={<HeroImagePlaylist items={PLAYLIST} />}>
       <div
         aria-hidden
         className="absolute inset-0 z-[1] pointer-events-none"
@@ -57,7 +83,7 @@ export default function HeroVariantC() {
                 '0 1px 2px rgba(0,0,0,0.85), 0 3px 16px rgba(0,0,0,0.55)',
             }}
           >
-            Come to pause. To celebrate. To breathe.
+            A lake, a forest, a luxurious villa.
           </p>
         </div>
       </div>

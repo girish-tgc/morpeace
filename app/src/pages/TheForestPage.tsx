@@ -41,7 +41,7 @@ export default function TheForestPage() {
           placeSchema(),
           breadcrumbSchema([
             { name: 'Home', path: '/' },
-            { name: 'The Forest', path: '/the-forest' },
+            { name: 'Biodiversity', path: '/the-forest' },
           ]),
         ]}
       />
@@ -74,32 +74,11 @@ export default function TheForestPage() {
           </p>
           <p
             data-hero-line
-            className="font-body text-base md:text-lg italic text-[#FFD29A]/90 max-w-xl mx-auto mb-6"
+            className="font-body text-base md:text-lg italic text-[#FFD29A]/90 max-w-xl mx-auto"
             style={{ textShadow: heroShadow }}
           >
             A scientifically documented, benchmark biodiversity sanctuary.
           </p>
-          <p
-            data-hero-line
-            className="font-body text-lg md:text-xl italic text-sky-cream/75 max-w-xl mx-auto"
-            style={{ textShadow: heroShadow }}
-          >
-            Flora &amp; Fauna · ~10 acres · Satara, Maharashtra
-          </p>
-
-          <div
-            data-hero-line
-            className="mt-10 mx-auto w-24 h-px bg-gradient-to-r from-transparent via-[#E94A3C]/60 to-transparent"
-          />
-
-          <div data-hero-line className="mt-10 max-w-xl mx-auto">
-            <p className="font-devanagari text-lg md:text-xl text-sky-cream/90" style={{ textShadow: heroShadow }}>
-              जो जे वांछिल तो ते लाभो, प्राणिजात ।
-            </p>
-            <p className="font-body text-sm md:text-base italic text-sky-cream/60 mt-2" style={{ textShadow: heroShadow }}>
-              Whatever all beings desire, may that be granted to them. — Pasaydan
-            </p>
-          </div>
         </div>
       </section>
 

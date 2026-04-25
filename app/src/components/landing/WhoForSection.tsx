@@ -8,7 +8,7 @@ const PALETTE = {
   cream: '#F5F1E3',
 }
 
-type Intent = 'To pause' | 'To explore' | 'To reconnect' | 'To celebrate'
+type Intent = 'To pause' | 'To explore' | 'To reconnect' | 'To celebrate' | 'On the way'
 
 interface WhoCard {
   intent: Intent
@@ -44,7 +44,7 @@ const CARDS: WhoCard[] = [
     intent: 'To reconnect',
     title: 'A family gathering',
     description:
-      'Grandparents, cousins, kids — space to be loud together and quiet apart. Four rooms, shared meals, a lake and a pool.',
+      'Grandparents, cousins, kids — space to be loud together and quiet apart. Three rooms, shared meals, a lake and a pool.',
     meta: '6–10 guests · book the villa',
     mode: 'villa',
     whatsappPrefill:
@@ -59,6 +59,16 @@ const CARDS: WhoCard[] = [
     mode: 'villa',
     whatsappPrefill:
       "Hi Morpeace — planning a team offsite / celebration. Could you share options for up to ~50 guests?",
+  },
+  {
+    intent: 'On the way',
+    title: 'A pit stop on the Mumbai–Goa drive',
+    description:
+      'Break the long road. One forest night between city and coast — pull off the highway, sleep in the canopy, breakfast slow, carry on to Goa.',
+    meta: '1–2 nights · room or villa',
+    mode: 'either',
+    whatsappPrefill:
+      "Hi Morpeace — planning to stop over on our Mumbai–Goa drive. Could you check availability?",
   },
 ]
 
@@ -80,17 +90,17 @@ export default function WhoForSection() {
             className="font-display text-4xl md:text-6xl mb-5 leading-tight"
             style={{ color: PALETTE.cream }}
           >
-            Four reasons, one forest.
+            Many reasons, one forest.
           </h2>
           <p
             className="font-body text-lg md:text-xl max-w-2xl mx-auto"
             style={{ color: `${PALETTE.sand}d9` }}
           >
-            Guests arrive with different intents &mdash; to pause, to explore, to reconnect, to celebrate. The land holds each of them differently.
+            Guests arrive with different intents &mdash; to pause, to explore, to reconnect, to celebrate, or simply to break a Mumbai&ndash;Goa drive. The land holds each of them differently.
           </p>
         </div>
 
-        <div data-animate className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+        <div data-animate className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5">
           {CARDS.map((card) => (
             <div
               key={card.title}

@@ -13,7 +13,7 @@ const PALETTE = {
 }
 
 const INCLUSIONS: { icon: Icon; title: string; detail: string }[] = [
-  { icon: House, title: 'A single room — or the whole villa', detail: '4 rooms · up to 10 guests · whole-villa buyouts welcome' },
+  { icon: House, title: 'A single room — or the whole villa', detail: '3 rooms · up to 10 guests · whole-villa buyouts welcome' },
   { icon: BowlFood, title: 'Breakfast, high tea, lunch & dinner', detail: 'All four meals included with every stay' },
   { icon: Barn, title: 'Farm-to-table, slow-cooked', detail: 'Veg, chicken, mutton, fish — rooted in the land' },
   { icon: Tree, title: 'Pool, forest walks, meditation cave, games', detail: 'Use any, skip any — the land is yours for the stay' },
@@ -46,7 +46,7 @@ export default function InclusionsStrip() {
             className="font-body text-lg md:text-xl max-w-2xl mx-auto"
             style={{ color: `${PALETTE.ink}cc` }}
           >
-            Every stay — solo, couple, family, or full-villa buyout — comes with all four meals, full access to the land, and people on hand to help when you need it.
+            Every stay — solo, couple, family, or full-villa buyout — comes with all four meals, full access to the land, and people on hand to help when you need it. Pet friendly.
           </p>
         </div>
 

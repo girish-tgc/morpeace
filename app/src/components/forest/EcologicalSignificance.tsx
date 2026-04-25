@@ -21,7 +21,7 @@ const points = [
     n: '04',
     title: 'Breathe, deeply.',
     body:
-      'Air quality at Morpeace is actively monitored and typically ranges between AQI 10–50 — clean, light, and restorative. For context, most Indian urban centres sit in the 150–300 band. The canopy, the water bodies and the absence of combustion sources do the work; guests register the difference within minutes of arriving.',
+      'Air quality at Morpeace is actively monitored and typically ranges between AQI 10–40 — clean, light, and restorative. For context, most Indian urban centres sit in the 150–300 band. The canopy, the water bodies and the absence of combustion sources do the work; guests register the difference within minutes of arriving.',
   },
 ]
 

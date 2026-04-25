@@ -340,7 +340,7 @@ export default function MenuPage() {
       }}
     >
       <SeoHead
-        title="The Menu — Rustic Heaven at Morpeace | Farm-to-Table Maharashtrian Cuisine"
+        title="The Menu — Morpeace | Farm-to-Table Maharashtrian Cuisine"
         description="A menu of age-old recipes, cooked slow and served warm — Maharashtrian thalis, clay-oven breads, Gavran chicken, farm vegetables, and seasonal mangoes from our own groves."
         path="/menu"
         jsonLd={[
@@ -371,11 +371,8 @@ export default function MenuPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#2C1810]/55 via-[#2C1810]/35 to-[#F4ECDE]" />
         <div className="relative z-10 text-center px-8 py-20 max-w-3xl">
           <div data-animate>
-            <span className="font-display uppercase tracking-[0.32em] text-xs md:text-sm text-[#F7D9A8]">
-              Rustic Heaven
-            </span>
             <h1
-              className="font-display text-5xl md:text-7xl text-[#FBF4E4] mt-4 leading-[1.05]"
+              className="font-display text-5xl md:text-7xl text-[#FBF4E4] leading-[1.05]"
               style={{ textShadow: '0 2px 24px rgba(44,24,16,0.65)' }}
             >
               The Menu

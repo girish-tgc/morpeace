@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { gsap } from 'gsap'
 import PairedBookingCTAs from './PairedBookingCTAs'
-import { whatsappLink, telLink, CONTACT, ADDRESS_LINES } from '../../data/contact'
+import { whatsappLink, telLink, CONTACT, ADDRESS_LINES, MAPS_URL } from '../../data/contact'
 
 interface Props {
   open: boolean
@@ -123,11 +123,41 @@ export default function MobileMenu({ open, onClose, links }: Props) {
 
         {/* Footer */}
         <div className="mt-auto p-6 border-t border-[#012E43]/10">
-          <address className="font-body text-xs leading-relaxed text-[#012E43]/55 not-italic">
-            {ADDRESS_LINES.flatMap((line, i) =>
-              i === 0 ? [line] : [<br key={`br-${i}`} />, line],
-            )}
-          </address>
+          <a
+            href={MAPS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-start gap-2 group not-italic"
+            aria-label="Open property location in Google Maps"
+          >
+            <svg
+              className="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-[#012E43]/55 group-hover:text-[#012E43]/85 transition-colors"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden
+            >
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <div>
+              <address className="font-body text-xs leading-relaxed text-[#012E43]/55 group-hover:text-[#012E43]/85 transition-colors not-italic">
+                {ADDRESS_LINES.flatMap((line, i) =>
+                  i === 0 ? [line] : [<br key={`br-${i}`} />, line],
+                )}
+              </address>
+              <span className="mt-1.5 inline-flex items-center gap-1 font-display text-[10px] tracking-[0.18em] uppercase text-[#012E43]/70 group-hover:text-[#012E43] transition-colors">
+                Open in Google Maps
+                <svg className="w-2.5 h-2.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                  <path d="M7 17L17 7" />
+                  <path d="M8 7h9v9" />
+                </svg>
+              </span>
+            </div>
+          </a>
         </div>
       </div>
     </div>

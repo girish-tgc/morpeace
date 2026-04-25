@@ -1,6 +1,5 @@
 import TheVisionSection from '../components/home/TheVisionSection'
 import TheVillaSection from '../components/home/TheVillaSection'
-import MeditationCave from '../components/trail/MeditationCave'
 import SeoHead from '../components/SeoHead'
 import { breadcrumbSchema } from '../lib/seo/schema'
 
@@ -10,8 +9,8 @@ export default function PhilosophyPage() {
   return (
     <div>
       <SeoHead
-        title="The Philosophy — Morpeace | Pasaydan, The Living Wada, and the Meditation Cave"
-        description="The convictions beneath Morpeace — the Pasaydan groves, the Living Wada, and the Meditation Cave. A philosophy of becoming, rooted in Sant Dnyaneshwar's prayer and a science-led ethic of care."
+        title="The Philosophy — Morpeace | Pasaydan and The Living Wada"
+        description="The convictions beneath Morpeace — the Pasaydan groves and the Living Wada. A philosophy of becoming, rooted in Sant Dnyaneshwar's prayer and a science-led ethic of care."
         path="/philosophy"
         jsonLd={breadcrumbSchema([
           { name: 'Home', path: '/' },
@@ -40,7 +39,7 @@ export default function PhilosophyPage() {
             className="font-body text-lg md:text-xl text-sky-cream/70 italic max-w-xl mx-auto"
             style={{ textShadow }}
           >
-            Outside in the groves. Inside the wada. Deeper still, the cave.
+            Outside in the groves. Inside the wada.
           </p>
         </div>
       </section>
@@ -50,9 +49,6 @@ export default function PhilosophyPage() {
 
       {/* === INFRASTRUCTURE PHILOSOPHY — The Living Wada === */}
       <TheVillaSection />
-
-      {/* === MEDITATION CAVE PHILOSOPHY — Inner Star === */}
-      <MeditationCave />
     </div>
   )
 }

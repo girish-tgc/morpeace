@@ -28,7 +28,7 @@ export default function TreeDetailPage() {
         />
         <div className="text-center">
           <p className="font-display text-2xl text-text-deep mb-4">This tree isn't in the registry yet</p>
-          <Link to="/the-forest" className="font-body text-teal-deep hover:underline">&larr; Back to The Forest</Link>
+          <Link to="/the-forest" className="font-body text-teal-deep hover:underline">&larr; Back to Biodiversity</Link>
         </div>
       </div>
     )
@@ -58,7 +58,7 @@ export default function TreeDetailPage() {
           }),
           breadcrumbSchema([
             { name: 'Home', path: '/' },
-            { name: 'The Forest', path: '/the-forest' },
+            { name: 'Biodiversity', path: '/the-forest' },
             { name: tree.species, path: treePath },
           ]),
         ]}
@@ -69,7 +69,7 @@ export default function TreeDetailPage() {
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
             <path d="M19 12H5m0 0l7 7m-7-7l7-7" />
           </svg>
-          Back to The Forest
+          Back to Biodiversity
         </Link>
       </div>
 

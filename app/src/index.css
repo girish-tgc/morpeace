@@ -362,6 +362,27 @@ img {
 .ken-burns-b { animation: ken-burns-b 25s ease-in-out infinite alternate; will-change: transform; }
 .ken-burns-c { animation: ken-burns-c 30s ease-in-out infinite alternate; will-change: transform; }
 
+/* === Hero photo carousel — slow continuous drift, opacity-only swap === */
+@keyframes hero-slide-drift {
+  0%   { transform: scale(1.06) translate3d(0%, 0%, 0); }
+  100% { transform: scale(1.12) translate3d(-1.2%, -0.8%, 0); }
+}
+.hero-slide {
+  will-change: opacity;
+  transform: scale(1.06);
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
+  /* Continuous, slow back-and-forth so the transform never snaps mid-fade */
+  animation: hero-slide-drift 28s ease-in-out infinite alternate;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide {
+    animation: none;
+    transform: none;
+    transition: none;
+  }
+}
+
 /* === Light dapple — shifting forest sunlight === */
 @keyframes light-dapple-drift {
   0%   { opacity: 0.15; background-position: 30% 20%; }

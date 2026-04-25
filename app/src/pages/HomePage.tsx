@@ -32,7 +32,7 @@ const HOME_FAQS = [
   {
     question: 'What is included in a stay?',
     answer:
-      'The villa sleeps up to 18 guests across 4 rooms, with a private pool, lake access, farm-to-table meals prepared by the caretaker families, forest trails through a regenerated 10-acre sanctuary, a watchtower for stargazing, and access to organic kitchen gardens with 40+ mango varieties.',
+      'The villa sleeps up to 18 guests across 3 rooms, with a private pool, lake access, farm-to-table meals prepared by the caretaker families, forest trails through a regenerated 10-acre sanctuary, a watchtower for stargazing, and access to organic kitchen gardens with 40+ mango varieties.',
   },
   {
     question: 'When is the best time to visit?',

@@ -11,7 +11,7 @@ const doorways = [
   },
   {
     to: '/the-forest',
-    title: 'The Forest',
+    title: 'Biodiversity',
     subtitle: '18 trees. 10 stories. The living map of Morpeace.',
     image: `${BASE}photos/forest-dense-vegetation.webp`,
   },

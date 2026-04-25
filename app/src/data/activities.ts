@@ -39,6 +39,6 @@ export const SUSTAINABILITY_ITEMS: ActivityItem[] = [
   { icon: PottedPlant, title: 'Shed-Net Greenhouse', description: 'Nurturing delicate growth in controlled environments.' },
   { icon: Drop, title: 'Hydroponics', description: 'Exploring water-led cultivation methods.' },
   { icon: Recycle, title: 'Biogas', description: 'Transforming organic waste into energy, quietly.' },
-  { icon: Trash, title: 'Zero-Waste Incinerator', description: 'Designed to leave nothing behind.' },
+  { icon: Trash, title: 'Incinerator', description: 'Designed to leave nothing behind.' },
   { icon: Plant, title: 'Open Growing Structures', description: 'Working with the land, not against it.' },
 ]
