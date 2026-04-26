@@ -152,8 +152,8 @@ const totalCounted = nativeCount + exoticCount + unclassifiedCount
 
 export const speciesStats = {
   totalTrees: 447, // authoritative from report
-  totalSpecies: 62, // authoritative from report (excludes 8 sentinel-only specimens + 1 "other" bucket)
-  totalCo2eKg: 42599, // from report §2.3 (42,598.8)
+  totalSpecies: 64, // authoritative from report (April 2026 baseline §2)
+  totalCo2eKg: 42682, // from report §2.4 (42,681.6 kg = 42.7 t)
   nativeCount,
   exoticCount,
   unclassifiedCount,

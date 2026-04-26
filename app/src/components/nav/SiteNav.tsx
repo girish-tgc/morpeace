@@ -11,7 +11,7 @@ const NAV_LINKS = [
   { to: '/origin', label: 'Origin' },
   { to: '/the-forest', label: 'Biodiversity' },
   { to: '/gallery', label: 'Gallery' },
-  { to: '/menu', label: 'Menu' },
+  { to: '/menu', label: 'At the Table' },
   { to: '/team', label: 'Team' },
   { to: '/reviews', label: 'Reviews' },
 ] as const

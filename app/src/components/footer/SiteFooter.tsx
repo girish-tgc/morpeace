@@ -32,7 +32,7 @@ export default function SiteFooter() {
               <Link to="/the-forest" className="font-body text-sm text-sky-cream/60 hover:text-sky-cream/90 transition-colors">Biodiversity</Link>
               <Link to="/philosophy" className="font-body text-sm text-sky-cream/60 hover:text-sky-cream/90 transition-colors">Philosophy</Link>
               <Link to="/gallery" className="font-body text-sm text-sky-cream/60 hover:text-sky-cream/90 transition-colors">Gallery</Link>
-              <Link to="/menu" className="font-body text-sm text-sky-cream/60 hover:text-sky-cream/90 transition-colors">Menu</Link>
+              <Link to="/menu" className="font-body text-sm text-sky-cream/60 hover:text-sky-cream/90 transition-colors">At the Table</Link>
               <Link to="/team" className="font-body text-sm text-sky-cream/60 hover:text-sky-cream/90 transition-colors">Team</Link>
               <Link to="/reviews" className="font-body text-sm text-sky-cream/60 hover:text-sky-cream/90 transition-colors">Reviews</Link>
             </div>

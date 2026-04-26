@@ -113,7 +113,7 @@ export default function YourDayPage() {
             className="font-body text-base md:text-lg text-sky-cream leading-relaxed space-y-4"
             style={{ textShadow: '0 1px 14px rgba(0,0,0,0.95), 0 0 20px rgba(0,0,0,0.7), 0 0 4px rgba(0,0,0,0.85)' }}
           >
-            <p>Wake to birds, not alarms.</p>
+            <p>Wake up to birds, not alarms.</p>
             <p>Breathe, deeply—air quality here is actively monitored and typically ranges between AQI 10–40. Clean, light, restorative.</p>
             <p>Meals arrive—fresh, seasonal, often gathered from the land itself.</p>
             <p>Luxurious, comfortable rooms to stay within the forest.</p>

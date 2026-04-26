@@ -26,22 +26,9 @@ const PALETTE = {
   cream: '#F5F1E3',  // headline near-white
 }
 
-const NAV_SECTIONS = [
-  { id: 'who-for', label: 'Who for' },
-  { id: 'things-to-do', label: 'Do' },
-  { id: 'day', label: 'A day' },
-  { id: 'forest', label: 'Forest' },
-  { id: 'stay', label: 'Stay' },
-  { id: 'children', label: 'Children' },
-  { id: 'meditation', label: 'Meditation' },
-  { id: 'food', label: 'Food' },
-  { id: 'nearby', label: 'Nearby' },
-  { id: 'location', label: 'Location' },
-]
-
 const FACTS = [
   { k: '10', v: 'acres of regenerated forest' },
-  { k: '4', v: 'rooms · sleeps up to 10' },
+  { k: '3', v: 'rooms · sleeps up to 10' },
   { k: '40+', v: 'heirloom mango varieties' },
   { k: '2 hr', v: 'drive from Pune' },
 ]
@@ -142,31 +129,6 @@ export default function LandingMockPage() {
           </div>
         </div>
       </section>
-
-      {/* ============================================= ANCHOR NAV (inline, palette-matched) */}
-      <nav
-        className="sticky top-0 z-30 backdrop-blur-md"
-        style={{
-          backgroundColor: `${PALETTE.ink}e6`,
-          borderBottom: `1px solid ${PALETTE.aqua}22`,
-        }}
-      >
-        <div className="max-w-6xl mx-auto px-4 md:px-6 overflow-x-auto [mask-image:linear-gradient(to_right,black_calc(100%-28px),transparent)] md:[mask-image:none]">
-          <ul className="flex gap-1 md:gap-2 py-3 whitespace-nowrap">
-            {NAV_SECTIONS.map((s) => (
-              <li key={s.id}>
-                <a
-                  href={`#${s.id}`}
-                  className="inline-block px-4 py-2 rounded-full text-sm md:text-base font-medium transition-colors"
-                  style={{ color: `${PALETTE.sand}d9` }}
-                >
-                  {s.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </nav>
 
       {/* ============================================= WHO FOR (new) */}
       <WhoForSection />
@@ -282,12 +244,10 @@ export default function LandingMockPage() {
             <Eyebrow color={PALETTE.blue}>A look inside</Eyebrow>
             <Heading color={PALETTE.ink}>Serene, luxurious, exclusive.</Heading>
             <p className="font-body text-lg md:text-xl leading-relaxed mb-3" style={{ color: `${PALETTE.ink}d9` }}>
-              Three private rooms designed around light, air, and stillness. Clean spaces with natural
-              materials, open views into the forest, and comfort without excess.
+              Three private rooms designed around light, air, and stillness.
             </p>
             <p className="font-body text-lg md:text-xl leading-relaxed" style={{ color: `${PALETTE.ink}b3` }}>
-              Open-air pool, a quiet library corner. No schedule, no demands — your day unfolds at
-              your own pace.
+              No schedule, no demands — your day unfolds at your own pace.
             </p>
           </div>
         </div>
@@ -367,8 +327,7 @@ export default function LandingMockPage() {
               Step down into the meditation cave — a womb carved below the ground, cool and hushed.
             </p>
             <p className="font-body text-lg md:text-xl leading-relaxed" style={{ color: `${PALETTE.sand}b3` }}>
-              Underground is not beneath life — it is beneath distraction. Sit. Breathe. Stay as long
-              as you like. Stillness is always welcome here.
+              Sit. Breathe. Stay as long as you like. Stillness is always welcome here.
             </p>
           </div>
         </div>

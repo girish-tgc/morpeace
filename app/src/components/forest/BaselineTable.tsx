@@ -1,8 +1,11 @@
 const rows = [
   { indicator: 'Total standing trees', value: '447', next: 'Q4 2026' },
-  { indicator: 'Tree species richness', value: '62', next: 'Q4 2026' },
-  { indicator: 'Native-tree proportion', value: '79.6%', next: 'Q4 2026' },
-  { indicator: 'CO₂e standing stock', value: '42.6 t', next: 'Q4 2026' },
+  { indicator: 'Tree species richness', value: '64', next: 'Q4 2026' },
+  { indicator: 'Native-tree proportion', value: '81%', next: 'Q4 2026' },
+  { indicator: 'CO₂e standing stock', value: '42.7 t', next: 'Q4 2026' },
+  { indicator: 'Shannon diversity (H′)', value: '3.23', next: 'Q4 2026' },
+  { indicator: 'Simpson diversity (1−D)', value: '0.93', next: 'Q4 2026' },
+  { indicator: 'Soil organic carbon', value: '0.99%', next: 'Q4 2026 (post-monsoon)' },
   { indicator: 'Tree survival rate', value: '100%', next: 'Q3 2026 (monsoon)' },
   { indicator: 'Bird species recorded', value: '58', next: 'Winter migration · Dec 2026' },
   { indicator: 'Butterfly species recorded', value: '20', next: 'Post-monsoon · Oct 2026' },
@@ -49,9 +52,9 @@ export default function BaselineTable() {
         </div>
 
         <p className="font-body text-xs italic text-text-deep/50 mt-6 leading-relaxed max-w-3xl">
-          A Shannon-Wiener diversity index for trees, soil-health parameters (Morpeace Soil Health Index, MSHI),
-          and a formal acoustic-monitoring protocol for birds will be introduced at the Q4 2026 resurvey so
-          the ten-year trajectory has the statistical backbone the project deserves.
+          A composite Morpeace Soil Health Index (MSHI) drawn from the §7 parameters and a formal
+          acoustic-monitoring protocol for birds will be introduced at the Q4 2026 resurvey so the
+          ten-year trajectory has the statistical backbone the project deserves.
         </p>
 
         <div className="mt-10 text-center text-xs italic text-text-deep/45">

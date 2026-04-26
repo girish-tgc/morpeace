@@ -5,7 +5,7 @@ const stats = [
   { value: String(speciesStats.totalTrees), label: 'Trees tagged', sub: 'individually GPS-located' },
   { value: String(speciesStats.totalSpecies), label: 'Tree species', sub: 'scientific + local names' },
   { value: `${speciesStats.nativePct.toFixed(0)}%`, label: 'Native', sub: `${speciesStats.nativeCount} of ${speciesStats.totalTrees} trees`, accent: 'emerald' as const },
-  { value: '42.6 t', label: 'CO₂e stored', sub: 'Chave et al. 2014', accent: 'gold' as const },
+  { value: '42.7 t', label: 'CO₂e stored', sub: 'Chave et al. 2014', accent: 'gold' as const },
   { value: String(faunaStats.birds.confirmed), label: 'Bird species', sub: 'acoustic + visual' },
   { value: String(faunaStats.butterflies.confirmed), label: 'Butterfly species', sub: 'photographic survey' },
 ]
@@ -57,7 +57,7 @@ export default function AtlasSummary() {
         </div>
 
         <div className="mt-10 text-center text-sky-cream/55 text-xs italic font-body">
-          Survey: 16–18 April 2026 · Aboli Kulkarni, Rohan Shetti, Girish Kulkarni · prepared for Rohit Talwalkar, Morpeace Consulting LLP
+          Survey: 16–18 April 2026 · Aboli Kulkarni, Rohan Shetti, Girish Kulkarni, Abhijeet Bayani (biodiversity lead) · prepared for Rohit Talwalkar, Morpeace Consulting LLP
         </div>
       </div>
     </section>

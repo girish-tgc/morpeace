@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 const BASE = import.meta.env.BASE_URL
 
-function MediaTile({ src, alt, type, poster }: { src: string; alt: string; type: 'image' | 'video'; poster?: string }) {
+function MediaTile({ src, alt, type, poster, caption }: { src: string; alt: string; type: 'image' | 'video'; poster?: string; caption?: string }) {
   const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
@@ -62,6 +62,15 @@ function MediaTile({ src, alt, type, poster }: { src: string; alt: string; type:
         <span className="absolute top-3 right-3 eyebrow text-sky-cream/80 bg-[#012E43]/70 backdrop-blur-sm px-2.5 py-1 rounded-full">
           video
         </span>
+      )}
+      {/* Caption */}
+      {caption && (
+        <>
+          <div className="absolute inset-x-0 bottom-0 h-1/3 pointer-events-none bg-gradient-to-t from-[#012E43]/85 via-[#012E43]/40 to-transparent" />
+          <p className="absolute left-3 right-3 bottom-3 font-display text-sm md:text-base text-sky-cream tracking-wide drop-shadow-[0_1px_8px_rgba(1,46,67,0.9)]">
+            {caption}
+          </p>
+        </>
       )}
     </div>
   )
@@ -191,6 +200,11 @@ export default function GalleryPage() {
                   <MediaTile key={`${section.id}-${i}`} {...item} />
                 ))}
               </div>
+              {section.attribution && (
+                <p className="mt-8 max-w-3xl mx-auto text-center font-body text-xs md:text-sm text-sky-cream/55 italic leading-relaxed">
+                  {section.attribution}
+                </p>
+              )}
             </div>
           </section>
         ))}

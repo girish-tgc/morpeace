@@ -10,6 +10,7 @@ export type GalleryItem = {
   alt: string
   type: 'image' | 'video'
   poster?: string
+  caption?: string
 }
 
 export type GallerySection = {
@@ -18,6 +19,7 @@ export type GallerySection = {
   heading: string
   description: string
   items: GalleryItem[]
+  attribution?: string
 }
 
 export const gallerySections: GallerySection[] = [
@@ -25,8 +27,14 @@ export const gallerySections: GallerySection[] = [
     id: 'food',
     label: 'Food',
     heading: 'At the Table',
-    description: 'Thalis by the pool, bruschetta under an open sky — meals that belong to the place.',
+    description: 'Forgotten grains, foraged greens, slow village recipes — meals that belong to the place.',
     items: [
+      { src: 'media/food/feast-spread.jpeg', alt: 'A full feast spread laid out for the table', type: 'image' },
+      { src: 'media/food/whatsapp-image-2026-04-25-at-11-34-23-pm-1.jpeg', alt: 'Slow-cooked village recipe served warm', type: 'image' },
+      { src: 'media/food/whatsapp-image-2026-04-25-at-11-39-20-pm.jpeg', alt: 'Seasonal harvest plated for the meal', type: 'image' },
+      { src: 'media/food/whatsapp-image-2026-04-25-at-11-41-07-pm.jpeg', alt: 'Foraged greens and forgotten grains, plated', type: 'image' },
+      { src: 'media/food/whatsapp-image-2026-04-25-at-11-44-43-pm.jpeg', alt: 'Hand-rolled breads and accompaniments', type: 'image' },
+      { src: 'media/food/whatsapp-image-2026-04-25-at-11-45-55-pm.jpeg', alt: 'Sweet course at the end of a long meal', type: 'image' },
       { src: 'media/rustic-haven/rh-21.webp', alt: 'Thali spread on the outdoor dining bench by the pool', type: 'image' },
       { src: 'media/rustic-haven/rh-01.webp', alt: 'Breakfast at sunset beside the pool', type: 'image' },
       { src: 'media/property/whatsapp-image-2026-02-16-at-10-56-39-pm-1.webp', alt: 'Outdoor table set with bruschetta, bread and flowers', type: 'image' },
@@ -133,6 +141,26 @@ export const gallerySections: GallerySection[] = [
     items: [
       { src: 'media/aerial-property-drone.mp4', alt: 'Drone sweep over Morpeace', type: 'video', poster: 'media/rustic-haven/rh-23.webp' },
     ],
+  },
+  {
+    id: 'satara',
+    label: 'Around Satara',
+    heading: 'The land beyond the gate',
+    description: 'Western Ghats lakes, Kaas Plateau wildflowers, Sajjangad fort, the forests of Tapola — what surrounds Morpeace, and what is yours to wander when you stay.',
+    items: [
+      { src: 'media/satara/kaas-lake.jpg', alt: 'Lake on the Kaas plateau, Satara — UNESCO World Heritage site (photo: Dinesh Valke, CC BY-SA 2.0)', type: 'image', caption: 'Kaas Plateau Lake' },
+      { src: 'media/satara/kaas-plateau.jpg', alt: 'Wildflowers of the Kaas plateau in bloom (photo: Ganesh R. Mandavkar, CC BY-SA 4.0)', type: 'image', caption: 'Kaas Plateau · Wildflowers' },
+      { src: 'media/satara/mahabaleshwar.jpg', alt: 'Mahabaleshwar hill station, Satara district (photo: Amey Khot, CC BY 3.0)', type: 'image', caption: 'Mahabaleshwar' },
+      { src: 'media/satara/panchgani.jpg', alt: 'Scenic Panchgani plateau, near Mahabaleshwar (photo: Amol Bakshi, CC BY-SA 4.0)', type: 'image', caption: 'Panchgani' },
+      { src: 'media/satara/pratapgad-fort.jpg', alt: 'Pratapgad fort in the Sahyadris (photo: Neeraj Rane, CC BY-SA 4.0)', type: 'image', caption: 'Pratapgad Fort' },
+      { src: 'media/satara/sajjangad-fort.jpg', alt: 'View from Sajjangad fort, near Satara (photo: Vinayaraj, CC BY-SA 4.0)', type: 'image', caption: 'Sajjangad Fort' },
+      { src: 'media/satara/thoseghar-falls.jpg', alt: 'Thoseghar waterfalls, Satara (photo: Bairagi17, CC BY-SA 4.0)', type: 'image', caption: 'Thoseghar Falls' },
+      { src: 'media/satara/koyna-backwaters.jpg', alt: 'Koyna backwaters in Satara district (photo: Bangal Priti, CC BY-SA 4.0)', type: 'image', caption: 'Koyna Backwaters' },
+      { src: 'media/satara/tapola-forest.jpg', alt: 'Forest in Tapola, near the Koyna backwaters (photo: Hanmant Dadaso Rane, CC BY-SA 4.0)', type: 'image', caption: 'Tapola Forest' },
+      { src: 'media/satara/mandhardevi.jpg', alt: 'Mandhardevi (Kalubai) hills near Satara (photo: Atulbibave, CC BY-SA 4.0)', type: 'image', caption: 'Mandhardevi (Kalubai)' },
+    ],
+    attribution:
+      'Photographs of the surrounding region courtesy Wikimedia Commons contributors Dinesh Valke, Ganesh R. Mandavkar, Amey Khot, Amol Bakshi, Neeraj Rane, Vinayaraj, Bairagi17, Bangal Priti, Hanmant Dadaso Rane, and Atulbibave — used under Creative Commons BY 3.0, BY-SA 2.0 and BY-SA 4.0 licences.',
   },
   {
     id: 'history',

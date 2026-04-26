@@ -352,12 +352,12 @@ export default function MenuPage() {
           ),
           breadcrumbSchema([
             { name: 'Home', path: '/' },
-            { name: 'Menu', path: '/menu' },
+            { name: 'At the Table', path: '/menu' },
           ]),
         ]}
       />
       {/* ═══ HERO ═══ */}
-      <section className="relative min-h-[70vh] md:min-h-[78vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[52vh] md:min-h-[58vh] flex items-end justify-center overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <div className="ken-burns-a absolute inset-0">
             <img
@@ -368,23 +368,58 @@ export default function MenuPage() {
             />
           </div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-[#2C1810]/55 via-[#2C1810]/35 to-[#F4ECDE]" />
-        <div className="relative z-10 text-center px-8 py-20 max-w-3xl">
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(to bottom, rgba(44,24,16,0.55) 0%, rgba(44,24,16,0.35) 55%, #F4ECDE 100%)',
+          }}
+        />
+        <div className="relative z-10 text-center px-8 pb-10 md:pb-14 pt-24 max-w-3xl">
           <div data-animate>
             <h1
               className="font-display text-4xl sm:text-5xl md:text-7xl text-[#FBF4E4] leading-[1.05]"
               style={{ textShadow: '0 2px 24px rgba(44,24,16,0.65)' }}
             >
-              The Menu
+              At the Table
             </h1>
             <Flourish className="w-44 h-3 mx-auto mt-6 text-[#F7D9A8]/80" />
-            <p
-              className="font-body italic text-lg md:text-2xl text-[#FBF4E4]/90 mt-7 leading-relaxed"
-              style={{ textShadow: '0 1px 14px rgba(44,24,16,0.55)' }}
-            >
-              Lovingly crafted with age-old recipes — cooked slow, served warm, just like grandma would.
-            </p>
           </div>
+        </div>
+      </section>
+
+      {/* ═══ INTRO PROSE ═══ */}
+      <section className="pt-8 md:pt-12 pb-16 md:pb-20 px-6 bg-[#F4ECDE]">
+        <div
+          data-animate
+          className="max-w-2xl mx-auto text-center space-y-6 font-body text-lg md:text-xl text-[#3a2618] leading-relaxed"
+        >
+          <p>
+            How many of us remember the taste of a yam roasted on coals,
+            <br />
+            or the smell of raw mango ripening slowly?
+          </p>
+          <p>
+            Today, our palate has become monochromatic —
+            <br />
+            polished, but often without smell or flavour.
+          </p>
+          <p>
+            When we lose diversity in food,
+            <br />
+            we lose nutrition, memory, and culture.
+          </p>
+          <p>At Morpeace, food carries the memory of what we once knew.</p>
+          <p>
+            Forgotten vegetables. Foraged greens. Seasonal harvests —
+            <br />
+            with real flavours.
+          </p>
+          <p className="italic text-[#6B4A24]">
+            Recipes from village kitchens.
+            <br />
+            Meals slow, nourishing, and deeply rooted.
+          </p>
         </div>
       </section>
 

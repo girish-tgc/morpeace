@@ -3,11 +3,15 @@ import { gsap } from 'gsap'
 import SeoHead from '../components/SeoHead'
 import { breadcrumbSchema, placeSchema } from '../lib/seo/schema'
 import AtlasSummary from '../components/forest/AtlasSummary'
+import CarbonEquivalents from '../components/forest/CarbonEquivalents'
 import ConservationHighlights from '../components/forest/ConservationHighlights'
+import DiversityIndex from '../components/forest/DiversityIndex'
 import NativeExoticBars from '../components/forest/NativeExoticBars'
 import SpeciesGrid from '../components/forest/SpeciesGrid'
 import FaunaGrid from '../components/forest/FaunaGrid'
 import Checklists from '../components/forest/Checklists'
+import EcosystemAtWork from '../components/forest/EcosystemAtWork'
+import SoilHealth from '../components/forest/SoilHealth'
 import EcologicalSignificance from '../components/forest/EcologicalSignificance'
 import BaselineTable from '../components/forest/BaselineTable'
 
@@ -82,9 +86,15 @@ export default function TheForestPage() {
         </div>
       </section>
 
+      <EcologicalSignificance />
+
       <AtlasSummary />
 
+      <CarbonEquivalents />
+
       <ConservationHighlights />
+
+      <DiversityIndex />
 
       <NativeExoticBars />
 
@@ -94,7 +104,9 @@ export default function TheForestPage() {
 
       <Checklists />
 
-      <EcologicalSignificance />
+      <EcosystemAtWork />
+
+      <SoilHealth />
 
       <BaselineTable />
     </div>

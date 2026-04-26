@@ -38,14 +38,15 @@ export default function ConservationHighlights() {
               <span className="eyebrow text-[10px] px-2 py-0.5 rounded-full border border-emerald-300/50 text-emerald-200 bg-emerald-900/20">
                 Keystone
               </span>
-              <span className="font-mono text-xs text-sky-cream/60">Ficus complex</span>
+              <span className="font-mono text-xs text-sky-cream/60">Four Ficus species</span>
             </div>
             <h3 className="font-display text-xl md:text-2xl text-sky-cream">Wild Figs</h3>
-            <p className="font-body text-sm italic text-sky-cream/65 mt-0.5">(F. racemosa · benghalensis · religiosa)</p>
+            <p className="font-body text-sm italic text-sky-cream/65 mt-0.5">(F. racemosa · benghalensis · benjamina · elastica)</p>
             <p className="font-body text-sm text-sky-cream/75 leading-relaxed mt-4">
-              Keystone resources for frugivorous birds and mammals. Two of the ten largest carbon
-              contributors on the property are <em>F. racemosa</em> — these trees anchor the most
-              vertically structured canopy pockets.
+              Keystone resources for frugivorous birds and mammals. <em>F. racemosa</em> tree #509
+              alone stores 737&nbsp;kg CO₂e — one of the ten largest individual carbon contributors —
+              and as a species sits in the top 15 by aggregate CO₂e, anchoring the most vertically
+              structured canopy pockets.
             </p>
           </div>
 

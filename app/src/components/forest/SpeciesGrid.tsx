@@ -158,7 +158,7 @@ export default function SpeciesGrid() {
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-sky-cream mb-4">The Wider Canopy</h2>
           <div className="w-12 h-0.5 bg-[#E94A3C]/70 mx-auto mb-5" />
           <p className="font-body text-base md:text-lg italic text-sky-cream/70">
-            447 tagged trees. 62 species. The first fifteen carry most of the carbon —
+            447 tagged trees. 64 species. The first fifteen carry most of the carbon —
             and the sacred grove carries the story.
           </p>
         </div>

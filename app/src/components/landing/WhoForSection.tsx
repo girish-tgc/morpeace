@@ -8,7 +8,7 @@ const PALETTE = {
   cream: '#F5F1E3',
 }
 
-type Intent = 'To pause' | 'To explore' | 'To reconnect' | 'To celebrate' | 'On the way'
+type Intent = 'To pause' | 'To explore' | 'To reconnect' | 'To celebrate' | 'On the way' | 'To remember'
 
 interface WhoCard {
   intent: Intent
@@ -24,7 +24,7 @@ const CARDS: WhoCard[] = [
     intent: 'To pause',
     title: 'Solo, or a couple, for a room',
     description:
-      'Arrive with a backpack. A single room, the forest, the pool, the meditation cave. The villa carries on around you.',
+      'Arrive with a backpack. A single room, the forest, the pool, the meditation cave. The villa carries on around you — and beautiful Satara is yours to explore.',
     meta: '1–2 guests · book a room',
     mode: 'room',
     whatsappPrefill:
@@ -54,7 +54,7 @@ const CARDS: WhoCard[] = [
     intent: 'To celebrate',
     title: 'A small offsite or celebration',
     description:
-      'Meditation cave, table-tennis, unhurried meals. Up to 50 for a day event, 10 overnight. No projectors, by design.',
+      'Meditation cave, table-tennis, unhurried meals. Up to 50 for a day event, 10 overnight.',
     meta: '6–10 overnight · book the villa',
     mode: 'villa',
     whatsappPrefill:
@@ -69,6 +69,16 @@ const CARDS: WhoCard[] = [
     mode: 'either',
     whatsappPrefill:
       "Hi Morpeace — planning to stop over on our Mumbai–Goa drive. Could you check availability?",
+  },
+  {
+    intent: 'To remember',
+    title: 'A pre-wedding shoot, a family album',
+    description:
+      'Some places are seen. Some are remembered. Whether it’s a pre-wedding shoot or time with family, Morpeace becomes part of the story you carry forward.',
+    meta: 'shoots & gatherings · room or villa',
+    mode: 'either',
+    whatsappPrefill:
+      "Hi Morpeace — planning a pre-wedding shoot / family memory weekend. Could you share options?",
   },
 ]
 
@@ -96,11 +106,11 @@ export default function WhoForSection() {
             className="font-body text-lg md:text-xl max-w-2xl mx-auto"
             style={{ color: `${PALETTE.sand}d9` }}
           >
-            Guests arrive with different intents &mdash; to pause, to explore, to reconnect, to celebrate, or simply to break a Mumbai&ndash;Goa drive. The land holds each of them differently.
+            Guests arrive with different intents &mdash; to pause, to explore, to reconnect, to celebrate, to remember, or simply to break a Mumbai&ndash;Goa drive. The land holds each of them differently.
           </p>
         </div>
 
-        <div data-animate className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5">
+        <div data-animate className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
           {CARDS.map((card) => (
             <div
               key={card.title}
