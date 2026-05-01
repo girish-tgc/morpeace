@@ -3,6 +3,8 @@ media/
 # But the slugged copies inside the app's deployed public folder ARE tracked
 !app/public/media/
 !app/public/media/**
+!app-next/public/media/
+!app-next/public/media/**
 /*.mp4
 /*.gpx
 /*.kml
