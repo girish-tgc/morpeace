@@ -9,13 +9,13 @@ const points = [
     n: '02',
     title: 'Arthropod diversity far ahead of ornamental landscapes',
     body:
-      'Eight spider genera across five families, plus wild Apis, Megachile leafcutters, three ant genera, mantids, odonate nymphs, syrphid pollinators — all from an opportunistic survey in a single season. Spider diversity in particular tracks closely with arthropod prey abundance; its presence here implies the pollinator food-web is intact.',
+      'Twenty-two spider genera, plus wild Apis, Megachile leafcutters, eight ant genera, mantids, seven dragonflies and damselflies, syrphid pollinators — from just two seasonal rounds. Spider diversity in particular tracks closely with arthropod prey abundance; its presence here implies the pollinator food-web is intact.',
   },
   {
     n: '03',
     title: 'An avifauna that already speaks',
     body:
-      '58 bird species detected on the property so far — including snake eagle, honey buzzard, hornbill, owlet, two sunbird species and multiple babblers — tells us that water bodies, tree canopy, and ground cover are collectively providing nesting, foraging and predator niches. The wildlife is already voting with its wings.',
+      '80 bird species detected on the property so far — including snake eagle, honey buzzard, hornbill, owlet, two sunbird species and multiple babblers — tells us that water bodies, tree canopy, and ground cover are collectively providing nesting, foraging and predator niches. The wildlife is already voting with its wings.',
   },
   {
     n: '04',

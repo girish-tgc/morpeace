@@ -12,14 +12,14 @@ const chains = [
   {
     label: 'Canopy → Pollinators → Fruit set',
     body:
-      'The top carbon-storing and most abundant species are the property’s fruit anchors: mango (51), coconut (60), jackfruit (9), tamarind (13), jamun (16), guava (9), bel, amla, custard apple, mulberry and four Ficus species. Their flowering phenology spans most of the year. The documented pollinator fauna — wild Apis bees, megachilid leaf-cutters, syrphid hover-flies, and 20 butterfly species — is exactly the insect guild ecological literature associates with this fruit roster.',
+      'The top carbon-storing and most abundant species are the property’s fruit anchors: mango (51), coconut (60), jackfruit (9), tamarind (13), jamun (16), guava (9), bel, amla, custard apple, mulberry and four Ficus species. Their flowering phenology spans most of the year. The documented pollinator fauna — wild Apis bees, megachilid leaf-cutters, syrphid hover-flies, and 34 butterfly species — is exactly the insect guild ecological literature associates with this fruit roster.',
     documented: 'fruit-tree roster, pollinator guild',
     inferred: 'pollinator-limited fruit set — no exclusion experiment was run',
   },
   {
     label: 'Fruit & Figs → Frugivores → Seed dispersal',
     body:
-      'Four Ficus species are present (F. racemosa, F. benghalensis, F. benjamina, F. elastica); F. racemosa #509 contributes one of the ten heaviest individual carbon trees. Figs fruit asynchronously, keeping ripe fruit available year-round — which is why tropical ecology consistently lists them as keystone resources. The 58-species bird list includes hornbills, multiple barbets, bulbuls and koel — textbook fig-dependent seed dispersers.',
+      'Four Ficus species are present (F. racemosa, F. benghalensis, F. benjamina, F. elastica); F. racemosa #509 contributes one of the ten heaviest individual carbon trees. Figs fruit asynchronously, keeping ripe fruit available year-round — which is why tropical ecology consistently lists them as keystone resources. The 80-species bird list includes hornbills, multiple barbets, bulbuls and koel — textbook fig-dependent seed dispersers.',
     documented: 'fig trees, bird species',
     inferred: 'the dispersal service is operating on site at a non-trivial rate',
   },

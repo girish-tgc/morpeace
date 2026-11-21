@@ -14,6 +14,8 @@ import EcosystemAtWork from '../components/forest/EcosystemAtWork'
 import SoilHealth from '../components/forest/SoilHealth'
 import EcologicalSignificance from '../components/forest/EcologicalSignificance'
 import BaselineTable from '../components/forest/BaselineTable'
+import MonsoonSurvey from '../components/forest/MonsoonSurvey'
+import NakshatraVan from '../components/forest/NakshatraVan'
 
 const heroShadow = '0 2px 20px rgba(1,46,67,0.55), 0 1px 6px rgba(1,46,67,0.35)'
 
@@ -39,7 +41,7 @@ export default function TheForestPage() {
     <div>
       <SeoHead
         title="The Biodiversity Atlas — Morpeace Forest | Western Ghats"
-        description="A scientifically documented 10-acre biodiversity sanctuary in the Western Ghats near Satara. 18 sentinel trees measured, 40+ mango varieties, native flora and fauna, and a decade of regeneration."
+        description="A scientifically documented 10-acre biodiversity sanctuary in the Western Ghats near Satara. 80 bird species, 34 butterflies, frogs, fungi and a 27-tree Nakshatra Van — measured season by season."
         path="/the-forest"
         jsonLd={[
           placeSchema(),
@@ -60,7 +62,7 @@ export default function TheForestPage() {
         />
         <div ref={heroRef} className="relative z-10 text-center px-6 md:px-8 py-20 md:py-24 max-w-3xl">
           <p data-hero-line className="eyebrow text-[#F5EBD0] mb-6" style={{ textShadow: heroShadow }}>
-            Morpeace · Living Pasaydan · Year 0 Baseline
+            Morpeace · Living Pasaydan · Year 0 · Summer + Monsoon 2026
           </p>
           <h1
             data-hero-line
@@ -83,12 +85,30 @@ export default function TheForestPage() {
           >
             A scientifically documented, benchmark biodiversity sanctuary.
           </p>
+          <div data-hero-line className="mt-8 flex flex-wrap justify-center gap-3">
+            <a
+              href="#monsoon"
+              className="inline-flex items-center gap-2 min-h-[44px] px-5 rounded-full bg-[#F5EBD0] text-[#012E43] font-display text-[11px] tracking-[0.18em] uppercase hover:bg-white transition-colors"
+            >
+              <span className="w-2 h-2 rounded-full bg-[#E94A3C] animate-pulse" /> New: Monsoon survey
+            </a>
+            <a
+              href="#nakshatra-van"
+              className="inline-flex items-center gap-2 min-h-[44px] px-5 rounded-full ring-1 ring-[#F5EBD0]/60 text-[#F5EBD0] font-display text-[11px] tracking-[0.18em] uppercase hover:bg-[#F5EBD0]/10 transition-colors"
+            >
+              New: Nakshatra Van
+            </a>
+          </div>
         </div>
       </section>
 
       <EcologicalSignificance />
 
       <AtlasSummary />
+
+      <MonsoonSurvey />
+
+      <NakshatraVan />
 
       <CarbonEquivalents />
 

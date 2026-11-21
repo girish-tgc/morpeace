@@ -11,7 +11,7 @@ const CATEGORY_ORDER: { id: FaunaCategory; label: string; blurb: string; countFa
   {
     id: 'birds',
     label: 'Birds',
-    blurb: '58 species recorded on site by sight and Merlin Sound ID. A handful photographed — the ones that held still long enough.',
+    blurb: `${faunaStats.birds.confirmed} species recorded on site across the summer and monsoon rounds, by sight, call and Merlin Sound ID. These are the ones that held still long enough.`,
     countFact: `${faunaStats.birds.confirmed} recorded · ${faunaStats.birds.photographed} photographed`,
   },
   {
@@ -22,16 +22,34 @@ const CATEGORY_ORDER: { id: FaunaCategory; label: string; blurb: string; countFa
     countFact: `${faunaStats.butterflies.confirmed} recorded · ${faunaStats.butterflies.photographed} photographed`,
   },
   {
+    id: 'amphibians',
+    label: 'Frogs & toads',
+    blurb:
+      'The first amphibian records for Morpeace, brought out by the rains. Frogs breathe partly through their skin, so a rich frog community is one of the clearest signs of a healthy wetland.',
+    countFact: `${faunaStats.amphibianGenera} genera · monsoon 2026`,
+  },
+  {
+    id: 'reptiles-mammals',
+    label: 'Reptiles & mammals',
+    blurb: 'The first reptile and the first mammal on the list. Snakes, skinks and geckos will be looked for in night surveys.',
+  },
+  {
     id: 'spiders',
     label: 'Spiders',
     blurb:
-      'Eight genera across five families — jumping, lynx, wolf, crab-ambush, huntsman. Sensitive indicators of arthropod base and micro-habitat complexity.',
-    countFact: `${faunaStats.spiderGenera} genera · ${faunaStats.spiderFamilies} families`,
+      'Jumping, lynx, wolf, crab-ambush and huntsman spiders in summer; the monsoon added the web-builders — orb-weavers, tent-web and long-jawed spiders. Sensitive indicators of micro-habitat complexity.',
+    countFact: `${faunaStats.spiderGenera} genera`,
   },
   {
     id: 'insects',
     label: 'Insects & other arthropods',
     blurb: 'Two wild honeybee species, potter wasps, cicadas, hoverflies, dragonfly nymphs, stick mantises. An intact pollinator-predator community.',
+  },
+  {
+    id: 'fungi',
+    label: 'Fungi',
+    blurb: 'The rains wake the recyclers. Jelly, cup, bracket and bird’s-nest fungi turn fallen wood and leaf litter back into soil.',
+    countFact: 'monsoon 2026',
   },
 ]
 
@@ -71,7 +89,7 @@ function FaunaTile({ f, onOpen }: { f: FaunaSpecies; onOpen: (f: FaunaSpecies) =
   )
 }
 
-function Lightbox({ f, onClose }: { f: FaunaSpecies; onClose: () => void }) {
+export function Lightbox({ f, onClose }: { f: FaunaSpecies; onClose: () => void }) {
   const [idx, setIdx] = useState(0)
   const total = f.photos.length
 

@@ -1,15 +1,18 @@
-// Companions — fauna observed during the Satara biodiversity survey (Apr 2026).
+// Companions — fauna observed during the Morpeace biodiversity surveys
+// (summer round Apr 2026, monsoon round Aug 2026; monsoon report 17 Nov 2026).
 //
-// Data follows the report's photographic plates: Birds, Butterflies, Spiders,
-// and Insects & other arthropods. Multiple photos of the same species are
-// grouped into a single entry with a `photos[]` array — so the grid reads
-// as one tile per taxon rather than repeating the same creature.
+// Data follows the reports' photographic plates. Multiple photos of the same
+// species are grouped into a single entry with a `photos[]` array — so the
+// grid reads as one tile per taxon rather than repeating the same creature.
 
 export type FaunaCategory =
   | 'birds'
   | 'butterflies'
   | 'spiders'
   | 'insects'
+  | 'amphibians'
+  | 'reptiles-mammals'
+  | 'fungi'
 
 export interface FaunaSpecies {
   id: string
@@ -22,7 +25,7 @@ export interface FaunaSpecies {
 }
 
 export const fauna: FaunaSpecies[] = [
-  // ---------- Birds (photographed, of 58 confirmed) ----------
+  // ---------- Birds (photographed, of 80 confirmed across summer + monsoon) ----------
   {
     id: 'oriental-turtle-dove',
     common: 'Oriental Turtle Dove',
@@ -36,7 +39,7 @@ export const fauna: FaunaSpecies[] = [
     scientific: 'Copsychus saularis',
     family: 'Muscicapidae',
     category: 'birds',
-    photos: ['media/animals/bird.webp'],
+    photos: ['media/animals/bird.webp', 'media/fauna/monsoon/oriental-magpie-robin.webp'],
     note: 'A resident songbird, perched in the palm canopy',
   },
   {
@@ -56,6 +59,26 @@ export const fauna: FaunaSpecies[] = [
     photos: ['media/fauna/sunbird-nest.webp'],
     note: 'A woven cradle in the canopy',
   },
+  // Monsoon 2026 photographic plates 1–4
+  { id: 'baya-weaver', common: 'Baya Weaver', scientific: 'Ploceus philippinus', family: 'Ploceidae', category: 'birds', photos: ['media/fauna/monsoon/baya-weaver.webp'], note: 'A male at its woven, bottle-shaped nest — proof that Morpeace is a breeding ground.' },
+  { id: 'fork-tailed-drongo-cuckoo', common: 'Fork-tailed Drongo-Cuckoo', scientific: 'Surniculus dicruroides', family: 'Cuculidae', category: 'birds', photos: ['media/fauna/monsoon/fork-tailed-drongo-cuckoo.webp'], note: 'A brood parasite of small babblers. Only two research-grade records from Satara district.' },
+  { id: 'grey-bellied-cuckoo', common: 'Grey-bellied Cuckoo', scientific: 'Cacomantis passerinus', family: 'Cuculidae', category: 'birds', photos: ['media/fauna/monsoon/grey-bellied-cuckoo.webp'], note: 'A monsoon voice. Lays its eggs in the nests of prinias and tailorbirds.' },
+  { id: 'common-hawk-cuckoo', common: 'Common Hawk-Cuckoo', scientific: 'Hierococcyx varius', family: 'Cuculidae', category: 'birds', photos: ['media/fauna/monsoon/common-hawk-cuckoo.webp'], note: 'The "brain-fever bird" of the Indian rains.' },
+  { id: 'yellow-footed-green-pigeon', common: 'Yellow-footed Green Pigeon', scientific: 'Treron phoenicopterus', family: 'Columbidae', category: 'birds', photos: ['media/fauna/monsoon/yellow-footed-green-pigeon.webp'], note: 'The Harial — state bird of Maharashtra. Feeds on the figs of Morpeace.' },
+  { id: 'indian-grey-hornbill', common: 'Indian Grey Hornbill', scientific: 'Ocyceros birostris', family: 'Bucerotidae', category: 'birds', photos: ['media/fauna/monsoon/indian-grey-hornbill.webp'], note: 'A fruit-eater that plants the future forest. Found only in the Indian subcontinent.' },
+  { id: 'indian-peafowl', common: 'Indian Peafowl', scientific: 'Pavo cristatus', family: 'Phasianidae', category: 'birds', photos: ['media/fauna/monsoon/indian-peafowl.webp'], note: "India's national bird. Schedule I, the highest legal protection." },
+  { id: 'white-spotted-fantail', common: 'White-spotted Fantail', scientific: 'Rhipidura albogularis', family: 'Rhipiduridae', category: 'birds', photos: ['media/fauna/monsoon/white-spotted-fantail.webp'], note: 'Endemic to India. Six birds fanning their tails through the shrubs.' },
+  { id: 'white-browed-bulbul', common: 'White-browed Bulbul', scientific: 'Pycnonotus luteolus', family: 'Pycnonotidae', category: 'birds', photos: ['media/fauna/monsoon/white-browed-bulbul.webp'], note: 'Found only in peninsular India and Sri Lanka.' },
+  { id: 'large-grey-babbler', common: 'Large Grey Babbler', scientific: 'Argya malcolmi', family: 'Leiothrichidae', category: 'birds', photos: ['media/fauna/monsoon/large-grey-babbler.webp'], note: 'A noisy flock of ten. Endemic to the Indian subcontinent.' },
+  { id: 'barred-buttonquail', common: 'Barred Buttonquail', scientific: 'Turnix suscitator', family: 'Turnicidae', category: 'birds', photos: ['media/fauna/monsoon/barred-buttonquail.webp'], note: 'A ground-nester that needs grass left uncut through the rains.' },
+  { id: 'red-wattled-lapwing', common: 'Red-wattled Lapwing', scientific: 'Vanellus indicus', family: 'Charadriidae', category: 'birds', photos: ['media/fauna/monsoon/red-wattled-lapwing.webp'] },
+  { id: 'jungle-myna', common: 'Jungle Myna', scientific: 'Acridotheres fuscus', family: 'Sturnidae', category: 'birds', photos: ['media/fauna/monsoon/jungle-myna.webp'] },
+  { id: 'indian-white-eye', common: 'Indian White-eye', scientific: 'Zosterops palpebrosus', family: 'Zosteropidae', category: 'birds', photos: ['media/fauna/monsoon/indian-white-eye.webp'] },
+  { id: 'white-breasted-waterhen', common: 'White-breasted Waterhen', scientific: 'Amaurornis phoenicurus', family: 'Rallidae', category: 'birds', photos: ['media/fauna/monsoon/white-breasted-waterhen.webp'], note: 'One of ten water birds that depend on the lake, pond and stream.' },
+  { id: 'white-throated-kingfisher', common: 'White-throated Kingfisher', scientific: 'Halcyon smyrnensis', family: 'Alcedinidae', category: 'birds', photos: ['media/fauna/monsoon/white-throated-kingfisher.webp'] },
+  { id: 'common-tailorbird', common: 'Common Tailorbird', scientific: 'Orthotomus sutorius', family: 'Cisticolidae', category: 'birds', photos: ['media/fauna/monsoon/common-tailorbird.webp'], note: 'New to the Morpeace list this monsoon.' },
+  { id: 'short-toed-snake-eagle', common: 'Short-toed Snake Eagle', scientific: 'Circaetus gallicus', family: 'Accipitridae', category: 'birds', photos: ['media/fauna/monsoon/short-toed-snake-eagle.webp'], note: 'A summer record. Raptors range widely and come and go with the seasons.' },
+  { id: 'spot-billed-duck', common: 'Indian Spot-billed Duck', scientific: 'Anas poecilorhyncha', family: 'Anatidae', category: 'birds', photos: ['media/fauna/monsoon/spot-billed-duck-1.webp', 'media/fauna/monsoon/spot-billed-duck-2.webp'], note: 'Arrived when the monsoon lake filled. New to the Morpeace list.' },
 
   // ---------- Butterflies (10 photographed of 20 confirmed) ----------
   {
@@ -275,6 +298,24 @@ export const fauna: FaunaSpecies[] = [
     photos: ['media/animals/tilapia.webp'],
     note: 'In the monsoon-fed lake',
   },
+
+  // ---------- Amphibians (monsoon 2026: 7 genera, first records) ----------
+  { id: 'indian-bullfrog', common: 'Bullfrog', scientific: 'Hoplobatrachus sp.', family: 'Dicroglossidae', category: 'amphibians', photos: ['media/fauna/monsoon/indian-bullfrog.webp'], note: 'Large predator of the pond edges. The Indian Bullfrog is legally protected.' },
+  { id: 'minervarya-sp', common: 'Cricket frog', scientific: 'Minervarya sp.', family: 'Dicroglossidae', category: 'amphibians', photos: ['media/fauna/monsoon/frog-minervarya.webp'], note: 'Lives in wet grass and field edges.' },
+  { id: 'microhyla-sp', common: 'Narrow-mouthed frog', scientific: 'Microhyla sp.', family: 'Microhylidae', category: 'amphibians', photos: ['media/fauna/monsoon/frog-microhyla.webp'], note: 'Tiny. Breeds in temporary rain puddles.' },
+  { id: 'sphaerotheca-sp', common: 'Burrowing frog', scientific: 'Sphaerotheca sp.', family: 'Dicroglossidae', category: 'amphibians', photos: ['media/fauna/monsoon/frog-sphaerotheca.webp'], note: 'Spends the dry season buried in soil. Needs undisturbed ground.' },
+
+  // ---------- Reptiles & mammals (monsoon 2026: first records) ----------
+  { id: 'golden-jackal', common: 'Golden Jackal', scientific: 'Canis aureus', family: 'Canidae', category: 'reptiles-mammals', photos: ['media/fauna/monsoon/golden-jackal.webp'], note: 'The first mammal on the Morpeace list. Schedule I protected. Shows the land is connected to the wider landscape.' },
+  { id: 'garden-lizard', common: 'Oriental Garden Lizard', scientific: 'Calotes versicolor', family: 'Agamidae', category: 'reptiles-mammals', photos: ['media/fauna/monsoon/garden-lizard.webp'], note: 'The first reptile on the Morpeace list.' },
+
+  // ---------- Fungi (monsoon 2026, Plate 5) ----------
+  { id: 'fungus-jelly', common: 'Orange jelly fungus', category: 'fungi', photos: ['media/fauna/monsoon/fungus-1.webp'], note: 'Tiny orange antlers on a fallen log.' },
+  { id: 'fungus-birds-nest', common: "Bird's-nest fungus", category: 'fungi', photos: ['media/fauna/monsoon/fungus-2.webp'], note: 'Each "egg" holds spores, splashed out by raindrops.' },
+  { id: 'fungus-purple-cup', common: 'Purple cup fungus', category: 'fungi', photos: ['media/fauna/monsoon/fungus-3.webp'] },
+  { id: 'fungus-polypore', common: 'Honeycomb polypore', category: 'fungi', photos: ['media/fauna/monsoon/fungus-4.webp'], note: 'A bracket fungus that recycles dead wood into soil.' },
+  { id: 'fungus-coral', common: 'White coral fungi', category: 'fungi', photos: ['media/fauna/monsoon/fungus-5.webp'] },
+  { id: 'fungus-mushroom', common: 'Leaf-litter mushroom', category: 'fungi', photos: ['media/fauna/monsoon/fungus-6.webp', 'media/fauna/monsoon/fungus-7.webp'] },
 ]
 
 export const faunaByCategory: Record<FaunaCategory, FaunaSpecies[]> = {
@@ -282,18 +323,22 @@ export const faunaByCategory: Record<FaunaCategory, FaunaSpecies[]> = {
   butterflies: [],
   spiders: [],
   insects: [],
+  amphibians: [],
+  'reptiles-mammals': [],
+  fungi: [],
 }
 
 fauna.forEach((f) => faunaByCategory[f.category].push(f))
 
-// Stats — authoritative numbers from the Apr 2026 report.
+// Stats — authoritative Year-0 totals (summer + monsoon) from the Monsoon
+// Biodiversity Report, 17 Nov 2026, Table 10.
 // `photographed` is how many distinct taxa were photographed and tiled here.
 // `confirmed` is the total species count confirmed on-site (incl. acoustic/sight records).
 export const faunaStats = {
   photographed: fauna.length,
   totalPhotos: fauna.reduce((sum, f) => sum + f.photos.length, 0),
-  birds: { photographed: faunaByCategory.birds.length, confirmed: 58 },
-  butterflies: { photographed: faunaByCategory.butterflies.length, confirmed: 20 },
-  spiderGenera: 8, // report §3.3 — "Eight genera have been confirmed"
-  spiderFamilies: 5,
+  birds: { photographed: faunaByCategory.birds.length, confirmed: 80 },
+  butterflies: { photographed: faunaByCategory.butterflies.length, confirmed: 34 },
+  spiderGenera: 22,
+  amphibianGenera: 7,
 }

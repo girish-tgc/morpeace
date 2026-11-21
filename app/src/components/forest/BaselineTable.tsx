@@ -7,9 +7,10 @@ const rows = [
   { indicator: 'Simpson diversity (1−D)', value: '0.93', next: 'Q4 2026' },
   { indicator: 'Soil organic carbon', value: '0.99%', next: 'Q4 2026 (post-monsoon)' },
   { indicator: 'Tree survival rate', value: '100%', next: 'Q3 2026 (monsoon)' },
-  { indicator: 'Bird species recorded', value: '58', next: 'Winter migration · Dec 2026' },
-  { indicator: 'Butterfly species recorded', value: '20', next: 'Post-monsoon · Oct 2026' },
-  { indicator: 'Spider genera recorded', value: '8', next: 'Monsoon · Aug 2026' },
+  { indicator: 'Bird species recorded', value: '80', next: 'Winter round · 2026–27' },
+  { indicator: 'Butterfly species recorded', value: '34', next: 'Winter round · 2026–27' },
+  { indicator: 'Spider genera recorded', value: '22', next: 'Winter round · 2026–27' },
+  { indicator: 'Amphibian genera recorded', value: '7', next: 'Winter round · 2026–27' },
 ]
 
 export default function BaselineTable() {

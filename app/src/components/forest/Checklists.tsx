@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { birdChecklist, butterflyChecklist } from '../../data/checklists'
+import { faunaStats } from '../../data/fauna'
 
 function ChecklistPanel({ title, eyebrow, note, items }: { title: string; eyebrow: string; note: string; items: string[] }) {
   const [open, setOpen] = useState(false)
@@ -16,7 +17,7 @@ function ChecklistPanel({ title, eyebrow, note, items }: { title: string; eyebro
           <p className="font-body text-sm italic text-sky-cream/60 mt-1 max-w-2xl">{note}</p>
         </div>
         <span className="eyebrow text-[#F5EBD0] whitespace-nowrap">
-          {open ? 'Collapse' : `Show all ${items.length} →`}
+          {open ? 'Collapse' : 'Show all →'}
         </span>
       </button>
       {open && (
@@ -48,21 +49,21 @@ export default function Checklists() {
           </h2>
           <div className="w-12 h-0.5 bg-[#E94A3C]/70 mx-auto mb-5" />
           <p className="font-body text-base italic text-sky-cream/65">
-            Beyond what could be photographed in a three-day window — the full roll of species
-            recorded on site by sight, sound, and survey.
+            Beyond what could be photographed — the full roll of species recorded on site by sight,
+            sound and survey, across the summer and monsoon rounds.
           </p>
         </div>
 
         <div className="space-y-5">
           <ChecklistPanel
             eyebrow="§3.1 Birds"
-            title="58 bird species recorded"
+            title={`${faunaStats.birds.confirmed} bird species recorded`}
             note="Visual field observation + Merlin Sound ID (Cornell Lab). Wetland specialists, raptors, frugivores, insectivores, nectarivores."
             items={birdChecklist}
           />
           <ChecklistPanel
             eyebrow="§3.2 Butterflies"
-            title="20 butterfly species recorded"
+            title={`${faunaStats.butterflies.confirmed} butterfly species recorded`}
             note="Predominantly Pieridae, Nymphalidae and Lycaenidae — diagnostic of healthy grass ground-layer and intact flowering understory."
             items={butterflyChecklist}
           />

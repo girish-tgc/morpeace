@@ -1,4 +1,5 @@
-// Full fauna checklists from the April 2026 Biodiversity Survey Report.
+// Full fauna checklists: April 2026 summer survey, plus species added in the
+// monsoon round (Monsoon Biodiversity Report, 17 Nov 2026, Table 1 and Table 12).
 // These are the species confirmed on-site by sight, sound (Merlin Sound ID),
 // or photograph — the broader catalogue that the plated photographs represent.
 
@@ -61,6 +62,30 @@ export const birdChecklist: string[] = [
   'Red Avadavat',
   'Indian Silverbill',
   'Western Yellow Wagtail',
+  // Monsoon 2026 additions
+  'Jungle Bush Quail',
+  'Indian Spot-billed Duck',
+  'Little Cormorant',
+  'Brahminy Kite',
+  'Yellow-footed Green Pigeon',
+  'Vernal Hanging Parrot',
+  'Rose-ringed Parakeet',
+  'Indian Cuckoo',
+  'Grey-bellied Cuckoo',
+  'Fork-tailed Drongo-Cuckoo',
+  'Asian Palm Swift',
+  'Common Kingfisher',
+  'Small Minivet',
+  'Cinereous Tit',
+  'White-browed Bulbul',
+  'Plain Prinia',
+  'Common Tailorbird',
+  'Puff-throated Babbler',
+  'Jungle Babbler',
+  'Thick-billed Flowerpecker',
+  'House Sparrow',
+  'Scaly-breasted Munia',
+  'White-browed Wagtail',
 ]
 
 export const butterflyChecklist: string[] = [
@@ -84,4 +109,19 @@ export const butterflyChecklist: string[] = [
   'Pea Blue',
   'Forget-me-not',
   'Dark Grass Blue',
+  // Monsoon 2026 additions
+  'Grass Demon',
+  'Dart sp.',
+  'Mottled Emigrant',
+  'Indian Wanderer',
+  'Striped Albatross',
+  'Common Sailer',
+  'Blue Pansy',
+  'Danaid Eggfly',
+  'Common Crow',
+  'Blue Tiger',
+  'Dark Cerulean',
+  'Lime Blue',
+  'Lesser Grass Blue',
+  'Gram Blue',
 ]

@@ -62,7 +62,7 @@ export default function ConservationHighlights() {
             <p className="font-body text-sm italic text-sky-cream/65 mt-0.5">Jamun · Tamarind · Mango · Guava · Custard Apple · Jackfruit · Fig</p>
             <p className="font-body text-sm text-sky-cream/75 leading-relaxed mt-4">
               Together these natives provide year-round fruit availability — the ecological scaffold
-              on which the 58-species avifauna depends.
+              on which the 80-species avifauna depends.
             </p>
           </div>
         </div>
