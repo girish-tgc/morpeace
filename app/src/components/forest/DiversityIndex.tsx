@@ -1,11 +1,16 @@
 // Reading the diversity numbers — Shannon and Simpson, with Western Ghats benchmark comparison.
-// Source: April 2026 baseline report §8.1.
+// Benchmarks: April 2026 baseline report §8.1. Morpeace values: tree census (treeCensus.ts).
+
+import { speciesStats as t, topSpecies } from '../../data/species'
+
+const top = topSpecies[0]
+const topPct = Math.round((top.count / t.totalTrees) * 100)
 
 const benchmarks = [
   { context: 'Monoculture plantation', shannon: '< 1.0', simpson: '< 0.50', mark: false },
   { context: 'Ornamental urban park', shannon: '1.5 – 2.5', simpson: '0.70 – 0.85', mark: false },
   { context: 'Sacred grove · NW Ghats', shannon: '2.8 – 3.4', simpson: '0.88 – 0.93', mark: false },
-  { context: 'Morpeace · April 2026', shannon: '3.23', simpson: '0.93', mark: true },
+  { context: 'Morpeace · 2026 census', shannon: t.shannon.toFixed(2), simpson: t.simpson.toFixed(2), mark: true },
   { context: 'Mature evergreen · S. Ghats', shannon: '3.8 – 4.2', simpson: '0.94 – 0.97', mark: false },
 ]
 
@@ -30,16 +35,16 @@ export default function DiversityIndex() {
           <div className="rounded-2xl p-7 md:p-8 ring-1 ring-sky-cream/12 bg-[#012E43]/45">
             <div className="flex items-baseline gap-4 mb-3">
               <span className="font-mono tabular-nums text-5xl md:text-6xl text-turmeric leading-none">
-                3.23
+                {t.shannon.toFixed(2)}
               </span>
               <span className="eyebrow text-sky-cream/65">Shannon H′</span>
             </div>
             <p className="font-body text-sm md:text-base text-sky-cream/75 leading-relaxed">
               <em>How many kinds, how evenly spread.</em> Pick a tree at random and guess its species —
               if one species dominates, you guess right and H′ is low; if every species is equally
-              common, H′ climbs toward the forest ceiling near 4.5. At 3.23, no single species —
-              not even the 64-tree sandalwood block — dominates the canopy; sixty-three other species
-              share the stand in meaningful numbers.
+              common, H′ climbs toward the forest ceiling near 4.5. At {t.shannon.toFixed(2)}, no single species
+              dominates. Even the largest group — {top.count} {top.common.toLowerCase()} trees — is only {topPct}% of
+              the stand; {t.totalSpecies - 1} other species share the rest.
             </p>
           </div>
 
@@ -47,15 +52,15 @@ export default function DiversityIndex() {
           <div className="rounded-2xl p-7 md:p-8 ring-1 ring-sky-cream/12 bg-[#012E43]/45">
             <div className="flex items-baseline gap-4 mb-3">
               <span className="font-mono tabular-nums text-5xl md:text-6xl text-turmeric leading-none">
-                0.93
+                {t.simpson.toFixed(2)}
               </span>
               <span className="eyebrow text-sky-cream/65">Simpson 1−D</span>
             </div>
             <p className="font-body text-sm md:text-base text-sky-cream/75 leading-relaxed">
               <em>Two-in-a-row.</em> Pick two trees at random — 1−D is the probability they belong
               to <strong className="text-sky-cream">different species</strong>. A monoculture is
-              near 0; a rich, even forest approaches 1. At 0.93, there is a 93% chance that any
-              two Morpeace trees you grab belong to different species.
+              near 0; a rich, even forest approaches 1. At {t.simpson.toFixed(2)}, there is a{' '}
+              {Math.round(t.simpson * 100)}% chance that any two Morpeace trees you grab belong to different species.
             </p>
           </div>
         </div>
@@ -66,8 +71,8 @@ export default function DiversityIndex() {
             Western Ghats benchmarks
           </h3>
           <p className="font-body text-sm italic text-sky-cream/55 max-w-2xl">
-            Read by the diversity arithmetic alone, the property already sits at the top end of the
-            sacred-grove band — only a notch below mature evergreen forest.
+            Read by the diversity arithmetic alone, the property already sits inside the sacred-grove
+            band, alongside the sacred groves of the northern Ghats.
           </p>
         </div>
 

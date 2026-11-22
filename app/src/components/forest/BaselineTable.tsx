@@ -1,10 +1,12 @@
+import { speciesStats as t } from '../../data/species'
+
 const rows = [
-  { indicator: 'Total standing trees', value: '447', next: 'Q4 2026' },
-  { indicator: 'Tree species richness', value: '64', next: 'Q4 2026' },
-  { indicator: 'Native-tree proportion', value: '81%', next: 'Q4 2026' },
-  { indicator: 'CO₂e standing stock', value: '42.7 t', next: 'Q4 2026' },
-  { indicator: 'Shannon diversity (H′)', value: '3.23', next: 'Q4 2026' },
-  { indicator: 'Simpson diversity (1−D)', value: '0.93', next: 'Q4 2026' },
+  { indicator: 'Total standing trees', value: t.totalTrees.toLocaleString('en-IN'), next: 'Q4 2026' },
+  { indicator: 'Tree species richness', value: String(t.totalSpecies), next: 'Q4 2026' },
+  { indicator: 'Native-tree proportion', value: `${t.nativePct.toFixed(0)}%`, next: 'Q4 2026' },
+  { indicator: 'CO₂e standing stock', value: `${(t.totalCo2eKg / 1000).toFixed(1)} t`, next: 'Q4 2026' },
+  { indicator: 'Shannon diversity (H′)', value: t.shannon.toFixed(2), next: 'Q4 2026' },
+  { indicator: 'Simpson diversity (1−D)', value: t.simpson.toFixed(2), next: 'Q4 2026' },
   { indicator: 'Soil organic carbon', value: '0.99%', next: 'Q4 2026 (post-monsoon)' },
   { indicator: 'Tree survival rate', value: '100%', next: 'Q3 2026 (monsoon)' },
   { indicator: 'Bird species recorded', value: '80', next: 'Winter round · 2026–27' },

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { topSpecies, allSpecies, maxSpeciesCount, type Species, type Origin } from '../../data/species'
+import { topSpecies, allSpecies, maxSpeciesCount, speciesStats, type Species, type Origin } from '../../data/species'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -158,8 +158,8 @@ export default function SpeciesGrid() {
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-sky-cream mb-4">The Wider Canopy</h2>
           <div className="w-12 h-0.5 bg-[#E94A3C]/70 mx-auto mb-5" />
           <p className="font-body text-base md:text-lg italic text-sky-cream/70">
-            447 tagged trees. 64 species. The first fifteen carry most of the carbon —
-            and the sacred grove carries the story.
+            {speciesStats.totalTrees.toLocaleString('en-IN')} tagged trees. {speciesStats.totalSpecies} species. Mango
+            and coconut carry most of the carbon — and the sacred grove carries the story.
           </p>
         </div>
 
@@ -179,7 +179,7 @@ export default function SpeciesGrid() {
         {/* Remaining species as compact list */}
         <div className="mb-6 flex items-baseline gap-4">
           <h3 className="font-display text-lg md:text-xl text-sky-cream/95">
-            All {allSpecies.length} species
+            All {speciesStats.totalSpecies} species
           </h3>
           <div className="flex-1 h-px bg-sky-cream/10" />
           <button

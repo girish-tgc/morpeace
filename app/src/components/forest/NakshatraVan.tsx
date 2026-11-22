@@ -132,13 +132,13 @@ export default function NakshatraVan() {
               <div className="rounded-xl bg-sky-cream/[0.06] ring-1 ring-sky-cream/10 p-4 text-center">
                 <p className="font-mono tabular-nums text-2xl md:text-3xl text-[#F5EBD0]">{nakshatraStats.speciesAfter}</p>
                 <p className="font-body text-[11px] md:text-xs text-sky-cream/65 mt-1 leading-snug">
-                  plant species, up from {nakshatraStats.speciesBefore} (+{pctGain}%)
+                  plant species of all kinds, up from {nakshatraStats.speciesBefore} (+{pctGain}%)
                 </p>
               </div>
               <div className="rounded-xl bg-sky-cream/[0.06] ring-1 ring-sky-cream/10 p-4 text-center">
                 <p className="font-mono tabular-nums text-2xl md:text-3xl text-[#F5EBD0]">{nakshatraStats.shannonAfter}</p>
                 <p className="font-body text-[11px] md:text-xs text-sky-cream/65 mt-1 leading-snug">
-                  Shannon diversity (H&prime;), up from {nakshatraStats.shannonBefore.toFixed(1)}
+                  all-plant Shannon (H&prime;), up from {nakshatraStats.shannonBefore.toFixed(1)}
                 </p>
               </div>
             </div>

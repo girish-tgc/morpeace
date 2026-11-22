@@ -1,3 +1,5 @@
+import { speciesStats } from '../../data/species'
+
 export default function ConservationHighlights() {
   return (
     <section
@@ -21,13 +23,13 @@ export default function ConservationHighlights() {
               <span className="eyebrow text-[10px] px-2 py-0.5 rounded-full border border-[#E94A3C]/70 text-[#F5EBD0] bg-[#E94A3C]/15">
                 IUCN Vulnerable
               </span>
-              <span className="font-mono text-xs text-sky-cream/60">64 individuals</span>
+              <span className="font-mono text-xs text-sky-cream/60">{speciesStats.sandalwood} individuals</span>
             </div>
             <h3 className="font-display text-xl md:text-2xl text-sky-cream">Sandalwood</h3>
             <p className="font-body text-sm italic text-sky-cream/65 mt-0.5">(Santalum album)</p>
             <p className="font-body text-sm text-sky-cream/75 leading-relaxed mt-4">
               Heavily exploited across its Indian range for sandalwood oil; wild regeneration is poor.
-              The Morpeace population is the single largest named species on site — and a conservation
+              The Morpeace population is one of the three most common trees on site — and a conservation
               asset in its own right.
             </p>
           </div>
@@ -38,14 +40,14 @@ export default function ConservationHighlights() {
               <span className="eyebrow text-[10px] px-2 py-0.5 rounded-full border border-emerald-300/50 text-emerald-200 bg-emerald-900/20">
                 Keystone
               </span>
-              <span className="font-mono text-xs text-sky-cream/60">Four Ficus species</span>
+              <span className="font-mono text-xs text-sky-cream/60">Eight Ficus species</span>
             </div>
             <h3 className="font-display text-xl md:text-2xl text-sky-cream">Wild Figs</h3>
-            <p className="font-body text-sm italic text-sky-cream/65 mt-0.5">(F. racemosa · benghalensis · benjamina · elastica)</p>
+            <p className="font-body text-sm italic text-sky-cream/65 mt-0.5">(F. racemosa · benghalensis · religiosa · virens · krishnae · benjamina · elastica · carica)</p>
             <p className="font-body text-sm text-sky-cream/75 leading-relaxed mt-4">
-              Keystone resources for frugivorous birds and mammals. <em>F. racemosa</em> tree #509
-              alone stores 737&nbsp;kg CO₂e — one of the ten largest individual carbon contributors —
-              and as a species sits in the top 15 by aggregate CO₂e, anchoring the most vertically
+              Keystone resources for frugivorous birds and mammals. <em>F. racemosa</em> tree #284
+              alone stores about 5,750&nbsp;kg CO₂e — the second-largest carbon store of any single tree
+              on site — and as a species sits in the top 5 by aggregate CO₂e, anchoring the most vertically
               structured canopy pockets.
             </p>
           </div>

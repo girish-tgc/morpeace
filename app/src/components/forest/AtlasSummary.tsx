@@ -2,10 +2,10 @@ import { speciesStats } from '../../data/species'
 import { faunaStats } from '../../data/fauna'
 
 const stats = [
-  { value: String(speciesStats.totalTrees), label: 'Trees tagged', sub: 'individually GPS-located' },
+  { value: speciesStats.totalTrees.toLocaleString('en-IN'), label: 'Trees tagged', sub: 'individually GPS-located' },
   { value: String(speciesStats.totalSpecies), label: 'Tree species', sub: 'scientific + local names' },
-  { value: `${speciesStats.nativePct.toFixed(0)}%`, label: 'Native', sub: `${speciesStats.nativeCount} of ${speciesStats.totalTrees} trees`, accent: 'emerald' as const },
-  { value: '42.7 t', label: 'CO₂e stored', sub: 'Chave et al. 2014', accent: 'gold' as const },
+  { value: `${speciesStats.nativePct.toFixed(0)}%`, label: 'Native', sub: `${speciesStats.nativeCount} of ${speciesStats.totalTrees.toLocaleString('en-IN')} trees`, accent: 'emerald' as const },
+  { value: `${(speciesStats.totalCo2eKg / 1000).toFixed(1)} t`, label: 'CO₂e stored', sub: 'Chave et al. 2014', accent: 'gold' as const },
   { value: String(faunaStats.birds.confirmed), label: 'Bird species', sub: 'acoustic + visual' },
   { value: String(faunaStats.butterflies.confirmed), label: 'Butterfly species', sub: 'photographic survey' },
 ]
@@ -19,17 +19,18 @@ export default function AtlasSummary() {
     >
       <div className="mx-auto max-w-6xl px-6 md:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-          <p className="eyebrow text-[#F5EBD0]/80 mb-3">§Interim Report · Year-0 Baseline (Partial Survey)</p>
+          <p className="eyebrow text-[#F5EBD0]/80 mb-3">§Tree Census · Year-0 Baseline · April–October 2026</p>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-sky-cream mb-5 leading-tight">
-            A first pass through<br/>part of the forest.
+            Every tree,<br/>one by one.
           </h2>
           <div className="w-12 h-0.5 bg-[#E94A3C]/70 mx-auto mb-6" />
           <p className="font-body text-base md:text-lg text-sky-cream/75 leading-relaxed">
-            Between 16 and 18 April 2026, a portion of the 10-acre property was surveyed: standing trees
-            in the covered area were individually tagged, measured, geo-located and catalogued through the <a href="https://tgctree.web.app/" target="_blank" rel="noopener" className="underline decoration-[#F5EBD0]/60 underline-offset-4 hover:text-[#F5EBD0]">tgctree</a> platform.
+            The tree census began with a first pass on 16–18 April 2026 and continued through October,
+            including the Nakshatra Van saplings planted in July. Each tree was tagged, measured, geo-located
+            and catalogued through the <a href="https://tgctree.web.app/" target="_blank" rel="noopener" className="underline decoration-[#F5EBD0]/60 underline-offset-4 hover:text-[#F5EBD0]">tgctree</a> platform.
             In parallel, a photographic and acoustic survey began documenting the property's resident fauna.
-            What follows is an interim Year-0 baseline drawn from this partial survey — the rest of the
-            property will be added as the work continues.
+            What follows is the Year-0 baseline: {speciesStats.totalTrees.toLocaleString('en-IN')} trees so far,
+            with {speciesStats.unidentified} still waiting for a confirmed name.
           </p>
         </div>
 
@@ -57,7 +58,7 @@ export default function AtlasSummary() {
         </div>
 
         <div className="mt-10 text-center text-sky-cream/55 text-xs italic font-body">
-          Survey: 16–18 April 2026 · Aboli Kulkarni, Rohan Shetti, Girish Kulkarni, Abhijeet Bayani (biodiversity lead) · prepared for Rohit Talwalkar, Morpeace Consulting LLP
+          Tree census: April–October 2026 · Aboli Kulkarni, Rohan Shetti, Girish Kulkarni and the Green Concept field team · Abhijeet Bayani (biodiversity lead) · prepared for Rohit Talwalkar, Morpeace Consulting LLP
         </div>
       </div>
     </section>

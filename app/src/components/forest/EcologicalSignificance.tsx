@@ -1,9 +1,11 @@
+import { speciesStats as t } from '../../data/species'
+
 const points = [
   {
     n: '01',
     title: 'A genuinely native-weighted canopy',
     body:
-      'At 81% native trees and a Shannon diversity of 3.23 (Simpson 1−D = 0.93), the property exceeds the threshold at which the landscape is recognisable as Indian — rather than generically ornamental — to the native fauna. The Pasaydan design brief already has a substrate to build upon; this is not a blank canvas.',
+      `At ${t.nativePct.toFixed(0)}% native trees and a Shannon diversity of ${t.shannon.toFixed(2)} (Simpson 1−D = ${t.simpson.toFixed(2)}), the property exceeds the threshold at which the landscape is recognisable as Indian — rather than generically ornamental — to the native fauna. The Pasaydan design brief already has a substrate to build upon; this is not a blank canvas.`,
   },
   {
     n: '02',

@@ -1,18 +1,23 @@
 // §6 Ecosystem at Work — How the parts connect.
 // Four documented + inferred relationships drawn from the April 2026 baseline.
+// Tree counts come from the tree census.
+
+import { treeCensus } from '../../data/treeCensus'
+
+const n = (id: keyof typeof treeCensus.bySpecies) => treeCensus.bySpecies[id].count
 
 const chains = [
   {
     label: 'Soil → Roots → Canopy',
     body:
-      'The topsoil sample carries 24 × 10⁶ CFU/g of culturable bacteria and 13 × 10³ CFU/g of fungi — an active, mixed microbial community. The 64 sandalwoods are the diagnostic: Santalum album is an obligate root hemiparasite that cannot thrive unless its haustoria can tap neighbouring roots. That sandalwood is the most abundant single species on the property is direct evidence the below-ground network is functional.',
+      `The topsoil sample carries 24 × 10⁶ CFU/g of culturable bacteria and 13 × 10³ CFU/g of fungi — an active, mixed microbial community. The ${n('santalum-album')} sandalwoods are the diagnostic: Santalum album is an obligate root hemiparasite that cannot thrive unless its haustoria can tap neighbouring roots. That sandalwood is one of the three most common trees on the property is direct evidence the below-ground network is functional.`,
     documented: 'microbial counts, sandalwood density',
     inferred: 'specific mycorrhizal colonisation rates — not yet measured',
   },
   {
     label: 'Canopy → Pollinators → Fruit set',
     body:
-      'The top carbon-storing and most abundant species are the property’s fruit anchors: mango (51), coconut (60), jackfruit (9), tamarind (13), jamun (16), guava (9), bel, amla, custard apple, mulberry and four Ficus species. Their flowering phenology spans most of the year. The documented pollinator fauna — wild Apis bees, megachilid leaf-cutters, syrphid hover-flies, and 34 butterfly species — is exactly the insect guild ecological literature associates with this fruit roster.',
+      `The top carbon-storing and most abundant species are the property’s fruit anchors: mango (${n('mangifera-indica')}), coconut (${n('cocos-nucifera')}), jackfruit (${n('artocarpus-heterophyllus')}), tamarind (${n('tamarindus-indica')}), jamun (${n('syzygium-cumini')}), guava (${n('psidium-guajava')}), bel, amla, custard apple, mulberry and eight Ficus species. Their flowering phenology spans most of the year. The documented pollinator fauna — wild Apis bees, megachilid leaf-cutters, syrphid hover-flies, and 34 butterfly species — is exactly the insect guild ecological literature associates with this fruit roster.`,
     documented: 'fruit-tree roster, pollinator guild',
     inferred: 'pollinator-limited fruit set — no exclusion experiment was run',
   },
