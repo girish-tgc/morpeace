@@ -42,7 +42,7 @@ export default function ConservationHighlights() {
               </span>
               <span className="font-mono text-xs text-sky-cream/60">Eight Ficus species</span>
             </div>
-            <h3 className="font-display text-xl md:text-2xl text-sky-cream">Wild Figs</h3>
+            <h3 className="font-display text-xl md:text-2xl text-sky-cream">The Figs</h3>
             <p className="font-body text-sm italic text-sky-cream/65 mt-0.5">(F. racemosa · benghalensis · religiosa · virens · krishnae · benjamina · elastica · carica)</p>
             <p className="font-body text-sm text-sky-cream/75 leading-relaxed mt-4">
               Keystone resources for frugivorous birds and mammals. <em>F. racemosa</em> tree #284

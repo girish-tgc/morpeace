@@ -52,7 +52,7 @@ const STORIES: Story[] = [
     title: 'The Harial',
     tag: 'State bird of Maharashtra',
     photoId: 'yellow-footed-green-pigeon',
-    body: 'The Yellow-footed Green Pigeon feeds mainly on figs — a direct link to the four wild fig species growing on the property.',
+    body: 'The Yellow-footed Green Pigeon feeds mainly on figs — a direct link to the wild fig trees growing on the property.',
   },
   {
     title: 'A parrot that sleeps upside down',

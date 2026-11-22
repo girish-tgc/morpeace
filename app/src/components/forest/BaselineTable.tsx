@@ -62,7 +62,7 @@ export default function BaselineTable() {
 
         <div className="mt-10 text-center text-xs italic text-text-deep/45">
           Carbon calculations: Chave et al. (2014) pan-tropical allometric equation; wood density from the
-          Global Wood Density Database; biomass-to-CO₂e factor 1.83.
+          Global Wood Density Database; CO₂e = total biomass × 0.47 carbon × 3.67 (factor 1.72).
         </div>
       </div>
     </section>

@@ -56,7 +56,7 @@ export default function CarbonEquivalents() {
 
         <p className="font-body text-xs italic text-sky-cream/45 mt-8 text-center max-w-3xl mx-auto leading-relaxed">
           Per-tree CO₂e calculated from measured girth, height and species-specific wood density
-          (Global Wood Density Database); biomass-to-CO₂e factor 1.83.
+          (Global Wood Density Database); CO₂e = total biomass × 0.47 carbon × 3.67 (factor 1.72).
         </p>
       </div>
     </section>

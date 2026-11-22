@@ -105,7 +105,7 @@ export default function LandingMockPage() {
     >
       <SeoHead
         title="Morpeace — A Forest Villa near Satara | Boutique Stay in the Western Ghats"
-        description="A boutique forest villa on 10 acres in the Western Ghats. Private pool, lake, 1,000+ native trees, farm-to-table meals. Sleeps up to 10. Book your stay at Morpeace."
+        description="A boutique forest villa on 10 acres in the Western Ghats. Private pool, lake, 1,000+ trees, farm-to-table meals. Sleeps up to 10. Book your stay at Morpeace."
         path="/"
       />
 
@@ -208,7 +208,7 @@ export default function LandingMockPage() {
             <Eyebrow>The forest</Eyebrow>
             <Heading>Walk without a destination.</Heading>
             <p className="font-body text-lg md:text-xl leading-relaxed" style={{ color: `${PALETTE.sand}cc` }}>
-              1,000+ native trees, 10 regenerated acres.
+              1,000+ trees, 10 regenerated acres.
             </p>
           </div>
         </div>
